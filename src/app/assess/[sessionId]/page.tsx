@@ -8,7 +8,6 @@ import {
   assertAssessmentOwned,
   getSessionUser,
 } from "@/lib/auth/session";
-import { loadPack } from "@/lib/content/loadPack";
 import {
   flattenPack,
   resumeSession,
@@ -43,8 +42,8 @@ export default async function AssessPage({ params }: PageProps) {
     throw err;
   }
 
-  const pack = loadPack(resumed.session.packId);
-  const items: ShellItem[] = flattenPack(pack).map((row) => ({
+  const playlist = resumed.playlist;
+  const items: ShellItem[] = flattenPack(playlist).map((row) => ({
     globalIndex: row.globalIndex,
     subtestId: row.subtestId,
     indexKey: row.indexKey,
@@ -60,8 +59,8 @@ export default async function AssessPage({ params }: PageProps) {
   return (
     <AssessmentShell
       sessionId={sessionId}
-      audience={pack.audience}
-      title={pack.title}
+      audience={playlist.audience}
+      title={playlist.title}
       items={items}
       initialIndex={resumed.currentIndex}
       initialStatus={resumed.status}

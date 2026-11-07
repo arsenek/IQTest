@@ -9,6 +9,7 @@ import { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/db";
 import { loadPack } from "@/lib/content/loadPack";
 import { loadNorms } from "@/lib/content/loadNorms";
+import { contentPackSchema } from "@/lib/content/schemas";
 import {
   INDEX_KEYS,
   type ContentPack,
@@ -18,6 +19,7 @@ import {
 import { scoreItem } from "@/lib/scoring/rawScore";
 import { scaleSubtest } from "@/lib/scoring/scaleScore";
 import { composeReport } from "@/lib/scoring/composeReport";
+import { shufflePlaylist } from "@/lib/session/shuffle";
 
 export class SessionError extends Error {
   constructor(
@@ -27,7 +29,8 @@ export class SessionError extends Error {
       | "SESSION_NOT_IN_PROGRESS"
       | "NO_MORE_ITEMS"
       | "ITEM_MISMATCH"
-      | "INVALID_PAYLOAD",
+      | "INVALID_PAYLOAD"
+      | "INVALID_PLAYLIST",
     message: string,
   ) {
     super(message);
@@ -58,6 +61,7 @@ export type ResumeResult = {
   currentIndex: number;
   totalItems: number;
   status: SessionStatus;
+  playlist: ContentPack;
   currentItem: (Item & { subtestId: string; indexKey: IndexKey }) | null;
 };
 
@@ -102,9 +106,27 @@ function toJsonAnswer(
   return answer as Prisma.InputJsonValue;
 }
 
+/** Resolve the session playlist; fall back to canonical pack if missing. */
+export function resolveSessionPlaylist(
+  session: Pick<AssessmentSession, "packId" | "playlistJson">,
+): ContentPack {
+  if (session.playlistJson != null) {
+    const parsed = contentPackSchema.safeParse(session.playlistJson);
+    if (!parsed.success) {
+      throw new SessionError(
+        "INVALID_PLAYLIST",
+        `Invalid playlistJson for pack ${session.packId}`,
+      );
+    }
+    return parsed.data;
+  }
+  return loadPack(session.packId);
+}
+
 /** Start a new assessment for a profile; pack chosen by Profile.kind. */
 export async function createSession(
   profileId: string,
+  rng: () => number = Math.random,
 ): Promise<AssessmentSession> {
   const profile = await prisma.profile.findUnique({ where: { id: profileId } });
   if (!profile) {
@@ -113,8 +135,9 @@ export async function createSession(
 
   const packId = resolvePackId(profile.kind);
   const normVersion = DEFAULT_NORM_VERSION;
-  loadPack(packId);
+  const pack = loadPack(packId);
   loadNorms(normVersion);
+  const playlist = shufflePlaylist(pack, rng);
 
   return prisma.assessmentSession.create({
     data: {
@@ -123,6 +146,7 @@ export async function createSession(
       normVersion,
       status: "IN_PROGRESS",
       currentIndex: 0,
+      playlistJson: playlist as unknown as Prisma.InputJsonValue,
     },
   });
 }
@@ -161,8 +185,8 @@ export async function recordAnswer(
     );
   }
 
-  const pack = loadPack(session.packId);
-  const flat = flattenPack(pack);
+  const playlist = resolveSessionPlaylist(session);
+  const flat = flattenPack(playlist);
   if (session.currentIndex >= flat.length) {
     throw new SessionError("NO_MORE_ITEMS", "All items already answered");
   }
@@ -214,8 +238,8 @@ export async function resumeSession(sessionId: string): Promise<ResumeResult> {
     throw new SessionError("SESSION_NOT_FOUND", `Session not found: ${sessionId}`);
   }
 
-  const pack = loadPack(session.packId);
-  const flat = flattenPack(pack);
+  const playlist = resolveSessionPlaylist(session);
+  const flat = flattenPack(playlist);
   const current =
     session.status === "IN_PROGRESS" && session.currentIndex < flat.length
       ? flat[session.currentIndex]
@@ -226,6 +250,7 @@ export async function resumeSession(sessionId: string): Promise<ResumeResult> {
     currentIndex: session.currentIndex,
     totalItems: flat.length,
     status: session.status,
+    playlist,
     currentItem: current
       ? {
           ...current.item,
@@ -253,10 +278,10 @@ export async function submitSession(sessionId: string): Promise<Report> {
     return session.report;
   }
 
-  const pack = loadPack(session.packId);
+  const playlist = resolveSessionPlaylist(session);
   const norms = loadNorms(session.normVersion);
   const subtestIndex = new Map(
-    pack.subtests.map((s) => [s.id, s.indexKey] as const),
+    playlist.subtests.map((s) => [s.id, s.indexKey] as const),
   );
 
   const rawByIndex: Record<IndexKey, number> = {

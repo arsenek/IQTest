@@ -37,6 +37,8 @@ model AssessmentSession {
   profile      Profile       @relation(fields: [profileId], references: [id])
   packId       String // e.g. child/v1
   normVersion  String
+  /** Shuffled per-session pack (item + choice order). Resume/submit read this. */
+  playlistJson Json?
   status       SessionStatus
   currentIndex Int           @default(0)
   startedAt    DateTime      @default(now())
