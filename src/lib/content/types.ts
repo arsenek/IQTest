@@ -4,13 +4,23 @@ export type IndexKey = (typeof INDEX_KEYS)[number];
 export const ITEM_TYPES = ["mcq", "digit_span", "symbol_search"] as const;
 export type ItemType = (typeof ITEM_TYPES)[number];
 
+export type Choice = {
+  label: string;
+  glyph?: string;
+  image?: string;
+};
+
 export type Item = {
   id: string;
   type: ItemType;
   prompt: string;
-  choices?: string[];
+  choices?: Choice[];
   answer: string | number | string[];
   timeLimitMs?: number;
+  /** Memory encode window (ms) before stem is masked. */
+  encodeMs?: number;
+  /** After encode, hide the stem until the next item. */
+  maskStem?: boolean;
 };
 
 export type Subtest = {

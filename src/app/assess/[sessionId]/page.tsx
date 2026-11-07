@@ -53,6 +53,8 @@ export default async function AssessPage({ params }: PageProps) {
     prompt: row.item.prompt,
     choices: row.item.choices,
     timeLimitMs: row.item.timeLimitMs,
+    encodeMs: row.item.encodeMs,
+    maskStem: row.item.maskStem,
   }));
 
   return (

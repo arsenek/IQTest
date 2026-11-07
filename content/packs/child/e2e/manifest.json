@@ -12,7 +12,12 @@
           "id": "e2e-vci-1",
           "type": "mcq",
           "prompt": "「苹果」是什么？",
-          "choices": ["一种水果", "一种交通工具", "一种颜色", "一种动物"],
+          "choices": [
+            { "label": "一种水果", "glyph": "🍎" },
+            { "label": "一种交通工具", "glyph": "🚌" },
+            { "label": "一种颜色", "glyph": "🎨" },
+            { "label": "一种动物", "glyph": "🐱" }
+          ],
           "answer": "一种水果",
           "timeLimitMs": 120000
         }
@@ -27,7 +32,12 @@
           "id": "e2e-pri-1",
           "type": "mcq",
           "prompt": "哪个更像圆形？",
-          "choices": ["皮球", "尺子", "筷子", "书本"],
+          "choices": [
+            { "label": "皮球", "glyph": "●" },
+            { "label": "尺子", "glyph": "─" },
+            { "label": "筷子", "glyph": "∥" },
+            { "label": "书本", "glyph": "▭" }
+          ],
           "answer": "皮球",
           "timeLimitMs": 120000
         }
@@ -43,7 +53,9 @@
           "type": "digit_span",
           "prompt": "请按顺序复述这些数字：1、2、3",
           "answer": "1-2-3",
-          "timeLimitMs": 120000
+          "timeLimitMs": 120000,
+          "encodeMs": 800,
+          "maskStem": true
         }
       ]
     },

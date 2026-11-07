@@ -47,8 +47,12 @@ export default async function PracticePage({ params, searchParams }: PageProps) 
   }
 
   let items;
+  let audience: "child" | "adult" = "child";
   try {
-    ({ items } = await getPracticeItemsForProfile(profileId, indexKey));
+    ({ items, audience } = await getPracticeItemsForProfile(
+      profileId,
+      indexKey,
+    ));
   } catch (err) {
     if (err instanceof PracticeError) notFound();
     throw err;
@@ -60,6 +64,7 @@ export default async function PracticePage({ params, searchParams }: PageProps) 
       profileId={profileId}
       reportSessionId={sessionId}
       items={items}
+      audience={audience}
     />
   );
 }

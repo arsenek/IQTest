@@ -20,6 +20,7 @@ type PracticeRoomProps = {
   profileId: string;
   reportSessionId?: string;
   items: PracticeItem[];
+  audience?: "child" | "adult";
 };
 
 type LocalAnswer = { itemId: string; answer: ItemAnswer };
@@ -29,7 +30,9 @@ export function PracticeRoom({
   profileId,
   reportSessionId,
   items,
+  audience = "child",
 }: PracticeRoomProps) {
+  const skinClass = audience === "child" ? "skin-child" : "skin-adult";
   const [cursor, setCursor] = useState(0);
   const [answers, setAnswers] = useState<LocalAnswer[]>([]);
   const [practiceSessionId, setPracticeSessionId] = useState<string | null>(
@@ -131,21 +134,23 @@ export function PracticeRoom({
   }
 
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-900">
+    <div className={`${skinClass} assess-root min-h-screen`}>
       <main className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-4 py-10 md:px-8 md:py-14">
         <header className="flex flex-col gap-2">
-          <p className="text-sm font-medium text-zinc-500">专项练习室</p>
-          <h1 className="text-3xl font-semibold md:text-4xl">
+          <p className="text-sm font-medium text-[var(--assess-muted)]">
+            专项练习室
+          </p>
+          <h1 className="text-3xl font-semibold text-[var(--assess-fg)] md:text-4xl">
             {INDEX_LABELS[indexKey]}（{indexKey}）
           </h1>
-          <p className="text-sm text-zinc-500 md:text-base">
+          <p className="text-sm text-[var(--assess-muted)] md:text-base">
             练习分只写入练习进度，不会改写正式报告分数。
           </p>
         </header>
 
         {phase === "ready" && (
-          <div className="rounded-2xl border border-zinc-200 bg-white p-6 md:p-8">
-            <p className="text-base text-zinc-600">
+          <div className="rounded-[var(--assess-radius)] border-2 border-[var(--assess-border)] bg-[var(--assess-panel)] p-6 shadow-[var(--assess-shadow)] md:p-8">
+            <p className="text-base text-[var(--assess-muted)]">
               本轮 {items.length} 题，完成后结算星星。
             </p>
             <button
@@ -153,7 +158,7 @@ export function PracticeRoom({
               data-testid="practice-start"
               disabled={busy || items.length === 0}
               onClick={() => void start()}
-              className="mt-6 min-h-12 rounded-xl bg-zinc-900 px-6 font-semibold text-white disabled:opacity-50"
+              className="mt-6 min-h-12 rounded-[var(--assess-radius)] bg-[var(--assess-accent)] px-6 font-semibold text-[var(--assess-accent-fg)] disabled:opacity-50"
             >
               开始练习
             </button>
@@ -161,8 +166,8 @@ export function PracticeRoom({
         )}
 
         {phase === "active" && current && (
-          <div className="rounded-2xl border border-zinc-200 bg-white p-5 md:p-8">
-            <div className="mb-4 flex justify-between text-sm text-zinc-500">
+          <div className="rounded-[var(--assess-radius)] border-2 border-[var(--assess-border)] bg-[var(--assess-panel)] p-5 shadow-[var(--assess-shadow)] md:p-8">
+            <div className="mb-4 flex justify-between text-sm text-[var(--assess-muted)]">
               <span>进度 {progressLabel}</span>
               <span>即时反馈局</span>
             </div>
@@ -178,6 +183,8 @@ export function PracticeRoom({
               <DigitSpanItem
                 prompt={current.prompt}
                 disabled={busy}
+                encodeMs={current.encodeMs}
+                maskStem={current.maskStem}
                 onAnswer={onAnswer}
               />
             )}
@@ -194,17 +201,23 @@ export function PracticeRoom({
         {phase === "done" && (
           <div
             data-testid="practice-done"
-            className="rounded-2xl border border-zinc-200 bg-white p-6 text-center md:p-8"
+            className="rounded-[var(--assess-radius)] border-2 border-[var(--assess-border)] bg-[var(--assess-panel)] p-6 text-center shadow-[var(--assess-shadow)] md:p-8"
           >
             <p className="text-4xl" aria-label={`${stars} 星`}>
               {"★".repeat(Math.min(3, stars)) || "☆"}
             </p>
-            <p className="mt-3 text-lg font-semibold">练习完成</p>
-            {message && <p className="mt-2 text-zinc-600">{message}</p>}
-            <p className="mt-1 text-sm text-zinc-500">累计星星：{stars}</p>
+            <p className="mt-3 text-lg font-semibold text-[var(--assess-fg)]">
+              练习完成
+            </p>
+            {message && (
+              <p className="mt-2 text-[var(--assess-muted)]">{message}</p>
+            )}
+            <p className="mt-1 text-sm text-[var(--assess-muted)]">
+              累计星星：{stars}
+            </p>
             <button
               type="button"
-              className="mt-6 min-h-11 rounded-xl border border-zinc-300 px-5 text-sm font-medium"
+              className="mt-6 min-h-11 rounded-[var(--assess-radius)] border-2 border-[var(--assess-border)] bg-[var(--assess-surface)] px-5 text-sm font-medium text-[var(--assess-fg)]"
               onClick={() => {
                 setPhase("ready");
                 setMessage(null);
@@ -223,12 +236,15 @@ export function PracticeRoom({
           {reportSessionId && (
             <Link
               href={`/report/${reportSessionId}`}
-              className="text-zinc-500 underline-offset-2 hover:underline"
+              className="text-[var(--assess-muted)] underline-offset-2 hover:underline"
             >
               返回报告
             </Link>
           )}
-          <Link href="/" className="text-zinc-500 underline-offset-2 hover:underline">
+          <Link
+            href="/"
+            className="text-[var(--assess-muted)] underline-offset-2 hover:underline"
+          >
             首页
           </Link>
         </div>

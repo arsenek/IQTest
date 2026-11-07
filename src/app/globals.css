@@ -24,22 +24,48 @@ body {
   color: var(--assess-fg);
 }
 
-.skin-child {
-  --assess-bg: #e8f6f4;
-  --assess-fg: #0f3d3a;
-  --assess-muted: #3d6b66;
-  --assess-border: #9fd5ce;
-  --assess-surface: #ffffff;
-  --assess-panel: #ffffff;
-  --assess-header: rgba(255, 255, 255, 0.85);
-  --assess-track: #cfeae6;
-  --assess-accent: #0d9488;
-  --assess-accent-fg: #ffffff;
-  --assess-accent-soft: #d5f5f0;
-  --assess-radius: 1.25rem;
-  --assess-shadow: 0 10px 30px rgba(13, 148, 136, 0.12);
+/* Shared card tokens (overridden per skin) */
+.assess-root {
+  --card-radius: var(--assess-radius);
+  --card-border: var(--assess-border);
+  --card-shadow: var(--assess-shadow);
+  --card-shadow-active: var(--assess-shadow);
+  --card-stem-bg: var(--assess-surface);
+  --card-choice-bg: var(--assess-surface);
+  --card-glyph-bg: var(--assess-accent-soft);
+  --card-mask-bg: color-mix(in srgb, var(--assess-panel) 92%, var(--assess-fg));
+  --card-timer-track: var(--assess-track);
+  --card-timer-fill: var(--assess-accent);
 }
 
+/* Child: playful game-card feel */
+.skin-child {
+  --assess-bg: #dff7f2;
+  --assess-fg: #0b3b36;
+  --assess-muted: #3a6f69;
+  --assess-border: #7ec9bf;
+  --assess-surface: #ffffff;
+  --assess-panel: #fffdf7;
+  --assess-header: rgba(255, 253, 247, 0.92);
+  --assess-track: #bfe8e1;
+  --assess-accent: #0f9f90;
+  --assess-accent-fg: #ffffff;
+  --assess-accent-soft: #c8f3ec;
+  --assess-radius: 1.5rem;
+  --assess-shadow: 0 12px 28px rgba(15, 159, 144, 0.18),
+    0 2px 0 rgba(15, 159, 144, 0.12);
+  --card-shadow: 0 14px 32px rgba(15, 159, 144, 0.16),
+    0 3px 0 #5bb5aa;
+  --card-shadow-active: 0 10px 24px rgba(15, 159, 144, 0.28),
+    0 2px 0 #0f9f90;
+  --card-stem-bg: linear-gradient(180deg, #ffffff 0%, #eefcf9 100%);
+  --card-choice-bg: #ffffff;
+  --card-glyph-bg: #e6faf6;
+  --card-mask-bg: color-mix(in srgb, #0f9f90 18%, #fffdf7);
+  --card-timer-fill: #f59e0b;
+}
+
+/* Adult: clean information cards */
 .skin-adult {
   --assess-bg: #f4f4f5;
   --assess-fg: #18181b;
@@ -52,6 +78,31 @@ body {
   --assess-accent: #27272a;
   --assess-accent-fg: #fafafa;
   --assess-accent-soft: #f4f4f5;
-  --assess-radius: 0.5rem;
+  --assess-radius: 0.625rem;
   --assess-shadow: 0 1px 2px rgba(24, 24, 27, 0.06);
+  --card-shadow: 0 1px 2px rgba(24, 24, 27, 0.05),
+    0 8px 20px rgba(24, 24, 27, 0.04);
+  --card-shadow-active: 0 0 0 1px rgba(39, 39, 42, 0.08),
+    0 8px 18px rgba(24, 24, 27, 0.1);
+  --card-stem-bg: #ffffff;
+  --card-choice-bg: #fafafa;
+  --card-glyph-bg: #f4f4f5;
+  --card-mask-bg: color-mix(in srgb, #18181b 6%, #ffffff);
+  --card-timer-fill: #3f3f46;
+}
+
+.item-card-stem {
+  background: var(--card-stem-bg);
+}
+
+.skin-child .choice-card {
+  transform: translateY(0);
+}
+
+.skin-child .choice-card:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.skin-adult .choice-card {
+  letter-spacing: 0.01em;
 }

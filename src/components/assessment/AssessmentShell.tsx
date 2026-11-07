@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { McqItem, type ItemAnswer } from "@/components/items/McqItem";
 import { DigitSpanItem } from "@/components/items/DigitSpanItem";
 import { SymbolSearchItem } from "@/components/items/SymbolSearchItem";
-import type { ItemType } from "@/lib/content/types";
+import type { Choice, ItemType } from "@/lib/content/types";
 
 export type ShellItem = {
   globalIndex: number;
@@ -14,8 +14,10 @@ export type ShellItem = {
   id: string;
   type: ItemType;
   prompt: string;
-  choices?: string[];
+  choices?: Choice[];
   timeLimitMs?: number;
+  encodeMs?: number;
+  maskStem?: boolean;
 };
 
 type AssessmentShellProps = {
@@ -278,6 +280,8 @@ export function AssessmentShell({
               <DigitSpanItem
                 prompt={current.prompt}
                 disabled={busy}
+                encodeMs={current.encodeMs}
+                maskStem={current.maskStem}
                 onAnswer={submitAnswer}
               />
             )}

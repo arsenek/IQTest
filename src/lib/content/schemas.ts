@@ -4,13 +4,27 @@ import { INDEX_KEYS, ITEM_TYPES } from "./types";
 const indexKeySchema = z.enum(INDEX_KEYS);
 const itemTypeSchema = z.enum(ITEM_TYPES);
 
+const choiceObjectSchema = z.object({
+  label: z.string().min(1),
+  glyph: z.string().optional(),
+  image: z.string().optional(),
+});
+
+/** Accept plain strings or { label, glyph?, image? }; normalize to Choice. */
+export const choiceSchema = z.union([
+  z.string().min(1).transform((label) => ({ label })),
+  choiceObjectSchema,
+]);
+
 export const itemSchema = z.object({
   id: z.string().min(1),
   type: itemTypeSchema,
   prompt: z.string().min(1),
-  choices: z.array(z.string()).optional(),
+  choices: z.array(choiceSchema).optional(),
   answer: z.union([z.string(), z.number(), z.array(z.string())]),
   timeLimitMs: z.number().int().positive().optional(),
+  encodeMs: z.number().int().positive().optional(),
+  maskStem: z.boolean().optional(),
 });
 
 export const subtestSchema = z.object({

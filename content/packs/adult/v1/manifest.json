@@ -13,10 +13,10 @@
           "type": "mcq",
           "prompt": "「隐喻」最接近下列哪一含义？",
           "choices": [
-            "用一种事物暗示另一种事物",
-            "逐字翻译",
-            "随机联想",
-            "否定陈述"
+            { "label": "用一种事物暗示另一种事物", "glyph": "⇔" },
+            { "label": "逐字翻译", "glyph": "≡" },
+            { "label": "随机联想", "glyph": "?" },
+            { "label": "否定陈述", "glyph": "¬" }
           ],
           "answer": "用一种事物暗示另一种事物",
           "timeLimitMs": 60000
@@ -26,10 +26,10 @@
           "type": "mcq",
           "prompt": "「稀缺」与「充裕」的关系最接近？",
           "choices": [
-            "反义",
-            "同义",
-            "因果",
-            "整体与部分"
+            { "label": "反义", "glyph": "↔" },
+            { "label": "同义", "glyph": "=" },
+            { "label": "因果", "glyph": "→" },
+            { "label": "整体与部分", "glyph": "⊂" }
           ],
           "answer": "反义",
           "timeLimitMs": 60000
@@ -39,10 +39,10 @@
           "type": "mcq",
           "prompt": "「范式」在学术语境中通常指？",
           "choices": [
-            "被广泛接受的研究框架或模式",
-            "临时假设",
-            "实验误差",
-            "样本偏差"
+            { "label": "被广泛接受的研究框架或模式", "glyph": "▣" },
+            { "label": "临时假设", "glyph": "…" },
+            { "label": "实验误差", "glyph": "±" },
+            { "label": "样本偏差", "glyph": "≠" }
           ],
           "answer": "被广泛接受的研究框架或模式",
           "timeLimitMs": 60000
@@ -52,10 +52,10 @@
           "type": "mcq",
           "prompt": "下列哪项最能说明「归纳」？",
           "choices": [
-            "从具体观察概括出一般规律",
-            "从公理推出结论",
-            "随机猜测",
-            "重复背诵"
+            { "label": "从具体观察概括出一般规律", "glyph": "↑" },
+            { "label": "从公理推出结论", "glyph": "↓" },
+            { "label": "随机猜测", "glyph": "?" },
+            { "label": "重复背诵", "glyph": "↻" }
           ],
           "answer": "从具体观察概括出一般规律",
           "timeLimitMs": 60000
@@ -65,10 +65,10 @@
           "type": "mcq",
           "prompt": "「冗余」在信息论直觉中意味着？",
           "choices": [
-            "超出必要的重复信息",
-            "完全无噪声的信道",
-            "无限带宽",
-            "零延迟"
+            { "label": "超出必要的重复信息", "glyph": "⧉" },
+            { "label": "完全无噪声的信道", "glyph": "⌀" },
+            { "label": "无限带宽", "glyph": "∞" },
+            { "label": "零延迟", "glyph": "0" }
           ],
           "answer": "超出必要的重复信息",
           "timeLimitMs": 60000
@@ -85,10 +85,10 @@
           "type": "mcq",
           "prompt": "2×2 矩阵：A B / C ? 若按「对角对称」补全，? 应为",
           "choices": [
-            "A",
-            "B",
-            "C",
-            "空"
+            { "label": "A", "glyph": "A" },
+            { "label": "B", "glyph": "B" },
+            { "label": "C", "glyph": "C" },
+            { "label": "空", "glyph": "∅" }
           ],
           "answer": "A",
           "timeLimitMs": 60000
@@ -98,10 +98,10 @@
           "type": "mcq",
           "prompt": "序列 ■□■□■ 的下一图形是？",
           "choices": [
-            "□",
-            "■",
-            "●",
-            "△"
+            { "label": "□", "glyph": "□" },
+            { "label": "■", "glyph": "■" },
+            { "label": "●", "glyph": "●" },
+            { "label": "△", "glyph": "△" }
           ],
           "answer": "□",
           "timeLimitMs": 60000
@@ -111,10 +111,10 @@
           "type": "mcq",
           "prompt": "旋转规律：图每步顺时针 90°，第 4 步朝向与第 0 步相同。第 5 步相对第 0 步？",
           "choices": [
-            "顺时针 90°",
-            "180°",
-            "270°",
-            "不变"
+            { "label": "顺时针 90°", "glyph": "↻" },
+            { "label": "180°", "glyph": "⇅" },
+            { "label": "270°", "glyph": "↺" },
+            { "label": "不变", "glyph": "=" }
           ],
           "answer": "顺时针 90°",
           "timeLimitMs": 60000
@@ -124,10 +124,10 @@
           "type": "mcq",
           "prompt": "三行数字：1 2 3 / 2 4 6 / 3 6 ? 规律为倍增列，? 是",
           "choices": [
-            "9",
-            "8",
-            "7",
-            "12"
+            { "label": "9", "glyph": "9" },
+            { "label": "8", "glyph": "8" },
+            { "label": "7", "glyph": "7" },
+            { "label": "12", "glyph": "12" }
           ],
           "answer": "9",
           "timeLimitMs": 60000
@@ -137,10 +137,10 @@
           "type": "mcq",
           "prompt": "哪个图形不能由「边数递增」序列推出：△□○◇ 后应接",
           "choices": [
-            "五边形",
-            "直线",
-            "六边形",
-            "五角星轮廓"
+            { "label": "五边形", "glyph": "⬠" },
+            { "label": "直线", "glyph": "─" },
+            { "label": "六边形", "glyph": "⬡" },
+            { "label": "五角星轮廓", "glyph": "☆" }
           ],
           "answer": "直线",
           "timeLimitMs": 60000
@@ -157,35 +157,45 @@
           "type": "digit_span",
           "prompt": "请按顺序复述这些数字：7、1、4",
           "answer": "7-1-4",
-          "timeLimitMs": 45000
+          "timeLimitMs": 45000,
+          "encodeMs": 3500,
+          "maskStem": true
         },
         {
           "id": "adult-wmi-2",
           "type": "digit_span",
           "prompt": "请按顺序复述这些数字：3、9、2、6",
           "answer": "3-9-2-6",
-          "timeLimitMs": 45000
+          "timeLimitMs": 45000,
+          "encodeMs": 4000,
+          "maskStem": true
         },
         {
           "id": "adult-wmi-3",
           "type": "digit_span",
           "prompt": "请按顺序复述这些数字：5、8、1、4、7",
           "answer": "5-8-1-4-7",
-          "timeLimitMs": 45000
+          "timeLimitMs": 45000,
+          "encodeMs": 4500,
+          "maskStem": true
         },
         {
           "id": "adult-wmi-4",
           "type": "digit_span",
           "prompt": "请按顺序复述这些数字：2、6、9、3、5、1",
           "answer": "2-6-9-3-5-1",
-          "timeLimitMs": 45000
+          "timeLimitMs": 45000,
+          "encodeMs": 5000,
+          "maskStem": true
         },
         {
           "id": "adult-wmi-5",
           "type": "digit_span",
           "prompt": "请按顺序复述这些数字：8、4、7、1、9、2、6",
           "answer": "8-4-7-1-9-2-6",
-          "timeLimitMs": 45000
+          "timeLimitMs": 45000,
+          "encodeMs": 5500,
+          "maskStem": true
         }
       ]
     },

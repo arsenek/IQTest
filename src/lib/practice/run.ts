@@ -20,7 +20,13 @@ export class PracticeError extends Error {
 
 export type PracticeItem = Pick<
   Item,
-  "id" | "type" | "prompt" | "choices" | "timeLimitMs"
+  | "id"
+  | "type"
+  | "prompt"
+  | "choices"
+  | "timeLimitMs"
+  | "encodeMs"
+  | "maskStem"
 > & { subtestId: string };
 
 const ROUND_SIZE = 5;
@@ -86,6 +92,8 @@ export function buildPracticeRound(
         prompt: item.prompt,
         choices: item.choices,
         timeLimitMs: item.timeLimitMs,
+        encodeMs: item.encodeMs,
+        maskStem: item.maskStem,
         subtestId: s.id,
       })),
     );
@@ -103,7 +111,11 @@ export function buildPracticeRound(
 export async function getPracticeItemsForProfile(
   profileId: string,
   indexKey: string,
-): Promise<{ packId: string; items: PracticeItem[] }> {
+): Promise<{
+  packId: string;
+  items: PracticeItem[];
+  audience: "child" | "adult";
+}> {
   if (!isIndexKey(indexKey)) {
     throw new PracticeError("INVALID_INDEX", `Invalid indexKey: ${indexKey}`);
   }
@@ -112,7 +124,8 @@ export async function getPracticeItemsForProfile(
     throw new PracticeError("PROFILE_NOT_FOUND", `Profile not found: ${profileId}`);
   }
   const packId = packIdForKind(profile.kind);
-  return { packId, items: buildPracticeRound(packId, indexKey) };
+  const audience = profile.kind === "CHILD" ? "child" : "adult";
+  return { packId, items: buildPracticeRound(packId, indexKey), audience };
 }
 
 export type PracticeAnswerInput = {
