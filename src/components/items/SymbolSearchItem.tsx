@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { ItemAnswer } from "./McqItem";
+import { ChoiceCardButton, ItemCard } from "./ItemCard";
 
 type SymbolSearchItemProps = {
   prompt: string;
@@ -11,12 +12,27 @@ type SymbolSearchItemProps = {
 
 const COUNTS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] as const;
 
+/** Pull target + sequence glyphs from Chinese prompt fixtures when present. */
+export function parseSymbolPrompt(prompt: string): {
+  target?: string;
+  sequence: string[];
+} {
+  const targetMatch = prompt.match(/目标\s*([^\s。．.]+)/);
+  const seqMatch = prompt.match(/在\s*(.+?)\s*中/);
+  const target = targetMatch?.[1]?.trim();
+  const sequence = seqMatch?.[1]
+    ? Array.from(seqMatch[1].replace(/\s+/g, ""))
+    : [];
+  return { target, sequence };
+}
+
 export function SymbolSearchItem({
   prompt,
   disabled = false,
   onAnswer,
 }: SymbolSearchItemProps) {
   const [selected, setSelected] = useState<number | null>(null);
+  const { target, sequence } = parseSymbolPrompt(prompt);
 
   function submit() {
     if (disabled || selected === null) return;
@@ -24,46 +40,71 @@ export function SymbolSearchItem({
   }
 
   return (
-    <div
+    <ItemCard
       data-testid="item-symbol-search"
-      className="flex w-full flex-col gap-5 md:gap-6"
+      stem={
+        <div className="flex flex-col gap-4">
+          <p className="text-lg leading-relaxed font-medium text-[var(--assess-fg)] md:text-xl lg:text-2xl">
+            {prompt}
+          </p>
+          {(target || sequence.length > 0) && (
+            <div className="flex flex-wrap items-center gap-3 md:gap-4">
+              {target && (
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-xs font-medium tracking-wide text-[var(--assess-muted)] uppercase">
+                    目标
+                  </span>
+                  <span className="choice-card-glyph flex h-14 w-14 items-center justify-center rounded-[var(--card-radius)] border-2 border-[var(--assess-accent)] bg-[var(--card-glyph-bg)] text-3xl shadow-[var(--card-shadow)] md:h-16 md:w-16 md:text-4xl">
+                    {target}
+                  </span>
+                </div>
+              )}
+              {sequence.length > 0 && (
+                <div className="flex flex-1 flex-col gap-1">
+                  <span className="text-xs font-medium tracking-wide text-[var(--assess-muted)] uppercase">
+                    序列
+                  </span>
+                  <div className="flex flex-wrap gap-2 md:gap-3">
+                    {sequence.map((g, i) => (
+                      <span
+                        key={`${g}-${i}`}
+                        className="flex h-12 w-12 items-center justify-center rounded-[calc(var(--card-radius)-0.25rem)] border-2 border-[var(--card-border)] bg-[var(--card-choice-bg)] text-2xl shadow-[var(--card-shadow)] md:h-14 md:w-14 md:text-3xl"
+                      >
+                        {g}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      }
     >
-      <p className="text-lg leading-relaxed font-medium text-[var(--assess-fg)] md:text-xl lg:text-2xl">
-        {prompt}
-      </p>
-      <p className="text-sm text-[var(--assess-muted)] md:text-base">
+      <p className="mb-3 text-sm text-[var(--assess-muted)] md:text-base">
         目标符号在序列中出现了几次？
       </p>
-      <div className="grid grid-cols-5 gap-2 sm:gap-3 md:max-w-xl md:gap-4">
-        {COUNTS.map((n) => {
-          const active = selected === n;
-          return (
-            <button
-              key={n}
-              type="button"
-              data-testid={`symbol-count-${n}`}
-              disabled={disabled}
-              onClick={() => setSelected(n)}
-              className={`min-h-14 rounded-[var(--assess-radius)] border-2 text-xl font-semibold transition disabled:opacity-50 md:min-h-16 md:text-2xl ${
-                active
-                  ? "border-[var(--assess-accent)] bg-[var(--assess-accent)] text-[var(--assess-accent-fg)]"
-                  : "border-[var(--assess-border)] bg-[var(--assess-surface)] text-[var(--assess-fg)] hover:border-[var(--assess-accent)] hover:bg-[var(--assess-accent-soft)]"
-              }`}
-            >
-              {n}
-            </button>
-          );
-        })}
+      <div className="grid grid-cols-5 gap-2 sm:gap-3 md:max-w-2xl md:gap-4">
+        {COUNTS.map((n) => (
+          <ChoiceCardButton
+            key={n}
+            label={String(n)}
+            selected={selected === n}
+            disabled={disabled}
+            onClick={() => setSelected(n)}
+            testId={`symbol-count-${n}`}
+          />
+        ))}
       </div>
       <button
         type="button"
         data-testid="symbol-search-submit"
         disabled={disabled || selected === null}
         onClick={submit}
-        className="min-h-14 w-full max-w-md rounded-[var(--assess-radius)] bg-[var(--assess-accent)] px-6 text-base font-semibold text-[var(--assess-accent-fg)] transition hover:opacity-90 disabled:opacity-50 md:min-h-16 md:text-lg"
+        className="mt-4 min-h-14 w-full max-w-md rounded-[var(--card-radius)] bg-[var(--assess-accent)] px-6 text-base font-semibold text-[var(--assess-accent-fg)] shadow-[var(--card-shadow-active)] transition hover:opacity-90 disabled:opacity-50 md:min-h-16 md:text-lg"
       >
         确认
       </button>
-    </div>
+    </ItemCard>
   );
 }

@@ -55,7 +55,7 @@ describe("scoreItem", () => {
     id: "t1",
     type: "mcq",
     prompt: "q",
-    choices: ["a", "b"],
+    choices: [{ label: "a" }, { label: "b" }],
     answer: "a",
   };
 
