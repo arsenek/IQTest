@@ -22,10 +22,29 @@ export async function POST(_request: Request, context: RouteContext) {
       return NextResponse.json({ error: err.message, code: err.code }, { status });
     }
     if (err instanceof SessionError) {
-      const status = err.code === "SESSION_NOT_FOUND" ? 404 : 400;
-      return NextResponse.json({ error: err.message, code: err.code }, { status });
+      const status =
+        err.code === "SESSION_NOT_FOUND"
+          ? 404
+          : err.code === "WRITE_FAILED"
+            ? 503
+            : 400;
+      return NextResponse.json(
+        {
+          error: err.message,
+          code: err.code,
+          retryable: err.retryable || err.code === "WRITE_FAILED",
+        },
+        { status },
+      );
     }
     console.error(err);
-    return NextResponse.json({ error: "Internal error" }, { status: 500 });
+    return NextResponse.json(
+      {
+        error: "交卷失败，请重试",
+        code: "WRITE_FAILED",
+        retryable: true,
+      },
+      { status: 503 },
+    );
   }
 }

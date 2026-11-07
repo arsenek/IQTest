@@ -70,10 +70,26 @@ export async function POST(request: Request, context: RouteContext) {
           ? 404
           : err.code === "SESSION_NOT_IN_PROGRESS"
             ? 409
-            : 400;
-      return NextResponse.json({ error: err.message, code: err.code }, { status });
+            : err.code === "WRITE_FAILED"
+              ? 503
+              : 400;
+      return NextResponse.json(
+        {
+          error: err.message,
+          code: err.code,
+          retryable: err.retryable || err.code === "WRITE_FAILED",
+        },
+        { status },
+      );
     }
     console.error(err);
-    return NextResponse.json({ error: "Internal error" }, { status: 500 });
+    return NextResponse.json(
+      {
+        error: "保存作答失败，请重试",
+        code: "WRITE_FAILED",
+        retryable: true,
+      },
+      { status: 503 },
+    );
   }
 }
