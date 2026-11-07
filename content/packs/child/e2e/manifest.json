@@ -1,0 +1,65 @@
+{
+  "id": "child/e2e",
+  "audience": "child",
+  "title": "儿童短卷 fixture（e2e）",
+  "subtests": [
+    {
+      "id": "e2e-vci",
+      "indexKey": "VCI",
+      "title": "词语理解",
+      "items": [
+        {
+          "id": "e2e-vci-1",
+          "type": "mcq",
+          "prompt": "「苹果」是什么？",
+          "choices": ["一种水果", "一种交通工具", "一种颜色", "一种动物"],
+          "answer": "一种水果",
+          "timeLimitMs": 120000
+        }
+      ]
+    },
+    {
+      "id": "e2e-pri",
+      "indexKey": "PRI",
+      "title": "图形推理",
+      "items": [
+        {
+          "id": "e2e-pri-1",
+          "type": "mcq",
+          "prompt": "哪个更像圆形？",
+          "choices": ["皮球", "尺子", "筷子", "书本"],
+          "answer": "皮球",
+          "timeLimitMs": 120000
+        }
+      ]
+    },
+    {
+      "id": "e2e-wmi",
+      "indexKey": "WMI",
+      "title": "数字广度",
+      "items": [
+        {
+          "id": "e2e-wmi-1",
+          "type": "digit_span",
+          "prompt": "请按顺序复述这些数字：1、2、3",
+          "answer": "1-2-3",
+          "timeLimitMs": 120000
+        }
+      ]
+    },
+    {
+      "id": "e2e-psi",
+      "indexKey": "PSI",
+      "title": "符号搜索",
+      "items": [
+        {
+          "id": "e2e-psi-1",
+          "type": "symbol_search",
+          "prompt": "目标☆。在 ★☆●☆■ 中出现几次？",
+          "answer": 2,
+          "timeLimitMs": 120000
+        }
+      ]
+    }
+  ]
+}

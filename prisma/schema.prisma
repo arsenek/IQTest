@@ -1,0 +1,103 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  passwordHash String
+  createdAt    DateTime  @default(now())
+  profiles     Profile[]
+}
+
+model Profile {
+  id          String              @id @default(cuid())
+  userId      String
+  user        User                @relation(fields: [userId], references: [id])
+  displayName String
+  birthDate   DateTime
+  kind        ProfileKind
+  assessments AssessmentSession[]
+  practices   PracticeSession[]
+}
+
+enum ProfileKind {
+  CHILD
+  ADULT
+}
+
+model AssessmentSession {
+  id           String        @id @default(cuid())
+  profileId    String
+  profile      Profile       @relation(fields: [profileId], references: [id])
+  packId       String // e.g. child/v1
+  normVersion  String
+  status       SessionStatus
+  currentIndex Int           @default(0)
+  startedAt    DateTime      @default(now())
+  submittedAt  DateTime?
+  responses    Response[]
+  report       Report?
+}
+
+enum SessionStatus {
+  IN_PROGRESS
+  SUBMITTED
+  ABANDONED
+}
+
+model Response {
+  id         String            @id @default(cuid())
+  sessionId  String
+  session    AssessmentSession @relation(fields: [sessionId], references: [id])
+  subtestId  String
+  itemId     String
+  answerJson Json
+  correct    Boolean?
+  rawScore   Float?
+  latencyMs  Int
+  createdAt  DateTime          @default(now())
+}
+
+model Report {
+  id        String            @id @default(cuid())
+  sessionId String            @unique
+  session   AssessmentSession @relation(fields: [sessionId], references: [id])
+  vci       Float
+  pri       Float
+  wmi       Float
+  psi       Float
+  composite Float
+  narrative String
+  createdAt DateTime          @default(now())
+}
+
+model PracticeSession {
+  id        String             @id @default(cuid())
+  profileId String
+  profile   Profile            @relation(fields: [profileId], references: [id])
+  indexKey  IndexKey
+  startedAt DateTime           @default(now())
+  progress  PracticeProgress[]
+}
+
+enum IndexKey {
+  VCI
+  PRI
+  WMI
+  PSI
+}
+
+model PracticeProgress {
+  id        String          @id @default(cuid())
+  sessionId String
+  session   PracticeSession @relation(fields: [sessionId], references: [id])
+  stars     Int
+  itemsDone Int
+  updatedAt DateTime        @updatedAt
+}

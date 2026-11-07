@@ -1,0 +1,235 @@
+{
+  "id": "child/v1",
+  "audience": "child",
+  "title": "儿童标准测 v1（试运行）",
+  "subtests": [
+    {
+      "id": "child-vci-vocab",
+      "indexKey": "VCI",
+      "title": "词语理解",
+      "items": [
+        {
+          "id": "child-vci-1",
+          "type": "mcq",
+          "prompt": "「苹果」是什么？",
+          "choices": [
+            "一种水果",
+            "一种交通工具",
+            "一种颜色",
+            "一种动物"
+          ],
+          "answer": "一种水果",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-vci-2",
+          "type": "mcq",
+          "prompt": "「学校」主要是用来做什么的地方？",
+          "choices": [
+            "学习",
+            "睡觉",
+            "开车",
+            "种地"
+          ],
+          "answer": "学习",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-vci-3",
+          "type": "mcq",
+          "prompt": "「医生」通常在哪里工作？",
+          "choices": [
+            "医院",
+            "球场",
+            "电影院",
+            "海边"
+          ],
+          "answer": "医院",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-vci-4",
+          "type": "mcq",
+          "prompt": "「夏天」天气通常怎样？",
+          "choices": [
+            "比较热",
+            "下雪",
+            "总是黑夜",
+            "没有太阳"
+          ],
+          "answer": "比较热",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-vci-5",
+          "type": "mcq",
+          "prompt": "「书」通常用来做什么？",
+          "choices": [
+            "阅读",
+            "煮饭",
+            "游泳",
+            "飞行"
+          ],
+          "answer": "阅读",
+          "timeLimitMs": 60000
+        }
+      ]
+    },
+    {
+      "id": "child-pri-matrix",
+      "indexKey": "PRI",
+      "title": "图形推理",
+      "items": [
+        {
+          "id": "child-pri-1",
+          "type": "mcq",
+          "prompt": "哪个图形与「圆形」最相似？",
+          "choices": [
+            "椭圆",
+            "三角形",
+            "直线",
+            "点"
+          ],
+          "answer": "椭圆",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-pri-2",
+          "type": "mcq",
+          "prompt": "缺角的正方形，补上哪一块最合适？",
+          "choices": [
+            "小方形",
+            "圆形",
+            "波浪线",
+            "字母 A"
+          ],
+          "answer": "小方形",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-pri-3",
+          "type": "mcq",
+          "prompt": "三只鸭子朝右，下一只最可能朝向？",
+          "choices": [
+            "朝右",
+            "朝上",
+            "变大",
+            "消失"
+          ],
+          "answer": "朝右",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-pri-4",
+          "type": "mcq",
+          "prompt": "红、蓝、红、蓝，下一个颜色是？",
+          "choices": [
+            "红",
+            "绿",
+            "黄",
+            "黑"
+          ],
+          "answer": "红",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-pri-5",
+          "type": "mcq",
+          "prompt": "哪个不属于「四条腿的动物」一类？",
+          "choices": [
+            "小鸟",
+            "猫",
+            "狗",
+            "马"
+          ],
+          "answer": "小鸟",
+          "timeLimitMs": 60000
+        }
+      ]
+    },
+    {
+      "id": "child-wmi-digits",
+      "indexKey": "WMI",
+      "title": "数字广度",
+      "items": [
+        {
+          "id": "child-wmi-1",
+          "type": "digit_span",
+          "prompt": "请按顺序复述这些数字：2、9",
+          "answer": "2-9",
+          "timeLimitMs": 45000
+        },
+        {
+          "id": "child-wmi-2",
+          "type": "digit_span",
+          "prompt": "请按顺序复述这些数字：5、1、8",
+          "answer": "5-1-8",
+          "timeLimitMs": 45000
+        },
+        {
+          "id": "child-wmi-3",
+          "type": "digit_span",
+          "prompt": "请按顺序复述这些数字：3、7、4、6",
+          "answer": "3-7-4-6",
+          "timeLimitMs": 45000
+        },
+        {
+          "id": "child-wmi-4",
+          "type": "digit_span",
+          "prompt": "请按顺序复述这些数字：9、2、5、1、8",
+          "answer": "9-2-5-1-8",
+          "timeLimitMs": 45000
+        },
+        {
+          "id": "child-wmi-5",
+          "type": "digit_span",
+          "prompt": "请按顺序复述这些数字：4、6、3、9、2、7",
+          "answer": "4-6-3-9-2-7",
+          "timeLimitMs": 45000
+        }
+      ]
+    },
+    {
+      "id": "child-psi-symbols",
+      "indexKey": "PSI",
+      "title": "符号搜索",
+      "items": [
+        {
+          "id": "child-psi-1",
+          "type": "symbol_search",
+          "prompt": "目标☆。在 ★☆●☆■ 中出现几次？",
+          "answer": 2,
+          "timeLimitMs": 30000
+        },
+        {
+          "id": "child-psi-2",
+          "type": "symbol_search",
+          "prompt": "目标△。在 △○△□△ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 30000
+        },
+        {
+          "id": "child-psi-3",
+          "type": "symbol_search",
+          "prompt": "目标●。在 ■●▲●● 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 30000
+        },
+        {
+          "id": "child-psi-4",
+          "type": "symbol_search",
+          "prompt": "目标□。在 □△□○☆ 中出现几次？",
+          "answer": 2,
+          "timeLimitMs": 30000
+        },
+        {
+          "id": "child-psi-5",
+          "type": "symbol_search",
+          "prompt": "目标◇。在 ◇◆◇◇○ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 30000
+        }
+      ]
+    }
+  ]
+}
