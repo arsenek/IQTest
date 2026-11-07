@@ -150,6 +150,7 @@ export function PracticeRoom({
             </p>
             <button
               type="button"
+              data-testid="practice-start"
               disabled={busy || items.length === 0}
               onClick={() => void start()}
               className="mt-6 min-h-12 rounded-xl bg-zinc-900 px-6 font-semibold text-white disabled:opacity-50"
@@ -191,7 +192,10 @@ export function PracticeRoom({
         )}
 
         {phase === "done" && (
-          <div className="rounded-2xl border border-zinc-200 bg-white p-6 text-center md:p-8">
+          <div
+            data-testid="practice-done"
+            className="rounded-2xl border border-zinc-200 bg-white p-6 text-center md:p-8"
+          >
             <p className="text-4xl" aria-label={`${stars} 星`}>
               {"★".repeat(Math.min(3, stars)) || "☆"}
             </p>

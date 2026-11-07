@@ -82,6 +82,12 @@ function packIdForProfile(kind: Profile["kind"]): string {
   return kind === "CHILD" ? "child/v1" : "adult/v1";
 }
 
+/** Optional short fixture pack for Playwright (`IQTEST_E2E_PACK=child/e2e`). */
+function resolvePackId(kind: Profile["kind"]): string {
+  const override = process.env.IQTEST_E2E_PACK?.trim();
+  return override && override.length > 0 ? override : packIdForProfile(kind);
+}
+
 export function ageMonthsAt(birthDate: Date, at: Date = new Date()): number {
   const years = at.getFullYear() - birthDate.getFullYear();
   const months = at.getMonth() - birthDate.getMonth();
@@ -105,7 +111,7 @@ export async function createSession(
     throw new SessionError("PROFILE_NOT_FOUND", `Profile not found: ${profileId}`);
   }
 
-  const packId = packIdForProfile(profile.kind);
+  const packId = resolvePackId(profile.kind);
   const normVersion = DEFAULT_NORM_VERSION;
   loadPack(packId);
   loadNorms(normVersion);

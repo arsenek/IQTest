@@ -24,7 +24,10 @@ export function SymbolSearchItem({
   }
 
   return (
-    <div className="flex w-full flex-col gap-5 md:gap-6">
+    <div
+      data-testid="item-symbol-search"
+      className="flex w-full flex-col gap-5 md:gap-6"
+    >
       <p className="text-lg leading-relaxed font-medium text-[var(--assess-fg)] md:text-xl lg:text-2xl">
         {prompt}
       </p>
@@ -38,6 +41,7 @@ export function SymbolSearchItem({
             <button
               key={n}
               type="button"
+              data-testid={`symbol-count-${n}`}
               disabled={disabled}
               onClick={() => setSelected(n)}
               className={`min-h-14 rounded-[var(--assess-radius)] border-2 text-xl font-semibold transition disabled:opacity-50 md:min-h-16 md:text-2xl ${
@@ -53,6 +57,7 @@ export function SymbolSearchItem({
       </div>
       <button
         type="button"
+        data-testid="symbol-search-submit"
         disabled={disabled || selected === null}
         onClick={submit}
         className="min-h-14 w-full max-w-md rounded-[var(--assess-radius)] bg-[var(--assess-accent)] px-6 text-base font-semibold text-[var(--assess-accent-fg)] transition hover:opacity-90 disabled:opacity-50 md:min-h-16 md:text-lg"

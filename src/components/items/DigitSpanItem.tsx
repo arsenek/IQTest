@@ -34,7 +34,10 @@ export function DigitSpanItem({
   }
 
   return (
-    <div className="flex w-full flex-col gap-5 md:gap-6">
+    <div
+      data-testid="item-digit-span"
+      className="flex w-full flex-col gap-5 md:gap-6"
+    >
       <p className="text-lg leading-relaxed font-medium text-[var(--assess-fg)] md:text-xl lg:text-2xl">
         {prompt}
       </p>
@@ -66,6 +69,7 @@ export function DigitSpanItem({
         </button>
         <button
           type="button"
+          data-testid="digit-span-submit"
           disabled={disabled || digits.length === 0}
           onClick={submit}
           className="col-span-2 min-h-14 rounded-[var(--assess-radius)] bg-[var(--assess-accent)] text-base font-semibold text-[var(--assess-accent-fg)] transition hover:opacity-90 disabled:opacity-50 md:min-h-16 md:text-lg"

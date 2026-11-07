@@ -28,6 +28,7 @@ export function IndexCard({
   return (
     <Link
       href={href}
+      data-testid={`index-card-${indexKey}`}
       className={`flex flex-col gap-3 rounded-2xl border p-5 transition hover:border-zinc-400 md:p-6 ${
         highlight
           ? "border-amber-400 bg-amber-50 shadow-sm"

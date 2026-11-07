@@ -168,7 +168,10 @@ export function AssessmentShell({
 
   if (phase === "done") {
     return (
-      <div className={`${skinClass} assess-root min-h-screen`}>
+      <div
+        data-testid="assess-done"
+        className={`${skinClass} assess-root min-h-screen`}
+      >
         <main className="mx-auto flex min-h-screen w-full max-w-3xl flex-col items-center justify-center gap-6 px-6 py-16 text-center">
           <h1 className="text-3xl font-semibold text-[var(--assess-fg)] md:text-4xl">
             测评已完成
@@ -178,6 +181,7 @@ export function AssessmentShell({
           </p>
           <button
             type="button"
+            data-testid="view-report"
             onClick={() => router.push(`/report/${sessionId}`)}
             className="min-h-12 rounded-[var(--assess-radius)] bg-[var(--assess-accent)] px-8 text-base font-semibold text-[var(--assess-accent-fg)]"
           >

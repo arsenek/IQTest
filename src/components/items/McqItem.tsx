@@ -16,7 +16,10 @@ export function McqItem({
   onAnswer,
 }: McqItemProps) {
   return (
-    <div className="flex w-full flex-col gap-5 md:gap-6">
+    <div
+      data-testid="item-mcq"
+      className="flex w-full flex-col gap-5 md:gap-6"
+    >
       <p className="text-lg leading-relaxed font-medium text-[var(--assess-fg)] md:text-xl lg:text-2xl">
         {prompt}
       </p>
@@ -25,6 +28,7 @@ export function McqItem({
           <button
             key={choice}
             type="button"
+            data-testid="mcq-choice"
             disabled={disabled}
             onClick={() => onAnswer(choice)}
             className="min-h-14 rounded-[var(--assess-radius)] border-2 border-[var(--assess-border)] bg-[var(--assess-surface)] px-5 py-4 text-left text-base font-medium text-[var(--assess-fg)] transition hover:border-[var(--assess-accent)] hover:bg-[var(--assess-accent-soft)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--assess-accent)] disabled:cursor-not-allowed disabled:opacity-50 md:min-h-16 md:text-lg"

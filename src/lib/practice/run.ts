@@ -30,6 +30,8 @@ function isIndexKey(value: string): value is IndexKey {
 }
 
 function packIdForKind(kind: "CHILD" | "ADULT"): string {
+  const override = process.env.IQTEST_E2E_PACK?.trim();
+  if (override) return override;
   return kind === "CHILD" ? "child/v1" : "adult/v1";
 }
 

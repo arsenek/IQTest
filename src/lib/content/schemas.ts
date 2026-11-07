@@ -17,7 +17,8 @@ export const subtestSchema = z.object({
   id: z.string().min(1),
   indexKey: indexKeySchema,
   title: z.string().min(1),
-  items: z.array(itemSchema).min(5),
+  // Production packs use ≥5; short e2e fixtures may use 1+.
+  items: z.array(itemSchema).min(1),
 });
 
 export const contentPackSchema = z
