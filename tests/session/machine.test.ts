@@ -42,9 +42,6 @@ beforeEach(async () => {
   await prisma.user.deleteMany();
 });
 
-afterAll(async () => {
-  await prisma.$disconnect();
-});
 
 describe("assessment session state machine", () => {
   it("createSession picks child pack and starts at index 0", async () => {

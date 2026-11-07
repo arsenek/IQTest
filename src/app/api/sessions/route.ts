@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import {
+  AuthError,
+  assertProfileOwned,
+  requireSessionUser,
+} from "@/lib/auth/session";
 import { createSession, SessionError } from "@/lib/session/machine";
 
 export async function POST(request: Request) {
@@ -22,9 +27,15 @@ export async function POST(request: Request) {
   }
 
   try {
+    const user = await requireSessionUser();
+    await assertProfileOwned(profileId, user.id);
     const session = await createSession(profileId);
     return NextResponse.json({ session }, { status: 201 });
   } catch (err) {
+    if (err instanceof AuthError) {
+      const status = err.code === "UNAUTHORIZED" ? 401 : 403;
+      return NextResponse.json({ error: err.message, code: err.code }, { status });
+    }
     if (err instanceof SessionError) {
       const status = err.code === "PROFILE_NOT_FOUND" ? 404 : 400;
       return NextResponse.json({ error: err.message, code: err.code }, { status });

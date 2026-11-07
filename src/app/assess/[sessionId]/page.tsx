@@ -1,8 +1,13 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import {
   AssessmentShell,
   type ShellItem,
 } from "@/components/assessment/AssessmentShell";
+import {
+  AuthError,
+  assertAssessmentOwned,
+  getSessionUser,
+} from "@/lib/auth/session";
 import { loadPack } from "@/lib/content/loadPack";
 import {
   flattenPack,
@@ -16,6 +21,17 @@ type PageProps = {
 
 export default async function AssessPage({ params }: PageProps) {
   const { sessionId } = await params;
+  const user = await getSessionUser();
+  if (!user) {
+    redirect(`/login?next=${encodeURIComponent(`/assess/${sessionId}`)}`);
+  }
+
+  try {
+    await assertAssessmentOwned(sessionId, user.id);
+  } catch (err) {
+    if (err instanceof AuthError) notFound();
+    throw err;
+  }
 
   let resumed;
   try {

@@ -1,5 +1,11 @@
 import { NextResponse } from "next/server";
 import {
+  AuthError,
+  assertPracticeOwned,
+  assertProfileOwned,
+  requireSessionUser,
+} from "@/lib/auth/session";
+import {
   PracticeError,
   recordPracticeRound,
   startPractice,
@@ -20,6 +26,8 @@ export async function POST(request: Request) {
   const action = (body as { action?: unknown }).action;
 
   try {
+    const user = await requireSessionUser();
+
     if (action === "start") {
       const { profileId, indexKey } = body as {
         profileId?: unknown;
@@ -31,6 +39,7 @@ export async function POST(request: Request) {
           { status: 400 },
         );
       }
+      await assertProfileOwned(profileId, user.id);
       const session = await startPractice(profileId, indexKey);
       return NextResponse.json({ session }, { status: 201 });
     }
@@ -49,6 +58,7 @@ export async function POST(request: Request) {
           { status: 400 },
         );
       }
+      await assertPracticeOwned(practiceSessionId, user.id);
       const result = await recordPracticeRound(
         practiceSessionId,
         answers as { itemId: string; answer: string | number | string[] }[],
@@ -58,6 +68,10 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ error: "Unknown action" }, { status: 400 });
   } catch (err) {
+    if (err instanceof AuthError) {
+      const status = err.code === "UNAUTHORIZED" ? 401 : 403;
+      return NextResponse.json({ error: err.message, code: err.code }, { status });
+    }
     if (err instanceof PracticeError) {
       const status =
         err.code === "PROFILE_NOT_FOUND" || err.code === "PRACTICE_NOT_FOUND"

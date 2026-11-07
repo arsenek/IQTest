@@ -1,6 +1,11 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { IndexCard } from "@/components/report/IndexCard";
+import {
+  AuthError,
+  assertAssessmentOwned,
+  getSessionUser,
+} from "@/lib/auth/session";
 import { loadNorms } from "@/lib/content/loadNorms";
 import { INDEX_KEYS, type IndexKey } from "@/lib/content/types";
 import { prisma } from "@/lib/db";
@@ -11,6 +16,17 @@ type PageProps = {
 
 export default async function ReportPage({ params }: PageProps) {
   const { sessionId } = await params;
+  const user = await getSessionUser();
+  if (!user) {
+    redirect(`/login?next=${encodeURIComponent(`/report/${sessionId}`)}`);
+  }
+
+  try {
+    await assertAssessmentOwned(sessionId, user.id);
+  } catch (err) {
+    if (err instanceof AuthError) notFound();
+    throw err;
+  }
 
   const session = await prisma.assessmentSession.findUnique({
     where: { id: sessionId },
@@ -90,10 +106,10 @@ export default async function ReportPage({ params }: PageProps) {
             返回首页
           </Link>
           <Link
-            href="/onboarding"
+            href="/profiles"
             className="text-zinc-500 underline-offset-2 hover:underline"
           >
-            再测一次
+            返回档案
           </Link>
         </div>
       </main>

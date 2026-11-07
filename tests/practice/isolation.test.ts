@@ -53,9 +53,6 @@ beforeEach(async () => {
   await prisma.user.deleteMany();
 });
 
-afterAll(async () => {
-  await prisma.$disconnect();
-});
 
 describe("practice score isolation", () => {
   it("starsFromAccuracy maps ratios to 0–3", () => {

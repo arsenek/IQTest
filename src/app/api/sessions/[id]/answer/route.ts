@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import {
+  AuthError,
+  assertAssessmentOwned,
+  requireSessionUser,
+} from "@/lib/auth/session";
 import { recordAnswer, SessionError } from "@/lib/session/machine";
 
 type RouteContext = { params: Promise<{ id: string }> };
@@ -46,6 +51,8 @@ export async function POST(request: Request, context: RouteContext) {
   }
 
   try {
+    const user = await requireSessionUser();
+    await assertAssessmentOwned(sessionId, user.id);
     const result = await recordAnswer(sessionId, {
       answer,
       latencyMs,
@@ -53,6 +60,10 @@ export async function POST(request: Request, context: RouteContext) {
     });
     return NextResponse.json(result);
   } catch (err) {
+    if (err instanceof AuthError) {
+      const status = err.code === "UNAUTHORIZED" ? 401 : 403;
+      return NextResponse.json({ error: err.message, code: err.code }, { status });
+    }
     if (err instanceof SessionError) {
       const status =
         err.code === "SESSION_NOT_FOUND"

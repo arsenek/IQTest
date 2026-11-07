@@ -1,5 +1,10 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { PracticeRoom } from "@/components/practice/PracticeRoom";
+import {
+  AuthError,
+  assertProfileOwned,
+  getSessionUser,
+} from "@/lib/auth/session";
 import { INDEX_KEYS, type IndexKey } from "@/lib/content/types";
 import {
   getPracticeItemsForProfile,
@@ -24,6 +29,21 @@ export default async function PracticePage({ params, searchParams }: PageProps) 
 
   if (!indexKey || !profileId) {
     notFound();
+  }
+
+  const user = await getSessionUser();
+  if (!user) {
+    const next = `/practice/${indexKey}?profileId=${encodeURIComponent(profileId)}${
+      sessionId ? `&sessionId=${encodeURIComponent(sessionId)}` : ""
+    }`;
+    redirect(`/login?next=${encodeURIComponent(next)}`);
+  }
+
+  try {
+    await assertProfileOwned(profileId, user.id);
+  } catch (err) {
+    if (err instanceof AuthError) notFound();
+    throw err;
   }
 
   let items;
