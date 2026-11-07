@@ -174,14 +174,14 @@ export function AssessmentShell({
             测评已完成
           </h1>
           <p className="max-w-md text-base text-[var(--assess-muted)] md:text-lg">
-            报告页将在后续版本开放。你也可以返回首页。
+            报告已生成，可查看四指数与薄弱项练习入口。
           </p>
           <button
             type="button"
-            onClick={() => router.push("/")}
+            onClick={() => router.push(`/report/${sessionId}`)}
             className="min-h-12 rounded-[var(--assess-radius)] bg-[var(--assess-accent)] px-8 text-base font-semibold text-[var(--assess-accent-fg)]"
           >
-            返回首页
+            查看报告
           </button>
         </main>
       </div>
