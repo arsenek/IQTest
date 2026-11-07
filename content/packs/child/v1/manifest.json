@@ -1,7 +1,7 @@
 {
   "id": "child/v1",
   "audience": "child",
-  "title": "儿童标准测 v1（试运行）",
+  "title": "儿童标准测 v1",
   "subtests": [
     {
       "id": "child-vci-vocab",
@@ -11,66 +11,118 @@
         {
           "id": "child-vci-1",
           "type": "mcq",
-          "prompt": "「苹果」是什么？",
+          "prompt": "「雨伞」主要用来做什么？",
           "choices": [
-            { "label": "一种水果", "glyph": "🍎" },
-            { "label": "一种交通工具", "glyph": "🚌" },
-            { "label": "一种颜色", "glyph": "🎨" },
-            { "label": "一种动物", "glyph": "🐱" }
+            { "label": "挡住雨水", "glyph": "傘" },
+            { "label": "切水果", "glyph": "刀" },
+            { "label": "写字", "glyph": "筆" },
+            { "label": "踢足球", "glyph": "球" }
           ],
-          "answer": "一种水果",
+          "answer": "挡住雨水",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-2",
           "type": "mcq",
-          "prompt": "「学校」主要是用来做什么的地方？",
+          "prompt": "「图书馆」是做什么的地方？",
           "choices": [
-            { "label": "学习", "glyph": "📚" },
-            { "label": "睡觉", "glyph": "🛏" },
-            { "label": "开车", "glyph": "🚗" },
-            { "label": "种地", "glyph": "🌱" }
+            { "label": "借阅图书", "glyph": "書" },
+            { "label": "修车", "glyph": "車" },
+            { "label": "游泳", "glyph": "泳" },
+            { "label": "烤蛋糕", "glyph": "糕" }
           ],
-          "answer": "学习",
+          "answer": "借阅图书",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-3",
           "type": "mcq",
-          "prompt": "「医生」通常在哪里工作？",
+          "prompt": "「早晨」通常发生在一天的什么时候？",
           "choices": [
-            { "label": "医院", "glyph": "🏥" },
-            { "label": "球场", "glyph": "⚽" },
-            { "label": "电影院", "glyph": "🎬" },
-            { "label": "海边", "glyph": "🌊" }
+            { "label": "刚起床、天刚亮", "glyph": "晨" },
+            { "label": "半夜最黑时", "glyph": "夜" },
+            { "label": "太阳落山后", "glyph": "暮" },
+            { "label": "只在周末", "glyph": "休" }
           ],
-          "answer": "医院",
+          "answer": "刚起床、天刚亮",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-4",
           "type": "mcq",
-          "prompt": "「夏天」天气通常怎样？",
+          "prompt": "「医生」和「护士」有什么共同点？",
           "choices": [
-            { "label": "比较热", "glyph": "☀" },
-            { "label": "下雪", "glyph": "❄" },
-            { "label": "总是黑夜", "glyph": "🌙" },
-            { "label": "没有太阳", "glyph": "☁" }
+            { "label": "都在医院帮助病人", "glyph": "醫" },
+            { "label": "都会开飞机", "glyph": "機" },
+            { "label": "都只卖文具", "glyph": "筆" },
+            { "label": "都不需要学习", "glyph": "休" }
           ],
-          "answer": "比较热",
+          "answer": "都在医院帮助病人",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-5",
           "type": "mcq",
-          "prompt": "「书」通常用来做什么？",
+          "prompt": "「吵闹」的反义词最接近？",
           "choices": [
-            { "label": "阅读", "glyph": "📖" },
-            { "label": "煮饭", "glyph": "🍳" },
-            { "label": "游泳", "glyph": "🏊" },
-            { "label": "飞行", "glyph": "✈" }
+            { "label": "安静", "glyph": "静" },
+            { "label": "巨大", "glyph": "大" },
+            { "label": "快速", "glyph": "速" },
+            { "label": "彩色", "glyph": "彩" }
           ],
-          "answer": "阅读",
+          "answer": "安静",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-vci-6",
+          "type": "mcq",
+          "prompt": "「钥匙」通常和什么一起使用？",
+          "choices": [
+            { "label": "锁", "glyph": "鎖" },
+            { "label": "枕头", "glyph": "枕" },
+            { "label": "雨靴", "glyph": "靴" },
+            { "label": "跳绳", "glyph": "繩" }
+          ],
+          "answer": "锁",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-vci-7",
+          "type": "mcq",
+          "prompt": "「勇敢」最可能用来形容谁？",
+          "choices": [
+            { "label": "敢于尝试新事物的人", "glyph": "勇" },
+            { "label": "总是躲在角落的人", "glyph": "躲" },
+            { "label": "只爱吃糖的人", "glyph": "糖" },
+            { "label": "从不说话的人", "glyph": "默" }
+          ],
+          "answer": "敢于尝试新事物的人",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-vci-8",
+          "type": "mcq",
+          "prompt": "「冬天」和「夏天」的关系最像？",
+          "choices": [
+            { "label": "白天和黑夜", "glyph": "↔" },
+            { "label": "铅笔和橡皮", "glyph": "工" },
+            { "label": "妈妈和孩子", "glyph": "亲" },
+            { "label": "书和封面", "glyph": "⊂" }
+          ],
+          "answer": "白天和黑夜",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-vci-9",
+          "type": "mcq",
+          "prompt": "「节约」是什么意思？",
+          "choices": [
+            { "label": "不浪费、好好使用", "glyph": "省" },
+            { "label": "全部扔掉", "glyph": "弃" },
+            { "label": "越买越多", "glyph": "购" },
+            { "label": "从不分享", "glyph": "独" }
+          ],
+          "answer": "不浪费、好好使用",
           "timeLimitMs": 60000
         }
       ]
@@ -83,12 +135,12 @@
         {
           "id": "child-pri-1",
           "type": "mcq",
-          "prompt": "哪个图形与「圆形」最相似？",
+          "prompt": "哪个图形最像「圆」？",
           "choices": [
             { "label": "椭圆", "glyph": "⬭" },
             { "label": "三角形", "glyph": "△" },
             { "label": "直线", "glyph": "─" },
-            { "label": "点", "glyph": "•" }
+            { "label": "直角", "glyph": "∟" }
           ],
           "answer": "椭圆",
           "timeLimitMs": 60000
@@ -96,33 +148,33 @@
         {
           "id": "child-pri-2",
           "type": "mcq",
-          "prompt": "缺角的正方形，补上哪一块最合适？",
+          "prompt": "■ □ ■ □ ■ 接下来应是？",
           "choices": [
-            { "label": "小方形", "glyph": "■" },
-            { "label": "圆形", "glyph": "●" },
-            { "label": "波浪线", "glyph": "〰" },
-            { "label": "字母 A", "glyph": "A" }
+            { "label": "空心方", "glyph": "□" },
+            { "label": "实心圆", "glyph": "●" },
+            { "label": "三角", "glyph": "▲" },
+            { "label": "叉号", "glyph": "×" }
           ],
-          "answer": "小方形",
+          "answer": "空心方",
           "timeLimitMs": 60000
         },
         {
           "id": "child-pri-3",
           "type": "mcq",
-          "prompt": "三只鸭子朝右，下一只最可能朝向？",
+          "prompt": "三只箭头都朝右 → → →，下一只最可能？",
           "choices": [
-            { "label": "朝右", "glyph": "→" },
-            { "label": "朝上", "glyph": "↑" },
-            { "label": "变大", "glyph": "⤢" },
+            { "label": "继续朝右", "glyph": "→" },
+            { "label": "忽然朝上", "glyph": "↑" },
+            { "label": "变成圆点", "glyph": "•" },
             { "label": "消失", "glyph": "∅" }
           ],
-          "answer": "朝右",
+          "answer": "继续朝右",
           "timeLimitMs": 60000
         },
         {
           "id": "child-pri-4",
           "type": "mcq",
-          "prompt": "红、蓝、红、蓝，下一个颜色是？",
+          "prompt": "红·蓝·红·蓝，下一个应是？",
           "choices": [
             { "label": "红", "glyph": "🔴" },
             { "label": "绿", "glyph": "🟢" },
@@ -135,14 +187,66 @@
         {
           "id": "child-pri-5",
           "type": "mcq",
-          "prompt": "哪个不属于「四条腿的动物」一类？",
+          "prompt": "哪个不属于「四条边的图形」？",
           "choices": [
-            { "label": "小鸟", "glyph": "🐦" },
-            { "label": "猫", "glyph": "🐈" },
-            { "label": "狗", "glyph": "🐕" },
-            { "label": "马", "glyph": "🐎" }
+            { "label": "三角形", "glyph": "△" },
+            { "label": "正方形", "glyph": "■" },
+            { "label": "长方形", "glyph": "▬" },
+            { "label": "菱形", "glyph": "◆" }
           ],
-          "answer": "小鸟",
+          "answer": "三角形",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-pri-6",
+          "type": "mcq",
+          "prompt": "大·中·小·大·中，下一个？",
+          "choices": [
+            { "label": "小", "glyph": "·" },
+            { "label": "大", "glyph": "●" },
+            { "label": "中", "glyph": "○" },
+            { "label": "超大", "glyph": "⬤" }
+          ],
+          "answer": "小",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-pri-7",
+          "type": "mcq",
+          "prompt": "缺了一角的正方形，补哪块最合适？",
+          "choices": [
+            { "label": "小直角块", "glyph": "◢" },
+            { "label": "完整圆", "glyph": "●" },
+            { "label": "波浪线", "glyph": "〰" },
+            { "label": "字母 Z", "glyph": "Z" }
+          ],
+          "answer": "小直角块",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-pri-8",
+          "type": "mcq",
+          "prompt": "1 个点、2 个点、3 个点，下一组应有几个点？",
+          "choices": [
+            { "label": "4 个点", "glyph": "::::" },
+            { "label": "1 个点", "glyph": "·" },
+            { "label": "0 个点", "glyph": "∅" },
+            { "label": "10 个点", "glyph": "…" }
+          ],
+          "answer": "4 个点",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-pri-9",
+          "type": "mcq",
+          "prompt": "镜像：左边是 ◢，右边最像它的镜像是？",
+          "choices": [
+            { "label": "◣", "glyph": "◣" },
+            { "label": "▲", "glyph": "▲" },
+            { "label": "─", "glyph": "─" },
+            { "label": "○", "glyph": "○" }
+          ],
+          "answer": "◣",
           "timeLimitMs": 60000
         }
       ]
@@ -155,8 +259,8 @@
         {
           "id": "child-wmi-1",
           "type": "digit_span",
-          "prompt": "请按顺序复述这些数字：2、9",
-          "answer": "2-9",
+          "prompt": "请按顺序复述这些数字：4、7",
+          "answer": "4-7",
           "timeLimitMs": 45000,
           "encodeMs": 4000,
           "maskStem": true
@@ -164,8 +268,8 @@
         {
           "id": "child-wmi-2",
           "type": "digit_span",
-          "prompt": "请按顺序复述这些数字：5、1、8",
-          "answer": "5-1-8",
+          "prompt": "请按顺序复述这些数字：2、9、5",
+          "answer": "2-9-5",
           "timeLimitMs": 45000,
           "encodeMs": 4500,
           "maskStem": true
@@ -173,8 +277,8 @@
         {
           "id": "child-wmi-3",
           "type": "digit_span",
-          "prompt": "请按顺序复述这些数字：3、7、4、6",
-          "answer": "3-7-4-6",
+          "prompt": "请按顺序复述这些数字：8、1、6、3",
+          "answer": "8-1-6-3",
           "timeLimitMs": 45000,
           "encodeMs": 5000,
           "maskStem": true
@@ -182,8 +286,8 @@
         {
           "id": "child-wmi-4",
           "type": "digit_span",
-          "prompt": "请按顺序复述这些数字：9、2、5、1、8",
-          "answer": "9-2-5-1-8",
+          "prompt": "请按顺序复述这些数字：5、2、9、4、7",
+          "answer": "5-2-9-4-7",
           "timeLimitMs": 45000,
           "encodeMs": 5500,
           "maskStem": true
@@ -191,8 +295,44 @@
         {
           "id": "child-wmi-5",
           "type": "digit_span",
-          "prompt": "请按顺序复述这些数字：4、6、3、9、2、7",
-          "answer": "4-6-3-9-2-7",
+          "prompt": "请按顺序复述这些数字：3、8、1、6、2、9",
+          "answer": "3-8-1-6-2-9",
+          "timeLimitMs": 45000,
+          "encodeMs": 6000,
+          "maskStem": true
+        },
+        {
+          "id": "child-wmi-6",
+          "type": "digit_span",
+          "prompt": "请按顺序复述这些数字：7、4、9、1、5、8、2",
+          "answer": "7-4-9-1-5-8-2",
+          "timeLimitMs": 45000,
+          "encodeMs": 6500,
+          "maskStem": true
+        },
+        {
+          "id": "child-wmi-7",
+          "type": "digit_span",
+          "prompt": "请按顺序复述这些数字：6、3、8、2、9、1、5、4",
+          "answer": "6-3-8-2-9-1-5-4",
+          "timeLimitMs": 45000,
+          "encodeMs": 7000,
+          "maskStem": true
+        },
+        {
+          "id": "child-wmi-8",
+          "type": "digit_span",
+          "prompt": "请倒序复述这些数字：9、2、5（从后往前说）",
+          "answer": "5-2-9",
+          "timeLimitMs": 45000,
+          "encodeMs": 5500,
+          "maskStem": true
+        },
+        {
+          "id": "child-wmi-9",
+          "type": "digit_span",
+          "prompt": "请倒序复述这些数字：4、7、1、8（从后往前说）",
+          "answer": "8-1-7-4",
           "timeLimitMs": 45000,
           "encodeMs": 6000,
           "maskStem": true
@@ -221,23 +361,51 @@
         {
           "id": "child-psi-3",
           "type": "symbol_search",
-          "prompt": "目标●。在 ■●▲●● 中出现几次？",
+          "prompt": "目标●。在 ■●▲●●○ 中出现几次？",
           "answer": 3,
-          "timeLimitMs": 30000
+          "timeLimitMs": 28000
         },
         {
           "id": "child-psi-4",
           "type": "symbol_search",
-          "prompt": "目标□。在 □△□○☆ 中出现几次？",
-          "answer": 2,
-          "timeLimitMs": 30000
+          "prompt": "目标□。在 □△□○☆□ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 28000
         },
         {
           "id": "child-psi-5",
           "type": "symbol_search",
-          "prompt": "目标◇。在 ◇◆◇◇○ 中出现几次？",
+          "prompt": "目标◇。在 ◇◆◇◇○◆ 中出现几次？",
           "answer": 3,
-          "timeLimitMs": 30000
+          "timeLimitMs": 25000
+        },
+        {
+          "id": "child-psi-6",
+          "type": "symbol_search",
+          "prompt": "目标＋。在 ×＋÷＋＝＋－ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 25000
+        },
+        {
+          "id": "child-psi-7",
+          "type": "symbol_search",
+          "prompt": "目标▲。在 △▲▼▲▲◆△ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 22000
+        },
+        {
+          "id": "child-psi-8",
+          "type": "symbol_search",
+          "prompt": "目标○。在 ●○◎○●○◎ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 22000
+        },
+        {
+          "id": "child-psi-9",
+          "type": "symbol_search",
+          "prompt": "目标※。在 ※＊※＃※＊＃ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 20000
         }
       ]
     }

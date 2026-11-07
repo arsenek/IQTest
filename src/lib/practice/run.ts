@@ -3,6 +3,7 @@ import { prisma } from "@/lib/db";
 import { loadPack } from "@/lib/content/loadPack";
 import { INDEX_KEYS, type IndexKey, type Item } from "@/lib/content/types";
 import { scoreItem } from "@/lib/scoring/rawScore";
+import { shuffleInPlace, type Rng } from "@/lib/session/shuffle";
 
 export class PracticeError extends Error {
   constructor(
@@ -81,6 +82,7 @@ export function buildPracticeRound(
   packId: string,
   indexKey: IndexKey,
   roundSize: number = ROUND_SIZE,
+  rng: Rng = Math.random,
 ): PracticeItem[] {
   const pack = loadPack(packId);
   const pool = pack.subtests
@@ -90,7 +92,12 @@ export function buildPracticeRound(
         id: item.id,
         type: item.type,
         prompt: item.prompt,
-        choices: item.choices,
+        choices: item.choices
+          ? shuffleInPlace(
+              item.choices.map((c) => ({ ...c })),
+              rng,
+            )
+          : undefined,
         timeLimitMs: item.timeLimitMs,
         encodeMs: item.encodeMs,
         maskStem: item.maskStem,
@@ -105,6 +112,7 @@ export function buildPracticeRound(
     );
   }
 
+  shuffleInPlace(pool, rng);
   return pool.slice(0, Math.min(roundSize, pool.length));
 }
 

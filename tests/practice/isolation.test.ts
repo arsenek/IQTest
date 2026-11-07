@@ -4,6 +4,7 @@ import {
   createSession,
   recordAnswer,
   flattenPack,
+  resolveSessionPlaylist,
   submitSession,
 } from "@/lib/session/machine";
 import { loadPack } from "@/lib/content/loadPack";
@@ -12,6 +13,7 @@ import {
   startPractice,
   starsFromAccuracy,
 } from "@/lib/practice/run";
+import { createSeededRng } from "@/lib/session/shuffle";
 
 async function seedSubmittedSession() {
   const user = await prisma.user.create({
@@ -31,8 +33,8 @@ async function seedSubmittedSession() {
     },
   });
 
-  const session = await createSession(profile.id);
-  const flat = flattenPack(loadPack(session.packId));
+  const session = await createSession(profile.id, createSeededRng(21));
+  const flat = flattenPack(resolveSessionPlaylist(session));
   for (let i = 0; i < 4; i++) {
     await recordAnswer(session.id, {
       answer: flat[i].item.answer as string | number | string[],

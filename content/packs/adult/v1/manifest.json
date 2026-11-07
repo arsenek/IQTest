@@ -1,7 +1,7 @@
 {
   "id": "adult/v1",
   "audience": "adult",
-  "title": "成人标准测 v1（试运行）",
+  "title": "成人标准测 v1",
   "subtests": [
     {
       "id": "adult-vci-vocab",
@@ -72,6 +72,58 @@
           ],
           "answer": "超出必要的重复信息",
           "timeLimitMs": 60000
+        },
+        {
+          "id": "adult-vci-6",
+          "type": "mcq",
+          "prompt": "「权衡」与「取舍」的关系最接近？",
+          "choices": [
+            { "label": "近义：在冲突目标间做选择", "glyph": "⚖" },
+            { "label": "反义：完全对立", "glyph": "↔" },
+            { "label": "无关", "glyph": "⊥" },
+            { "label": "包含关系：权衡是取舍的子集", "glyph": "⊂" }
+          ],
+          "answer": "近义：在冲突目标间做选择",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-vci-7",
+          "type": "mcq",
+          "prompt": "「批判性思维」最核心的特征是？",
+          "choices": [
+            { "label": "依据证据审视主张是否成立", "glyph": "🔍" },
+            { "label": "无条件反对一切观点", "glyph": "✗" },
+            { "label": "只相信权威说法", "glyph": "👑" },
+            { "label": "回避任何争议话题", "glyph": "∅" }
+          ],
+          "answer": "依据证据审视主张是否成立",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-vci-8",
+          "type": "mcq",
+          "prompt": "「因果」与「相关」的区别在于？",
+          "choices": [
+            { "label": "相关未必意味着一方导致另一方", "glyph": "≁" },
+            { "label": "两者永远等同", "glyph": "=" },
+            { "label": "相关比因果更强", "glyph": ">" },
+            { "label": "因果只存在于实验室外", "glyph": "外" }
+          ],
+          "answer": "相关未必意味着一方导致另一方",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-vci-9",
+          "type": "mcq",
+          "prompt": "「抽象」相对于「具体」通常意味着？",
+          "choices": [
+            { "label": "抽离个别细节，保留一般结构", "glyph": "◇" },
+            { "label": "增加感官细节", "glyph": "✦" },
+            { "label": "只描述颜色", "glyph": "彩" },
+            { "label": "拒绝任何概括", "glyph": "¬" }
+          ],
+          "answer": "抽离个别细节，保留一般结构",
+          "timeLimitMs": 50000
         }
       ]
     },
@@ -83,7 +135,7 @@
         {
           "id": "adult-pri-1",
           "type": "mcq",
-          "prompt": "2×2 矩阵：A B / C ? 若按「对角对称」补全，? 应为",
+          "prompt": "2×2：A B / C ? 若按对角对称补全，? 应为",
           "choices": [
             { "label": "A", "glyph": "A" },
             { "label": "B", "glyph": "B" },
@@ -109,7 +161,7 @@
         {
           "id": "adult-pri-3",
           "type": "mcq",
-          "prompt": "旋转规律：图每步顺时针 90°，第 4 步朝向与第 0 步相同。第 5 步相对第 0 步？",
+          "prompt": "每步顺时针 90°。第 4 步与第 0 步同向，第 5 步相对第 0 步？",
           "choices": [
             { "label": "顺时针 90°", "glyph": "↻" },
             { "label": "180°", "glyph": "⇅" },
@@ -122,7 +174,7 @@
         {
           "id": "adult-pri-4",
           "type": "mcq",
-          "prompt": "三行数字：1 2 3 / 2 4 6 / 3 6 ? 规律为倍增列，? 是",
+          "prompt": "三行：1 2 3 / 2 4 6 / 3 6 ? 列倍增规律，? 是",
           "choices": [
             { "label": "9", "glyph": "9" },
             { "label": "8", "glyph": "8" },
@@ -135,15 +187,67 @@
         {
           "id": "adult-pri-5",
           "type": "mcq",
-          "prompt": "哪个图形不能由「边数递增」序列推出：△□○◇ 后应接",
+          "prompt": "边数递增序列 △□五边形 后，哪项不合理？",
           "choices": [
-            { "label": "五边形", "glyph": "⬠" },
             { "label": "直线", "glyph": "─" },
             { "label": "六边形", "glyph": "⬡" },
-            { "label": "五角星轮廓", "glyph": "☆" }
+            { "label": "七边形", "glyph": "⬠" },
+            { "label": "八角星轮廓", "glyph": "✴" }
           ],
           "answer": "直线",
-          "timeLimitMs": 60000
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-pri-6",
+          "type": "mcq",
+          "prompt": "3×3 矩阵每行点数为 1、2、3；第三行缺右格，应填？",
+          "choices": [
+            { "label": "3 个点", "glyph": "···" },
+            { "label": "1 个点", "glyph": "·" },
+            { "label": "0 个点", "glyph": "∅" },
+            { "label": "9 个点", "glyph": "⋮" }
+          ],
+          "answer": "3 个点",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-pri-7",
+          "type": "mcq",
+          "prompt": "图元每步加一条边且旋转 45°。下一步边数？",
+          "choices": [
+            { "label": "比当前多 1", "glyph": "+1" },
+            { "label": "减半", "glyph": "½" },
+            { "label": "不变", "glyph": "=" },
+            { "label": "归零", "glyph": "0" }
+          ],
+          "answer": "比当前多 1",
+          "timeLimitMs": 50000
+        },
+        {
+          "id": "adult-pri-8",
+          "type": "mcq",
+          "prompt": "黑白交替且每两格尺寸翻倍：小黑、小白、大黑、？",
+          "choices": [
+            { "label": "大白", "glyph": "⬜" },
+            { "label": "小黑", "glyph": "▪" },
+            { "label": "中灰", "glyph": "▒" },
+            { "label": "空", "glyph": "∅" }
+          ],
+          "answer": "大白",
+          "timeLimitMs": 50000
+        },
+        {
+          "id": "adult-pri-9",
+          "type": "mcq",
+          "prompt": "异类排除：◯ △ □ ◇ ★ 中，哪项破坏「封闭简单多边形」共性？",
+          "choices": [
+            { "label": "★（非简单多边形）", "glyph": "★" },
+            { "label": "◯", "glyph": "◯" },
+            { "label": "△", "glyph": "△" },
+            { "label": "□", "glyph": "□" }
+          ],
+          "answer": "★（非简单多边形）",
+          "timeLimitMs": 50000
         }
       ]
     },
@@ -196,6 +300,42 @@
           "timeLimitMs": 45000,
           "encodeMs": 5500,
           "maskStem": true
+        },
+        {
+          "id": "adult-wmi-6",
+          "type": "digit_span",
+          "prompt": "请按顺序复述这些数字：9、3、6、1、8、4、2、7",
+          "answer": "9-3-6-1-8-4-2-7",
+          "timeLimitMs": 45000,
+          "encodeMs": 6000,
+          "maskStem": true
+        },
+        {
+          "id": "adult-wmi-7",
+          "type": "digit_span",
+          "prompt": "请倒序复述这些数字：4、8、2、9（从后往前）",
+          "answer": "9-2-8-4",
+          "timeLimitMs": 45000,
+          "encodeMs": 5000,
+          "maskStem": true
+        },
+        {
+          "id": "adult-wmi-8",
+          "type": "digit_span",
+          "prompt": "请倒序复述这些数字：1、6、3、9、5（从后往前）",
+          "answer": "5-9-3-6-1",
+          "timeLimitMs": 45000,
+          "encodeMs": 5500,
+          "maskStem": true
+        },
+        {
+          "id": "adult-wmi-9",
+          "type": "digit_span",
+          "prompt": "请倒序复述这些数字：7、2、8、4、1、6（从后往前）",
+          "answer": "6-1-4-8-2-7",
+          "timeLimitMs": 45000,
+          "encodeMs": 6000,
+          "maskStem": true
         }
       ]
     },
@@ -207,37 +347,65 @@
         {
           "id": "adult-psi-1",
           "type": "symbol_search",
-          "prompt": "目标 Σ。在 ΑΣΒΣΓΣ 中出现几次？",
+          "prompt": "目标 Σ。在 ΑΣΒΣΓΣΔ 中出现几次？",
           "answer": 3,
-          "timeLimitMs": 30000
+          "timeLimitMs": 28000
         },
         {
           "id": "adult-psi-2",
           "type": "symbol_search",
-          "prompt": "目标 ≠。在 =≠≈≠≡ 中出现几次？",
-          "answer": 2,
-          "timeLimitMs": 30000
+          "prompt": "目标 ≠。在 =≠≈≠≡≠∼ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 28000
         },
         {
           "id": "adult-psi-3",
           "type": "symbol_search",
-          "prompt": "目标 ∞。在 ∅∞∪∞∩∞ 中出现几次？",
+          "prompt": "目标 ∞。在 ∅∞∪∞∩∞⊂ 中出现几次？",
           "answer": 3,
-          "timeLimitMs": 30000
+          "timeLimitMs": 25000
         },
         {
           "id": "adult-psi-4",
           "type": "symbol_search",
-          "prompt": "目标 √。在 √π√e√2 中出现几次？",
-          "answer": 3,
-          "timeLimitMs": 30000
+          "prompt": "目标 √。在 √π√e√2√φ 中出现几次？",
+          "answer": 4,
+          "timeLimitMs": 25000
         },
         {
           "id": "adult-psi-5",
           "type": "symbol_search",
-          "prompt": "目标 ∴。在 ∵∴∵∴∴ 中出现几次？",
+          "prompt": "目标 ∴。在 ∵∴∵∴∴∵ 中出现几次？",
           "answer": 3,
-          "timeLimitMs": 30000
+          "timeLimitMs": 22000
+        },
+        {
+          "id": "adult-psi-6",
+          "type": "symbol_search",
+          "prompt": "目标 ∂。在 ∇∂Δ∂∫∂∑ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 22000
+        },
+        {
+          "id": "adult-psi-7",
+          "type": "symbol_search",
+          "prompt": "目标 ∈。在 ⊂∈∪∈∩∈∅ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 20000
+        },
+        {
+          "id": "adult-psi-8",
+          "type": "symbol_search",
+          "prompt": "目标 ℵ。在 αℵβℵγδℵ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 20000
+        },
+        {
+          "id": "adult-psi-9",
+          "type": "symbol_search",
+          "prompt": "目标 ⊢。在 ⊨⊢⊥⊢⊤⊢∼ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 18000
         }
       ]
     }

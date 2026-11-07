@@ -1,4 +1,4 @@
-import { afterAll, beforeEach, describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it } from "vitest";
 import { prisma } from "@/lib/db";
 import {
   createSession,
@@ -7,8 +7,9 @@ import {
   submitSession,
   SessionError,
   flattenPack,
+  resolveSessionPlaylist,
 } from "@/lib/session/machine";
-import { loadPack } from "@/lib/content/loadPack";
+import { createSeededRng } from "@/lib/session/shuffle";
 
 async function seedProfile(kind: "CHILD" | "ADULT" = "CHILD") {
   const user = await prisma.user.create({
@@ -42,22 +43,32 @@ beforeEach(async () => {
   await prisma.user.deleteMany();
 });
 
-
 describe("assessment session state machine", () => {
-  it("createSession picks child pack and starts at index 0", async () => {
+  it("createSession picks child pack, starts at 0, persists playlistJson", async () => {
     const { profile } = await seedProfile("CHILD");
-    const session = await createSession(profile.id);
+    const session = await createSession(profile.id, createSeededRng(11));
     expect(session.packId).toBe("child/v1");
     expect(session.normVersion).toBe("placeholder/v1");
     expect(session.status).toBe("IN_PROGRESS");
     expect(session.currentIndex).toBe(0);
+    expect(session.playlistJson).toBeTruthy();
+    const playlist = resolveSessionPlaylist(session);
+    expect(playlist.subtests).toHaveLength(4);
   });
 
-  it("resume restores currentIndex after answers", async () => {
+  it("two sessions with different seeds get different item order", async () => {
     const { profile } = await seedProfile("CHILD");
-    const session = await createSession(profile.id);
-    const pack = loadPack(session.packId);
-    const flat = flattenPack(pack);
+    const a = await createSession(profile.id, createSeededRng(1));
+    const b = await createSession(profile.id, createSeededRng(99));
+    const idsA = flattenPack(resolveSessionPlaylist(a)).map((r) => r.item.id);
+    const idsB = flattenPack(resolveSessionPlaylist(b)).map((r) => r.item.id);
+    expect(idsA).not.toEqual(idsB);
+  });
+
+  it("resume restores currentIndex after answers using playlist order", async () => {
+    const { profile } = await seedProfile("CHILD");
+    const session = await createSession(profile.id, createSeededRng(3));
+    const flat = flattenPack(resolveSessionPlaylist(session));
     const first = flat[0];
 
     await recordAnswer(session.id, {
@@ -71,14 +82,16 @@ describe("assessment session state machine", () => {
     expect(resumed.session.responses).toHaveLength(1);
     expect(resumed.session.responses[0].latencyMs).toBe(1200);
     expect(resumed.currentItem?.id).toBe(flat[1].item.id);
+    expect(resumed.playlist.subtests[0].items[0].id).toBe(
+      resolveSessionPlaylist(session).subtests[0].items[0].id,
+    );
     expect(resumed.status).toBe("IN_PROGRESS");
   });
 
   it("cannot answer after SUBMITTED", async () => {
     const { profile } = await seedProfile("CHILD");
-    const session = await createSession(profile.id);
-    const pack = loadPack(session.packId);
-    const flat = flattenPack(pack);
+    const session = await createSession(profile.id, createSeededRng(5));
+    const flat = flattenPack(resolveSessionPlaylist(session));
 
     await recordAnswer(session.id, {
       answer: flat[0].item.answer as string | number | string[],
@@ -100,11 +113,9 @@ describe("assessment session state machine", () => {
 
   it("submit creates Report once and is idempotent", async () => {
     const { profile } = await seedProfile("CHILD");
-    const session = await createSession(profile.id);
-    const pack = loadPack(session.packId);
-    const flat = flattenPack(pack);
+    const session = await createSession(profile.id, createSeededRng(8));
+    const flat = flattenPack(resolveSessionPlaylist(session));
 
-    // Answer a couple of items so scoring has data
     for (let i = 0; i < 2; i++) {
       await recordAnswer(session.id, {
         answer: flat[i].item.answer as string | number | string[],
@@ -136,5 +147,6 @@ describe("assessment session state machine", () => {
     const { profile } = await seedProfile("ADULT");
     const session = await createSession(profile.id);
     expect(session.packId).toBe("adult/v1");
+    expect(session.playlistJson).toBeTruthy();
   });
 });
