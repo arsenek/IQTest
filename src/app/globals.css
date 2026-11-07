@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafafa;
+  --foreground: #18181b;
 }
 
 @theme inline {
@@ -12,15 +12,46 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), "PingFang SC", "Noto Sans SC", sans-serif;
+}
+
+/* Assessment skins — CSS variables from pack.audience */
+.assess-root {
+  background: var(--assess-bg);
+  color: var(--assess-fg);
+}
+
+.skin-child {
+  --assess-bg: #e8f6f4;
+  --assess-fg: #0f3d3a;
+  --assess-muted: #3d6b66;
+  --assess-border: #9fd5ce;
+  --assess-surface: #ffffff;
+  --assess-panel: #ffffff;
+  --assess-header: rgba(255, 255, 255, 0.85);
+  --assess-track: #cfeae6;
+  --assess-accent: #0d9488;
+  --assess-accent-fg: #ffffff;
+  --assess-accent-soft: #d5f5f0;
+  --assess-radius: 1.25rem;
+  --assess-shadow: 0 10px 30px rgba(13, 148, 136, 0.12);
+}
+
+.skin-adult {
+  --assess-bg: #f4f4f5;
+  --assess-fg: #18181b;
+  --assess-muted: #71717a;
+  --assess-border: #d4d4d8;
+  --assess-surface: #ffffff;
+  --assess-panel: #ffffff;
+  --assess-header: #ffffff;
+  --assess-track: #e4e4e7;
+  --assess-accent: #27272a;
+  --assess-accent-fg: #fafafa;
+  --assess-accent-soft: #f4f4f5;
+  --assess-radius: 0.5rem;
+  --assess-shadow: 0 1px 2px rgba(24, 24, 27, 0.06);
 }
