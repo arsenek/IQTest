@@ -1,0 +1,54 @@
+{
+  "version": "placeholder/v1",
+  "trial": true,
+  "ageBands": [
+    {
+      "minAgeMonths": 72,
+      "maxAgeMonths": 143,
+      "means": {
+        "VCI": 10,
+        "PRI": 10,
+        "WMI": 10,
+        "PSI": 10
+      },
+      "sds": {
+        "VCI": 3,
+        "PRI": 3,
+        "WMI": 3,
+        "PSI": 3
+      }
+    },
+    {
+      "minAgeMonths": 144,
+      "maxAgeMonths": 191,
+      "means": {
+        "VCI": 12,
+        "PRI": 12,
+        "WMI": 12,
+        "PSI": 12
+      },
+      "sds": {
+        "VCI": 3,
+        "PRI": 3,
+        "WMI": 3,
+        "PSI": 3
+      }
+    },
+    {
+      "minAgeMonths": 192,
+      "maxAgeMonths": 1200,
+      "means": {
+        "VCI": 14,
+        "PRI": 14,
+        "WMI": 14,
+        "PSI": 14
+      },
+      "sds": {
+        "VCI": 3.5,
+        "PRI": 3.5,
+        "WMI": 3.5,
+        "PSI": 3.5
+      }
+    }
+  ]
+}
