@@ -149,4 +149,34 @@ describe("assessment session state machine", () => {
     expect(session.packId).toBe("adult/v1");
     expect(session.playlistJson).toBeTruthy();
   });
+
+  it("resume after refresh keeps the same shuffled playlistJson", async () => {
+    const { profile } = await seedProfile("CHILD");
+    const session = await createSession(profile.id, createSeededRng(42));
+    const before = resolveSessionPlaylist(session);
+    const flat = flattenPack(before);
+
+    await recordAnswer(session.id, {
+      answer: flat[0].item.answer as string | number | string[],
+      latencyMs: 300,
+      itemId: flat[0].item.id,
+    });
+    await recordAnswer(session.id, {
+      answer: flat[1].item.answer as string | number | string[],
+      latencyMs: 400,
+      itemId: flat[1].item.id,
+    });
+
+    const fromDb = await prisma.assessmentSession.findUniqueOrThrow({
+      where: { id: session.id },
+    });
+    expect(fromDb.currentIndex).toBe(2);
+    expect(fromDb.playlistJson).toEqual(session.playlistJson);
+
+    const resumed = await resumeSession(session.id);
+    expect(resumed.playlist).toEqual(before);
+    expect(resumed.currentIndex).toBe(2);
+    expect(resumed.currentItem?.id).toBe(flat[2].item.id);
+    expect(resumed.session.responses).toHaveLength(2);
+  });
 });

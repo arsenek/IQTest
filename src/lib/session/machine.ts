@@ -6,7 +6,7 @@ import type {
   SessionStatus,
 } from "@prisma/client";
 import { Prisma } from "@prisma/client";
-import { prisma } from "@/lib/db";
+import { prisma, withPrismaRetry } from "@/lib/db";
 import { loadPack } from "@/lib/content/loadPack";
 import { loadNorms } from "@/lib/content/loadNorms";
 import { contentPackSchema } from "@/lib/content/schemas";
@@ -30,12 +30,24 @@ export class SessionError extends Error {
       | "NO_MORE_ITEMS"
       | "ITEM_MISMATCH"
       | "INVALID_PAYLOAD"
-      | "INVALID_PLAYLIST",
+      | "INVALID_PLAYLIST"
+      | "WRITE_FAILED",
     message: string,
+    public readonly retryable = false,
   ) {
     super(message);
     this.name = "SessionError";
   }
+}
+
+/** Map transient Prisma / DB failures to a retryable SessionError. */
+export function asWriteFailed(err: unknown): SessionError {
+  if (err instanceof SessionError) return err;
+  const message =
+    err instanceof Error && err.message
+      ? `保存作答失败，请重试（${err.message}）`
+      : "保存作答失败，请重试";
+  return new SessionError("WRITE_FAILED", message, true);
 }
 
 export type AnswerPayload = {
@@ -128,7 +140,9 @@ export async function createSession(
   profileId: string,
   rng: () => number = Math.random,
 ): Promise<AssessmentSession> {
-  const profile = await prisma.profile.findUnique({ where: { id: profileId } });
+  const profile = await withPrismaRetry(() =>
+    prisma.profile.findUnique({ where: { id: profileId } }),
+  );
   if (!profile) {
     throw new SessionError("PROFILE_NOT_FOUND", `Profile not found: ${profileId}`);
   }
@@ -139,16 +153,22 @@ export async function createSession(
   loadNorms(normVersion);
   const playlist = shufflePlaylist(pack, rng);
 
-  return prisma.assessmentSession.create({
-    data: {
-      profileId,
-      packId,
-      normVersion,
-      status: "IN_PROGRESS",
-      currentIndex: 0,
-      playlistJson: playlist as unknown as Prisma.InputJsonValue,
-    },
-  });
+  try {
+    return await withPrismaRetry(() =>
+      prisma.assessmentSession.create({
+        data: {
+          profileId,
+          packId,
+          normVersion,
+          status: "IN_PROGRESS",
+          currentIndex: 0,
+          playlistJson: playlist as unknown as Prisma.InputJsonValue,
+        },
+      }),
+    );
+  } catch (err) {
+    throw asWriteFailed(err);
+  }
 }
 
 /** Persist one answer at currentIndex and advance the cursor. */
@@ -172,9 +192,11 @@ export async function recordAnswer(
     throw new SessionError("INVALID_PAYLOAD", "answer and latencyMs are required");
   }
 
-  const session = await prisma.assessmentSession.findUnique({
-    where: { id: sessionId },
-  });
+  const session = await withPrismaRetry(() =>
+    prisma.assessmentSession.findUnique({
+      where: { id: sessionId },
+    }),
+  );
   if (!session) {
     throw new SessionError("SESSION_NOT_FOUND", `Session not found: ${sessionId}`);
   }
@@ -202,38 +224,50 @@ export async function recordAnswer(
   const scored = scoreItem(current.item, payload.answer);
   const nextIndex = session.currentIndex + 1;
 
-  const [response] = await prisma.$transaction([
-    prisma.response.create({
-      data: {
-        sessionId,
-        subtestId: current.subtestId,
-        itemId: current.item.id,
-        answerJson: toJsonAnswer(payload.answer),
-        correct: scored.correct,
-        rawScore: scored.rawScore,
-        latencyMs: Math.round(payload.latencyMs),
-      },
-    }),
-    prisma.assessmentSession.update({
-      where: { id: sessionId },
-      data: { currentIndex: nextIndex },
-    }),
-  ]);
+  try {
+    const [response] = await withPrismaRetry(() =>
+      prisma.$transaction([
+        prisma.response.create({
+          data: {
+            sessionId,
+            subtestId: current.subtestId,
+            itemId: current.item.id,
+            answerJson: toJsonAnswer(payload.answer),
+            correct: scored.correct,
+            rawScore: scored.rawScore,
+            latencyMs: Math.round(payload.latencyMs),
+          },
+        }),
+        prisma.assessmentSession.update({
+          where: { id: sessionId },
+          data: { currentIndex: nextIndex },
+        }),
+      ]),
+    );
 
-  return {
-    response,
-    currentIndex: nextIndex,
-    totalItems: flat.length,
-    done: nextIndex >= flat.length,
-  };
+    return {
+      response,
+      currentIndex: nextIndex,
+      totalItems: flat.length,
+      done: nextIndex >= flat.length,
+    };
+  } catch (err) {
+    throw asWriteFailed(err);
+  }
 }
 
 /** Restore session progress for resume / UI. */
 export async function resumeSession(sessionId: string): Promise<ResumeResult> {
-  const session = await prisma.assessmentSession.findUnique({
-    where: { id: sessionId },
-    include: { responses: { orderBy: { createdAt: "asc" } }, report: true, profile: true },
-  });
+  const session = await withPrismaRetry(() =>
+    prisma.assessmentSession.findUnique({
+      where: { id: sessionId },
+      include: {
+        responses: { orderBy: { createdAt: "asc" } },
+        report: true,
+        profile: true,
+      },
+    }),
+  );
   if (!session) {
     throw new SessionError("SESSION_NOT_FOUND", `Session not found: ${sessionId}`);
   }

@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16
+    container_name: iqtest-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: iqtest
+    ports:
+      - "5432:5432"
+    volumes:
+      - iqtest_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d iqtest"]
+      interval: 3s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  iqtest_pgdata:

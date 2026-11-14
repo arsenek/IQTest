@@ -45,11 +45,15 @@ export function AssessmentShell({
     initialStatus === "SUBMITTED" ? "done" : "active",
   );
   const [error, setError] = useState<string | null>(null);
+  const [retryable, setRetryable] = useState(false);
   const [remainingMs, setRemainingMs] = useState<number | null>(null);
   const startedAtRef = useRef<number>(Date.now());
   const submittingRef = useRef(false);
   const budgetRef = useRef<number | null>(null);
   const timedOutRef = useRef(false);
+  const pendingAnswerRef = useRef<ItemAnswer | null>(null);
+  /** After answer POST succeeds but final submit fails, retry only submit. */
+  const pendingSubmitOnlyRef = useRef(false);
 
   const total = items.length;
   const current = index < total ? items[index] : null;
@@ -81,12 +85,36 @@ export function AssessmentShell({
     return () => window.clearInterval(tick);
   }, [phase, current?.id]);
 
+  const finishSubmit = useCallback(async (nextIndex: number) => {
+    const submitRes = await fetch(`/api/sessions/${sessionId}/submit`, {
+      method: "POST",
+    });
+    const submitData = (await submitRes.json()) as {
+      error?: string;
+      retryable?: boolean;
+    };
+    if (!submitRes.ok) {
+      const err = new Error(submitData.error ?? "交卷失败");
+      (err as Error & { retryable?: boolean }).retryable =
+        submitData.retryable === true || submitRes.status >= 500;
+      pendingSubmitOnlyRef.current = true;
+      throw err;
+    }
+    pendingSubmitOnlyRef.current = false;
+    pendingAnswerRef.current = null;
+    setIndex(nextIndex);
+    setPhase("done");
+  }, [sessionId]);
+
   const submitAnswer = useCallback(
     async (answer: ItemAnswer) => {
       if (!current || submittingRef.current || phase === "paused") return;
       submittingRef.current = true;
+      pendingAnswerRef.current = answer;
+      pendingSubmitOnlyRef.current = false;
       setPhase("submitting");
       setError(null);
+      setRetryable(false);
       const latencyMs = Math.max(0, Date.now() - startedAtRef.current);
 
       try {
@@ -103,37 +131,68 @@ export function AssessmentShell({
           error?: string;
           done?: boolean;
           currentIndex?: number;
+          retryable?: boolean;
+          code?: string;
         };
         if (!res.ok) {
-          throw new Error(data.error ?? "提交作答失败");
+          const err = new Error(data.error ?? "提交作答失败");
+          (err as Error & { retryable?: boolean }).retryable =
+            data.retryable === true || res.status >= 500;
+          throw err;
         }
 
         const nextIndex = data.currentIndex ?? index + 1;
         if (data.done || nextIndex >= total) {
-          const submitRes = await fetch(`/api/sessions/${sessionId}/submit`, {
-            method: "POST",
-          });
-          const submitData = (await submitRes.json()) as { error?: string };
-          if (!submitRes.ok) {
-            throw new Error(submitData.error ?? "交卷失败");
-          }
-          setIndex(nextIndex);
-          setPhase("done");
+          await finishSubmit(nextIndex);
           return;
         }
 
+        pendingAnswerRef.current = null;
         setIndex(nextIndex);
         startedAtRef.current = Date.now();
         setPhase("active");
       } catch (err) {
-        setError(err instanceof Error ? err.message : "网络错误");
+        const retry =
+          err instanceof Error &&
+          (err as Error & { retryable?: boolean }).retryable === true;
+        setRetryable(
+          retry ||
+            pendingAnswerRef.current != null ||
+            pendingSubmitOnlyRef.current,
+        );
+        setError(err instanceof Error ? err.message : "网络错误，请重试");
         setPhase("error");
       } finally {
         submittingRef.current = false;
       }
     },
-    [current, index, phase, sessionId, total],
+    [current, finishSubmit, index, phase, sessionId, total],
   );
+
+  async function retryLastAnswer() {
+    setError(null);
+    setRetryable(false);
+    if (pendingSubmitOnlyRef.current) {
+      submittingRef.current = true;
+      setPhase("submitting");
+      try {
+        await finishSubmit(Math.min(index + 1, total));
+      } catch (err) {
+        setRetryable(true);
+        setError(err instanceof Error ? err.message : "交卷失败，请重试");
+        setPhase("error");
+      } finally {
+        submittingRef.current = false;
+      }
+      return;
+    }
+    const pending = pendingAnswerRef.current;
+    if (pending != null) {
+      void submitAnswer(pending);
+      return;
+    }
+    setPhase("active");
+  }
 
   useEffect(() => {
     if (
@@ -298,17 +357,24 @@ export function AssessmentShell({
         )}
 
         {error && (
-          <div className="rounded-[var(--assess-radius)] border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800">
-            {error}
+          <div
+            data-testid="assess-error"
+            className="rounded-[var(--assess-radius)] border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800"
+            role="alert"
+          >
+            <p>{error}</p>
+            <p className="mt-1 text-xs text-red-700/80">
+              {retryable
+                ? "作答可能尚未写入；可立即重试，刷新页面也会从服务端进度续测。"
+                : "可返回题目后重新作答，或刷新页面从已保存进度继续。"}
+            </p>
             <button
               type="button"
-              className="ml-3 underline"
-              onClick={() => {
-                setError(null);
-                setPhase("active");
-              }}
+              data-testid="assess-retry"
+              className="mt-2 underline"
+              onClick={retryLastAnswer}
             >
-              重试
+              {retryable ? "重试保存" : "继续作答"}
             </button>
           </div>
         )}

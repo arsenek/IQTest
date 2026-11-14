@@ -52,6 +52,16 @@ async function startAssessment(formData: FormData) {
   if (!profile) {
     throw new Error("档案不存在");
   }
+
+  // Prefer resuming an in-progress session so refresh/login keep the same playlist.
+  const existing = await prisma.assessmentSession.findFirst({
+    where: { profileId: profile.id, status: "IN_PROGRESS" },
+    orderBy: { startedAt: "desc" },
+  });
+  if (existing) {
+    redirect(`/assess/${existing.id}`);
+  }
+
   const session = await createSession(profile.id);
   redirect(`/assess/${session.id}`);
 }
@@ -72,6 +82,14 @@ export default async function ProfilesPage() {
   const profiles = await prisma.profile.findMany({
     where: { userId: user.id },
     orderBy: { displayName: "asc" },
+    include: {
+      assessments: {
+        where: { status: "IN_PROGRESS" },
+        orderBy: { startedAt: "desc" },
+        take: 1,
+        select: { id: true, currentIndex: true, startedAt: true },
+      },
+    },
   });
   const children = profiles.filter((p) => p.kind === "CHILD");
   const adults = profiles.filter((p) => p.kind === "ADULT");
@@ -101,7 +119,9 @@ export default async function ProfilesPage() {
             <p className="text-sm text-zinc-500">尚未添加儿童档案。</p>
           ) : (
             <ul className="grid gap-3">
-              {children.map((p) => (
+              {children.map((p) => {
+                const open = p.assessments[0];
+                return (
                 <li
                   key={p.id}
                   className="flex flex-col gap-3 rounded-2xl border border-zinc-200 bg-white p-4 sm:flex-row sm:items-center sm:justify-between"
@@ -110,19 +130,33 @@ export default async function ProfilesPage() {
                     <p className="font-medium">{p.displayName}</p>
                     <p className="text-sm text-zinc-500">
                       {yearsOld(p.birthDate)} 岁 · CHILD
+                      {open
+                        ? ` · 进行中（题 ${open.currentIndex + 1}）`
+                        : ""}
                     </p>
                   </div>
-                  <form action={startAssessment}>
-                    <input type="hidden" name="profileId" value={p.id} />
-                    <button
-                      type="submit"
-                      className="min-h-10 rounded-xl bg-zinc-900 px-4 text-sm font-semibold text-white"
+                  {open ? (
+                    <Link
+                      href={`/assess/${open.id}`}
+                      data-testid="resume-assessment"
+                      className="inline-flex min-h-10 items-center justify-center rounded-xl bg-zinc-900 px-4 text-sm font-semibold text-white"
                     >
-                      开始测评
-                    </button>
-                  </form>
+                      继续测评
+                    </Link>
+                  ) : (
+                    <form action={startAssessment}>
+                      <input type="hidden" name="profileId" value={p.id} />
+                      <button
+                        type="submit"
+                        className="min-h-10 rounded-xl bg-zinc-900 px-4 text-sm font-semibold text-white"
+                      >
+                        开始测评
+                      </button>
+                    </form>
+                  )}
                 </li>
-              ))}
+              );
+              })}
             </ul>
           )}
         </section>
@@ -133,7 +167,9 @@ export default async function ProfilesPage() {
             <p className="text-sm text-zinc-500">尚未创建成人自测档案。</p>
           ) : (
             <ul className="grid gap-3">
-              {adults.map((p) => (
+              {adults.map((p) => {
+                const open = p.assessments[0];
+                return (
                 <li
                   key={p.id}
                   className="flex flex-col gap-3 rounded-2xl border border-zinc-200 bg-white p-4 sm:flex-row sm:items-center sm:justify-between"
@@ -142,19 +178,33 @@ export default async function ProfilesPage() {
                     <p className="font-medium">{p.displayName}</p>
                     <p className="text-sm text-zinc-500">
                       {yearsOld(p.birthDate)} 岁 · ADULT
+                      {open
+                        ? ` · 进行中（题 ${open.currentIndex + 1}）`
+                        : ""}
                     </p>
                   </div>
-                  <form action={startAssessment}>
-                    <input type="hidden" name="profileId" value={p.id} />
-                    <button
-                      type="submit"
-                      className="min-h-10 rounded-xl bg-zinc-900 px-4 text-sm font-semibold text-white"
+                  {open ? (
+                    <Link
+                      href={`/assess/${open.id}`}
+                      data-testid="resume-assessment"
+                      className="inline-flex min-h-10 items-center justify-center rounded-xl bg-zinc-900 px-4 text-sm font-semibold text-white"
                     >
-                      开始测评
-                    </button>
-                  </form>
+                      继续测评
+                    </Link>
+                  ) : (
+                    <form action={startAssessment}>
+                      <input type="hidden" name="profileId" value={p.id} />
+                      <button
+                        type="submit"
+                        className="min-h-10 rounded-xl bg-zinc-900 px-4 text-sm font-semibold text-white"
+                      >
+                        开始测评
+                      </button>
+                    </form>
+                  )}
                 </li>
-              ))}
+              );
+              })}
             </ul>
           )}
         </section>

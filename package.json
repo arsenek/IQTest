@@ -9,7 +9,11 @@
     "lint": "eslint",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:e2e": "playwright test tests/e2e/happy-path.spec.ts"
+    "test:e2e": "playwright test tests/e2e/happy-path.spec.ts",
+    "db:up": "bash scripts/db-up.sh",
+    "db:migrate": "prisma migrate deploy",
+    "db:generate": "prisma generate",
+    "db:smoke": "node scripts/smoke-persist.mjs"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",

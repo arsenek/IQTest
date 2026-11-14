@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { verifyPassword } from "@/lib/auth/password";
 import { attachSessionCookie } from "@/lib/auth/session";
-import { prisma } from "@/lib/db";
+import { prisma, withPrismaRetry } from "@/lib/db";
 
 export async function POST(request: Request) {
   let body: unknown;
@@ -28,7 +28,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "请输入邮箱和密码" }, { status: 400 });
   }
 
-  const user = await prisma.user.findUnique({ where: { email } });
+  const user = await withPrismaRetry(() =>
+    prisma.user.findUnique({ where: { email } }),
+  );
   if (!user || !(await verifyPassword(password, user.passwordHash))) {
     return NextResponse.json({ error: "邮箱或密码错误" }, { status: 401 });
   }
