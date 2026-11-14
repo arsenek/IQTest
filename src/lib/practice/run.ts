@@ -24,6 +24,7 @@ export type PracticeItem = Pick<
   | "id"
   | "type"
   | "prompt"
+  | "image"
   | "choices"
   | "timeLimitMs"
   | "encodeMs"
@@ -92,6 +93,7 @@ export function buildPracticeRound(
         id: item.id,
         type: item.type,
         prompt: item.prompt,
+        image: item.image,
         choices: item.choices
           ? shuffleInPlace(
               item.choices.map((c) => ({ ...c })),

@@ -50,4 +50,26 @@ describe("shufflePlaylist", () => {
     expect(first).toEqual(second);
     expect(first).not.toEqual([1, 2, 3, 4, 5]);
   });
+
+  it("preserves digit_span / ordered WMI item order across seeds", () => {
+    const pack = loadPack("child/v1");
+    const originalWmi = pack.subtests.find((s) => s.indexKey === "WMI")!;
+    expect(originalWmi.ordered).toBe(true);
+    const origIds = originalWmi.items.map((i) => i.id);
+
+    for (const seed of [1, 42, 999]) {
+      const shuffled = shufflePlaylist(pack, createSeededRng(seed));
+      const wmi = shuffled.subtests.find((s) => s.indexKey === "WMI")!;
+      expect(wmi.items.map((i) => i.id)).toEqual(origIds);
+    }
+  });
+
+  it("still shuffles non-ordered subtest item order", () => {
+    const pack = loadPack("child/v1");
+    const a = shufflePlaylist(pack, createSeededRng(1));
+    const b = shufflePlaylist(pack, createSeededRng(999));
+    const vciA = a.subtests.find((s) => s.indexKey === "VCI")!.items.map((i) => i.id);
+    const vciB = b.subtests.find((s) => s.indexKey === "VCI")!.items.map((i) => i.id);
+    expect(vciA).not.toEqual(vciB);
+  });
 });

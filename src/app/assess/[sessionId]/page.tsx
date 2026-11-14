@@ -50,6 +50,7 @@ export default async function AssessPage({ params }: PageProps) {
     id: row.item.id,
     type: row.item.type,
     prompt: row.item.prompt,
+    image: row.item.image,
     choices: row.item.choices,
     timeLimitMs: row.item.timeLimitMs,
     encodeMs: row.item.encodeMs,

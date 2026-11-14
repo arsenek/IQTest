@@ -1,4 +1,4 @@
-import type { Choice, ContentPack, Item } from "@/lib/content/types";
+import type { Choice, ContentPack, Item, Subtest } from "@/lib/content/types";
 
 /** Uniform RNG in [0, 1). */
 export type Rng = () => number;
@@ -56,9 +56,18 @@ function shuffleItemChoices(item: Item, rng: Rng): Item {
   };
 }
 
+/** WMI / digit_span and explicitly ordered subtests keep ascending difficulty. */
+export function shouldPreserveItemOrder(subtest: Subtest): boolean {
+  if (subtest.ordered) return true;
+  if (subtest.items.every((item) => item.type === "digit_span")) return true;
+  if (subtest.items.every((item) => item.ordered)) return true;
+  return false;
+}
+
 /**
- * Per-subtest: shuffle item order; for choice items, shuffle options and
- * remap indexed answers. Returns a deep-cloned pack suitable for playlistJson.
+ * Per-subtest: shuffle item order (unless ordered / digit_span); for choice
+ * items, shuffle options and remap indexed answers. Returns a deep-cloned pack
+ * suitable for playlistJson.
  */
 export function shufflePlaylist(pack: ContentPack, rng: Rng): ContentPack {
   return {
@@ -66,14 +75,17 @@ export function shufflePlaylist(pack: ContentPack, rng: Rng): ContentPack {
     audience: pack.audience,
     title: pack.title,
     subtests: pack.subtests.map((subtest) => {
-      const items = shuffleInPlace(
-        subtest.items.map((item) => shuffleItemChoices(item, rng)),
-        rng,
+      const withShuffledChoices = subtest.items.map((item) =>
+        shuffleItemChoices(item, rng),
       );
+      const items = shouldPreserveItemOrder(subtest)
+        ? withShuffledChoices
+        : shuffleInPlace(withShuffledChoices, rng);
       return {
         id: subtest.id,
         indexKey: subtest.indexKey,
         title: subtest.title,
+        ordered: subtest.ordered,
         items,
       };
     }),

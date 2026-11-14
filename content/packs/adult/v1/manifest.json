@@ -13,241 +13,823 @@
           "type": "mcq",
           "prompt": "「隐喻」最接近下列哪一含义？",
           "choices": [
-            { "label": "用一种事物暗示另一种事物", "glyph": "⇔" },
-            { "label": "逐字翻译", "glyph": "≡" },
-            { "label": "随机联想", "glyph": "?" },
-            { "label": "否定陈述", "glyph": "¬" }
+            {
+              "label": "用一种事物暗示另一种事物",
+              "glyph": "⇔"
+            },
+            {
+              "label": "逐字翻译",
+              "glyph": "≡"
+            },
+            {
+              "label": "随机联想",
+              "glyph": "?"
+            },
+            {
+              "label": "否定陈述",
+              "glyph": "¬"
+            }
           ],
           "answer": "用一种事物暗示另一种事物",
-          "timeLimitMs": 60000
+          "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-2",
           "type": "mcq",
           "prompt": "「稀缺」与「充裕」的关系最接近？",
           "choices": [
-            { "label": "反义", "glyph": "↔" },
-            { "label": "同义", "glyph": "=" },
-            { "label": "因果", "glyph": "→" },
-            { "label": "整体与部分", "glyph": "⊂" }
+            {
+              "label": "反义",
+              "glyph": "↔"
+            },
+            {
+              "label": "同义",
+              "glyph": "="
+            },
+            {
+              "label": "因果",
+              "glyph": "→"
+            },
+            {
+              "label": "整体与部分",
+              "glyph": "⊂"
+            }
           ],
           "answer": "反义",
-          "timeLimitMs": 60000
+          "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-3",
           "type": "mcq",
           "prompt": "「范式」在学术语境中通常指？",
           "choices": [
-            { "label": "被广泛接受的研究框架或模式", "glyph": "▣" },
-            { "label": "临时假设", "glyph": "…" },
-            { "label": "实验误差", "glyph": "±" },
-            { "label": "样本偏差", "glyph": "≠" }
+            {
+              "label": "被广泛接受的研究框架或模式",
+              "glyph": "▣"
+            },
+            {
+              "label": "临时假设",
+              "glyph": "…"
+            },
+            {
+              "label": "实验误差",
+              "glyph": "±"
+            },
+            {
+              "label": "样本偏差",
+              "glyph": "≠"
+            }
           ],
           "answer": "被广泛接受的研究框架或模式",
-          "timeLimitMs": 60000
+          "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-4",
           "type": "mcq",
-          "prompt": "下列哪项最能说明「归纳」？",
+          "prompt": "「冗余」最接近？",
           "choices": [
-            { "label": "从具体观察概括出一般规律", "glyph": "↑" },
-            { "label": "从公理推出结论", "glyph": "↓" },
-            { "label": "随机猜测", "glyph": "?" },
-            { "label": "重复背诵", "glyph": "↻" }
+            {
+              "label": "多余、可精简的部分",
+              "glyph": "余"
+            },
+            {
+              "label": "核心必要部分",
+              "glyph": "核"
+            },
+            {
+              "label": "随机噪声的同义词",
+              "glyph": "噪"
+            },
+            {
+              "label": "样本量的下限",
+              "glyph": "n"
+            }
           ],
-          "answer": "从具体观察概括出一般规律",
-          "timeLimitMs": 60000
+          "answer": "多余、可精简的部分",
+          "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-5",
           "type": "mcq",
-          "prompt": "「冗余」在信息论直觉中意味着？",
+          "prompt": "「归纳」与「演绎」的关系最像？",
           "choices": [
-            { "label": "超出必要的重复信息", "glyph": "⧉" },
-            { "label": "完全无噪声的信道", "glyph": "⌀" },
-            { "label": "无限带宽", "glyph": "∞" },
-            { "label": "零延迟", "glyph": "0" }
+            {
+              "label": "自下而上与自上而下",
+              "glyph": "↕"
+            },
+            {
+              "label": "同义反复",
+              "glyph": "="
+            },
+            {
+              "label": "加减运算",
+              "glyph": "+−"
+            },
+            {
+              "label": "左右对称",
+              "glyph": "⇔"
+            }
           ],
-          "answer": "超出必要的重复信息",
-          "timeLimitMs": 60000
+          "answer": "自下而上与自上而下",
+          "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-6",
           "type": "mcq",
-          "prompt": "「权衡」与「取舍」的关系最接近？",
+          "prompt": "「效度」主要关心？",
           "choices": [
-            { "label": "近义：在冲突目标间做选择", "glyph": "⚖" },
-            { "label": "反义：完全对立", "glyph": "↔" },
-            { "label": "无关", "glyph": "⊥" },
-            { "label": "包含关系：权衡是取舍的子集", "glyph": "⊂" }
+            {
+              "label": "是否测到了想测的构念",
+              "glyph": "✓"
+            },
+            {
+              "label": "仪器是否校准到零",
+              "glyph": "0"
+            },
+            {
+              "label": "打印机分辨率",
+              "glyph": "dpi"
+            },
+            {
+              "label": "网络延迟",
+              "glyph": "ms"
+            }
           ],
-          "answer": "近义：在冲突目标间做选择",
+          "answer": "是否测到了想测的构念",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-7",
           "type": "mcq",
-          "prompt": "「批判性思维」最核心的特征是？",
+          "prompt": "「信度」强调？",
           "choices": [
-            { "label": "依据证据审视主张是否成立", "glyph": "🔍" },
-            { "label": "无条件反对一切观点", "glyph": "✗" },
-            { "label": "只相信权威说法", "glyph": "👑" },
-            { "label": "回避任何争议话题", "glyph": "∅" }
+            {
+              "label": "测量结果的一致性与稳定性",
+              "glyph": "≈"
+            },
+            {
+              "label": "外观是否美观",
+              "glyph": "美"
+            },
+            {
+              "label": "价格是否最低",
+              "glyph": "¥"
+            },
+            {
+              "label": "是否首次发表",
+              "glyph": "1st"
+            }
           ],
-          "answer": "依据证据审视主张是否成立",
+          "answer": "测量结果的一致性与稳定性",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-8",
           "type": "mcq",
-          "prompt": "「因果」与「相关」的区别在于？",
+          "prompt": "「对照组」的作用是？",
           "choices": [
-            { "label": "相关未必意味着一方导致另一方", "glyph": "≁" },
-            { "label": "两者永远等同", "glyph": "=" },
-            { "label": "相关比因果更强", "glyph": ">" },
-            { "label": "因果只存在于实验室外", "glyph": "外" }
+            {
+              "label": "提供比较基线以估计效应",
+              "glyph": "基"
+            },
+            {
+              "label": "替换自变量",
+              "glyph": "替"
+            },
+            {
+              "label": "删除所有异常值",
+              "glyph": "删"
+            },
+            {
+              "label": "保证样本量无穷大",
+              "glyph": "∞"
+            }
           ],
-          "answer": "相关未必意味着一方导致另一方",
+          "answer": "提供比较基线以估计效应",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-9",
           "type": "mcq",
-          "prompt": "「抽象」相对于「具体」通常意味着？",
+          "prompt": "「混淆变量」可能导致？",
           "choices": [
-            { "label": "抽离个别细节，保留一般结构", "glyph": "◇" },
-            { "label": "增加感官细节", "glyph": "✦" },
-            { "label": "只描述颜色", "glyph": "彩" },
-            { "label": "拒绝任何概括", "glyph": "¬" }
+            {
+              "label": "因果解释被干扰",
+              "glyph": "混"
+            },
+            {
+              "label": "字体自动放大",
+              "glyph": "Aa"
+            },
+            {
+              "label": "电池耗电变慢",
+              "glyph": "电"
+            },
+            {
+              "label": "键盘布局改变",
+              "glyph": "键"
+            }
           ],
-          "answer": "抽离个别细节，保留一般结构",
-          "timeLimitMs": 50000
+          "answer": "因果解释被干扰",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-vci-10",
+          "type": "mcq",
+          "prompt": "「操作性定义」是指？",
+          "choices": [
+            {
+              "label": "用可观测程序界定概念",
+              "glyph": "操"
+            },
+            {
+              "label": "词典里的文学释义",
+              "glyph": "辞"
+            },
+            {
+              "label": "口号式宣传语",
+              "glyph": "宣"
+            },
+            {
+              "label": "未经验证的传闻",
+              "glyph": "传"
+            }
+          ],
+          "answer": "用可观测程序界定概念",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-vci-11",
+          "type": "mcq",
+          "prompt": "「天花板效应」描述？",
+          "choices": [
+            {
+              "label": "题目过易导致分数挤在高端",
+              "glyph": "顶"
+            },
+            {
+              "label": "房间真的没有天花板",
+              "glyph": "屋"
+            },
+            {
+              "label": "只测最低分被试",
+              "glyph": "低"
+            },
+            {
+              "label": "永远无法完成测试",
+              "glyph": "∞"
+            }
+          ],
+          "answer": "题目过易导致分数挤在高端",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-vci-12",
+          "type": "mcq",
+          "prompt": "「地板效应」描述？",
+          "choices": [
+            {
+              "label": "题目过难导致分数挤在低端",
+              "glyph": "底"
+            },
+            {
+              "label": "地板材质检测",
+              "glyph": "材"
+            },
+            {
+              "label": "只奖励满分",
+              "glyph": "满分"
+            },
+            {
+              "label": "忽略时间限制",
+              "glyph": "时"
+            }
+          ],
+          "answer": "题目过难导致分数挤在低端",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-vci-13",
+          "type": "mcq",
+          "prompt": "「常模」在测评中通常指？",
+          "choices": [
+            {
+              "label": "参照群体的分数分布基准",
+              "glyph": "范"
+            },
+            {
+              "label": "试卷封面设计",
+              "glyph": "封"
+            },
+            {
+              "label": "监考老师名单",
+              "glyph": "名"
+            },
+            {
+              "label": "机房空调设定",
+              "glyph": "℃"
+            }
+          ],
+          "answer": "参照群体的分数分布基准",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-vci-14",
+          "type": "mcq",
+          "prompt": "「建构效度」关注？",
+          "choices": [
+            {
+              "label": "分数与理论构念的符合程度",
+              "glyph": "构"
+            },
+            {
+              "label": "装订是否牢固",
+              "glyph": "钉"
+            },
+            {
+              "label": "是否彩色印刷",
+              "glyph": "彩"
+            },
+            {
+              "label": "二维码能否扫描",
+              "glyph": "码"
+            }
+          ],
+          "answer": "分数与理论构念的符合程度",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-vci-15",
+          "type": "mcq",
+          "prompt": "「生态效度」更强调？",
+          "choices": [
+            {
+              "label": "结论推广到真实情境的程度",
+              "glyph": "境"
+            },
+            {
+              "label": "实验室电压稳定",
+              "glyph": "V"
+            },
+            {
+              "label": "显示器色域",
+              "glyph": "色"
+            },
+            {
+              "label": "鼠标灵敏度",
+              "glyph": "dpi"
+            }
+          ],
+          "answer": "结论推广到真实情境的程度",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-vci-16",
+          "type": "mcq",
+          "prompt": "「双盲」设计主要是为了？",
+          "choices": [
+            {
+              "label": "减少期望效应与评估偏倚",
+              "glyph": "盲"
+            },
+            {
+              "label": "加快打印速度",
+              "glyph": "速"
+            },
+            {
+              "label": "节省仓储空间",
+              "glyph": "仓"
+            },
+            {
+              "label": "统一服装颜色",
+              "glyph": "衣"
+            }
+          ],
+          "answer": "减少期望效应与评估偏倚",
+          "timeLimitMs": 55000
         }
       ]
     },
     {
       "id": "adult-pri-matrix",
       "indexKey": "PRI",
-      "title": "矩阵推理",
+      "title": "图形推理",
       "items": [
         {
           "id": "adult-pri-1",
           "type": "mcq",
-          "prompt": "2×2：A B / C ? 若按对角对称补全，? 应为",
+          "prompt": "行列互补：缺格应取与对角同类？",
+          "image": "/packs/adult/v1/media/pri-01-stem.svg",
           "choices": [
-            { "label": "A", "glyph": "A" },
-            { "label": "B", "glyph": "B" },
-            { "label": "C", "glyph": "C" },
-            { "label": "空", "glyph": "∅" }
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/pri-01-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/pri-01-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/pri-01-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/pri-01-d.svg"
+            }
           ],
-          "answer": "A",
-          "timeLimitMs": 60000
+          "answer": "选项 A",
+          "timeLimitMs": 55000
         },
         {
           "id": "adult-pri-2",
           "type": "mcq",
-          "prompt": "序列 ■□■□■ 的下一图形是？",
+          "prompt": "按对角相等规律，缺项是？",
+          "image": "/packs/adult/v1/media/pri-02-stem.svg",
           "choices": [
-            { "label": "□", "glyph": "□" },
-            { "label": "■", "glyph": "■" },
-            { "label": "●", "glyph": "●" },
-            { "label": "△", "glyph": "△" }
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/pri-02-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/pri-02-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/pri-02-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/pri-02-d.svg"
+            }
           ],
-          "answer": "□",
-          "timeLimitMs": 60000
+          "answer": "选项 A",
+          "timeLimitMs": 55000
         },
         {
           "id": "adult-pri-3",
           "type": "mcq",
-          "prompt": "每步顺时针 90°。第 4 步与第 0 步同向，第 5 步相对第 0 步？",
+          "prompt": "两环一菱重复，缺？",
+          "image": "/packs/adult/v1/media/pri-03-stem.svg",
           "choices": [
-            { "label": "顺时针 90°", "glyph": "↻" },
-            { "label": "180°", "glyph": "⇅" },
-            { "label": "270°", "glyph": "↺" },
-            { "label": "不变", "glyph": "=" }
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/pri-03-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/pri-03-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/pri-03-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/pri-03-d.svg"
+            }
           ],
-          "answer": "顺时针 90°",
-          "timeLimitMs": 60000
+          "answer": "选项 A",
+          "timeLimitMs": 55000
         },
         {
           "id": "adult-pri-4",
           "type": "mcq",
-          "prompt": "三行：1 2 3 / 2 4 6 / 3 6 ? 列倍增规律，? 是",
+          "prompt": "方块与菱形交替？",
+          "image": "/packs/adult/v1/media/pri-04-stem.svg",
           "choices": [
-            { "label": "9", "glyph": "9" },
-            { "label": "8", "glyph": "8" },
-            { "label": "7", "glyph": "7" },
-            { "label": "12", "glyph": "12" }
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/pri-04-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/pri-04-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/pri-04-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/pri-04-d.svg"
+            }
           ],
-          "answer": "9",
-          "timeLimitMs": 60000
+          "answer": "选项 A",
+          "timeLimitMs": 55000
         },
         {
           "id": "adult-pri-5",
           "type": "mcq",
-          "prompt": "边数递增序列 △□五边形 后，哪项不合理？",
+          "prompt": "两加一星，缺？",
+          "image": "/packs/adult/v1/media/pri-05-stem.svg",
           "choices": [
-            { "label": "直线", "glyph": "─" },
-            { "label": "六边形", "glyph": "⬡" },
-            { "label": "七边形", "glyph": "⬠" },
-            { "label": "八角星轮廓", "glyph": "✴" }
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/pri-05-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/pri-05-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/pri-05-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/pri-05-d.svg"
+            }
           ],
-          "answer": "直线",
+          "answer": "选项 A",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-pri-6",
           "type": "mcq",
-          "prompt": "3×3 矩阵每行点数为 1、2、3；第三行缺右格，应填？",
+          "prompt": "圆与三角交替？",
+          "image": "/packs/adult/v1/media/pri-06-stem.svg",
           "choices": [
-            { "label": "3 个点", "glyph": "···" },
-            { "label": "1 个点", "glyph": "·" },
-            { "label": "0 个点", "glyph": "∅" },
-            { "label": "9 个点", "glyph": "⋮" }
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/pri-06-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/pri-06-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/pri-06-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/pri-06-d.svg"
+            }
           ],
-          "answer": "3 个点",
+          "answer": "选项 A",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-pri-7",
           "type": "mcq",
-          "prompt": "图元每步加一条边且旋转 45°。下一步边数？",
+          "prompt": "菱形与空心环交替？",
+          "image": "/packs/adult/v1/media/pri-07-stem.svg",
           "choices": [
-            { "label": "比当前多 1", "glyph": "+1" },
-            { "label": "减半", "glyph": "½" },
-            { "label": "不变", "glyph": "=" },
-            { "label": "归零", "glyph": "0" }
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/pri-07-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/pri-07-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/pri-07-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/pri-07-d.svg"
+            }
           ],
-          "answer": "比当前多 1",
-          "timeLimitMs": 50000
+          "answer": "选项 A",
+          "timeLimitMs": 55000
         },
         {
           "id": "adult-pri-8",
           "type": "mcq",
-          "prompt": "黑白交替且每两格尺寸翻倍：小黑、小白、大黑、？",
+          "prompt": "星与方交替？",
+          "image": "/packs/adult/v1/media/pri-08-stem.svg",
           "choices": [
-            { "label": "大白", "glyph": "⬜" },
-            { "label": "小黑", "glyph": "▪" },
-            { "label": "中灰", "glyph": "▒" },
-            { "label": "空", "glyph": "∅" }
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/pri-08-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/pri-08-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/pri-08-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/pri-08-d.svg"
+            }
           ],
-          "answer": "大白",
-          "timeLimitMs": 50000
+          "answer": "选项 A",
+          "timeLimitMs": 55000
         },
         {
           "id": "adult-pri-9",
           "type": "mcq",
-          "prompt": "异类排除：◯ △ □ ◇ ★ 中，哪项破坏「封闭简单多边形」共性？",
+          "prompt": "两三角一环，缺？",
+          "image": "/packs/adult/v1/media/pri-09-stem.svg",
           "choices": [
-            { "label": "★（非简单多边形）", "glyph": "★" },
-            { "label": "◯", "glyph": "◯" },
-            { "label": "△", "glyph": "△" },
-            { "label": "□", "glyph": "□" }
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/pri-09-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/pri-09-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/pri-09-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/pri-09-d.svg"
+            }
           ],
-          "answer": "★（非简单多边形）",
-          "timeLimitMs": 50000
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-pri-10",
+          "type": "mcq",
+          "prompt": "复杂度递增：圆→加→方→？",
+          "image": "/packs/adult/v1/media/pri-10-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/pri-10-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/pri-10-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/pri-10-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/pri-10-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-pri-11",
+          "type": "mcq",
+          "prompt": "环与方交替？",
+          "image": "/packs/adult/v1/media/pri-11-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/pri-11-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/pri-11-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/pri-11-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/pri-11-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-pri-12",
+          "type": "mcq",
+          "prompt": "两菱一圆，缺？",
+          "image": "/packs/adult/v1/media/pri-12-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/pri-12-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/pri-12-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/pri-12-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/pri-12-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-pri-13",
+          "type": "mcq",
+          "prompt": "加号与三角交替？",
+          "image": "/packs/adult/v1/media/pri-13-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/pri-13-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/pri-13-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/pri-13-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/pri-13-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-pri-14",
+          "type": "mcq",
+          "prompt": "对称：圆方△方圆？",
+          "image": "/packs/adult/v1/media/pri-14-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/pri-14-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/pri-14-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/pri-14-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/pri-14-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-pri-15",
+          "type": "mcq",
+          "prompt": "对称序列：缺中间镜像？",
+          "image": "/packs/adult/v1/media/pri-15-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/pri-15-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/pri-15-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/pri-15-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/pri-15-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-pri-16",
+          "type": "mcq",
+          "prompt": "对称矩阵缺格？",
+          "image": "/packs/adult/v1/media/pri-16-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/pri-16-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/pri-16-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/pri-16-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/pri-16-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
         }
       ]
     },
@@ -255,6 +837,7 @@
       "id": "adult-wmi-digits",
       "indexKey": "WMI",
       "title": "数字广度",
+      "ordered": true,
       "items": [
         {
           "id": "adult-wmi-1",
@@ -262,8 +845,9 @@
           "prompt": "请按顺序复述这些数字：7、1、4",
           "answer": "7-1-4",
           "timeLimitMs": 45000,
-          "encodeMs": 3500,
-          "maskStem": true
+          "encodeMs": 4500,
+          "maskStem": true,
+          "ordered": true
         },
         {
           "id": "adult-wmi-2",
@@ -271,8 +855,9 @@
           "prompt": "请按顺序复述这些数字：3、9、2、6",
           "answer": "3-9-2-6",
           "timeLimitMs": 45000,
-          "encodeMs": 4000,
-          "maskStem": true
+          "encodeMs": 5000,
+          "maskStem": true,
+          "ordered": true
         },
         {
           "id": "adult-wmi-3",
@@ -280,8 +865,9 @@
           "prompt": "请按顺序复述这些数字：5、8、1、4、7",
           "answer": "5-8-1-4-7",
           "timeLimitMs": 45000,
-          "encodeMs": 4500,
-          "maskStem": true
+          "encodeMs": 5500,
+          "maskStem": true,
+          "ordered": true
         },
         {
           "id": "adult-wmi-4",
@@ -289,8 +875,9 @@
           "prompt": "请按顺序复述这些数字：2、6、9、3、5、1",
           "answer": "2-6-9-3-5-1",
           "timeLimitMs": 45000,
-          "encodeMs": 5000,
-          "maskStem": true
+          "encodeMs": 6000,
+          "maskStem": true,
+          "ordered": true
         },
         {
           "id": "adult-wmi-5",
@@ -298,8 +885,9 @@
           "prompt": "请按顺序复述这些数字：8、4、7、1、9、2、6",
           "answer": "8-4-7-1-9-2-6",
           "timeLimitMs": 45000,
-          "encodeMs": 5500,
-          "maskStem": true
+          "encodeMs": 6500,
+          "maskStem": true,
+          "ordered": true
         },
         {
           "id": "adult-wmi-6",
@@ -307,35 +895,109 @@
           "prompt": "请按顺序复述这些数字：9、3、6、1、8、4、2、7",
           "answer": "9-3-6-1-8-4-2-7",
           "timeLimitMs": 45000,
-          "encodeMs": 6000,
-          "maskStem": true
+          "encodeMs": 7000,
+          "maskStem": true,
+          "ordered": true
         },
         {
           "id": "adult-wmi-7",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：4、8、2、9（从后往前）",
-          "answer": "9-2-8-4",
+          "prompt": "请按顺序复述这些数字：1、5、9、2、8、4、7、3、6",
+          "answer": "1-5-9-2-8-4-7-3-6",
           "timeLimitMs": 45000,
-          "encodeMs": 5000,
-          "maskStem": true
+          "encodeMs": 7500,
+          "maskStem": true,
+          "ordered": true
         },
         {
           "id": "adult-wmi-8",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：1、6、3、9、5（从后往前）",
-          "answer": "5-9-3-6-1",
+          "prompt": "请按顺序复述这些数字：4、8、1、6、9、2、5、7、3、0",
+          "answer": "4-8-1-6-9-2-5-7-3-0",
           "timeLimitMs": 45000,
-          "encodeMs": 5500,
-          "maskStem": true
+          "encodeMs": 8000,
+          "maskStem": true,
+          "ordered": true
         },
         {
           "id": "adult-wmi-9",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：7、2、8、4、1、6（从后往前）",
-          "answer": "6-1-4-8-2-7",
+          "prompt": "请按顺序复述这些数字：6、2、9、4、1、8、5、3、7、0、2",
+          "answer": "6-2-9-4-1-8-5-3-7-0-2",
+          "timeLimitMs": 45000,
+          "encodeMs": 8500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-wmi-10",
+          "type": "digit_span",
+          "prompt": "请倒序复述这些数字：4、8、2、9（从后往前说）",
+          "answer": "9-2-8-4",
+          "timeLimitMs": 45000,
+          "encodeMs": 5500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-wmi-11",
+          "type": "digit_span",
+          "prompt": "请倒序复述这些数字：1、6、3、9、5（从后往前说）",
+          "answer": "5-9-3-6-1",
           "timeLimitMs": 45000,
           "encodeMs": 6000,
-          "maskStem": true
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-wmi-12",
+          "type": "digit_span",
+          "prompt": "请倒序复述这些数字：7、2、8、4、1、6（从后往前说）",
+          "answer": "6-1-4-8-2-7",
+          "timeLimitMs": 45000,
+          "encodeMs": 6500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-wmi-13",
+          "type": "digit_span",
+          "prompt": "请倒序复述这些数字：5、9、1、7、3、8、2（从后往前说）",
+          "answer": "2-8-3-7-1-9-5",
+          "timeLimitMs": 45000,
+          "encodeMs": 7000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-wmi-14",
+          "type": "digit_span",
+          "prompt": "请倒序复述这些数字：3、8、5、1、9、4、7、2（从后往前说）",
+          "answer": "2-7-4-9-1-5-8-3",
+          "timeLimitMs": 45000,
+          "encodeMs": 7500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-wmi-15",
+          "type": "digit_span",
+          "prompt": "请倒序复述这些数字：9、4、1、6、8、2、5、3、7（从后往前说）",
+          "answer": "7-3-5-2-8-6-1-4-9",
+          "timeLimitMs": 45000,
+          "encodeMs": 8000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-wmi-16",
+          "type": "digit_span",
+          "prompt": "请倒序复述这些数字：2、7、4、9、1、5、8、3、6、0（从后往前说）",
+          "answer": "0-6-3-8-5-1-9-4-7-2",
+          "timeLimitMs": 45000,
+          "encodeMs": 8500,
+          "maskStem": true,
+          "ordered": true
         }
       ]
     },
@@ -347,65 +1009,114 @@
         {
           "id": "adult-psi-1",
           "type": "symbol_search",
-          "prompt": "目标 Σ。在 ΑΣΒΣΓΣΔ 中出现几次？",
-          "answer": 3,
-          "timeLimitMs": 28000
+          "prompt": "目标 Σ。在 ΑΣΒΓΔΕ 中出现几次？",
+          "answer": 1,
+          "timeLimitMs": 32000
         },
         {
           "id": "adult-psi-2",
           "type": "symbol_search",
-          "prompt": "目标 ≠。在 =≠≈≠≡≠∼ 中出现几次？",
-          "answer": 3,
-          "timeLimitMs": 28000
+          "prompt": "目标 ≠。在 =≠≈≠≡≠∼≠ 中出现几次？",
+          "answer": 4,
+          "timeLimitMs": 31200
         },
         {
           "id": "adult-psi-3",
           "type": "symbol_search",
-          "prompt": "目标 ∞。在 ∅∞∪∞∩∞⊂ 中出现几次？",
-          "answer": 3,
-          "timeLimitMs": 25000
+          "prompt": "目标 ∞。在 ∅∞∪∩⊂⊃ 中出现几次？",
+          "answer": 1,
+          "timeLimitMs": 30400
         },
         {
           "id": "adult-psi-4",
           "type": "symbol_search",
-          "prompt": "目标 √。在 √π√e√2√φ 中出现几次？",
-          "answer": 4,
-          "timeLimitMs": 25000
+          "prompt": "目标 √。在 √π√e√2√φ√ 中出现几次？",
+          "answer": 5,
+          "timeLimitMs": 29600
         },
         {
           "id": "adult-psi-5",
           "type": "symbol_search",
-          "prompt": "目标 ∴。在 ∵∴∵∴∴∵ 中出现几次？",
+          "prompt": "目标 ∴。在 ∵∴∵∴∵∴ 中出现几次？",
           "answer": 3,
-          "timeLimitMs": 22000
+          "timeLimitMs": 28800
         },
         {
           "id": "adult-psi-6",
           "type": "symbol_search",
-          "prompt": "目标 ∂。在 ∇∂Δ∂∫∂∑ 中出现几次？",
-          "answer": 3,
-          "timeLimitMs": 22000
+          "prompt": "目标 ∂。在 ∇Δ∫∑∂ 中出现几次？",
+          "answer": 1,
+          "timeLimitMs": 28000
         },
         {
           "id": "adult-psi-7",
           "type": "symbol_search",
-          "prompt": "目标 ∈。在 ⊂∈∪∈∩∈∅ 中出现几次？",
-          "answer": 3,
-          "timeLimitMs": 20000
+          "prompt": "目标 ∈。在 ⊂∈∪∈∩∈∅∈ 中出现几次？",
+          "answer": 4,
+          "timeLimitMs": 27200
         },
         {
           "id": "adult-psi-8",
           "type": "symbol_search",
-          "prompt": "目标 ℵ。在 αℵβℵγδℵ 中出现几次？",
-          "answer": 3,
-          "timeLimitMs": 20000
+          "prompt": "目标 ℵ。在 αβγδℵε 中出现几次？",
+          "answer": 1,
+          "timeLimitMs": 26400
         },
         {
           "id": "adult-psi-9",
           "type": "symbol_search",
-          "prompt": "目标 ⊢。在 ⊨⊢⊥⊢⊤⊢∼ 中出现几次？",
+          "prompt": "目标 ⊢。在 ⊨⊢⊥⊢⊤⊢∼⊢ 中出现几次？",
+          "answer": 4,
+          "timeLimitMs": 25600
+        },
+        {
+          "id": "adult-psi-10",
+          "type": "symbol_search",
+          "prompt": "目标 ∀。在 ∃∀∃∀∃∀∀ 中出现几次？",
+          "answer": 4,
+          "timeLimitMs": 24800
+        },
+        {
+          "id": "adult-psi-11",
+          "type": "symbol_search",
+          "prompt": "目标 ⊆。在 ⊂⊆⊂⊆⊆⊃ 中出现几次？",
           "answer": 3,
-          "timeLimitMs": 18000
+          "timeLimitMs": 24000
+        },
+        {
+          "id": "adult-psi-12",
+          "type": "symbol_search",
+          "prompt": "目标 ∧。在 ∨∧∨∧∨∧∧ 中出现几次？",
+          "answer": 4,
+          "timeLimitMs": 23200
+        },
+        {
+          "id": "adult-psi-13",
+          "type": "symbol_search",
+          "prompt": "目标 ⊥。在 ⊤⊥⊤⊥⊥⊤ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 22400
+        },
+        {
+          "id": "adult-psi-14",
+          "type": "symbol_search",
+          "prompt": "目标 ≈。在 =≈≠≈≡≈∼ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 21600
+        },
+        {
+          "id": "adult-psi-15",
+          "type": "symbol_search",
+          "prompt": "目标 Ω。在 αΩβΩγδΩ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 20800
+        },
+        {
+          "id": "adult-psi-16",
+          "type": "symbol_search",
+          "prompt": "目标 ∅。在 ∅∪∅∩∅⊂∅ 中出现几次？",
+          "answer": 4,
+          "timeLimitMs": 20000
         }
       ]
     }
