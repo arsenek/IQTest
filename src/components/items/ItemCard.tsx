@@ -138,7 +138,11 @@ export function ChoiceCardButton({
           {image ? (
             // Decorative content glyph/image from pack fixtures.
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={image} alt="" className="h-10 w-10 object-contain md:h-12 md:w-12" />
+            <img
+              src={image}
+              alt=""
+              className="h-14 w-14 object-contain md:h-16 md:w-16"
+            />
           ) : (
             glyph
           )}

@@ -174,6 +174,7 @@ export function PracticeRoom({
             {current.type === "mcq" && current.choices && (
               <McqItem
                 prompt={current.prompt}
+                image={current.image}
                 choices={current.choices}
                 disabled={busy}
                 onAnswer={onAnswer}

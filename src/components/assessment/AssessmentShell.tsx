@@ -14,6 +14,7 @@ export type ShellItem = {
   id: string;
   type: ItemType;
   prompt: string;
+  image?: string;
   choices?: Choice[];
   timeLimitMs?: number;
   encodeMs?: number;
@@ -330,6 +331,7 @@ export function AssessmentShell({
             {current.type === "mcq" && current.choices && (
               <McqItem
                 prompt={current.prompt}
+                image={current.image}
                 choices={current.choices}
                 disabled={busy}
                 onAnswer={submitAnswer}

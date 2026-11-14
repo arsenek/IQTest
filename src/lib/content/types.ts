@@ -14,6 +14,8 @@ export type Item = {
   id: string;
   type: ItemType;
   prompt: string;
+  /** Optional stem figure (e.g. PRI matrix SVG URL). */
+  image?: string;
   choices?: Choice[];
   answer: string | number | string[];
   timeLimitMs?: number;
@@ -21,12 +23,16 @@ export type Item = {
   encodeMs?: number;
   /** After encode, hide the stem until the next item. */
   maskStem?: boolean;
+  /** Keep this item's relative order (used with subtest.ordered / digit_span). */
+  ordered?: boolean;
 };
 
 export type Subtest = {
   id: string;
   indexKey: IndexKey;
   title: string;
+  /** When true, within-subtest item order is preserved (e.g. WMI spans). */
+  ordered?: boolean;
   items: Item[];
 };
 

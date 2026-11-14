@@ -20,17 +20,20 @@ export const itemSchema = z.object({
   id: z.string().min(1),
   type: itemTypeSchema,
   prompt: z.string().min(1),
+  image: z.string().optional(),
   choices: z.array(choiceSchema).optional(),
   answer: z.union([z.string(), z.number(), z.array(z.string())]),
   timeLimitMs: z.number().int().positive().optional(),
   encodeMs: z.number().int().positive().optional(),
   maskStem: z.boolean().optional(),
+  ordered: z.boolean().optional(),
 });
 
 export const subtestSchema = z.object({
   id: z.string().min(1),
   indexKey: indexKeySchema,
   title: z.string().min(1),
+  ordered: z.boolean().optional(),
   // Production packs use ≥5; short e2e fixtures may use 1+.
   items: z.array(itemSchema).min(1),
 });
