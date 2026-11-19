@@ -53,7 +53,7 @@ describe("assessment session state machine", () => {
     expect(session.currentIndex).toBe(0);
     expect(session.playlistJson).toBeTruthy();
     const playlist = resolveSessionPlaylist(session);
-    expect(playlist.subtests).toHaveLength(4);
+    expect(playlist.subtests).toHaveLength(8);
   });
 
   it("two sessions with different seeds get different item order", async () => {
