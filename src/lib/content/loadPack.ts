@@ -4,19 +4,13 @@ import { contentPackSchema } from "./schemas";
 import type { ContentPack } from "./types";
 
 function packManifestPath(packId: string): string {
-  // packId e.g. "child/v1" → content/packs/child/v1/manifest.json
+  // "child/v1" → content/packs/child/v1/manifest.json
+  // "child/practice/v1" → content/packs/child/practice/v1/manifest.json
   const parts = packId.split("/").filter(Boolean);
-  if (parts.length !== 2) {
+  if (parts.length !== 2 && parts.length !== 3) {
     throw new Error(`Invalid pack id: ${packId}`);
   }
-  return path.join(
-    process.cwd(),
-    "content",
-    "packs",
-    parts[0],
-    parts[1],
-    "manifest.json",
-  );
+  return path.join(process.cwd(), "content", "packs", ...parts, "manifest.json");
 }
 
 export function loadPack(packId: string): ContentPack {

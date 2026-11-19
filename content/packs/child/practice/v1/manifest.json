@@ -1,0 +1,716 @@
+{
+  "id": "child/practice/v1",
+  "audience": "child",
+  "title": "儿童练习池 v1",
+  "subtests": [
+    {
+      "id": "child-prac-vci",
+      "indexKey": "VCI",
+      "title": "词语练习",
+      "items": [
+        {
+          "id": "child-prac-vci-1",
+          "type": "mcq",
+          "prompt": "「冰箱」主要用来？",
+          "choices": [
+            {
+              "label": "冷藏食物",
+              "glyph": "冷"
+            },
+            {
+              "label": "洗衣服",
+              "glyph": "洗"
+            },
+            {
+              "label": "浇花",
+              "glyph": "花"
+            },
+            {
+              "label": "开锁",
+              "glyph": "锁"
+            }
+          ],
+          "answer": "冷藏食物",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-vci-2",
+          "type": "mcq",
+          "prompt": "「夜晚」通常发生在？",
+          "choices": [
+            {
+              "label": "天黑之后",
+              "glyph": "夜"
+            },
+            {
+              "label": "中午最热时",
+              "glyph": "午"
+            },
+            {
+              "label": "刚起床时",
+              "glyph": "晨"
+            },
+            {
+              "label": "只在周一",
+              "glyph": "一"
+            }
+          ],
+          "answer": "天黑之后",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-vci-3",
+          "type": "mcq",
+          "prompt": "筷子对吃饭，就像笔对？",
+          "choices": [
+            {
+              "label": "写字",
+              "glyph": "写"
+            },
+            {
+              "label": "跑步",
+              "glyph": "跑"
+            },
+            {
+              "label": "游泳",
+              "glyph": "泳"
+            },
+            {
+              "label": "睡觉",
+              "glyph": "睡"
+            }
+          ],
+          "answer": "写字",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-vci-4",
+          "type": "mcq",
+          "prompt": "「温暖」的反义词更接近？",
+          "choices": [
+            {
+              "label": "寒冷",
+              "glyph": "寒"
+            },
+            {
+              "label": "明亮",
+              "glyph": "明"
+            },
+            {
+              "label": "巨大",
+              "glyph": "大"
+            },
+            {
+              "label": "柔软",
+              "glyph": "软"
+            }
+          ],
+          "answer": "寒冷",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-vci-5",
+          "type": "mcq",
+          "prompt": "消防车通常帮助？",
+          "choices": [
+            {
+              "label": "灭火救人",
+              "glyph": "火"
+            },
+            {
+              "label": "卖冰淇淋",
+              "glyph": "冰"
+            },
+            {
+              "label": "修理电脑",
+              "glyph": "电"
+            },
+            {
+              "label": "教拼音",
+              "glyph": "拼"
+            }
+          ],
+          "answer": "灭火救人",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-vci-6",
+          "type": "mcq",
+          "prompt": "鸟对飞，就像鱼对？",
+          "choices": [
+            {
+              "label": "游",
+              "glyph": "游"
+            },
+            {
+              "label": "跑",
+              "glyph": "跑"
+            },
+            {
+              "label": "爬树",
+              "glyph": "爬"
+            },
+            {
+              "label": "唱歌",
+              "glyph": "歌"
+            }
+          ],
+          "answer": "游",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-vci-7",
+          "type": "mcq",
+          "prompt": "「礼貌」指的是？",
+          "choices": [
+            {
+              "label": "对人客气有规矩",
+              "glyph": "礼"
+            },
+            {
+              "label": "跑得很快",
+              "glyph": "快"
+            },
+            {
+              "label": "声音很大",
+              "glyph": "响"
+            },
+            {
+              "label": "不睡觉",
+              "glyph": "醒"
+            }
+          ],
+          "answer": "对人客气有规矩",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-vci-8",
+          "type": "mcq",
+          "prompt": "晴天对太阳，就像雨天对？",
+          "choices": [
+            {
+              "label": "雨水",
+              "glyph": "雨"
+            },
+            {
+              "label": "月亮",
+              "glyph": "月"
+            },
+            {
+              "label": "雪人",
+              "glyph": "雪"
+            },
+            {
+              "label": "风筝",
+              "glyph": "筝"
+            }
+          ],
+          "answer": "雨水",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-vci-9",
+          "type": "mcq",
+          "prompt": "「厨房」最常用来？",
+          "choices": [
+            {
+              "label": "做饭",
+              "glyph": "饭"
+            },
+            {
+              "label": "睡觉",
+              "glyph": "睡"
+            },
+            {
+              "label": "洗澡",
+              "glyph": "浴"
+            },
+            {
+              "label": "停车",
+              "glyph": "车"
+            }
+          ],
+          "answer": "做饭",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-vci-10",
+          "type": "mcq",
+          "prompt": "冬天人们常穿？",
+          "choices": [
+            {
+              "label": "厚衣服",
+              "glyph": "衣"
+            },
+            {
+              "label": "泳装",
+              "glyph": "泳"
+            },
+            {
+              "label": "短裤",
+              "glyph": "短"
+            },
+            {
+              "label": "拖鞋去雪山",
+              "glyph": "拖"
+            }
+          ],
+          "answer": "厚衣服",
+          "timeLimitMs": 60000
+        }
+      ]
+    },
+    {
+      "id": "child-prac-pri",
+      "indexKey": "PRI",
+      "title": "图形练习",
+      "items": [
+        {
+          "id": "child-prac-pri-1",
+          "type": "mcq",
+          "prompt": "练习：圆方交替，下一个？",
+          "image": "/packs/child/practice/v1/media/prac-seq-01-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/child/practice/v1/media/prac-seq-01-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/child/practice/v1/media/prac-seq-01-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/child/practice/v1/media/prac-seq-01-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/child/practice/v1/media/prac-seq-01-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-pri-2",
+          "type": "mcq",
+          "prompt": "练习：空心实心交替？",
+          "image": "/packs/child/practice/v1/media/prac-seq-02-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/child/practice/v1/media/prac-seq-02-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/child/practice/v1/media/prac-seq-02-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/child/practice/v1/media/prac-seq-02-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/child/practice/v1/media/prac-seq-02-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-pri-3",
+          "type": "mcq",
+          "prompt": "练习：边越来越多？",
+          "image": "/packs/child/practice/v1/media/prac-seq-03-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/child/practice/v1/media/prac-seq-03-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/child/practice/v1/media/prac-seq-03-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/child/practice/v1/media/prac-seq-03-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/child/practice/v1/media/prac-seq-03-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-pri-4",
+          "type": "mcq",
+          "prompt": "练习：加号星星轮流？",
+          "image": "/packs/child/practice/v1/media/prac-seq-04-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/child/practice/v1/media/prac-seq-04-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/child/practice/v1/media/prac-seq-04-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/child/practice/v1/media/prac-seq-04-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/child/practice/v1/media/prac-seq-04-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-pri-5",
+          "type": "mcq",
+          "prompt": "练习：方菱交替？",
+          "image": "/packs/child/practice/v1/media/prac-seq-05-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/child/practice/v1/media/prac-seq-05-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/child/practice/v1/media/prac-seq-05-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/child/practice/v1/media/prac-seq-05-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/child/practice/v1/media/prac-seq-05-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-pri-6",
+          "type": "mcq",
+          "prompt": "练习：两个圆两个方接着？",
+          "image": "/packs/child/practice/v1/media/prac-seq-06-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/child/practice/v1/media/prac-seq-06-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/child/practice/v1/media/prac-seq-06-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/child/practice/v1/media/prac-seq-06-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/child/practice/v1/media/prac-seq-06-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-pri-7",
+          "type": "mcq",
+          "prompt": "练习：星星加号交替？",
+          "image": "/packs/child/practice/v1/media/prac-seq-07-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/child/practice/v1/media/prac-seq-07-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/child/practice/v1/media/prac-seq-07-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/child/practice/v1/media/prac-seq-07-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/child/practice/v1/media/prac-seq-07-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-pri-8",
+          "type": "mcq",
+          "prompt": "练习：空心实心三角？",
+          "image": "/packs/child/practice/v1/media/prac-seq-08-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/child/practice/v1/media/prac-seq-08-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/child/practice/v1/media/prac-seq-08-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/child/practice/v1/media/prac-seq-08-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/child/practice/v1/media/prac-seq-08-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-pri-9",
+          "type": "mcq",
+          "prompt": "练习：菱圆交替？",
+          "image": "/packs/child/practice/v1/media/prac-seq-09-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/child/practice/v1/media/prac-seq-09-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/child/practice/v1/media/prac-seq-09-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/child/practice/v1/media/prac-seq-09-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/child/practice/v1/media/prac-seq-09-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-prac-pri-10",
+          "type": "mcq",
+          "prompt": "练习：实心空心方？",
+          "image": "/packs/child/practice/v1/media/prac-seq-10-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/child/practice/v1/media/prac-seq-10-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/child/practice/v1/media/prac-seq-10-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/child/practice/v1/media/prac-seq-10-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/child/practice/v1/media/prac-seq-10-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 60000
+        }
+      ]
+    },
+    {
+      "id": "child-prac-wmi",
+      "indexKey": "WMI",
+      "title": "记忆练习",
+      "ordered": true,
+      "items": [
+        {
+          "id": "child-prac-wmi-1",
+          "type": "digit_span",
+          "prompt": "请按顺序复述：5、2",
+          "answer": "5-2",
+          "timeLimitMs": 45000,
+          "encodeMs": 4000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "child-prac-wmi-2",
+          "type": "digit_span",
+          "prompt": "请按顺序复述：8、1、4",
+          "answer": "8-1-4",
+          "timeLimitMs": 45000,
+          "encodeMs": 4500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "child-prac-wmi-3",
+          "type": "digit_span",
+          "prompt": "请按顺序复述：3、7、0、6",
+          "answer": "3-7-0-6",
+          "timeLimitMs": 45000,
+          "encodeMs": 5000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "child-prac-wmi-4",
+          "type": "digit_span",
+          "prompt": "请按顺序复述：9、2、5、1、8",
+          "answer": "9-2-5-1-8",
+          "timeLimitMs": 45000,
+          "encodeMs": 5500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "child-prac-wmi-5",
+          "type": "digit_span",
+          "prompt": "请倒序复述：4、7（从后往前说）",
+          "answer": "7-4",
+          "timeLimitMs": 45000,
+          "encodeMs": 4000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "child-prac-wmi-6",
+          "type": "digit_span",
+          "prompt": "请倒序复述：1、9、3（从后往前说）",
+          "answer": "3-9-1",
+          "timeLimitMs": 45000,
+          "encodeMs": 4500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "child-prac-wmi-7",
+          "type": "digit_span",
+          "prompt": "请倒序复述：6、2、8、5（从后往前说）",
+          "answer": "5-8-2-6",
+          "timeLimitMs": 45000,
+          "encodeMs": 5000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "child-prac-wmi-8",
+          "type": "digit_span",
+          "prompt": "请倒序复述：0、4、7、1、9（从后往前说）",
+          "answer": "9-1-7-4-0",
+          "timeLimitMs": 45000,
+          "encodeMs": 5500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "child-prac-wmi-9",
+          "type": "digit_span",
+          "prompt": "请按顺序复述：2、8、3、6、1、4",
+          "answer": "2-8-3-6-1-4",
+          "timeLimitMs": 45000,
+          "encodeMs": 6000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "child-prac-wmi-10",
+          "type": "digit_span",
+          "prompt": "请倒序复述：5、0、8、2、7、3（从后往前说）",
+          "answer": "3-7-2-8-0-5",
+          "timeLimitMs": 45000,
+          "encodeMs": 6000,
+          "maskStem": true,
+          "ordered": true
+        }
+      ]
+    },
+    {
+      "id": "child-prac-psi",
+      "indexKey": "PSI",
+      "title": "速度练习",
+      "items": [
+        {
+          "id": "child-prac-psi-1",
+          "type": "symbol_search",
+          "prompt": "目标○。在 ●○◎○● 中出现几次？",
+          "answer": 2,
+          "timeLimitMs": 30000
+        },
+        {
+          "id": "child-prac-psi-2",
+          "type": "symbol_search",
+          "prompt": "目标△。在 △□△○△■ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 29000
+        },
+        {
+          "id": "child-prac-psi-3",
+          "type": "symbol_search",
+          "prompt": "目标★。在 ☆★●★☆ 中出现几次？",
+          "answer": 2,
+          "timeLimitMs": 28000
+        },
+        {
+          "id": "child-prac-psi-4",
+          "type": "symbol_search",
+          "prompt": "目标■。在 □■◆■□▲ 中出现几次？",
+          "answer": 2,
+          "timeLimitMs": 27000
+        },
+        {
+          "id": "child-prac-psi-5",
+          "type": "symbol_search",
+          "prompt": "目标＋。在 ×＋÷＋＝ 中出现几次？",
+          "answer": 2,
+          "timeLimitMs": 26000
+        },
+        {
+          "id": "child-prac-psi-6",
+          "type": "symbol_search",
+          "prompt": "目标◇。在 ◆◇○◇◆◇ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 25000
+        },
+        {
+          "id": "child-prac-psi-7",
+          "type": "symbol_search",
+          "prompt": "目标▲。在 △▼▲◆▲△ 中出现几次？",
+          "answer": 2,
+          "timeLimitMs": 24000
+        },
+        {
+          "id": "child-prac-psi-8",
+          "type": "symbol_search",
+          "prompt": "目标※。在 ＊＃※＊＃※ 中出现几次？",
+          "answer": 2,
+          "timeLimitMs": 23000
+        },
+        {
+          "id": "child-prac-psi-9",
+          "type": "symbol_search",
+          "prompt": "目标◎。在 ○●◎○◎● 中出现几次？",
+          "answer": 2,
+          "timeLimitMs": 22000
+        },
+        {
+          "id": "child-prac-psi-10",
+          "type": "symbol_search",
+          "prompt": "目标▼。在 ▲▼▲▼▼◆ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 21000
+        }
+      ]
+    }
+  ]
+}
