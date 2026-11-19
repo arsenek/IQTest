@@ -38,31 +38,35 @@ body {
   --card-timer-fill: var(--assess-accent);
 }
 
-/* Child: playful game-card feel */
+/* Child: deeper playful game-card feel (brighter field, chunkier type/motion) */
 .skin-child {
-  --assess-bg: #dff7f2;
-  --assess-fg: #0b3b36;
-  --assess-muted: #3a6f69;
-  --assess-border: #7ec9bf;
+  --assess-bg: radial-gradient(120% 80% at 10% 0%, #fff7d6 0%, transparent 45%),
+    radial-gradient(90% 70% at 100% 10%, #b8f3ff 0%, transparent 40%),
+    linear-gradient(180deg, #c8f6ee 0%, #9ee8dc 48%, #dff7f2 100%);
+  --assess-fg: #07352f;
+  --assess-muted: #2f6a63;
+  --assess-border: #4fb8ab;
   --assess-surface: #ffffff;
-  --assess-panel: #fffdf7;
-  --assess-header: rgba(255, 253, 247, 0.92);
-  --assess-track: #bfe8e1;
-  --assess-accent: #0f9f90;
+  --assess-panel: #fffef8;
+  --assess-header: rgba(255, 252, 240, 0.94);
+  --assess-track: #9edfd5;
+  --assess-accent: #0b8f80;
   --assess-accent-fg: #ffffff;
-  --assess-accent-soft: #c8f3ec;
-  --assess-radius: 1.5rem;
-  --assess-shadow: 0 12px 28px rgba(15, 159, 144, 0.18),
-    0 2px 0 rgba(15, 159, 144, 0.12);
-  --card-shadow: 0 14px 32px rgba(15, 159, 144, 0.16),
-    0 3px 0 #5bb5aa;
-  --card-shadow-active: 0 10px 24px rgba(15, 159, 144, 0.28),
-    0 2px 0 #0f9f90;
-  --card-stem-bg: linear-gradient(180deg, #ffffff 0%, #eefcf9 100%);
+  --assess-accent-soft: #c4f5ec;
+  --assess-radius: 1.75rem;
+  --assess-shadow: 0 16px 36px rgba(11, 143, 128, 0.22),
+    0 3px 0 rgba(11, 143, 128, 0.16);
+  --card-shadow: 0 16px 34px rgba(11, 143, 128, 0.18),
+    0 4px 0 #49b3a6;
+  --card-shadow-active: 0 12px 26px rgba(11, 143, 128, 0.3),
+    0 3px 0 #0b8f80;
+  --card-stem-bg: linear-gradient(180deg, #ffffff 0%, #e7fbf6 100%);
   --card-choice-bg: #ffffff;
-  --card-glyph-bg: #e6faf6;
-  --card-mask-bg: color-mix(in srgb, #0f9f90 18%, #fffdf7);
+  --card-glyph-bg: #d9f8f1;
+  --card-mask-bg: color-mix(in srgb, #0b8f80 22%, #fffef8);
   --card-timer-fill: #f59e0b;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
 }
 
 /* Adult: clean information cards */
@@ -97,12 +101,45 @@ body {
 
 .skin-child .choice-card {
   transform: translateY(0);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
 .skin-child .choice-card:hover:not(:disabled) {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.01);
+}
+
+.skin-child .choice-card:active:not(:disabled) {
+  transform: translateY(0) scale(0.99);
+}
+
+.skin-child [data-testid="subtest-intro"] {
+  animation: child-intro-pop 420ms ease-out;
+}
+
+.skin-child [data-testid="subtest-intro-start"] {
+  box-shadow: 0 8px 0 color-mix(in srgb, var(--assess-accent) 70%, #04574d);
+}
+
+.skin-child [data-testid="subtest-intro-start"]:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--assess-accent) 70%, #04574d);
+}
+
+@keyframes child-intro-pop {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .skin-adult .choice-card {
   letter-spacing: 0.01em;
+}
+
+.skin-adult [data-testid="subtest-intro"] {
+  border: 1px solid var(--assess-border);
 }

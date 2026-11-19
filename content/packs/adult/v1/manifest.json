@@ -411,6 +411,188 @@
       ]
     },
     {
+      "id": "adult-vci-analogy",
+      "indexKey": "VCI",
+      "title": "类比与常识",
+      "items": [
+        {
+          "id": "adult-vci2-1",
+          "type": "mcq",
+          "prompt": "「医生」之于「医院」，最接近「法官」之于？",
+          "choices": [
+            {
+              "label": "法院",
+              "glyph": "院"
+            },
+            {
+              "label": "药房",
+              "glyph": "药"
+            },
+            {
+              "label": "教室",
+              "glyph": "教"
+            },
+            {
+              "label": "剧院",
+              "glyph": "剧"
+            }
+          ],
+          "answer": "法院",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-vci2-2",
+          "type": "mcq",
+          "prompt": "「储蓄」与「消费」的关系最接近？",
+          "choices": [
+            {
+              "label": "积累与支出",
+              "glyph": "↔"
+            },
+            {
+              "label": "同义替换",
+              "glyph": "="
+            },
+            {
+              "label": "颜色对比",
+              "glyph": "色"
+            },
+            {
+              "label": "空间方位",
+              "glyph": "方"
+            }
+          ],
+          "answer": "积累与支出",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-vci2-3",
+          "type": "mcq",
+          "prompt": "在公共场所大声喧哗通常被视为？",
+          "choices": [
+            {
+              "label": "对他人的干扰",
+              "glyph": "扰"
+            },
+            {
+              "label": "高效沟通",
+              "glyph": "效"
+            },
+            {
+              "label": "法律义务",
+              "glyph": "法"
+            },
+            {
+              "label": "医疗程序",
+              "glyph": "医"
+            }
+          ],
+          "answer": "对他人的干扰",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-vci2-4",
+          "type": "mcq",
+          "prompt": "「显微镜」之于「微观」，好比「望远镜」之于？",
+          "choices": [
+            {
+              "label": "宏观/远距",
+              "glyph": "远"
+            },
+            {
+              "label": "听觉",
+              "glyph": "听"
+            },
+            {
+              "label": "气味",
+              "glyph": "嗅"
+            },
+            {
+              "label": "温度",
+              "glyph": "温"
+            }
+          ],
+          "answer": "宏观/远距",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-vci2-5",
+          "type": "mcq",
+          "prompt": "火灾时优先行动通常是？",
+          "choices": [
+            {
+              "label": "确保人员安全撤离",
+              "glyph": "撤"
+            },
+            {
+              "label": "先整理文件",
+              "glyph": "文"
+            },
+            {
+              "label": "关闭所有电源后拍照",
+              "glyph": "拍"
+            },
+            {
+              "label": "等待陌生人指示再行动",
+              "glyph": "等"
+            }
+          ],
+          "answer": "确保人员安全撤离",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-vci2-6",
+          "type": "mcq",
+          "prompt": "「前提」与「结论」的关系最像？",
+          "choices": [
+            {
+              "label": "依据与推导结果",
+              "glyph": "→"
+            },
+            {
+              "label": "同义词对",
+              "glyph": "="
+            },
+            {
+              "label": "左右对称",
+              "glyph": "⇔"
+            },
+            {
+              "label": "随机配对",
+              "glyph": "?"
+            }
+          ],
+          "answer": "依据与推导结果",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-vci2-7",
+          "type": "mcq",
+          "prompt": "「稀缺资源」在决策中意味着？",
+          "choices": [
+            {
+              "label": "需要权衡取舍",
+              "glyph": "权"
+            },
+            {
+              "label": "可以无限使用",
+              "glyph": "∞"
+            },
+            {
+              "label": "无需定价",
+              "glyph": "0"
+            },
+            {
+              "label": "只存在于理论",
+              "glyph": "理"
+            }
+          ],
+          "answer": "需要权衡取舍",
+          "timeLimitMs": 55000
+        }
+      ]
+    },
+    {
       "id": "adult-pri-matrix",
       "indexKey": "PRI",
       "title": "图形推理",
@@ -834,6 +1016,195 @@
       ]
     },
     {
+      "id": "adult-pri-sequence",
+      "indexKey": "PRI",
+      "title": "图形序列与补全",
+      "items": [
+        {
+          "id": "adult-pri2-1",
+          "type": "mcq",
+          "prompt": "按交替规律，序列下一项是？",
+          "image": "/packs/adult/v1/media/seq-01-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/seq-01-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/seq-01-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/seq-01-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/seq-01-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-pri2-2",
+          "type": "mcq",
+          "prompt": "空心与实心交替，缺项为？",
+          "image": "/packs/adult/v1/media/seq-02-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/seq-02-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/seq-02-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/seq-02-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/seq-02-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-pri2-3",
+          "type": "mcq",
+          "prompt": "边数递增序列，下一项是？",
+          "image": "/packs/adult/v1/media/seq-03-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/seq-03-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/seq-03-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/seq-03-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/seq-03-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-pri2-4",
+          "type": "mcq",
+          "prompt": "两种符号交替，缺项为？",
+          "image": "/packs/adult/v1/media/seq-04-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/seq-04-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/seq-04-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/seq-04-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/seq-04-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-pri2-5",
+          "type": "mcq",
+          "prompt": "方形与菱形交替，补全缺项。",
+          "image": "/packs/adult/v1/media/seq-05-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/seq-05-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/seq-05-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/seq-05-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/seq-05-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-pri2-6",
+          "type": "mcq",
+          "prompt": "成对重复模式，下一项是？",
+          "image": "/packs/adult/v1/media/seq-06-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/seq-06-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/seq-06-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/seq-06-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/seq-06-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-pri2-7",
+          "type": "mcq",
+          "prompt": "双环与实心圆交替，缺项？",
+          "image": "/packs/adult/v1/media/seq-07-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/v1/media/seq-07-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/v1/media/seq-07-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/v1/media/seq-07-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/v1/media/seq-07-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        }
+      ]
+    },
+    {
       "id": "adult-wmi-digits",
       "indexKey": "WMI",
       "title": "数字广度",
@@ -1002,6 +1373,84 @@
       ]
     },
     {
+      "id": "adult-wmi-reverse-short",
+      "indexKey": "WMI",
+      "title": "反向数字短梯",
+      "ordered": true,
+      "items": [
+        {
+          "id": "adult-wmi2-1",
+          "type": "digit_span",
+          "prompt": "请倒序复述：7、2、9（从后往前）",
+          "answer": "9-2-7",
+          "timeLimitMs": 45000,
+          "encodeMs": 4500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-wmi2-2",
+          "type": "digit_span",
+          "prompt": "请倒序复述：1、8、4、6（从后往前）",
+          "answer": "6-4-8-1",
+          "timeLimitMs": 45000,
+          "encodeMs": 5000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-wmi2-3",
+          "type": "digit_span",
+          "prompt": "请倒序复述：5、0、3、9、2（从后往前）",
+          "answer": "2-9-3-0-5",
+          "timeLimitMs": 45000,
+          "encodeMs": 5500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-wmi2-4",
+          "type": "digit_span",
+          "prompt": "请倒序复述：8、4、1、7、0、6（从后往前）",
+          "answer": "6-0-7-1-4-8",
+          "timeLimitMs": 45000,
+          "encodeMs": 6000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-wmi2-5",
+          "type": "digit_span",
+          "prompt": "请倒序复述：2、9、5、3、8、1、4（从后往前）",
+          "answer": "4-1-8-3-5-9-2",
+          "timeLimitMs": 45000,
+          "encodeMs": 6500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-wmi2-6",
+          "type": "digit_span",
+          "prompt": "请倒序复述：6、1、8、0、4、9、3、7（从后往前）",
+          "answer": "7-3-9-4-0-8-1-6",
+          "timeLimitMs": 45000,
+          "encodeMs": 7000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-wmi2-7",
+          "type": "digit_span",
+          "prompt": "请倒序复述：9、3、7、1、5、0、8、2、6（从后往前）",
+          "answer": "6-2-8-0-5-1-7-3-9",
+          "timeLimitMs": 45000,
+          "encodeMs": 7500,
+          "maskStem": true,
+          "ordered": true
+        }
+      ]
+    },
+    {
       "id": "adult-psi-symbols",
       "indexKey": "PSI",
       "title": "符号搜索",
@@ -1117,6 +1566,62 @@
           "prompt": "目标 ∅。在 ∅∪∅∩∅⊂∅ 中出现几次？",
           "answer": 4,
           "timeLimitMs": 20000
+        }
+      ]
+    },
+    {
+      "id": "adult-psi-pairing",
+      "indexKey": "PSI",
+      "title": "符号配对与计数",
+      "items": [
+        {
+          "id": "adult-psi2-1",
+          "type": "symbol_search",
+          "prompt": "配对计数：目标※。在 ＊＃※＃＊※＃ 中目标出现几次？",
+          "answer": 2,
+          "timeLimitMs": 28000
+        },
+        {
+          "id": "adult-psi2-2",
+          "type": "symbol_search",
+          "prompt": "快速扫描：目标◇。序列 ◆◇○◇◆◇○◇ 中出现几次？",
+          "answer": 4,
+          "timeLimitMs": 26000
+        },
+        {
+          "id": "adult-psi2-3",
+          "type": "symbol_search",
+          "prompt": "配对：目标▲。在 △▼▲◆▲△▼▲ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 24000
+        },
+        {
+          "id": "adult-psi2-4",
+          "type": "symbol_search",
+          "prompt": "计数变体：目标＋。在 ×÷＋＝＋－＋× 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 22000
+        },
+        {
+          "id": "adult-psi2-5",
+          "type": "symbol_search",
+          "prompt": "扫描：目标◎。在 ○●◎○◎●◎○ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 21000
+        },
+        {
+          "id": "adult-psi2-6",
+          "type": "symbol_search",
+          "prompt": "配对计数：目标■。在 □■◆□■▲■□ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 20000
+        },
+        {
+          "id": "adult-psi2-7",
+          "type": "symbol_search",
+          "prompt": "快速配对：目标★。在 ☆★●★☆■★☆ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 18000
         }
       ]
     }

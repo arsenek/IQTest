@@ -46,6 +46,7 @@ export default async function AssessPage({ params }: PageProps) {
   const items: ShellItem[] = flattenPack(playlist).map((row) => ({
     globalIndex: row.globalIndex,
     subtestId: row.subtestId,
+    subtestTitle: row.subtestTitle,
     indexKey: row.indexKey,
     id: row.item.id,
     type: row.item.type,

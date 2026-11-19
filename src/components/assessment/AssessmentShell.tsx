@@ -5,11 +5,16 @@ import { useRouter } from "next/navigation";
 import { McqItem, type ItemAnswer } from "@/components/items/McqItem";
 import { DigitSpanItem } from "@/components/items/DigitSpanItem";
 import { SymbolSearchItem } from "@/components/items/SymbolSearchItem";
+import {
+  SubtestIntro,
+  helpForSubtest,
+} from "@/components/assessment/SubtestIntro";
 import type { Choice, ItemType } from "@/lib/content/types";
 
 export type ShellItem = {
   globalIndex: number;
   subtestId: string;
+  subtestTitle: string;
   indexKey: string;
   id: string;
   type: ItemType;
@@ -30,7 +35,7 @@ type AssessmentShellProps = {
   initialStatus: "IN_PROGRESS" | "SUBMITTED" | "ABANDONED";
 };
 
-type Phase = "active" | "paused" | "submitting" | "done" | "error";
+type Phase = "intro" | "active" | "paused" | "submitting" | "done" | "error";
 
 export function AssessmentShell({
   sessionId,
@@ -42,9 +47,10 @@ export function AssessmentShell({
 }: AssessmentShellProps) {
   const router = useRouter();
   const [index, setIndex] = useState(initialIndex);
-  const [phase, setPhase] = useState<Phase>(
-    initialStatus === "SUBMITTED" ? "done" : "active",
-  );
+  const [phase, setPhase] = useState<Phase>(() => {
+    if (initialStatus === "SUBMITTED") return "done";
+    return "intro";
+  });
   const [error, setError] = useState<string | null>(null);
   const [retryable, setRetryable] = useState(false);
   const [remainingMs, setRemainingMs] = useState<number | null>(null);
@@ -55,14 +61,31 @@ export function AssessmentShell({
   const pendingAnswerRef = useRef<ItemAnswer | null>(null);
   /** After answer POST succeeds but final submit fails, retry only submit. */
   const pendingSubmitOnlyRef = useRef(false);
+  const introSeenRef = useRef<Set<string>>(new Set());
 
   const total = items.length;
   const current = index < total ? items[index] : null;
   const progress = total === 0 ? 100 : Math.min(100, (index / total) * 100);
 
-  // Reset per-item timer budget when the item changes.
+  // Show intro whenever the subtest changes (and not yet dismissed this visit).
+  useEffect(() => {
+    if (initialStatus === "SUBMITTED") return;
+    if (!current) return;
+    if (introSeenRef.current.has(current.subtestId)) {
+      setPhase((prev) => (prev === "intro" ? "active" : prev));
+      return;
+    }
+    setPhase("intro");
+  }, [current?.subtestId, initialStatus, current]);
+
+  // Reset per-item timer budget when the item changes (skip while intro).
   useEffect(() => {
     timedOutRef.current = false;
+    if (phase === "intro") {
+      budgetRef.current = null;
+      setRemainingMs(null);
+      return;
+    }
     if (!current?.timeLimitMs) {
       budgetRef.current = null;
       setRemainingMs(null);
@@ -70,7 +93,7 @@ export function AssessmentShell({
     }
     budgetRef.current = current.timeLimitMs;
     setRemainingMs(current.timeLimitMs);
-  }, [current?.id, current?.timeLimitMs]);
+  }, [current?.id, current?.timeLimitMs, phase]);
 
   // Tick only while active; pause freezes remainingMs.
   useEffect(() => {
@@ -109,7 +132,8 @@ export function AssessmentShell({
 
   const submitAnswer = useCallback(
     async (answer: ItemAnswer) => {
-      if (!current || submittingRef.current || phase === "paused") return;
+      if (!current || submittingRef.current || phase === "paused" || phase === "intro")
+        return;
       submittingRef.current = true;
       pendingAnswerRef.current = answer;
       pendingSubmitOnlyRef.current = false;
@@ -151,6 +175,7 @@ export function AssessmentShell({
         pendingAnswerRef.current = null;
         setIndex(nextIndex);
         startedAtRef.current = Date.now();
+        // Intro effect will switch to intro if subtest changed.
         setPhase("active");
       } catch (err) {
         const retry =
@@ -225,6 +250,13 @@ export function AssessmentShell({
     }
   }
 
+  function startSubtest() {
+    if (!current) return;
+    introSeenRef.current.add(current.subtestId);
+    startedAtRef.current = Date.now();
+    setPhase("active");
+  }
+
   const skinClass = audience === "child" ? "skin-child" : "skin-adult";
   const busy = phase === "submitting";
 
@@ -267,7 +299,9 @@ export function AssessmentShell({
             </h1>
           </div>
           <div className="flex items-center gap-3 md:gap-4">
-            {current?.timeLimitMs != null && remainingMs != null && (
+            {phase !== "intro" &&
+              current?.timeLimitMs != null &&
+              remainingMs != null && (
               <div
                 className="rounded-full bg-[var(--assess-surface)] px-4 py-2 font-mono text-sm font-semibold text-[var(--assess-fg)] md:text-base"
                 aria-live="polite"
@@ -278,7 +312,7 @@ export function AssessmentShell({
             <button
               type="button"
               onClick={togglePause}
-              disabled={busy || phase === "error"}
+              disabled={busy || phase === "error" || phase === "intro"}
               className="min-h-11 min-w-24 rounded-[var(--assess-radius)] border-2 border-[var(--assess-border)] bg-[var(--assess-surface)] px-4 text-sm font-medium text-[var(--assess-fg)] disabled:opacity-50 md:min-h-12 md:text-base"
             >
               {phase === "paused" ? "继续" : "暂停"}
@@ -303,13 +337,27 @@ export function AssessmentShell({
             进度 {Math.min(index + 1, total)} / {total}
           </span>
           {current && (
-            <span className="font-medium text-[var(--assess-fg)]">
-              {current.indexKey}
+            <span
+              data-testid="assess-subtest-title"
+              className="truncate font-medium text-[var(--assess-fg)]"
+            >
+              {current.subtestTitle}
+              <span className="ml-2 text-[var(--assess-muted)]">
+                {current.indexKey}
+              </span>
             </span>
           )}
         </div>
 
-        {phase === "paused" ? (
+        {phase === "intro" && current ? (
+          <SubtestIntro
+            audience={audience}
+            title={current.subtestTitle}
+            help={helpForSubtest(current.subtestId, audience)}
+            indexKey={current.indexKey}
+            onStart={startSubtest}
+          />
+        ) : phase === "paused" ? (
           <div className="flex flex-1 flex-col items-center justify-center gap-4 rounded-[var(--assess-radius)] border-2 border-dashed border-[var(--assess-border)] bg-[var(--assess-surface)] px-6 py-16 text-center">
             <p className="text-xl font-semibold text-[var(--assess-fg)] md:text-2xl">
               已暂停

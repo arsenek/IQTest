@@ -411,6 +411,188 @@
       ]
     },
     {
+      "id": "child-vci-analogy",
+      "indexKey": "VCI",
+      "title": "类比与常识",
+      "items": [
+        {
+          "id": "child-vci2-1",
+          "type": "mcq",
+          "prompt": "鸟对天空，就像鱼对？",
+          "choices": [
+            {
+              "label": "水",
+              "glyph": "水"
+            },
+            {
+              "label": "树",
+              "glyph": "树"
+            },
+            {
+              "label": "石头",
+              "glyph": "石"
+            },
+            {
+              "label": "火",
+              "glyph": "火"
+            }
+          ],
+          "answer": "水",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-vci2-2",
+          "type": "mcq",
+          "prompt": "手套主要保护哪一部分？",
+          "choices": [
+            {
+              "label": "手",
+              "glyph": "手"
+            },
+            {
+              "label": "脚",
+              "glyph": "脚"
+            },
+            {
+              "label": "耳朵",
+              "glyph": "耳"
+            },
+            {
+              "label": "牙齿",
+              "glyph": "牙"
+            }
+          ],
+          "answer": "手",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-vci2-3",
+          "type": "mcq",
+          "prompt": "红绿灯里，红灯通常表示？",
+          "choices": [
+            {
+              "label": "停下",
+              "glyph": "停"
+            },
+            {
+              "label": "加速",
+              "glyph": "速"
+            },
+            {
+              "label": "倒车",
+              "glyph": "倒"
+            },
+            {
+              "label": "鸣笛",
+              "glyph": "笛"
+            }
+          ],
+          "answer": "停下",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-vci2-4",
+          "type": "mcq",
+          "prompt": "铅笔对写字，就像剪刀对？",
+          "choices": [
+            {
+              "label": "剪东西",
+              "glyph": "剪"
+            },
+            {
+              "label": "喝水",
+              "glyph": "喝"
+            },
+            {
+              "label": "睡觉",
+              "glyph": "睡"
+            },
+            {
+              "label": "唱歌",
+              "glyph": "歌"
+            }
+          ],
+          "answer": "剪东西",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-vci2-5",
+          "type": "mcq",
+          "prompt": "为什么夏天人们更爱喝水？",
+          "choices": [
+            {
+              "label": "身体更容易出汗失水",
+              "glyph": "汗"
+            },
+            {
+              "label": "水会自己变热",
+              "glyph": "热"
+            },
+            {
+              "label": "冬天没有水",
+              "glyph": "冬"
+            },
+            {
+              "label": "水能当玩具",
+              "glyph": "玩"
+            }
+          ],
+          "answer": "身体更容易出汗失水",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-vci2-6",
+          "type": "mcq",
+          "prompt": "猫对喵喵，就像狗对？",
+          "choices": [
+            {
+              "label": "汪汪",
+              "glyph": "汪"
+            },
+            {
+              "label": "呱呱",
+              "glyph": "蛙"
+            },
+            {
+              "label": "嗡嗡",
+              "glyph": "蜂"
+            },
+            {
+              "label": "嘶嘶",
+              "glyph": "蛇"
+            }
+          ],
+          "answer": "汪汪",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-vci2-7",
+          "type": "mcq",
+          "prompt": "书包主要用来做什么？",
+          "choices": [
+            {
+              "label": "装书本和学习用品",
+              "glyph": "书"
+            },
+            {
+              "label": "做饭",
+              "glyph": "饭"
+            },
+            {
+              "label": "浇花",
+              "glyph": "花"
+            },
+            {
+              "label": "开锁",
+              "glyph": "锁"
+            }
+          ],
+          "answer": "装书本和学习用品",
+          "timeLimitMs": 60000
+        }
+      ]
+    },
+    {
       "id": "child-pri-matrix",
       "indexKey": "PRI",
       "title": "图形推理",
@@ -834,6 +1016,195 @@
       ]
     },
     {
+      "id": "child-pri-sequence",
+      "indexKey": "PRI",
+      "title": "图形序列",
+      "items": [
+        {
+          "id": "child-pri2-1",
+          "type": "mcq",
+          "prompt": "按圆—方交替，下一项是？",
+          "image": "/packs/child/v1/media/seq-01-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/child/v1/media/seq-01-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/child/v1/media/seq-01-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/child/v1/media/seq-01-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/child/v1/media/seq-01-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-pri2-2",
+          "type": "mcq",
+          "prompt": "空心—实心交替，缺的是？",
+          "image": "/packs/child/v1/media/seq-02-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/child/v1/media/seq-02-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/child/v1/media/seq-02-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/child/v1/media/seq-02-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/child/v1/media/seq-02-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-pri2-3",
+          "type": "mcq",
+          "prompt": "边数越来越多，下一项？",
+          "image": "/packs/child/v1/media/seq-03-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/child/v1/media/seq-03-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/child/v1/media/seq-03-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/child/v1/media/seq-03-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/child/v1/media/seq-03-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-pri2-4",
+          "type": "mcq",
+          "prompt": "加号和星星轮流出现，下一个？",
+          "image": "/packs/child/v1/media/seq-04-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/child/v1/media/seq-04-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/child/v1/media/seq-04-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/child/v1/media/seq-04-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/child/v1/media/seq-04-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-pri2-5",
+          "type": "mcq",
+          "prompt": "方—菱交替，缺格是？",
+          "image": "/packs/child/v1/media/seq-05-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/child/v1/media/seq-05-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/child/v1/media/seq-05-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/child/v1/media/seq-05-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/child/v1/media/seq-05-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-pri2-6",
+          "type": "mcq",
+          "prompt": "两个圆、两个方，接着是？",
+          "image": "/packs/child/v1/media/seq-06-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/child/v1/media/seq-06-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/child/v1/media/seq-06-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/child/v1/media/seq-06-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/child/v1/media/seq-06-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 60000
+        },
+        {
+          "id": "child-pri2-7",
+          "type": "mcq",
+          "prompt": "双环—实心圆交替，下一个？",
+          "image": "/packs/child/v1/media/seq-07-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/child/v1/media/seq-07-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/child/v1/media/seq-07-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/child/v1/media/seq-07-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/child/v1/media/seq-07-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 60000
+        }
+      ]
+    },
+    {
       "id": "child-wmi-digits",
       "indexKey": "WMI",
       "title": "数字广度",
@@ -1002,6 +1373,84 @@
       ]
     },
     {
+      "id": "child-wmi-reverse-short",
+      "indexKey": "WMI",
+      "title": "反向数字短梯",
+      "ordered": true,
+      "items": [
+        {
+          "id": "child-wmi2-1",
+          "type": "digit_span",
+          "prompt": "请倒序复述：6、1（从后往前说）",
+          "answer": "1-6",
+          "timeLimitMs": 45000,
+          "encodeMs": 4000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "child-wmi2-2",
+          "type": "digit_span",
+          "prompt": "请倒序复述：8、3、5（从后往前说）",
+          "answer": "5-3-8",
+          "timeLimitMs": 45000,
+          "encodeMs": 4500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "child-wmi2-3",
+          "type": "digit_span",
+          "prompt": "请倒序复述：2、9、4、7（从后往前说）",
+          "answer": "7-4-9-2",
+          "timeLimitMs": 45000,
+          "encodeMs": 5000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "child-wmi2-4",
+          "type": "digit_span",
+          "prompt": "请倒序复述：1、6、3、8、5（从后往前说）",
+          "answer": "5-8-3-6-1",
+          "timeLimitMs": 45000,
+          "encodeMs": 5500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "child-wmi2-5",
+          "type": "digit_span",
+          "prompt": "请倒序复述：9、2、7、4、0、6（从后往前说）",
+          "answer": "6-0-4-7-2-9",
+          "timeLimitMs": 45000,
+          "encodeMs": 6000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "child-wmi2-6",
+          "type": "digit_span",
+          "prompt": "请倒序复述：4、8、1、5、9、2、7（从后往前说）",
+          "answer": "7-2-9-5-1-8-4",
+          "timeLimitMs": 45000,
+          "encodeMs": 6500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "child-wmi2-7",
+          "type": "digit_span",
+          "prompt": "请倒序复述：3、0、6、9、1、8、4、2（从后往前说）",
+          "answer": "2-4-8-1-9-6-0-3",
+          "timeLimitMs": 45000,
+          "encodeMs": 7000,
+          "maskStem": true,
+          "ordered": true
+        }
+      ]
+    },
+    {
       "id": "child-psi-symbols",
       "indexKey": "PSI",
       "title": "符号搜索",
@@ -1116,6 +1565,62 @@
           "type": "symbol_search",
           "prompt": "目标★。在 ☆★☆●★☆■ 中出现几次？",
           "answer": 2,
+          "timeLimitMs": 20000
+        }
+      ]
+    },
+    {
+      "id": "child-psi-pairing",
+      "indexKey": "PSI",
+      "title": "符号配对",
+      "items": [
+        {
+          "id": "child-psi2-1",
+          "type": "symbol_search",
+          "prompt": "配对：左边是☆，右边应选哪个？在 ★☆●■ 中找与目标相同的符号，它出现几次？目标☆",
+          "answer": 1,
+          "timeLimitMs": 32000
+        },
+        {
+          "id": "child-psi2-2",
+          "type": "symbol_search",
+          "prompt": "数一数：▲ 在 ▲△▲○▲■ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 30000
+        },
+        {
+          "id": "child-psi2-3",
+          "type": "symbol_search",
+          "prompt": "配对计数：目标◇。序列 ◆◇○◇◆◇ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 28000
+        },
+        {
+          "id": "child-psi2-4",
+          "type": "symbol_search",
+          "prompt": "快速配对：目标＋。在 ×＋÷＋＝－ 中出现几次？",
+          "answer": 2,
+          "timeLimitMs": 26000
+        },
+        {
+          "id": "child-psi2-5",
+          "type": "symbol_search",
+          "prompt": "数一数：○ 在 ●◎○●○◎○○ 中出现几次？",
+          "answer": 4,
+          "timeLimitMs": 24000
+        },
+        {
+          "id": "child-psi2-6",
+          "type": "symbol_search",
+          "prompt": "配对：目标■。在 □■◆■□▲■ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 22000
+        },
+        {
+          "id": "child-psi2-7",
+          "type": "symbol_search",
+          "prompt": "计数变体：目标※。在 ＊＃※＊※＃※ 中出现几次？",
+          "answer": 3,
           "timeLimitMs": 20000
         }
       ]

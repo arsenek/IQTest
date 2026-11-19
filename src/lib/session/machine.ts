@@ -60,6 +60,7 @@ export type AnswerPayload = {
 export type FlatItem = {
   globalIndex: number;
   subtestId: string;
+  subtestTitle: string;
   indexKey: IndexKey;
   item: Item;
 };
@@ -86,6 +87,7 @@ export function flattenPack(pack: ContentPack): FlatItem[] {
       out.push({
         globalIndex: out.length,
         subtestId: subtest.id,
+        subtestTitle: subtest.title,
         indexKey: subtest.indexKey,
         item,
       });

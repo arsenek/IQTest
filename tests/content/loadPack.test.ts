@@ -14,14 +14,37 @@ function countByIndex(packId: string) {
   return { pack, counts };
 }
 
+function subtestsByIndex(packId: string, key: string) {
+  return loadPack(packId).subtests.filter((s) => s.indexKey === key);
+}
+
 describe("loadPack", () => {
-  it("child/v1 exposes VCI PRI WMI PSI with ≥16 items each", () => {
+  it("child/v1 exposes dual cores per index (≥16 + 6–8)", () => {
     const { pack, counts } = countByIndex("child/v1");
     const keys = new Set(pack.subtests.map((s) => s.indexKey));
     expect(keys).toEqual(new Set(INDEX_KEYS));
     for (const key of INDEX_KEYS) {
-      expect(counts[key], key).toBeGreaterThanOrEqual(16);
+      const subs = pack.subtests.filter((s) => s.indexKey === key);
+      expect(subs.length, key).toBeGreaterThanOrEqual(2);
+      expect(subs[0].items.length, `${key} core1`).toBe(16);
+      expect(subs[1].items.length, `${key} core2`).toBeGreaterThanOrEqual(6);
+      expect(subs[1].items.length, `${key} core2`).toBeLessThanOrEqual(8);
+      expect(counts[key], key).toBe(subs[0].items.length + subs[1].items.length);
     }
+  });
+
+  it("child/v1 battery order is VCI→PRI→WMI→PSI with core1 then core2", () => {
+    const pack = loadPack("child/v1");
+    expect(pack.subtests.map((s) => s.indexKey)).toEqual([
+      "VCI",
+      "VCI",
+      "PRI",
+      "PRI",
+      "WMI",
+      "WMI",
+      "PSI",
+      "PSI",
+    ]);
   });
 
   it("child/v1 mcq choices include glyphs and digit_span has encode+mask", () => {
@@ -31,25 +54,31 @@ describe("loadPack", () => {
       label: expect.any(String),
       glyph: expect.any(String),
     });
-    const wmi = pack.subtests.find((s) => s.indexKey === "WMI")!.items;
-    expect(wmi.every((i) => i.encodeMs && i.maskStem)).toBe(true);
+    const wmiItems = pack.subtests
+      .filter((s) => s.indexKey === "WMI")
+      .flatMap((s) => s.items);
+    expect(wmiItems.every((i) => i.encodeMs && i.maskStem)).toBe(true);
   });
 
-  it("child/v1 WMI is ordered and PRI items carry SVG image paths", () => {
+  it("child/v1 WMI cores are ordered and all PRI items carry SVG image paths", () => {
     const pack = loadPack("child/v1");
-    const wmi = pack.subtests.find((s) => s.indexKey === "WMI")!;
-    expect(wmi.ordered).toBe(true);
-    const pri = pack.subtests.find((s) => s.indexKey === "PRI")!.items;
-    expect(pri.every((i) => typeof i.image === "string" && i.image.includes("/media/"))).toBe(
-      true,
-    );
+    for (const wmi of pack.subtests.filter((s) => s.indexKey === "WMI")) {
+      expect(wmi.ordered).toBe(true);
+    }
+    const pri = pack.subtests
+      .filter((s) => s.indexKey === "PRI")
+      .flatMap((s) => s.items);
+    expect(
+      pri.every((i) => typeof i.image === "string" && i.image.includes("/media/")),
+    ).toBe(true);
   });
 
-  it("child/v1 PSI answer keys are dispersed (not nearly all identical)", () => {
+  it("child/v1 PSI answer keys are dispersed across both cores", () => {
     const pack = loadPack("child/v1");
     const answers = pack.subtests
-      .find((s) => s.indexKey === "PSI")!
-      .items.map((i) => i.answer);
+      .filter((s) => s.indexKey === "PSI")
+      .flatMap((s) => s.items)
+      .map((i) => i.answer);
     const unique = new Set(answers);
     expect(unique.size).toBeGreaterThanOrEqual(3);
     const modeCount = Math.max(
@@ -58,21 +87,29 @@ describe("loadPack", () => {
     expect(modeCount / answers.length).toBeLessThan(0.6);
   });
 
-  it("adult/v1 exposes VCI PRI WMI PSI with ≥16 items each", () => {
+  it("adult/v1 exposes dual cores per index (≥16 + 6–8)", () => {
     const { pack, counts } = countByIndex("adult/v1");
     const keys = new Set(pack.subtests.map((s) => s.indexKey));
     expect(keys).toEqual(new Set(INDEX_KEYS));
     for (const key of INDEX_KEYS) {
-      expect(counts[key], key).toBeGreaterThanOrEqual(16);
+      const subs = pack.subtests.filter((s) => s.indexKey === key);
+      expect(subs.length, key).toBeGreaterThanOrEqual(2);
+      expect(subs[0].items.length, `${key} core1`).toBe(16);
+      expect(subs[1].items.length, `${key} core2`).toBeGreaterThanOrEqual(6);
+      expect(subs[1].items.length, `${key} core2`).toBeLessThanOrEqual(8);
+      expect(counts[key], key).toBeGreaterThanOrEqual(22);
     }
   });
 
   it("adult/v1 digit_span items use encode+mask; WMI ordered; PRI has image", () => {
     const pack = loadPack("adult/v1");
-    const wmi = pack.subtests.find((s) => s.indexKey === "WMI")!;
-    expect(wmi.ordered).toBe(true);
-    expect(wmi.items.every((i) => i.encodeMs && i.maskStem)).toBe(true);
-    const pri = pack.subtests.find((s) => s.indexKey === "PRI")!.items;
+    for (const wmi of pack.subtests.filter((s) => s.indexKey === "WMI")) {
+      expect(wmi.ordered).toBe(true);
+      expect(wmi.items.every((i) => i.encodeMs && i.maskStem)).toBe(true);
+    }
+    const pri = pack.subtests
+      .filter((s) => s.indexKey === "PRI")
+      .flatMap((s) => s.items);
     expect(pri.every((i) => typeof i.image === "string" && i.image.length > 0)).toBe(
       true,
     );
@@ -81,8 +118,9 @@ describe("loadPack", () => {
   it("adult/v1 PSI answer keys are dispersed", () => {
     const pack = loadPack("adult/v1");
     const answers = pack.subtests
-      .find((s) => s.indexKey === "PSI")!
-      .items.map((i) => i.answer);
+      .filter((s) => s.indexKey === "PSI")
+      .flatMap((s) => s.items)
+      .map((i) => i.answer);
     expect(new Set(answers).size).toBeGreaterThanOrEqual(3);
   });
 
@@ -95,6 +133,20 @@ describe("loadPack", () => {
 
   it("rejects unknown pack id", () => {
     expect(() => loadPack("missing/v9")).toThrow(/unknown pack/i);
+  });
+
+  it("second cores use expected item types", () => {
+    for (const packId of ["child/v1", "adult/v1"] as const) {
+      const vci2 = subtestsByIndex(packId, "VCI")[1];
+      const pri2 = subtestsByIndex(packId, "PRI")[1];
+      const wmi2 = subtestsByIndex(packId, "WMI")[1];
+      const psi2 = subtestsByIndex(packId, "PSI")[1];
+      expect(vci2.items.every((i) => i.type === "mcq")).toBe(true);
+      expect(pri2.items.every((i) => i.type === "mcq" && i.image)).toBe(true);
+      expect(wmi2.items.every((i) => i.type === "digit_span")).toBe(true);
+      expect(wmi2.ordered).toBe(true);
+      expect(psi2.items.every((i) => i.type === "symbol_search")).toBe(true);
+    }
   });
 });
 
@@ -113,6 +165,8 @@ describe("loadNorms", () => {
           .reduce((n, s) => n + s.items.length, 0),
       ),
     );
+    expect(maxRaw).toBeGreaterThanOrEqual(22);
+    expect(maxRaw).toBeLessThanOrEqual(24);
     for (const band of norms.ageBands) {
       for (const key of INDEX_KEYS) {
         expect(band.means[key], `${band.minAgeMonths}-${key}`).toBeLessThanOrEqual(
