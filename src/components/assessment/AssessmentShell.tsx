@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { McqItem, type ItemAnswer } from "@/components/items/McqItem";
 import { DigitSpanItem } from "@/components/items/DigitSpanItem";
@@ -9,6 +9,11 @@ import {
   SubtestIntro,
   helpForSubtest,
 } from "@/components/assessment/SubtestIntro";
+import { SubtestBreak } from "@/components/assessment/SubtestBreak";
+import {
+  indexOrder,
+  segmentProgress,
+} from "@/lib/assessment/progress";
 import type { Choice, ItemType } from "@/lib/content/types";
 
 export type ShellItem = {
@@ -35,7 +40,14 @@ type AssessmentShellProps = {
   initialStatus: "IN_PROGRESS" | "SUBMITTED" | "ABANDONED";
 };
 
-type Phase = "intro" | "active" | "paused" | "submitting" | "done" | "error";
+type Phase =
+  | "break"
+  | "intro"
+  | "active"
+  | "paused"
+  | "submitting"
+  | "done"
+  | "error";
 
 export function AssessmentShell({
   sessionId,
@@ -62,26 +74,40 @@ export function AssessmentShell({
   /** After answer POST succeeds but final submit fails, retry only submit. */
   const pendingSubmitOnlyRef = useRef(false);
   const introSeenRef = useRef<Set<string>>(new Set());
+  const breakSeenRef = useRef<Set<string>>(new Set());
 
   const total = items.length;
   const current = index < total ? items[index] : null;
-  const progress = total === 0 ? 100 : Math.min(100, (index / total) * 100);
+  const previous = index > 0 ? items[index - 1] : null;
+  const segment = useMemo(
+    () => segmentProgress(items, Math.min(index, Math.max(total - 1, 0))),
+    [items, index, total],
+  );
+  const indices = useMemo(() => indexOrder(items), [items]);
 
-  // Show intro whenever the subtest changes (and not yet dismissed this visit).
+  // Break (optional) then intro when entering a new subtest.
   useEffect(() => {
     if (initialStatus === "SUBMITTED") return;
     if (!current) return;
     if (introSeenRef.current.has(current.subtestId)) {
-      setPhase((prev) => (prev === "intro" ? "active" : prev));
+      setPhase((prev) =>
+        prev === "intro" || prev === "break" ? "active" : prev,
+      );
       return;
     }
-    setPhase("intro");
-  }, [current?.subtestId, initialStatus, current]);
+    const atSubtestStart =
+      !previous || previous.subtestId !== current.subtestId;
+    const offerBreak =
+      index > 0 &&
+      atSubtestStart &&
+      !breakSeenRef.current.has(current.subtestId);
+    setPhase(offerBreak ? "break" : "intro");
+  }, [current?.subtestId, initialStatus, current, index, previous]);
 
-  // Reset per-item timer budget when the item changes (skip while intro).
+  // Reset per-item timer budget when the item changes (skip while intro/break).
   useEffect(() => {
     timedOutRef.current = false;
-    if (phase === "intro") {
+    if (phase === "intro" || phase === "break") {
       budgetRef.current = null;
       setRemainingMs(null);
       return;
@@ -132,7 +158,13 @@ export function AssessmentShell({
 
   const submitAnswer = useCallback(
     async (answer: ItemAnswer) => {
-      if (!current || submittingRef.current || phase === "paused" || phase === "intro")
+      if (
+        !current ||
+        submittingRef.current ||
+        phase === "paused" ||
+        phase === "intro" ||
+        phase === "break"
+      )
         return;
       submittingRef.current = true;
       pendingAnswerRef.current = answer;
@@ -175,7 +207,6 @@ export function AssessmentShell({
         pendingAnswerRef.current = null;
         setIndex(nextIndex);
         startedAtRef.current = Date.now();
-        // Intro effect will switch to intro if subtest changed.
         setPhase("active");
       } catch (err) {
         const retry =
@@ -250,6 +281,12 @@ export function AssessmentShell({
     }
   }
 
+  const finishBreak = useCallback(() => {
+    if (!current) return;
+    breakSeenRef.current.add(current.subtestId);
+    setPhase("intro");
+  }, [current]);
+
   function startSubtest() {
     if (!current) return;
     introSeenRef.current.add(current.subtestId);
@@ -259,6 +296,7 @@ export function AssessmentShell({
 
   const skinClass = audience === "child" ? "skin-child" : "skin-adult";
   const busy = phase === "submitting";
+  const gating = phase === "intro" || phase === "break";
 
   if (phase === "done") {
     return (
@@ -299,7 +337,7 @@ export function AssessmentShell({
             </h1>
           </div>
           <div className="flex items-center gap-3 md:gap-4">
-            {phase !== "intro" &&
+            {!gating &&
               current?.timeLimitMs != null &&
               remainingMs != null && (
               <div
@@ -312,44 +350,73 @@ export function AssessmentShell({
             <button
               type="button"
               onClick={togglePause}
-              disabled={busy || phase === "error" || phase === "intro"}
+              disabled={busy || phase === "error" || gating}
               className="min-h-11 min-w-24 rounded-[var(--assess-radius)] border-2 border-[var(--assess-border)] bg-[var(--assess-surface)] px-4 text-sm font-medium text-[var(--assess-fg)] disabled:opacity-50 md:min-h-12 md:text-base"
             >
               {phase === "paused" ? "继续" : "暂停"}
             </button>
           </div>
         </div>
+        <div className="mx-auto flex w-full max-w-5xl gap-1.5 px-4 pb-2 md:px-8 lg:px-10">
+          {indices.map((key) => {
+            const active = segment?.indexKey === key;
+            return (
+              <div
+                key={key}
+                data-testid={`progress-index-${key}`}
+                className={`h-1.5 flex-1 rounded-full ${
+                  active
+                    ? "bg-[var(--assess-accent)]"
+                    : "bg-[var(--assess-track)]"
+                }`}
+                title={key}
+              />
+            );
+          })}
+        </div>
         <div className="h-2 w-full bg-[var(--assess-track)]">
           <div
             className="h-full bg-[var(--assess-accent)] transition-[width] duration-300"
-            style={{ width: `${progress}%` }}
+            style={{ width: `${segment?.corePercent ?? 0}%` }}
             role="progressbar"
-            aria-valuenow={Math.round(progress)}
+            aria-valuenow={Math.round(segment?.corePercent ?? 0)}
             aria-valuemin={0}
             aria-valuemax={100}
+            aria-label={segment?.label ?? "progress"}
           />
         </div>
       </header>
 
       <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-6 px-4 py-6 md:px-8 md:py-10 lg:px-10">
         <div className="flex items-baseline justify-between gap-4 text-sm text-[var(--assess-muted)] md:text-base">
-          <span>
-            进度 {Math.min(index + 1, total)} / {total}
-          </span>
+          {segment ? (
+            <span data-testid="assess-segment-progress">
+              {segment.label} · {segment.itemInCore}/{segment.itemsInCore}
+            </span>
+          ) : (
+            <span>
+              进度 {Math.min(index + 1, total)} / {total}
+            </span>
+          )}
           {current && (
             <span
               data-testid="assess-subtest-title"
               className="truncate font-medium text-[var(--assess-fg)]"
             >
               {current.subtestTitle}
-              <span className="ml-2 text-[var(--assess-muted)]">
-                {current.indexKey}
-              </span>
             </span>
           )}
         </div>
 
-        {phase === "intro" && current ? (
+        {phase === "break" && current && previous ? (
+          <SubtestBreak
+            audience={audience}
+            completedTitle={previous.subtestTitle}
+            nextTitle={current.subtestTitle}
+            onContinue={finishBreak}
+            onSkip={finishBreak}
+          />
+        ) : phase === "intro" && current ? (
           <SubtestIntro
             audience={audience}
             title={current.subtestTitle}
