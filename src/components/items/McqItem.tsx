@@ -25,9 +25,14 @@ export function McqItem({
   disabled = false,
   onAnswer,
 }: McqItemProps) {
-  const normalized = choices.map(normalizeChoice);
+  const asGiven = choices.map(normalizeChoice);
   // Figure options need room to be read; four across keeps them beside the stem.
-  const figureChoices = normalized.length > 0 && normalized.every((c) => Boolean(c.image));
+  const figureChoices = asGiven.length > 0 && asGiven.every((c) => Boolean(c.image));
+  // Figure options are named by letter, and the pack already balances which
+  // letter is correct, so show them A→D instead of in session-shuffled order.
+  const normalized = figureChoices
+    ? [...asGiven].sort((a, b) => (a.label < b.label ? -1 : a.label > b.label ? 1 : 0))
+    : asGiven;
 
   return (
     <ItemCard

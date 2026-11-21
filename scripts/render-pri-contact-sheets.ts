@@ -2,7 +2,7 @@
  * Renders one contact-sheet PNG per pack: every PRI item's stem with its four
  * options, the correct one marked, plus the rule in one sentence.
  *
- *   npm run pri:sheets -- --out <dir> [--tiles <dir>]
+ *   npm run pri:sheets -- --out <dir> [--tiles <dir>] [--scale 1.5]
  *
  * --tiles additionally saves one PNG per item (for close inspection).
  * Reads the SVGs straight from the generator, i.e. exactly what ships.
@@ -100,7 +100,10 @@ async function main() {
   if (tilesDir) fs.mkdirSync(tilesDir, { recursive: true });
 
   const browser = await chromium.launch();
-  const page = await browser.newPage({ viewport: { width: 1856, height: 1200 }, deviceScaleFactor: 1 });
+  const page = await browser.newPage({
+    viewport: { width: 1856, height: 1200 },
+    deviceScaleFactor: Number(arg("--scale") ?? 1.5),
+  });
 
   for (const pack of packs) {
     const { packId } = pack.plan;

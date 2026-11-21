@@ -276,7 +276,7 @@ function figureSvg(doc: Doc, ctx: RenderContext, cell: Cell, cx: number, cy: num
     return out + posGuides(figure.posLayout, cx, cy) + shapeSvg(doc, shape, fill, cx + dx, cy + dy, r, rot);
   }
 
-  const half = framed ? 28 : 48;
+  const half = framed ? 34 : 48;
   const count = typeof cell.count === "number" ? cell.count : 1;
   let radius = 0.72;
   if (ctx.countRadius) radius = ctx.countRadius;
