@@ -116,7 +116,7 @@ async function main() {
       .join("");
     const html = `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><style>${CSS}</style></head><body>
       <h1>${SHEET_TITLE[packId]}</h1>
-      <p class="note">绿色框为正确选项。图形由题目规格自动生成，与线上测试使用的是同一批 SVG 文件；作答时选项顺序会被打乱。</p>
+      <p class="note">绿色框为正确选项。图形由题目规格自动生成，与线上测试使用的是同一批 SVG 文件；线上作答时选项同样按 A–D 顺序显示。</p>
       ${sections}</body></html>`;
     await page.setContent(html, { waitUntil: "load" });
     await page.evaluate(() => Promise.all(Array.from(document.images).map((img) => img.decode())));
