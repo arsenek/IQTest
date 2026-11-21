@@ -7,7 +7,7 @@
       "maxAgeMonths": 143,
       "means": {
         "VCI": 12,
-        "PRI": 12,
+        "PRI": 11,
         "WMI": 12,
         "PSI": 12
       },
@@ -23,7 +23,7 @@
       "maxAgeMonths": 191,
       "means": {
         "VCI": 14,
-        "PRI": 14,
+        "PRI": 13,
         "WMI": 14,
         "PSI": 14
       },
@@ -39,7 +39,7 @@
       "maxAgeMonths": 1200,
       "means": {
         "VCI": 15,
-        "PRI": 15,
+        "PRI": 10,
         "WMI": 15,
         "PSI": 15
       },

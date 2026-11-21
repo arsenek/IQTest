@@ -9,12 +9,25 @@ function childBirthDate(): string {
   return `${yyyy}-${mm}-${dd}`;
 }
 
-async function waitForAssessProgress(page: Page, n: number) {
-  await expect(page.getByText(`进度 ${n} / 4`)).toBeVisible();
+/** Skip optional break, then start the current subtest intro if shown. */
+async function passSubtestGates(page: Page) {
+  const breakSkip = page.getByTestId("subtest-break-skip");
+  if (await breakSkip.isVisible().catch(() => false)) {
+    await breakSkip.click();
+  }
+  const introStart = page.getByTestId("subtest-intro-start");
+  if (await introStart.isVisible().catch(() => false)) {
+    await introStart.click();
+  }
 }
 
-async function answerCurrentAssessmentItem(page: Page) {
-  // Wait until a non-disabled item surface is interactive (post-submit unlock).
+async function waitForAssessItem(page: Page) {
+  await expect(page.getByTestId("assess-segment-progress")).toBeVisible();
+  // e2e pack: one item per index core → "· 1/1"
+  await expect(page.getByTestId("assess-segment-progress")).toContainText(
+    "1/1",
+  );
+  await passSubtestGates(page);
   await page.waitForFunction(() => {
     const enabledChoice = document.querySelector(
       '[data-testid="mcq-choice"]:not([disabled])',
@@ -27,7 +40,9 @@ async function answerCurrentAssessmentItem(page: Page) {
     );
     return Boolean(enabledChoice || digitPad || symbolPad);
   });
+}
 
+async function answerCurrentAssessmentItem(page: Page) {
   if (await page.getByTestId("item-mcq").isVisible()) {
     const fruit = page
       .getByTestId("mcq-choice")
@@ -128,7 +143,7 @@ test("happy path: register → child profile → assess → report → practice"
   await expect(page.getByText("儿童短卷 fixture（e2e）")).toBeVisible();
 
   for (let i = 1; i <= 4; i++) {
-    await waitForAssessProgress(page, i);
+    await waitForAssessItem(page);
     await answerCurrentAssessmentItem(page);
   }
 
