@@ -9,15 +9,22 @@ function childBirthDate(): string {
   return `${yyyy}-${mm}-${dd}`;
 }
 
-/** Skip optional break, then start the current subtest intro if shown. */
+/** Clear break/intro gates; may need more than one pass between subtests. */
 async function passSubtestGates(page: Page) {
-  const breakSkip = page.getByTestId("subtest-break-skip");
-  if (await breakSkip.isVisible().catch(() => false)) {
-    await breakSkip.click();
-  }
-  const introStart = page.getByTestId("subtest-intro-start");
-  if (await introStart.isVisible().catch(() => false)) {
-    await introStart.click();
+  for (let i = 0; i < 6; i++) {
+    const breakSkip = page.getByTestId("subtest-break-skip");
+    if (await breakSkip.isVisible().catch(() => false)) {
+      await breakSkip.click();
+      await expect(breakSkip).toBeHidden({ timeout: 10_000 });
+      continue;
+    }
+    const introStart = page.getByTestId("subtest-intro-start");
+    if (await introStart.isVisible().catch(() => false)) {
+      await introStart.click();
+      await expect(introStart).toBeHidden({ timeout: 10_000 });
+      continue;
+    }
+    break;
   }
 }
 
@@ -27,23 +34,33 @@ async function waitForAssessItem(page: Page) {
   await expect(page.getByTestId("assess-segment-progress")).toContainText(
     "1/1",
   );
-  await passSubtestGates(page);
-  await page.waitForFunction(() => {
-    const enabledChoice = document.querySelector(
-      '[data-testid="mcq-choice"]:not([disabled])',
-    );
-    const digitPad = document.querySelector(
-      '[data-testid="item-digit-span"] button:not([disabled])',
-    );
-    const symbolPad = document.querySelector(
-      '[data-testid="item-symbol-search"] button:not([disabled])',
-    );
-    return Boolean(enabledChoice || digitPad || symbolPad);
-  });
+  // Break/intro can appear after the previous item submits; keep clearing
+  // until an interactive item surface is actually on screen.
+  await expect
+    .poll(
+      async () => {
+        await passSubtestGates(page);
+        return page.evaluate(() => {
+          const enabledChoice = document.querySelector(
+            '[data-testid="mcq-choice"]:not([disabled])',
+          );
+          const digitPad = document.querySelector(
+            '[data-testid="item-digit-span"] button:not([disabled])',
+          );
+          const symbolPad = document.querySelector(
+            '[data-testid="item-symbol-search"] button:not([disabled])',
+          );
+          return Boolean(enabledChoice || digitPad || symbolPad);
+        });
+      },
+      { timeout: 30_000 },
+    )
+    .toBe(true);
 }
 
 async function answerCurrentAssessmentItem(page: Page) {
-  if (await page.getByTestId("item-mcq").isVisible()) {
+  const mcq = page.getByTestId("item-mcq");
+  if (await mcq.isVisible().catch(() => false)) {
     const fruit = page
       .getByTestId("mcq-choice")
       .filter({ hasText: "一种水果" });
@@ -58,19 +75,18 @@ async function answerCurrentAssessmentItem(page: Page) {
     return;
   }
 
-  if (await page.getByTestId("item-digit-span").isVisible()) {
+  const digit = page.getByTestId("item-digit-span");
+  if (await digit.isVisible().catch(() => false)) {
     for (const d of ["1", "2", "3"]) {
-      await page
-        .getByTestId("item-digit-span")
-        .getByRole("button", { name: d, exact: true })
-        .click();
+      await digit.getByRole("button", { name: d, exact: true }).click();
     }
     await expect(page.getByTestId("digit-span-submit")).toBeEnabled();
     await page.getByTestId("digit-span-submit").click();
     return;
   }
 
-  if (await page.getByTestId("item-symbol-search").isVisible()) {
+  const symbol = page.getByTestId("item-symbol-search");
+  if (await symbol.isVisible().catch(() => false)) {
     await page.getByTestId("symbol-count-2").click();
     await expect(page.getByTestId("symbol-search-submit")).toBeEnabled();
     await page.getByTestId("symbol-search-submit").click();
