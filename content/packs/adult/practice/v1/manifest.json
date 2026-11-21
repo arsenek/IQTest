@@ -1,0 +1,716 @@
+{
+  "id": "adult/practice/v1",
+  "audience": "adult",
+  "title": "成人练习池 v1",
+  "subtests": [
+    {
+      "id": "adult-prac-vci",
+      "indexKey": "VCI",
+      "title": "词汇练习",
+      "items": [
+        {
+          "id": "adult-prac-vci-1",
+          "type": "mcq",
+          "prompt": "「权衡」最接近？",
+          "choices": [
+            {
+              "label": "比较利弊后抉择",
+              "glyph": "衡"
+            },
+            {
+              "label": "随机挑选",
+              "glyph": "随"
+            },
+            {
+              "label": "完全放弃",
+              "glyph": "弃"
+            },
+            {
+              "label": "重复抄写",
+              "glyph": "抄"
+            }
+          ],
+          "answer": "比较利弊后抉择",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-vci-2",
+          "type": "mcq",
+          "prompt": "「因果」关系最像？",
+          "choices": [
+            {
+              "label": "前提导致结果",
+              "glyph": "→"
+            },
+            {
+              "label": "同义反复",
+              "glyph": "="
+            },
+            {
+              "label": "左右对称",
+              "glyph": "⇔"
+            },
+            {
+              "label": "颜色对比",
+              "glyph": "色"
+            }
+          ],
+          "answer": "前提导致结果",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-vci-3",
+          "type": "mcq",
+          "prompt": "「抽象」与「具象」更接近？",
+          "choices": [
+            {
+              "label": "概括与具体",
+              "glyph": "↕"
+            },
+            {
+              "label": "同义",
+              "glyph": "="
+            },
+            {
+              "label": "加减",
+              "glyph": "+−"
+            },
+            {
+              "label": "地理方位",
+              "glyph": "方"
+            }
+          ],
+          "answer": "概括与具体",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-vci-4",
+          "type": "mcq",
+          "prompt": "会议纪要的主要作用是？",
+          "choices": [
+            {
+              "label": "记录决议与行动项",
+              "glyph": "记"
+            },
+            {
+              "label": "装饰会议室",
+              "glyph": "饰"
+            },
+            {
+              "label": "替代所有口头沟通",
+              "glyph": "替"
+            },
+            {
+              "label": "计算工资",
+              "glyph": "资"
+            }
+          ],
+          "answer": "记录决议与行动项",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-vci-5",
+          "type": "mcq",
+          "prompt": "「稀缺」通常意味着？",
+          "choices": [
+            {
+              "label": "供给有限需取舍",
+              "glyph": "稀"
+            },
+            {
+              "label": "永远够用",
+              "glyph": "∞"
+            },
+            {
+              "label": "无法定价",
+              "glyph": "0"
+            },
+            {
+              "label": "只存在于艺术",
+              "glyph": "艺"
+            }
+          ],
+          "answer": "供给有限需取舍",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-vci-6",
+          "type": "mcq",
+          "prompt": "「律师」之于「法庭」，最接近「教师」之于？",
+          "choices": [
+            {
+              "label": "学校/教室",
+              "glyph": "校"
+            },
+            {
+              "label": "药房",
+              "glyph": "药"
+            },
+            {
+              "label": "机场",
+              "glyph": "机"
+            },
+            {
+              "label": "银行金库",
+              "glyph": "库"
+            }
+          ],
+          "answer": "学校/教室",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-vci-7",
+          "type": "mcq",
+          "prompt": "「冗余」在信息语境中常指？",
+          "choices": [
+            {
+              "label": "可精简的多余部分",
+              "glyph": "余"
+            },
+            {
+              "label": "核心密钥",
+              "glyph": "核"
+            },
+            {
+              "label": "噪声同义词",
+              "glyph": "噪"
+            },
+            {
+              "label": "样本量下限",
+              "glyph": "n"
+            }
+          ],
+          "answer": "可精简的多余部分",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-vci-8",
+          "type": "mcq",
+          "prompt": "紧急疏散时优先？",
+          "choices": [
+            {
+              "label": "保障人员安全",
+              "glyph": "安"
+            },
+            {
+              "label": "先整理桌面",
+              "glyph": "桌"
+            },
+            {
+              "label": "拍照留念",
+              "glyph": "拍"
+            },
+            {
+              "label": "关闭全部社交软件",
+              "glyph": "社"
+            }
+          ],
+          "answer": "保障人员安全",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-vci-9",
+          "type": "mcq",
+          "prompt": "「效度」主要关心？",
+          "choices": [
+            {
+              "label": "是否测到目标构念",
+              "glyph": "效"
+            },
+            {
+              "label": "打印机分辨率",
+              "glyph": "打"
+            },
+            {
+              "label": "字体是否好看",
+              "glyph": "字"
+            },
+            {
+              "label": "电池续航",
+              "glyph": "电"
+            }
+          ],
+          "answer": "是否测到目标构念",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-vci-10",
+          "type": "mcq",
+          "prompt": "「归纳」通常是？",
+          "choices": [
+            {
+              "label": "从个别到一般",
+              "glyph": "↑"
+            },
+            {
+              "label": "从一般到个别",
+              "glyph": "↓"
+            },
+            {
+              "label": "随机配对",
+              "glyph": "?"
+            },
+            {
+              "label": "纯复制粘贴",
+              "glyph": "复"
+            }
+          ],
+          "answer": "从个别到一般",
+          "timeLimitMs": 55000
+        }
+      ]
+    },
+    {
+      "id": "adult-prac-pri",
+      "indexKey": "PRI",
+      "title": "图形练习",
+      "items": [
+        {
+          "id": "adult-prac-pri-1",
+          "type": "mcq",
+          "prompt": "练习：交替序列下一项？",
+          "image": "/packs/adult/practice/v1/media/prac-seq-01-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/practice/v1/media/prac-seq-01-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/practice/v1/media/prac-seq-01-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/practice/v1/media/prac-seq-01-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/practice/v1/media/prac-seq-01-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-pri-2",
+          "type": "mcq",
+          "prompt": "练习：空心/实心交替缺项？",
+          "image": "/packs/adult/practice/v1/media/prac-seq-02-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/practice/v1/media/prac-seq-02-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/practice/v1/media/prac-seq-02-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/practice/v1/media/prac-seq-02-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/practice/v1/media/prac-seq-02-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-pri-3",
+          "type": "mcq",
+          "prompt": "练习：边数递增下一项？",
+          "image": "/packs/adult/practice/v1/media/prac-seq-03-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/practice/v1/media/prac-seq-03-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/practice/v1/media/prac-seq-03-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/practice/v1/media/prac-seq-03-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/practice/v1/media/prac-seq-03-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-pri-4",
+          "type": "mcq",
+          "prompt": "练习：两符号交替缺项？",
+          "image": "/packs/adult/practice/v1/media/prac-seq-04-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/practice/v1/media/prac-seq-04-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/practice/v1/media/prac-seq-04-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/practice/v1/media/prac-seq-04-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/practice/v1/media/prac-seq-04-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-pri-5",
+          "type": "mcq",
+          "prompt": "练习：方形菱形交替？",
+          "image": "/packs/adult/practice/v1/media/prac-seq-05-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/practice/v1/media/prac-seq-05-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/practice/v1/media/prac-seq-05-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/practice/v1/media/prac-seq-05-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/practice/v1/media/prac-seq-05-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-pri-6",
+          "type": "mcq",
+          "prompt": "练习：成对重复下一项？",
+          "image": "/packs/adult/practice/v1/media/prac-seq-06-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/practice/v1/media/prac-seq-06-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/practice/v1/media/prac-seq-06-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/practice/v1/media/prac-seq-06-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/practice/v1/media/prac-seq-06-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-pri-7",
+          "type": "mcq",
+          "prompt": "练习：星号加号交替？",
+          "image": "/packs/adult/practice/v1/media/prac-seq-07-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/practice/v1/media/prac-seq-07-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/practice/v1/media/prac-seq-07-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/practice/v1/media/prac-seq-07-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/practice/v1/media/prac-seq-07-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-pri-8",
+          "type": "mcq",
+          "prompt": "练习：三角填充交替？",
+          "image": "/packs/adult/practice/v1/media/prac-seq-08-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/practice/v1/media/prac-seq-08-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/practice/v1/media/prac-seq-08-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/practice/v1/media/prac-seq-08-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/practice/v1/media/prac-seq-08-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-pri-9",
+          "type": "mcq",
+          "prompt": "练习：菱形圆形交替？",
+          "image": "/packs/adult/practice/v1/media/prac-seq-09-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/practice/v1/media/prac-seq-09-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/practice/v1/media/prac-seq-09-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/practice/v1/media/prac-seq-09-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/practice/v1/media/prac-seq-09-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        },
+        {
+          "id": "adult-prac-pri-10",
+          "type": "mcq",
+          "prompt": "练习：方块填充交替？",
+          "image": "/packs/adult/practice/v1/media/prac-seq-10-stem.svg",
+          "choices": [
+            {
+              "label": "选项 A",
+              "image": "/packs/adult/practice/v1/media/prac-seq-10-a.svg"
+            },
+            {
+              "label": "选项 B",
+              "image": "/packs/adult/practice/v1/media/prac-seq-10-b.svg"
+            },
+            {
+              "label": "选项 C",
+              "image": "/packs/adult/practice/v1/media/prac-seq-10-c.svg"
+            },
+            {
+              "label": "选项 D",
+              "image": "/packs/adult/practice/v1/media/prac-seq-10-d.svg"
+            }
+          ],
+          "answer": "选项 A",
+          "timeLimitMs": 55000
+        }
+      ]
+    },
+    {
+      "id": "adult-prac-wmi",
+      "indexKey": "WMI",
+      "title": "工作记忆练习",
+      "ordered": true,
+      "items": [
+        {
+          "id": "adult-prac-wmi-1",
+          "type": "digit_span",
+          "prompt": "请按顺序复述：6、3、9",
+          "answer": "6-3-9",
+          "timeLimitMs": 45000,
+          "encodeMs": 4500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-prac-wmi-2",
+          "type": "digit_span",
+          "prompt": "请按顺序复述：1、8、4、2",
+          "answer": "1-8-4-2",
+          "timeLimitMs": 45000,
+          "encodeMs": 5000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-prac-wmi-3",
+          "type": "digit_span",
+          "prompt": "请按顺序复述：7、0、5、3、9",
+          "answer": "7-0-5-3-9",
+          "timeLimitMs": 45000,
+          "encodeMs": 5500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-prac-wmi-4",
+          "type": "digit_span",
+          "prompt": "请倒序复述：2、8、5（从后往前）",
+          "answer": "5-8-2",
+          "timeLimitMs": 45000,
+          "encodeMs": 4500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-prac-wmi-5",
+          "type": "digit_span",
+          "prompt": "请倒序复述：9、1、6、4（从后往前）",
+          "answer": "4-6-1-9",
+          "timeLimitMs": 45000,
+          "encodeMs": 5000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-prac-wmi-6",
+          "type": "digit_span",
+          "prompt": "请倒序复述：3、7、0、8、2（从后往前）",
+          "answer": "2-8-0-7-3",
+          "timeLimitMs": 45000,
+          "encodeMs": 5500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-prac-wmi-7",
+          "type": "digit_span",
+          "prompt": "请按顺序复述：4、9、1、6、0、8",
+          "answer": "4-9-1-6-0-8",
+          "timeLimitMs": 45000,
+          "encodeMs": 6000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-prac-wmi-8",
+          "type": "digit_span",
+          "prompt": "请倒序复述：5、2、9、1、7、3（从后往前）",
+          "answer": "3-7-1-9-2-5",
+          "timeLimitMs": 45000,
+          "encodeMs": 6000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-prac-wmi-9",
+          "type": "digit_span",
+          "prompt": "请按顺序复述：8、3、6、0、4、9、1",
+          "answer": "8-3-6-0-4-9-1",
+          "timeLimitMs": 45000,
+          "encodeMs": 6500,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "adult-prac-wmi-10",
+          "type": "digit_span",
+          "prompt": "请倒序复述：1、7、4、9、2、6、0（从后往前）",
+          "answer": "0-6-2-9-4-7-1",
+          "timeLimitMs": 45000,
+          "encodeMs": 6500,
+          "maskStem": true,
+          "ordered": true
+        }
+      ]
+    },
+    {
+      "id": "adult-prac-psi",
+      "indexKey": "PSI",
+      "title": "加工速度练习",
+      "items": [
+        {
+          "id": "adult-prac-psi-1",
+          "type": "symbol_search",
+          "prompt": "目标※。在 ＊＃※＃＊※ 中出现几次？",
+          "answer": 2,
+          "timeLimitMs": 26000
+        },
+        {
+          "id": "adult-prac-psi-2",
+          "type": "symbol_search",
+          "prompt": "目标◇。在 ◆◇○◇◆◇○ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 25000
+        },
+        {
+          "id": "adult-prac-psi-3",
+          "type": "symbol_search",
+          "prompt": "目标▲。在 △▼▲◆▲△▼ 中出现几次？",
+          "answer": 2,
+          "timeLimitMs": 24000
+        },
+        {
+          "id": "adult-prac-psi-4",
+          "type": "symbol_search",
+          "prompt": "目标＋。在 ×÷＋＝＋－ 中出现几次？",
+          "answer": 2,
+          "timeLimitMs": 23000
+        },
+        {
+          "id": "adult-prac-psi-5",
+          "type": "symbol_search",
+          "prompt": "目标◎。在 ○●◎○◎●◎ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 22000
+        },
+        {
+          "id": "adult-prac-psi-6",
+          "type": "symbol_search",
+          "prompt": "目标■。在 □■◆□■▲■ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 21000
+        },
+        {
+          "id": "adult-prac-psi-7",
+          "type": "symbol_search",
+          "prompt": "目标★。在 ☆★●★☆■★ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 20000
+        },
+        {
+          "id": "adult-prac-psi-8",
+          "type": "symbol_search",
+          "prompt": "目标▼。在 ▲▼▲▼◆▼▲ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 19000
+        },
+        {
+          "id": "adult-prac-psi-9",
+          "type": "symbol_search",
+          "prompt": "目标＃。在 ＊＃※＃＊＃※ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 18000
+        },
+        {
+          "id": "adult-prac-psi-10",
+          "type": "symbol_search",
+          "prompt": "目标○。在 ●◎○●○◎○○ 中出现几次？",
+          "answer": 4,
+          "timeLimitMs": 17000
+        }
+      ]
+    }
+  ]
+}

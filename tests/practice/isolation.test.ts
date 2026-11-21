@@ -73,7 +73,7 @@ describe("practice score isolation", () => {
     });
 
     const practice = await startPractice(profile.id, "VCI");
-    const pack = loadPack("child/v1");
+    const pack = loadPack("child/practice/v1");
     const vciItems = pack.subtests
       .filter((s) => s.indexKey === "VCI")
       .flatMap((s) => s.items)

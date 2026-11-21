@@ -37,10 +37,22 @@ function isIndexKey(value: string): value is IndexKey {
   return (INDEX_KEYS as readonly string[]).includes(value);
 }
 
-function packIdForKind(kind: "CHILD" | "ADULT"): string {
-  const override = process.env.IQTEST_E2E_PACK?.trim();
-  if (override) return override;
+/** Formal assessment packs — never used for practice rounds. */
+export function formalPackIdForKind(kind: "CHILD" | "ADULT"): string {
   return kind === "CHILD" ? "child/v1" : "adult/v1";
+}
+
+/** Practice-only pools (IDs disjoint from formal packs). */
+export function practicePackIdForKind(kind: "CHILD" | "ADULT"): string {
+  return kind === "CHILD" ? "child/practice/v1" : "adult/practice/v1";
+}
+
+function packIdForKind(kind: "CHILD" | "ADULT"): string {
+  // E2E may override formal pack; practice still uses dedicated practice pools
+  // unless IQTEST_E2E_PRACTICE_PACK is set.
+  const practiceOverride = process.env.IQTEST_E2E_PRACTICE_PACK?.trim();
+  if (practiceOverride) return practiceOverride;
+  return practicePackIdForKind(kind);
 }
 
 /** Stars 0–3 from accuracy in a round. */
