@@ -9,6 +9,10 @@ import {
 import { loadNorms } from "@/lib/content/loadNorms";
 import { INDEX_KEYS, type IndexKey } from "@/lib/content/types";
 import { prisma } from "@/lib/db";
+import {
+  dualCoreBlurb,
+  narrativeParagraph,
+} from "@/lib/scoring/reportCopy";
 
 type PageProps = {
   params: Promise<{ sessionId: string }>;
@@ -39,6 +43,7 @@ export default async function ReportPage({ params }: PageProps) {
 
   const report = session.report;
   const norms = loadNorms(session.normVersion);
+  const audience = session.profile.kind === "CHILD" ? "child" : "adult";
   const scores: Record<IndexKey, number> = {
     VCI: report.vci,
     PRI: report.pri,
@@ -50,16 +55,25 @@ export default async function ReportPage({ params }: PageProps) {
     : INDEX_KEYS.reduce((a, b) => (scores[a] <= scores[b] ? a : b))) as IndexKey;
 
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-900">
+    <div
+      className={`min-h-screen text-zinc-900 ${
+        audience === "child" ? "skin-child assess-root bg-[var(--assess-bg)]" : "bg-zinc-50"
+      }`}
+    >
       <main className="mx-auto flex w-full max-w-5xl flex-col gap-8 px-4 py-10 md:px-8 md:py-14 lg:px-10">
         <header className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <div className="flex flex-col gap-2">
-            <p className="text-sm font-medium text-zinc-500">测评报告</p>
+            <p className="text-sm font-medium text-zinc-500">
+              {audience === "child" ? "给家长的测评报告" : "测评报告"}
+            </p>
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
               {session.profile.displayName} 的结果
             </h1>
-            <p className="text-sm text-zinc-500 md:text-base">
-              合成分 = 四指数均值（MVP）。点任一指数进入专项练习。
+            <p
+              data-testid="report-dual-core-blurb"
+              className="max-w-2xl text-sm leading-relaxed text-zinc-600 md:text-base"
+            >
+              {dualCoreBlurb(audience)}
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-2">
@@ -80,7 +94,13 @@ export default async function ReportPage({ params }: PageProps) {
             {Math.round(report.composite)}
           </p>
           <p className="mt-2 text-sm text-zinc-500">
-            精确值 {report.composite.toFixed(2)} · 薄弱指数提示：{weakest}
+            精确值 {report.composite.toFixed(2)} · 四指数均值（MVP）
+          </p>
+          <p
+            data-testid="report-narrative"
+            className="mt-4 text-sm leading-relaxed text-zinc-700 md:text-base"
+          >
+            {narrativeParagraph(weakest, audience)}
           </p>
         </section>
 
@@ -92,13 +112,14 @@ export default async function ReportPage({ params }: PageProps) {
               score={scores[key]}
               profileId={session.profileId}
               reportSessionId={sessionId}
+              audience={audience}
               highlight={key === weakest}
             />
           ))}
         </section>
 
         <aside className="rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm leading-relaxed text-amber-950 md:text-base">
-          合规提示：本站采用自研题库与占位常模，结构对齐韦氏四指数，非官方韦氏/WISC/WAIS；结果仅供参考，不能替代专业心理或医学评估。儿童请在家长陪同下阅读与练习。
+          合规提示：本站采用自研题库与占位常模，结构对齐韦氏四指数，非官方韦氏/WISC/WAIS；结果仅供参考，不能替代专业心理或医学评估。儿童请在家长陪同下阅读与练习。练习不会回写正式分。
         </aside>
 
         <div className="flex flex-wrap gap-4 text-sm">
