@@ -26,6 +26,8 @@ export function McqItem({
   onAnswer,
 }: McqItemProps) {
   const normalized = choices.map(normalizeChoice);
+  // Figure options need room to be read; four across keeps them beside the stem.
+  const figureChoices = normalized.length > 0 && normalized.every((c) => Boolean(c.image));
 
   return (
     <ItemCard
@@ -42,13 +44,19 @@ export function McqItem({
               src={image}
               alt=""
               data-testid="item-stem-image"
-              className="mx-auto h-auto w-full max-w-md rounded-[calc(var(--card-radius)-0.25rem)] border border-[var(--card-border)] bg-white object-contain p-2 md:max-w-lg"
+              className="mx-auto h-auto max-w-full rounded-[calc(var(--card-radius)-0.25rem)] border border-[var(--card-border)] bg-white object-contain p-2"
             />
           ) : null}
         </div>
       }
     >
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4 lg:gap-5">
+      <div
+        className={
+          figureChoices
+            ? "grid grid-cols-2 gap-3 sm:grid-cols-4 md:gap-4"
+            : "grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4 lg:gap-5"
+        }
+      >
         {normalized.map((choice) => (
           <ChoiceCardButton
             key={choice.label}
