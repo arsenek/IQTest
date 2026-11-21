@@ -175,7 +175,12 @@ test("happy path: register → child profile → assess → report → practice"
   await expect(page.getByRole("heading", { name: /言语理解/ })).toBeVisible();
 
   await page.getByTestId("practice-start").click();
-  await answerCurrentPracticeItem(page);
+  // Practice rounds are 5 items with immediate feedback.
+  for (let i = 0; i < 5; i++) {
+    const done = page.getByTestId("practice-done");
+    if (await done.isVisible().catch(() => false)) break;
+    await answerCurrentPracticeItem(page);
+  }
   await expect(page.getByTestId("practice-done")).toBeVisible({
     timeout: 60_000,
   });
