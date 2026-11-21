@@ -596,132 +596,133 @@
       "id": "child-pri-matrix",
       "indexKey": "PRI",
       "title": "图形推理",
+      "ordered": true,
       "items": [
         {
           "id": "child-pri-1",
           "type": "mcq",
-          "prompt": "右下角应填哪个图形？",
-          "image": "/packs/child/v1/media/pri-01-stem.svg",
+          "prompt": "找一找规律：哪一个图形应该放在「？」的位置？",
+          "image": "/packs/child/v1/media/pri-matrix-01-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/pri-01-a.svg"
+              "image": "/packs/child/v1/media/pri-matrix-01-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/pri-01-b.svg"
+              "image": "/packs/child/v1/media/pri-matrix-01-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/pri-01-c.svg"
+              "image": "/packs/child/v1/media/pri-matrix-01-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/pri-01-d.svg"
+              "image": "/packs/child/v1/media/pri-matrix-01-d.svg"
             }
           ],
-          "answer": "选项 A",
+          "answer": "选项 D",
           "timeLimitMs": 60000
         },
         {
           "id": "child-pri-2",
           "type": "mcq",
-          "prompt": "按交替规律，缺格是？",
-          "image": "/packs/child/v1/media/pri-02-stem.svg",
+          "prompt": "找一找规律：哪一个图形应该放在「？」的位置？",
+          "image": "/packs/child/v1/media/pri-matrix-02-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/pri-02-a.svg"
+              "image": "/packs/child/v1/media/pri-matrix-02-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/pri-02-b.svg"
+              "image": "/packs/child/v1/media/pri-matrix-02-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/pri-02-c.svg"
+              "image": "/packs/child/v1/media/pri-matrix-02-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/pri-02-d.svg"
+              "image": "/packs/child/v1/media/pri-matrix-02-d.svg"
             }
           ],
-          "answer": "选项 A",
+          "answer": "选项 C",
           "timeLimitMs": 60000
         },
         {
           "id": "child-pri-3",
           "type": "mcq",
-          "prompt": "哪一个能补全这一组？",
-          "image": "/packs/child/v1/media/pri-03-stem.svg",
+          "prompt": "找一找规律：哪一个图形应该放在「？」的位置？",
+          "image": "/packs/child/v1/media/pri-matrix-03-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/pri-03-a.svg"
+              "image": "/packs/child/v1/media/pri-matrix-03-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/pri-03-b.svg"
+              "image": "/packs/child/v1/media/pri-matrix-03-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/pri-03-c.svg"
+              "image": "/packs/child/v1/media/pri-matrix-03-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/pri-03-d.svg"
+              "image": "/packs/child/v1/media/pri-matrix-03-d.svg"
             }
           ],
-          "answer": "选项 A",
+          "answer": "选项 B",
           "timeLimitMs": 60000
         },
         {
           "id": "child-pri-4",
           "type": "mcq",
-          "prompt": "实心与空心交替，下一项是？",
-          "image": "/packs/child/v1/media/pri-04-stem.svg",
+          "prompt": "找一找规律：哪一个图形应该放在「？」的位置？",
+          "image": "/packs/child/v1/media/pri-matrix-04-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/pri-04-a.svg"
+              "image": "/packs/child/v1/media/pri-matrix-04-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/pri-04-b.svg"
+              "image": "/packs/child/v1/media/pri-matrix-04-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/pri-04-c.svg"
+              "image": "/packs/child/v1/media/pri-matrix-04-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/pri-04-d.svg"
+              "image": "/packs/child/v1/media/pri-matrix-04-d.svg"
             }
           ],
-          "answer": "选项 A",
+          "answer": "选项 C",
           "timeLimitMs": 60000
         },
         {
           "id": "child-pri-5",
           "type": "mcq",
-          "prompt": "菱形与方形交替，缺的是？",
-          "image": "/packs/child/v1/media/pri-05-stem.svg",
+          "prompt": "找一找规律：哪一个图形应该放在「？」的位置？",
+          "image": "/packs/child/v1/media/pri-matrix-05-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/pri-05-a.svg"
+              "image": "/packs/child/v1/media/pri-matrix-05-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/pri-05-b.svg"
+              "image": "/packs/child/v1/media/pri-matrix-05-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/pri-05-c.svg"
+              "image": "/packs/child/v1/media/pri-matrix-05-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/pri-05-d.svg"
+              "image": "/packs/child/v1/media/pri-matrix-05-d.svg"
             }
           ],
           "answer": "选项 A",
@@ -730,50 +731,50 @@
         {
           "id": "child-pri-6",
           "type": "mcq",
-          "prompt": "最后一格应与第三格同类？",
-          "image": "/packs/child/v1/media/pri-06-stem.svg",
+          "prompt": "找一找规律：哪一个图形应该放在「？」的位置？",
+          "image": "/packs/child/v1/media/pri-matrix-06-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/pri-06-a.svg"
+              "image": "/packs/child/v1/media/pri-matrix-06-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/pri-06-b.svg"
+              "image": "/packs/child/v1/media/pri-matrix-06-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/pri-06-c.svg"
+              "image": "/packs/child/v1/media/pri-matrix-06-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/pri-06-d.svg"
+              "image": "/packs/child/v1/media/pri-matrix-06-d.svg"
             }
           ],
-          "answer": "选项 A",
+          "answer": "选项 C",
           "timeLimitMs": 60000
         },
         {
           "id": "child-pri-7",
           "type": "mcq",
-          "prompt": "加号与圆点交替，缺格？",
-          "image": "/packs/child/v1/media/pri-07-stem.svg",
+          "prompt": "找一找规律：哪一个图形应该放在「？」的位置？",
+          "image": "/packs/child/v1/media/pri-matrix-07-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/pri-07-a.svg"
+              "image": "/packs/child/v1/media/pri-matrix-07-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/pri-07-b.svg"
+              "image": "/packs/child/v1/media/pri-matrix-07-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/pri-07-c.svg"
+              "image": "/packs/child/v1/media/pri-matrix-07-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/pri-07-d.svg"
+              "image": "/packs/child/v1/media/pri-matrix-07-d.svg"
             }
           ],
           "answer": "选项 A",
@@ -782,236 +783,236 @@
         {
           "id": "child-pri-8",
           "type": "mcq",
-          "prompt": "两方一角再重复，缺的是？",
-          "image": "/packs/child/v1/media/pri-08-stem.svg",
+          "prompt": "找一找规律：哪一个图形应该放在「？」的位置？",
+          "image": "/packs/child/v1/media/pri-matrix-08-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/pri-08-a.svg"
+              "image": "/packs/child/v1/media/pri-matrix-08-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/pri-08-b.svg"
+              "image": "/packs/child/v1/media/pri-matrix-08-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/pri-08-c.svg"
+              "image": "/packs/child/v1/media/pri-matrix-08-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/pri-08-d.svg"
+              "image": "/packs/child/v1/media/pri-matrix-08-d.svg"
             }
           ],
-          "answer": "选项 A",
+          "answer": "选项 D",
           "timeLimitMs": 60000
         },
         {
           "id": "child-pri-9",
           "type": "mcq",
-          "prompt": "边数增加：圆→三角→方→？",
-          "image": "/packs/child/v1/media/pri-09-stem.svg",
+          "prompt": "找一找规律：哪一个图形应该放在「？」的位置？",
+          "image": "/packs/child/v1/media/pri-matrix-09-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/pri-09-a.svg"
+              "image": "/packs/child/v1/media/pri-matrix-09-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/pri-09-b.svg"
+              "image": "/packs/child/v1/media/pri-matrix-09-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/pri-09-c.svg"
+              "image": "/packs/child/v1/media/pri-matrix-09-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/pri-09-d.svg"
+              "image": "/packs/child/v1/media/pri-matrix-09-d.svg"
             }
           ],
-          "answer": "选项 A",
+          "answer": "选项 B",
           "timeLimitMs": 60000
         },
         {
           "id": "child-pri-10",
           "type": "mcq",
-          "prompt": "空心与实心圆交替？",
-          "image": "/packs/child/v1/media/pri-10-stem.svg",
+          "prompt": "找一找规律：哪一个图形应该放在「？」的位置？",
+          "image": "/packs/child/v1/media/pri-matrix-10-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/pri-10-a.svg"
+              "image": "/packs/child/v1/media/pri-matrix-10-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/pri-10-b.svg"
+              "image": "/packs/child/v1/media/pri-matrix-10-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/pri-10-c.svg"
+              "image": "/packs/child/v1/media/pri-matrix-10-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/pri-10-d.svg"
+              "image": "/packs/child/v1/media/pri-matrix-10-d.svg"
             }
           ],
-          "answer": "选项 A",
+          "answer": "选项 D",
           "timeLimitMs": 60000
         },
         {
           "id": "child-pri-11",
           "type": "mcq",
-          "prompt": "三角与菱形交替？",
-          "image": "/packs/child/v1/media/pri-11-stem.svg",
+          "prompt": "找一找规律：哪一个图形应该放在「？」的位置？",
+          "image": "/packs/child/v1/media/pri-matrix-11-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/pri-11-a.svg"
+              "image": "/packs/child/v1/media/pri-matrix-11-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/pri-11-b.svg"
+              "image": "/packs/child/v1/media/pri-matrix-11-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/pri-11-c.svg"
+              "image": "/packs/child/v1/media/pri-matrix-11-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/pri-11-d.svg"
+              "image": "/packs/child/v1/media/pri-matrix-11-d.svg"
             }
           ],
-          "answer": "选项 A",
-          "timeLimitMs": 60000
+          "answer": "选项 D",
+          "timeLimitMs": 75000
         },
         {
           "id": "child-pri-12",
           "type": "mcq",
-          "prompt": "方块与圆环交替？",
-          "image": "/packs/child/v1/media/pri-12-stem.svg",
+          "prompt": "找一找规律：哪一个图形应该放在「？」的位置？",
+          "image": "/packs/child/v1/media/pri-matrix-12-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/pri-12-a.svg"
+              "image": "/packs/child/v1/media/pri-matrix-12-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/pri-12-b.svg"
+              "image": "/packs/child/v1/media/pri-matrix-12-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/pri-12-c.svg"
+              "image": "/packs/child/v1/media/pri-matrix-12-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/pri-12-d.svg"
+              "image": "/packs/child/v1/media/pri-matrix-12-d.svg"
             }
           ],
           "answer": "选项 A",
-          "timeLimitMs": 60000
+          "timeLimitMs": 75000
         },
         {
           "id": "child-pri-13",
           "type": "mcq",
-          "prompt": "星与加号交替？",
-          "image": "/packs/child/v1/media/pri-13-stem.svg",
+          "prompt": "找一找规律：哪一个图形应该放在「？」的位置？",
+          "image": "/packs/child/v1/media/pri-matrix-13-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/pri-13-a.svg"
+              "image": "/packs/child/v1/media/pri-matrix-13-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/pri-13-b.svg"
+              "image": "/packs/child/v1/media/pri-matrix-13-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/pri-13-c.svg"
+              "image": "/packs/child/v1/media/pri-matrix-13-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/pri-13-d.svg"
+              "image": "/packs/child/v1/media/pri-matrix-13-d.svg"
             }
           ],
-          "answer": "选项 A",
-          "timeLimitMs": 60000
+          "answer": "选项 B",
+          "timeLimitMs": 75000
         },
         {
           "id": "child-pri-14",
           "type": "mcq",
-          "prompt": "成对出现：圆圆方方△△，缺？",
-          "image": "/packs/child/v1/media/pri-14-stem.svg",
+          "prompt": "找一找规律：哪一个图形应该放在「？」的位置？",
+          "image": "/packs/child/v1/media/pri-matrix-14-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/pri-14-a.svg"
+              "image": "/packs/child/v1/media/pri-matrix-14-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/pri-14-b.svg"
+              "image": "/packs/child/v1/media/pri-matrix-14-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/pri-14-c.svg"
+              "image": "/packs/child/v1/media/pri-matrix-14-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/pri-14-d.svg"
+              "image": "/packs/child/v1/media/pri-matrix-14-d.svg"
             }
           ],
           "answer": "选项 A",
-          "timeLimitMs": 60000
+          "timeLimitMs": 75000
         },
         {
           "id": "child-pri-15",
           "type": "mcq",
-          "prompt": "三个菱形后三个圆，缺？",
-          "image": "/packs/child/v1/media/pri-15-stem.svg",
+          "prompt": "找一找规律：哪一个图形应该放在「？」的位置？",
+          "image": "/packs/child/v1/media/pri-matrix-15-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/pri-15-a.svg"
+              "image": "/packs/child/v1/media/pri-matrix-15-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/pri-15-b.svg"
+              "image": "/packs/child/v1/media/pri-matrix-15-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/pri-15-c.svg"
+              "image": "/packs/child/v1/media/pri-matrix-15-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/pri-15-d.svg"
+              "image": "/packs/child/v1/media/pri-matrix-15-d.svg"
             }
           ],
-          "answer": "选项 A",
-          "timeLimitMs": 60000
+          "answer": "选项 C",
+          "timeLimitMs": 90000
         },
         {
           "id": "child-pri-16",
           "type": "mcq",
-          "prompt": "对称序列中间应是？",
-          "image": "/packs/child/v1/media/pri-16-stem.svg",
+          "prompt": "找一找规律：哪一个图形应该放在「？」的位置？",
+          "image": "/packs/child/v1/media/pri-matrix-16-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/pri-16-a.svg"
+              "image": "/packs/child/v1/media/pri-matrix-16-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/pri-16-b.svg"
+              "image": "/packs/child/v1/media/pri-matrix-16-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/pri-16-c.svg"
+              "image": "/packs/child/v1/media/pri-matrix-16-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/pri-16-d.svg"
+              "image": "/packs/child/v1/media/pri-matrix-16-d.svg"
             }
           ],
-          "answer": "选项 A",
-          "timeLimitMs": 60000
+          "answer": "选项 B",
+          "timeLimitMs": 90000
         }
       ]
     },
@@ -1019,28 +1020,29 @@
       "id": "child-pri-sequence",
       "indexKey": "PRI",
       "title": "图形序列",
+      "ordered": true,
       "items": [
         {
           "id": "child-pri2-1",
           "type": "mcq",
-          "prompt": "按圆—方交替，下一项是？",
-          "image": "/packs/child/v1/media/seq-01-stem.svg",
+          "prompt": "图形在按规律排队：「？」的位置应该是哪一个？",
+          "image": "/packs/child/v1/media/pri-sequence-01-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/seq-01-a.svg"
+              "image": "/packs/child/v1/media/pri-sequence-01-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/seq-01-b.svg"
+              "image": "/packs/child/v1/media/pri-sequence-01-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/seq-01-c.svg"
+              "image": "/packs/child/v1/media/pri-sequence-01-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/seq-01-d.svg"
+              "image": "/packs/child/v1/media/pri-sequence-01-d.svg"
             }
           ],
           "answer": "选项 A",
@@ -1049,50 +1051,50 @@
         {
           "id": "child-pri2-2",
           "type": "mcq",
-          "prompt": "空心—实心交替，缺的是？",
-          "image": "/packs/child/v1/media/seq-02-stem.svg",
+          "prompt": "图形在按规律排队：「？」的位置应该是哪一个？",
+          "image": "/packs/child/v1/media/pri-sequence-02-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/seq-02-a.svg"
+              "image": "/packs/child/v1/media/pri-sequence-02-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/seq-02-b.svg"
+              "image": "/packs/child/v1/media/pri-sequence-02-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/seq-02-c.svg"
+              "image": "/packs/child/v1/media/pri-sequence-02-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/seq-02-d.svg"
+              "image": "/packs/child/v1/media/pri-sequence-02-d.svg"
             }
           ],
-          "answer": "选项 A",
+          "answer": "选项 D",
           "timeLimitMs": 60000
         },
         {
           "id": "child-pri2-3",
           "type": "mcq",
-          "prompt": "边数越来越多，下一项？",
-          "image": "/packs/child/v1/media/seq-03-stem.svg",
+          "prompt": "图形在按规律排队：「？」的位置应该是哪一个？",
+          "image": "/packs/child/v1/media/pri-sequence-03-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/seq-03-a.svg"
+              "image": "/packs/child/v1/media/pri-sequence-03-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/seq-03-b.svg"
+              "image": "/packs/child/v1/media/pri-sequence-03-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/seq-03-c.svg"
+              "image": "/packs/child/v1/media/pri-sequence-03-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/seq-03-d.svg"
+              "image": "/packs/child/v1/media/pri-sequence-03-d.svg"
             }
           ],
           "answer": "选项 A",
@@ -1101,106 +1103,106 @@
         {
           "id": "child-pri2-4",
           "type": "mcq",
-          "prompt": "加号和星星轮流出现，下一个？",
-          "image": "/packs/child/v1/media/seq-04-stem.svg",
+          "prompt": "图形在按规律排队：「？」的位置应该是哪一个？",
+          "image": "/packs/child/v1/media/pri-sequence-04-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/seq-04-a.svg"
+              "image": "/packs/child/v1/media/pri-sequence-04-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/seq-04-b.svg"
+              "image": "/packs/child/v1/media/pri-sequence-04-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/seq-04-c.svg"
+              "image": "/packs/child/v1/media/pri-sequence-04-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/seq-04-d.svg"
+              "image": "/packs/child/v1/media/pri-sequence-04-d.svg"
             }
           ],
-          "answer": "选项 A",
+          "answer": "选项 B",
           "timeLimitMs": 60000
         },
         {
           "id": "child-pri2-5",
           "type": "mcq",
-          "prompt": "方—菱交替，缺格是？",
-          "image": "/packs/child/v1/media/seq-05-stem.svg",
+          "prompt": "图形在按规律排队：「？」的位置应该是哪一个？",
+          "image": "/packs/child/v1/media/pri-sequence-05-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/seq-05-a.svg"
+              "image": "/packs/child/v1/media/pri-sequence-05-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/seq-05-b.svg"
+              "image": "/packs/child/v1/media/pri-sequence-05-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/seq-05-c.svg"
+              "image": "/packs/child/v1/media/pri-sequence-05-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/seq-05-d.svg"
+              "image": "/packs/child/v1/media/pri-sequence-05-d.svg"
             }
           ],
-          "answer": "选项 A",
+          "answer": "选项 B",
           "timeLimitMs": 60000
         },
         {
           "id": "child-pri2-6",
           "type": "mcq",
-          "prompt": "两个圆、两个方，接着是？",
-          "image": "/packs/child/v1/media/seq-06-stem.svg",
+          "prompt": "图形在按规律排队：「？」的位置应该是哪一个？",
+          "image": "/packs/child/v1/media/pri-sequence-06-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/seq-06-a.svg"
+              "image": "/packs/child/v1/media/pri-sequence-06-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/seq-06-b.svg"
+              "image": "/packs/child/v1/media/pri-sequence-06-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/seq-06-c.svg"
+              "image": "/packs/child/v1/media/pri-sequence-06-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/seq-06-d.svg"
+              "image": "/packs/child/v1/media/pri-sequence-06-d.svg"
             }
           ],
-          "answer": "选项 A",
-          "timeLimitMs": 60000
+          "answer": "选项 D",
+          "timeLimitMs": 75000
         },
         {
           "id": "child-pri2-7",
           "type": "mcq",
-          "prompt": "双环—实心圆交替，下一个？",
-          "image": "/packs/child/v1/media/seq-07-stem.svg",
+          "prompt": "图形在按规律排队：「？」的位置应该是哪一个？",
+          "image": "/packs/child/v1/media/pri-sequence-07-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/child/v1/media/seq-07-a.svg"
+              "image": "/packs/child/v1/media/pri-sequence-07-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/child/v1/media/seq-07-b.svg"
+              "image": "/packs/child/v1/media/pri-sequence-07-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/child/v1/media/seq-07-c.svg"
+              "image": "/packs/child/v1/media/pri-sequence-07-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/child/v1/media/seq-07-d.svg"
+              "image": "/packs/child/v1/media/pri-sequence-07-d.svg"
             }
           ],
-          "answer": "选项 A",
-          "timeLimitMs": 60000
+          "answer": "选项 C",
+          "timeLimitMs": 75000
         }
       ]
     },

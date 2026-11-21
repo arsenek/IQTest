@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="635" height="141" viewBox="0 0 668 148" role="img" aria-hidden="true">
+<rect width="668" height="148" fill="#ffffff"/>
+<rect x="14" y="14" width="120" height="120" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/><path d="M 0 -1 L 0.78 -0.08 L 0.3 -0.08 L 0.3 1 L -0.3 1 L -0.3 -0.08 L -0.78 -0.08 Z" transform="translate(74 74) scale(34.56)" fill="#1e293b" stroke="#1e293b" stroke-width="0.1013" stroke-linejoin="round"/>
+<rect x="144" y="14" width="120" height="120" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/><path d="M 0 -1 L 0.78 -0.08 L 0.3 -0.08 L 0.3 1 L -0.3 1 L -0.3 -0.08 L -0.78 -0.08 Z" transform="translate(204 74) rotate(90) scale(34.56)" fill="#1e293b" stroke="#1e293b" stroke-width="0.1013" stroke-linejoin="round"/>
+<rect x="274" y="14" width="120" height="120" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/><path d="M 0 -1 L 0.78 -0.08 L 0.3 -0.08 L 0.3 1 L -0.3 1 L -0.3 -0.08 L -0.78 -0.08 Z" transform="translate(334 74) rotate(180) scale(34.56)" fill="#1e293b" stroke="#1e293b" stroke-width="0.1013" stroke-linejoin="round"/>
+<rect x="404" y="14" width="120" height="120" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/><path d="M 0 -1 L 0.78 -0.08 L 0.3 -0.08 L 0.3 1 L -0.3 1 L -0.3 -0.08 L -0.78 -0.08 Z" transform="translate(464 74) rotate(270) scale(34.56)" fill="#1e293b" stroke="#1e293b" stroke-width="0.1013" stroke-linejoin="round"/>
+<rect x="534" y="14" width="120" height="120" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5" stroke-dasharray="8 6"/><text x="594" y="94" text-anchor="middle" font-size="58" font-weight="700" font-family="system-ui, -apple-system, 'PingFang SC', 'Noto Sans SC', sans-serif" fill="#475569">?</text>
+</svg>

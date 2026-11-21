@@ -25,7 +25,14 @@ export function McqItem({
   disabled = false,
   onAnswer,
 }: McqItemProps) {
-  const normalized = choices.map(normalizeChoice);
+  const asGiven = choices.map(normalizeChoice);
+  // Figure options need room to be read; four across keeps them beside the stem.
+  const figureChoices = asGiven.length > 0 && asGiven.every((c) => Boolean(c.image));
+  // Figure options are named by letter, and the pack already balances which
+  // letter is correct, so show them A→D instead of in session-shuffled order.
+  const normalized = figureChoices
+    ? [...asGiven].sort((a, b) => (a.label < b.label ? -1 : a.label > b.label ? 1 : 0))
+    : asGiven;
 
   return (
     <ItemCard
@@ -42,13 +49,19 @@ export function McqItem({
               src={image}
               alt=""
               data-testid="item-stem-image"
-              className="mx-auto h-auto w-full max-w-md rounded-[calc(var(--card-radius)-0.25rem)] border border-[var(--card-border)] bg-white object-contain p-2 md:max-w-lg"
+              className="mx-auto h-auto max-w-full rounded-[calc(var(--card-radius)-0.25rem)] border border-[var(--card-border)] bg-white object-contain p-2"
             />
           ) : null}
         </div>
       }
     >
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4 lg:gap-5">
+      <div
+        className={
+          figureChoices
+            ? "grid grid-cols-2 gap-3 sm:grid-cols-4 md:gap-4"
+            : "grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4 lg:gap-5"
+        }
+      >
         {normalized.map((choice) => (
           <ChoiceCardButton
             key={choice.label}

@@ -12,7 +12,7 @@ type RouteParams = {
 
 /**
  * Serve pack SVG media from content/packs/{audience}/{version}/media/.
- * URL: /packs/child/v1/media/pri-01-stem.svg
+ * URL: /packs/child/v1/media/pri-matrix-01-stem.svg
  */
 export async function GET(_request: Request, { params }: RouteParams) {
   const { audience, version, file } = await params;

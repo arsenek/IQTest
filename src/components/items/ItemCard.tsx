@@ -132,7 +132,11 @@ export function ChoiceCardButton({
     >
       {(glyph || image) && (
         <span
-          className="choice-card-glyph flex h-12 w-12 items-center justify-center rounded-[calc(var(--card-radius)-0.35rem)] bg-[var(--card-glyph-bg)] text-2xl md:h-14 md:w-14 md:text-3xl"
+          className={`choice-card-glyph flex items-center justify-center overflow-hidden rounded-[calc(var(--card-radius)-0.35rem)] ${
+            image
+              ? "h-24 w-24 bg-white md:h-28 md:w-28"
+              : "h-12 w-12 bg-[var(--card-glyph-bg)] text-2xl md:h-14 md:w-14 md:text-3xl"
+          }`}
           aria-hidden={Boolean(glyph)}
         >
           {image ? (
@@ -141,7 +145,7 @@ export function ChoiceCardButton({
             <img
               src={image}
               alt=""
-              className="h-14 w-14 object-contain md:h-16 md:w-16"
+              className="h-full w-full object-contain"
             />
           ) : (
             glyph

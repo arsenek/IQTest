@@ -596,132 +596,133 @@
       "id": "adult-pri-matrix",
       "indexKey": "PRI",
       "title": "图形推理",
+      "ordered": true,
       "items": [
         {
           "id": "adult-pri-1",
           "type": "mcq",
-          "prompt": "行列互补：缺格应取与对角同类？",
-          "image": "/packs/adult/v1/media/pri-01-stem.svg",
+          "prompt": "观察图形的排列规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-matrix-01-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/pri-01-a.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-01-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/pri-01-b.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-01-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/pri-01-c.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-01-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/pri-01-d.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-01-d.svg"
             }
           ],
-          "answer": "选项 A",
+          "answer": "选项 B",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-pri-2",
           "type": "mcq",
-          "prompt": "按对角相等规律，缺项是？",
-          "image": "/packs/adult/v1/media/pri-02-stem.svg",
+          "prompt": "观察图形的排列规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-matrix-02-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/pri-02-a.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-02-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/pri-02-b.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-02-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/pri-02-c.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-02-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/pri-02-d.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-02-d.svg"
             }
           ],
-          "answer": "选项 A",
+          "answer": "选项 B",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-pri-3",
           "type": "mcq",
-          "prompt": "两环一菱重复，缺？",
-          "image": "/packs/adult/v1/media/pri-03-stem.svg",
+          "prompt": "观察图形的排列规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-matrix-03-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/pri-03-a.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-03-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/pri-03-b.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-03-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/pri-03-c.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-03-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/pri-03-d.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-03-d.svg"
             }
           ],
-          "answer": "选项 A",
+          "answer": "选项 D",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-pri-4",
           "type": "mcq",
-          "prompt": "方块与菱形交替？",
-          "image": "/packs/adult/v1/media/pri-04-stem.svg",
+          "prompt": "观察图形的排列规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-matrix-04-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/pri-04-a.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-04-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/pri-04-b.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-04-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/pri-04-c.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-04-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/pri-04-d.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-04-d.svg"
             }
           ],
-          "answer": "选项 A",
+          "answer": "选项 C",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-pri-5",
           "type": "mcq",
-          "prompt": "两加一星，缺？",
-          "image": "/packs/adult/v1/media/pri-05-stem.svg",
+          "prompt": "观察图形的排列规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-matrix-05-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/pri-05-a.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-05-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/pri-05-b.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-05-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/pri-05-c.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-05-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/pri-05-d.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-05-d.svg"
             }
           ],
           "answer": "选项 A",
@@ -730,288 +731,288 @@
         {
           "id": "adult-pri-6",
           "type": "mcq",
-          "prompt": "圆与三角交替？",
-          "image": "/packs/adult/v1/media/pri-06-stem.svg",
+          "prompt": "观察图形的排列规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-matrix-06-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/pri-06-a.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-06-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/pri-06-b.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-06-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/pri-06-c.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-06-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/pri-06-d.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-06-d.svg"
             }
           ],
           "answer": "选项 A",
-          "timeLimitMs": 55000
+          "timeLimitMs": 70000
         },
         {
           "id": "adult-pri-7",
           "type": "mcq",
-          "prompt": "菱形与空心环交替？",
-          "image": "/packs/adult/v1/media/pri-07-stem.svg",
+          "prompt": "观察图形的排列规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-matrix-07-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/pri-07-a.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-07-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/pri-07-b.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-07-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/pri-07-c.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-07-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/pri-07-d.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-07-d.svg"
             }
           ],
-          "answer": "选项 A",
-          "timeLimitMs": 55000
+          "answer": "选项 D",
+          "timeLimitMs": 70000
         },
         {
           "id": "adult-pri-8",
           "type": "mcq",
-          "prompt": "星与方交替？",
-          "image": "/packs/adult/v1/media/pri-08-stem.svg",
+          "prompt": "观察图形的排列规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-matrix-08-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/pri-08-a.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-08-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/pri-08-b.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-08-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/pri-08-c.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-08-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/pri-08-d.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-08-d.svg"
             }
           ],
-          "answer": "选项 A",
-          "timeLimitMs": 55000
+          "answer": "选项 B",
+          "timeLimitMs": 70000
         },
         {
           "id": "adult-pri-9",
           "type": "mcq",
-          "prompt": "两三角一环，缺？",
-          "image": "/packs/adult/v1/media/pri-09-stem.svg",
+          "prompt": "观察图形的排列规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-matrix-09-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/pri-09-a.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-09-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/pri-09-b.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-09-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/pri-09-c.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-09-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/pri-09-d.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-09-d.svg"
             }
           ],
-          "answer": "选项 A",
-          "timeLimitMs": 55000
+          "answer": "选项 C",
+          "timeLimitMs": 70000
         },
         {
           "id": "adult-pri-10",
           "type": "mcq",
-          "prompt": "复杂度递增：圆→加→方→？",
-          "image": "/packs/adult/v1/media/pri-10-stem.svg",
+          "prompt": "观察图形的排列规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-matrix-10-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/pri-10-a.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-10-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/pri-10-b.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-10-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/pri-10-c.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-10-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/pri-10-d.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-10-d.svg"
             }
           ],
           "answer": "选项 A",
-          "timeLimitMs": 55000
+          "timeLimitMs": 70000
         },
         {
           "id": "adult-pri-11",
           "type": "mcq",
-          "prompt": "环与方交替？",
-          "image": "/packs/adult/v1/media/pri-11-stem.svg",
+          "prompt": "观察图形的排列规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-matrix-11-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/pri-11-a.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-11-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/pri-11-b.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-11-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/pri-11-c.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-11-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/pri-11-d.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-11-d.svg"
             }
           ],
-          "answer": "选项 A",
-          "timeLimitMs": 55000
+          "answer": "选项 D",
+          "timeLimitMs": 85000
         },
         {
           "id": "adult-pri-12",
           "type": "mcq",
-          "prompt": "两菱一圆，缺？",
-          "image": "/packs/adult/v1/media/pri-12-stem.svg",
+          "prompt": "观察图形的排列规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-matrix-12-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/pri-12-a.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-12-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/pri-12-b.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-12-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/pri-12-c.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-12-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/pri-12-d.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-12-d.svg"
             }
           ],
-          "answer": "选项 A",
-          "timeLimitMs": 55000
+          "answer": "选项 D",
+          "timeLimitMs": 85000
         },
         {
           "id": "adult-pri-13",
           "type": "mcq",
-          "prompt": "加号与三角交替？",
-          "image": "/packs/adult/v1/media/pri-13-stem.svg",
+          "prompt": "观察图形的排列规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-matrix-13-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/pri-13-a.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-13-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/pri-13-b.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-13-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/pri-13-c.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-13-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/pri-13-d.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-13-d.svg"
             }
           ],
           "answer": "选项 A",
-          "timeLimitMs": 55000
+          "timeLimitMs": 85000
         },
         {
           "id": "adult-pri-14",
           "type": "mcq",
-          "prompt": "对称：圆方△方圆？",
-          "image": "/packs/adult/v1/media/pri-14-stem.svg",
+          "prompt": "观察图形的排列规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-matrix-14-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/pri-14-a.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-14-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/pri-14-b.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-14-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/pri-14-c.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-14-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/pri-14-d.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-14-d.svg"
             }
           ],
-          "answer": "选项 A",
-          "timeLimitMs": 55000
+          "answer": "选项 B",
+          "timeLimitMs": 85000
         },
         {
           "id": "adult-pri-15",
           "type": "mcq",
-          "prompt": "对称序列：缺中间镜像？",
-          "image": "/packs/adult/v1/media/pri-15-stem.svg",
+          "prompt": "观察图形的排列规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-matrix-15-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/pri-15-a.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-15-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/pri-15-b.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-15-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/pri-15-c.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-15-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/pri-15-d.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-15-d.svg"
             }
           ],
-          "answer": "选项 A",
-          "timeLimitMs": 55000
+          "answer": "选项 C",
+          "timeLimitMs": 100000
         },
         {
           "id": "adult-pri-16",
           "type": "mcq",
-          "prompt": "对称矩阵缺格？",
-          "image": "/packs/adult/v1/media/pri-16-stem.svg",
+          "prompt": "观察图形的排列规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-matrix-16-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/pri-16-a.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-16-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/pri-16-b.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-16-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/pri-16-c.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-16-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/pri-16-d.svg"
+              "image": "/packs/adult/v1/media/pri-matrix-16-d.svg"
             }
           ],
-          "answer": "选项 A",
-          "timeLimitMs": 55000
+          "answer": "选项 C",
+          "timeLimitMs": 100000
         }
       ]
     },
@@ -1019,54 +1020,55 @@
       "id": "adult-pri-sequence",
       "indexKey": "PRI",
       "title": "图形序列与补全",
+      "ordered": true,
       "items": [
         {
           "id": "adult-pri2-1",
           "type": "mcq",
-          "prompt": "按交替规律，序列下一项是？",
-          "image": "/packs/adult/v1/media/seq-01-stem.svg",
+          "prompt": "根据图形序列的变化规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-sequence-01-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/seq-01-a.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-01-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/seq-01-b.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-01-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/seq-01-c.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-01-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/seq-01-d.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-01-d.svg"
             }
           ],
-          "answer": "选项 A",
+          "answer": "选项 B",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-pri2-2",
           "type": "mcq",
-          "prompt": "空心与实心交替，缺项为？",
-          "image": "/packs/adult/v1/media/seq-02-stem.svg",
+          "prompt": "根据图形序列的变化规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-sequence-02-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/seq-02-a.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-02-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/seq-02-b.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-02-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/seq-02-c.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-02-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/seq-02-d.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-02-d.svg"
             }
           ],
           "answer": "选项 A",
@@ -1075,132 +1077,132 @@
         {
           "id": "adult-pri2-3",
           "type": "mcq",
-          "prompt": "边数递增序列，下一项是？",
-          "image": "/packs/adult/v1/media/seq-03-stem.svg",
+          "prompt": "根据图形序列的变化规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-sequence-03-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/seq-03-a.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-03-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/seq-03-b.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-03-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/seq-03-c.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-03-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/seq-03-d.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-03-d.svg"
             }
           ],
-          "answer": "选项 A",
+          "answer": "选项 B",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-pri2-4",
           "type": "mcq",
-          "prompt": "两种符号交替，缺项为？",
-          "image": "/packs/adult/v1/media/seq-04-stem.svg",
+          "prompt": "根据图形序列的变化规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-sequence-04-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/seq-04-a.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-04-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/seq-04-b.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-04-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/seq-04-c.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-04-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/seq-04-d.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-04-d.svg"
             }
           ],
-          "answer": "选项 A",
-          "timeLimitMs": 55000
+          "answer": "选项 D",
+          "timeLimitMs": 70000
         },
         {
           "id": "adult-pri2-5",
           "type": "mcq",
-          "prompt": "方形与菱形交替，补全缺项。",
-          "image": "/packs/adult/v1/media/seq-05-stem.svg",
+          "prompt": "根据图形序列的变化规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-sequence-05-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/seq-05-a.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-05-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/seq-05-b.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-05-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/seq-05-c.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-05-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/seq-05-d.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-05-d.svg"
             }
           ],
-          "answer": "选项 A",
-          "timeLimitMs": 55000
+          "answer": "选项 C",
+          "timeLimitMs": 70000
         },
         {
           "id": "adult-pri2-6",
           "type": "mcq",
-          "prompt": "成对重复模式，下一项是？",
-          "image": "/packs/adult/v1/media/seq-06-stem.svg",
+          "prompt": "根据图形序列的变化规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-sequence-06-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/seq-06-a.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-06-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/seq-06-b.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-06-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/seq-06-c.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-06-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/seq-06-d.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-06-d.svg"
             }
           ],
           "answer": "选项 A",
-          "timeLimitMs": 55000
+          "timeLimitMs": 85000
         },
         {
           "id": "adult-pri2-7",
           "type": "mcq",
-          "prompt": "双环与实心圆交替，缺项？",
-          "image": "/packs/adult/v1/media/seq-07-stem.svg",
+          "prompt": "根据图形序列的变化规律，选出最适合填入「？」处的一项。",
+          "image": "/packs/adult/v1/media/pri-sequence-07-stem.svg",
           "choices": [
             {
               "label": "选项 A",
-              "image": "/packs/adult/v1/media/seq-07-a.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-07-a.svg"
             },
             {
               "label": "选项 B",
-              "image": "/packs/adult/v1/media/seq-07-b.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-07-b.svg"
             },
             {
               "label": "选项 C",
-              "image": "/packs/adult/v1/media/seq-07-c.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-07-c.svg"
             },
             {
               "label": "选项 D",
-              "image": "/packs/adult/v1/media/seq-07-d.svg"
+              "image": "/packs/adult/v1/media/pri-sequence-07-d.svg"
             }
           ],
-          "answer": "选项 A",
-          "timeLimitMs": 55000
+          "answer": "选项 D",
+          "timeLimitMs": 85000
         }
       ]
     },
