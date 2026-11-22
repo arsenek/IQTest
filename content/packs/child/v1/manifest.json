@@ -1579,49 +1579,49 @@
         {
           "id": "child-psi2-1",
           "type": "symbol_search",
-          "prompt": "配对：左边是☆，右边应选哪个？在 ★☆●■ 中找与目标相同的符号，它出现几次？目标☆",
+          "prompt": "配对计数：目标☆。在 ★☆●■ 中出现几次？",
           "answer": 1,
           "timeLimitMs": 32000
         },
         {
           "id": "child-psi2-2",
           "type": "symbol_search",
-          "prompt": "数一数：▲ 在 ▲△▲○▲■ 中出现几次？",
+          "prompt": "目标▲。在 ▲△▲○▲■ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 30000
         },
         {
           "id": "child-psi2-3",
           "type": "symbol_search",
-          "prompt": "配对计数：目标◇。序列 ◆◇○◇◆◇ 中出现几次？",
+          "prompt": "配对计数：目标◇。在 ◆◇○◇◆◇ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 28000
         },
         {
           "id": "child-psi2-4",
           "type": "symbol_search",
-          "prompt": "快速配对：目标＋。在 ×＋÷＋＝－ 中出现几次？",
+          "prompt": "目标＋。在 ×＋÷＋＝－ 中出现几次？",
           "answer": 2,
           "timeLimitMs": 26000
         },
         {
           "id": "child-psi2-5",
           "type": "symbol_search",
-          "prompt": "数一数：○ 在 ●◎○●○◎○○ 中出现几次？",
+          "prompt": "目标○。在 ●◎○●○◎○○ 中出现几次？",
           "answer": 4,
           "timeLimitMs": 24000
         },
         {
           "id": "child-psi2-6",
           "type": "symbol_search",
-          "prompt": "配对：目标■。在 □■◆■□▲■ 中出现几次？",
+          "prompt": "配对计数：目标■。在 □■◆■□▲■ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 22000
         },
         {
           "id": "child-psi2-7",
           "type": "symbol_search",
-          "prompt": "计数变体：目标※。在 ＊＃※＊※＃※ 中出现几次？",
+          "prompt": "目标※。在 ＊＃※＊※＃※ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 20000
         }

@@ -1460,112 +1460,112 @@
         {
           "id": "adult-psi-1",
           "type": "symbol_search",
-          "prompt": "目标 Σ。在 ΑΣΒΓΔΕ 中出现几次？",
+          "prompt": "目标Σ。在 ΑΣΒΓΔΕ 中出现几次？",
           "answer": 1,
           "timeLimitMs": 32000
         },
         {
           "id": "adult-psi-2",
           "type": "symbol_search",
-          "prompt": "目标 ≠。在 =≠≈≠≡≠∼≠ 中出现几次？",
+          "prompt": "目标≠。在 =≠≈≠≡≠∼≠ 中出现几次？",
           "answer": 4,
           "timeLimitMs": 31200
         },
         {
           "id": "adult-psi-3",
           "type": "symbol_search",
-          "prompt": "目标 ∞。在 ∅∞∪∩⊂⊃ 中出现几次？",
+          "prompt": "目标∞。在 ∅∞∪∩⊂⊃ 中出现几次？",
           "answer": 1,
           "timeLimitMs": 30400
         },
         {
           "id": "adult-psi-4",
           "type": "symbol_search",
-          "prompt": "目标 √。在 √π√e√2√φ√ 中出现几次？",
+          "prompt": "目标√。在 √π√e√2√φ√ 中出现几次？",
           "answer": 5,
           "timeLimitMs": 29600
         },
         {
           "id": "adult-psi-5",
           "type": "symbol_search",
-          "prompt": "目标 ∴。在 ∵∴∵∴∵∴ 中出现几次？",
+          "prompt": "目标∴。在 ∵∴∵∴∵∴ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 28800
         },
         {
           "id": "adult-psi-6",
           "type": "symbol_search",
-          "prompt": "目标 ∂。在 ∇Δ∫∑∂ 中出现几次？",
+          "prompt": "目标∂。在 ∇Δ∫∑∂ 中出现几次？",
           "answer": 1,
           "timeLimitMs": 28000
         },
         {
           "id": "adult-psi-7",
           "type": "symbol_search",
-          "prompt": "目标 ∈。在 ⊂∈∪∈∩∈∅∈ 中出现几次？",
+          "prompt": "目标∈。在 ⊂∈∪∈∩∈∅∈ 中出现几次？",
           "answer": 4,
           "timeLimitMs": 27200
         },
         {
           "id": "adult-psi-8",
           "type": "symbol_search",
-          "prompt": "目标 ℵ。在 αβγδℵε 中出现几次？",
+          "prompt": "目标ℵ。在 αβγδℵε 中出现几次？",
           "answer": 1,
           "timeLimitMs": 26400
         },
         {
           "id": "adult-psi-9",
           "type": "symbol_search",
-          "prompt": "目标 ⊢。在 ⊨⊢⊥⊢⊤⊢∼⊢ 中出现几次？",
+          "prompt": "目标⊢。在 ⊨⊢⊥⊢⊤⊢∼⊢ 中出现几次？",
           "answer": 4,
           "timeLimitMs": 25600
         },
         {
           "id": "adult-psi-10",
           "type": "symbol_search",
-          "prompt": "目标 ∀。在 ∃∀∃∀∃∀∀ 中出现几次？",
+          "prompt": "目标∀。在 ∃∀∃∀∃∀∀ 中出现几次？",
           "answer": 4,
           "timeLimitMs": 24800
         },
         {
           "id": "adult-psi-11",
           "type": "symbol_search",
-          "prompt": "目标 ⊆。在 ⊂⊆⊂⊆⊆⊃ 中出现几次？",
+          "prompt": "目标⊆。在 ⊂⊆⊂⊆⊆⊃ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 24000
         },
         {
           "id": "adult-psi-12",
           "type": "symbol_search",
-          "prompt": "目标 ∧。在 ∨∧∨∧∨∧∧ 中出现几次？",
+          "prompt": "目标∧。在 ∨∧∨∧∨∧∧ 中出现几次？",
           "answer": 4,
           "timeLimitMs": 23200
         },
         {
           "id": "adult-psi-13",
           "type": "symbol_search",
-          "prompt": "目标 ⊥。在 ⊤⊥⊤⊥⊥⊤ 中出现几次？",
+          "prompt": "目标⊥。在 ⊤⊥⊤⊥⊥⊤ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 22400
         },
         {
           "id": "adult-psi-14",
           "type": "symbol_search",
-          "prompt": "目标 ≈。在 =≈≠≈≡≈∼ 中出现几次？",
+          "prompt": "目标≈。在 =≈≠≈≡≈∼ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 21600
         },
         {
           "id": "adult-psi-15",
           "type": "symbol_search",
-          "prompt": "目标 Ω。在 αΩβΩγδΩ 中出现几次？",
+          "prompt": "目标Ω。在 αΩβΩγδΩ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 20800
         },
         {
           "id": "adult-psi-16",
           "type": "symbol_search",
-          "prompt": "目标 ∅。在 ∅∪∅∩∅⊂∅ 中出现几次？",
+          "prompt": "目标∅。在 ∅∪∅∩∅⊂∅ 中出现几次？",
           "answer": 4,
           "timeLimitMs": 20000
         }
@@ -1574,7 +1574,7 @@
     {
       "id": "adult-psi-pairing",
       "indexKey": "PSI",
-      "title": "符号配对与计数",
+      "title": "符号配对",
       "items": [
         {
           "id": "adult-psi2-1",
@@ -1586,42 +1586,42 @@
         {
           "id": "adult-psi2-2",
           "type": "symbol_search",
-          "prompt": "快速扫描：目标◇。序列 ◆◇○◇◆◇○◇ 中出现几次？",
+          "prompt": "目标◇。在 ◆◇○◇◆◇○◇ 中出现几次？",
           "answer": 4,
           "timeLimitMs": 26000
         },
         {
           "id": "adult-psi2-3",
           "type": "symbol_search",
-          "prompt": "配对：目标▲。在 △▼▲◆▲△▼▲ 中出现几次？",
+          "prompt": "配对计数：目标▲。在 △▼▲◆▲△▼▲ 中目标出现几次？",
           "answer": 3,
           "timeLimitMs": 24000
         },
         {
           "id": "adult-psi2-4",
           "type": "symbol_search",
-          "prompt": "计数变体：目标＋。在 ×÷＋＝＋－＋× 中出现几次？",
+          "prompt": "目标＋。在 ×÷＋＝＋－＋× 中出现几次？",
           "answer": 3,
           "timeLimitMs": 22000
         },
         {
           "id": "adult-psi2-5",
           "type": "symbol_search",
-          "prompt": "扫描：目标◎。在 ○●◎○◎●◎○ 中出现几次？",
+          "prompt": "目标◎。在 ○●◎○◎●◎○ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 21000
         },
         {
           "id": "adult-psi2-6",
           "type": "symbol_search",
-          "prompt": "配对计数：目标■。在 □■◆□■▲■□ 中出现几次？",
+          "prompt": "配对计数：目标■。在 □■◆□■▲■□ 中目标出现几次？",
           "answer": 3,
           "timeLimitMs": 20000
         },
         {
           "id": "adult-psi2-7",
           "type": "symbol_search",
-          "prompt": "快速配对：目标★。在 ☆★●★☆■★☆ 中出现几次？",
+          "prompt": "目标★。在 ☆★●★☆■★☆ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 18000
         }

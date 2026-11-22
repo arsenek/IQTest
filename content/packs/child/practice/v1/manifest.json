@@ -638,75 +638,75 @@
     {
       "id": "child-prac-psi",
       "indexKey": "PSI",
-      "title": "速度练习",
+      "title": "符号练习",
       "items": [
         {
           "id": "child-prac-psi-1",
           "type": "symbol_search",
-          "prompt": "目标○。在 ●○◎○● 中出现几次？",
+          "prompt": "练习：目标○。在 ●○◎○● 中出现几次？",
           "answer": 2,
           "timeLimitMs": 30000
         },
         {
           "id": "child-prac-psi-2",
           "type": "symbol_search",
-          "prompt": "目标△。在 △□△○△■ 中出现几次？",
+          "prompt": "练习：目标△。在 △□△○△■ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 29000
         },
         {
           "id": "child-prac-psi-3",
           "type": "symbol_search",
-          "prompt": "目标★。在 ☆★●★☆ 中出现几次？",
+          "prompt": "练习：目标★。在 ☆★●★☆ 中出现几次？",
           "answer": 2,
           "timeLimitMs": 28000
         },
         {
           "id": "child-prac-psi-4",
           "type": "symbol_search",
-          "prompt": "目标■。在 □■◆■□▲ 中出现几次？",
+          "prompt": "练习：目标■。在 □■◆■□▲ 中出现几次？",
           "answer": 2,
           "timeLimitMs": 27000
         },
         {
           "id": "child-prac-psi-5",
           "type": "symbol_search",
-          "prompt": "目标＋。在 ×＋÷＋＝ 中出现几次？",
+          "prompt": "练习：目标＋。在 ×＋÷＋＝ 中出现几次？",
           "answer": 2,
           "timeLimitMs": 26000
         },
         {
           "id": "child-prac-psi-6",
           "type": "symbol_search",
-          "prompt": "目标◇。在 ◆◇○◇◆◇ 中出现几次？",
+          "prompt": "练习：目标◇。在 ◆◇○◇◆◇ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 25000
         },
         {
           "id": "child-prac-psi-7",
           "type": "symbol_search",
-          "prompt": "目标▲。在 △▼▲◆▲△ 中出现几次？",
+          "prompt": "练习：目标▲。在 △▼▲◆▲△ 中出现几次？",
           "answer": 2,
           "timeLimitMs": 24000
         },
         {
           "id": "child-prac-psi-8",
           "type": "symbol_search",
-          "prompt": "目标※。在 ＊＃※＊＃※ 中出现几次？",
+          "prompt": "练习：目标※。在 ＊＃※＊＃※ 中出现几次？",
           "answer": 2,
           "timeLimitMs": 23000
         },
         {
           "id": "child-prac-psi-9",
           "type": "symbol_search",
-          "prompt": "目标◎。在 ○●◎○◎● 中出现几次？",
+          "prompt": "练习：目标◎。在 ○●◎○◎● 中出现几次？",
           "answer": 2,
           "timeLimitMs": 22000
         },
         {
           "id": "child-prac-psi-10",
           "type": "symbol_search",
-          "prompt": "目标▼。在 ▲▼▲▼▼◆ 中出现几次？",
+          "prompt": "练习：目标▼。在 ▲▼▲▼▼◆ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 21000
         }
