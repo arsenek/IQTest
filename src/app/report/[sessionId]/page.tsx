@@ -6,17 +6,27 @@ import {
   assertAssessmentOwned,
   getSessionUser,
 } from "@/lib/auth/session";
-import { loadNorms } from "@/lib/content/loadNorms";
-import { INDEX_KEYS, type IndexKey } from "@/lib/content/types";
+import { INDEX_KEYS, type IndexKey, type ScoringStage } from "@/lib/content/types";
 import { prisma } from "@/lib/db";
 import {
+  compositeScoreHint,
+  compositeScoreLabel,
   dualCoreBlurb,
   narrativeParagraph,
+  reportComplianceNote,
+  stageBadgeLabel,
 } from "@/lib/scoring/reportCopy";
 
 type PageProps = {
   params: Promise<{ sessionId: string }>;
 };
+
+function asScoringStage(value: string): ScoringStage {
+  if (value === "calibrated" || value === "standardized" || value === "trial") {
+    return value;
+  }
+  return "trial";
+}
 
 export default async function ReportPage({ params }: PageProps) {
   const { sessionId } = await params;
@@ -42,7 +52,9 @@ export default async function ReportPage({ params }: PageProps) {
   }
 
   const report = session.report;
-  const norms = loadNorms(session.normVersion);
+  const stage = asScoringStage(report.scoringStage);
+  const normVersion = report.normVersion || session.normVersion;
+  const algorithmVersion = report.algorithmVersion;
   const audience = session.profile.kind === "CHILD" ? "child" : "adult";
   const scores: Record<IndexKey, number> = {
     VCI: report.vci,
@@ -73,34 +85,67 @@ export default async function ReportPage({ params }: PageProps) {
               data-testid="report-dual-core-blurb"
               className="max-w-2xl text-sm leading-relaxed text-zinc-600 md:text-base"
             >
-              {dualCoreBlurb(audience)}
+              {dualCoreBlurb(audience, stage)}
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-2">
-            {norms.trial && (
-              <span className="rounded-full bg-sky-100 px-3 py-1 text-sm font-medium text-sky-900">
-                试运行
-              </span>
-            )}
-            <span className="rounded-full bg-zinc-200 px-3 py-1 text-sm text-zinc-700">
-              常模 {session.normVersion}
+            <span
+              data-testid="report-stage-badge"
+              className="rounded-full bg-sky-100 px-3 py-1 text-sm font-medium text-sky-900"
+            >
+              {stageBadgeLabel(stage)}
             </span>
+            {stage === "trial" && (
+              <>
+                <span
+                  data-testid="report-nonstandard-badge"
+                  className="rounded-full bg-amber-100 px-3 py-1 text-sm font-medium text-amber-950"
+                >
+                  非标准化 IQ
+                </span>
+                <span
+                  data-testid="report-nonclinical-badge"
+                  className="rounded-full bg-rose-100 px-3 py-1 text-sm font-medium text-rose-950"
+                >
+                  非临床
+                </span>
+              </>
+            )}
+            <span
+              data-testid="report-norm-version"
+              className="rounded-full bg-zinc-200 px-3 py-1 text-sm text-zinc-700"
+            >
+              常模 {normVersion}
+            </span>
+            {algorithmVersion ? (
+              <span
+                data-testid="report-algorithm-version"
+                className="rounded-full bg-zinc-100 px-3 py-1 text-xs text-zinc-600"
+              >
+                算法 {algorithmVersion}
+              </span>
+            ) : null}
           </div>
         </header>
 
         <section className="rounded-2xl border border-zinc-200 bg-white p-6 md:p-8">
-          <p className="text-sm font-medium text-zinc-500">总合成分</p>
+          <p
+            data-testid="report-composite-label"
+            className="text-sm font-medium text-zinc-500"
+          >
+            {compositeScoreLabel(stage)}
+          </p>
           <p className="mt-2 text-5xl font-semibold tabular-nums md:text-6xl">
             {Math.round(report.composite)}
           </p>
           <p className="mt-2 text-sm text-zinc-500">
-            精确值 {report.composite.toFixed(2)} · 四指数均值（MVP）
+            精确值 {report.composite.toFixed(2)} · {compositeScoreHint(stage)}
           </p>
           <p
             data-testid="report-narrative"
             className="mt-4 text-sm leading-relaxed text-zinc-700 md:text-base"
           >
-            {narrativeParagraph(weakest, audience)}
+            {narrativeParagraph(weakest, audience, stage)}
           </p>
         </section>
 
@@ -118,8 +163,11 @@ export default async function ReportPage({ params }: PageProps) {
           ))}
         </section>
 
-        <aside className="rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm leading-relaxed text-amber-950 md:text-base">
-          合规提示：本站采用自研题库与占位常模，结构对齐韦氏四指数，非官方韦氏/WISC/WAIS；结果仅供参考，不能替代专业心理或医学评估。儿童请在家长陪同下阅读与练习。练习不会回写正式分。
+        <aside
+          data-testid="report-compliance"
+          className="rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm leading-relaxed text-amber-950 md:text-base"
+        >
+          {reportComplianceNote(stage)}
         </aside>
 
         <div className="flex flex-wrap gap-4 text-sm">
