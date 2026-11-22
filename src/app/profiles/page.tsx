@@ -1,76 +1,43 @@
 import Link from "next/link";
-import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { profileKindFromBirthDate, yearsOld } from "@/lib/auth/age";
-import {
-  SESSION_COOKIE,
-  getSessionUser,
-  sessionCookieOptions,
-} from "@/lib/auth/session";
+import { yearsOld } from "@/lib/auth/age";
+import { profileKindLabel } from "@/lib/auth/labels";
+import { getSessionUser } from "@/lib/auth/session";
 import { prisma } from "@/lib/db";
-import { createSession } from "@/lib/session/machine";
+import { AddProfileForm } from "./AddProfileForm";
+import { logout, startAssessment } from "./actions";
 
-async function addProfile(formData: FormData) {
-  "use server";
-  const user = await getSessionUser();
-  if (!user) redirect("/login?next=/profiles");
+const HISTORY_LIMIT = 5;
 
-  const displayName = String(formData.get("displayName") ?? "").trim();
-  const birthRaw = String(formData.get("birthDate") ?? "").trim();
-  if (!displayName || !birthRaw) {
-    throw new Error("请填写姓名与出生日期");
-  }
-  const birthDate = new Date(`${birthRaw}T00:00:00`);
-  if (Number.isNaN(birthDate.getTime())) {
-    throw new Error("出生日期无效");
-  }
-  const age = yearsOld(birthDate);
-  if (age < 6 || age > 90) {
-    throw new Error("年龄需在 6–90 岁之间（试运行）");
-  }
+type ReportScores = {
+  narrative: string;
+  vci: number;
+  pri: number;
+  wmi: number;
+  psi: number;
+};
 
-  await prisma.profile.create({
-    data: {
-      userId: user.id,
-      displayName,
-      birthDate,
-      kind: profileKindFromBirthDate(birthDate),
-    },
-  });
-  redirect("/profiles");
+function weakestIndexKey(report: ReportScores): "VCI" | "PRI" | "WMI" | "PSI" {
+  const keys = ["VCI", "PRI", "WMI", "PSI"] as const;
+  if (keys.includes(report.narrative as (typeof keys)[number])) {
+    return report.narrative as (typeof keys)[number];
+  }
+  const scores = {
+    VCI: report.vci,
+    PRI: report.pri,
+    WMI: report.wmi,
+    PSI: report.psi,
+  };
+  return keys.reduce((a, b) => (scores[a] <= scores[b] ? a : b));
 }
 
-async function startAssessment(formData: FormData) {
-  "use server";
-  const user = await getSessionUser();
-  if (!user) redirect("/login?next=/profiles");
-
-  const profileId = String(formData.get("profileId") ?? "");
-  const profile = await prisma.profile.findFirst({
-    where: { id: profileId, userId: user.id },
-  });
-  if (!profile) {
-    throw new Error("档案不存在");
-  }
-
-  // Prefer resuming an in-progress session so refresh/login keep the same playlist.
-  const existing = await prisma.assessmentSession.findFirst({
-    where: { profileId: profile.id, status: "IN_PROGRESS" },
-    orderBy: { startedAt: "desc" },
-  });
-  if (existing) {
-    redirect(`/assess/${existing.id}`);
-  }
-
-  const session = await createSession(profile.id);
-  redirect(`/assess/${session.id}`);
-}
-
-async function logout() {
-  "use server";
-  const jar = await cookies();
-  jar.set(SESSION_COOKIE, "", { ...sessionCookieOptions, maxAge: 0 });
-  redirect("/");
+function formatDate(d: Date | null | undefined): string {
+  if (!d) return "";
+  return new Intl.DateTimeFormat("zh-CN", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  }).format(d);
 }
 
 export default async function ProfilesPage() {
@@ -84,166 +51,252 @@ export default async function ProfilesPage() {
     orderBy: { displayName: "asc" },
     include: {
       assessments: {
-        where: { status: "IN_PROGRESS" },
+        where: {
+          OR: [
+            { status: "IN_PROGRESS" },
+            { status: "SUBMITTED", report: { isNot: null } },
+          ],
+        },
         orderBy: { startedAt: "desc" },
-        take: 1,
-        select: { id: true, currentIndex: true, startedAt: true },
+        select: {
+          id: true,
+          status: true,
+          currentIndex: true,
+          startedAt: true,
+          submittedAt: true,
+          report: {
+            select: {
+              narrative: true,
+              vci: true,
+              pri: true,
+              wmi: true,
+              psi: true,
+              createdAt: true,
+            },
+          },
+        },
       },
     },
   });
-  const children = profiles.filter((p) => p.kind === "CHILD");
-  const adults = profiles.filter((p) => p.kind === "ADULT");
+
+  const inProgress = profiles
+    .flatMap((p) =>
+      p.assessments
+        .filter((a) => a.status === "IN_PROGRESS")
+        .map((a) => ({
+          profileId: p.id,
+          displayName: p.displayName,
+          kind: p.kind,
+          sessionId: a.id,
+          currentIndex: a.currentIndex,
+          startedAt: a.startedAt,
+        })),
+    )
+    .sort((a, b) => b.startedAt.getTime() - a.startedAt.getTime());
+
+  const isEmpty = profiles.length === 0;
 
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-900">
+    <div className="hub-page">
       <main className="mx-auto flex w-full max-w-3xl flex-col gap-8 px-4 py-10 md:px-8 md:py-14">
         <header className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <p className="text-sm font-medium text-zinc-500">档案中心</p>
-            <h1 className="text-3xl font-semibold md:text-4xl">我的测评档案</h1>
-            <p className="mt-1 text-sm text-zinc-500">{user.email}</p>
+            <h1 className="hub-title text-3xl font-semibold md:text-4xl">
+              我的档案
+            </h1>
+            <p className="mt-1 text-sm text-[var(--home-ink-muted)]">
+              {user.email}
+            </p>
           </div>
           <form action={logout}>
-            <button
-              type="submit"
-              className="min-h-10 rounded-xl border border-zinc-300 px-4 text-sm"
-            >
+            <button type="submit" className="hub-btn-quiet">
               退出登录
             </button>
           </form>
         </header>
 
-        <section className="flex flex-col gap-4">
-          <h2 className="text-lg font-semibold">儿童档案</h2>
-          {children.length === 0 ? (
-            <p className="text-sm text-zinc-500">尚未添加儿童档案。</p>
-          ) : (
-            <ul className="grid gap-3">
-              {children.map((p) => {
-                const open = p.assessments[0];
-                return (
-                <li
-                  key={p.id}
-                  className="flex flex-col gap-3 rounded-2xl border border-zinc-200 bg-white p-4 sm:flex-row sm:items-center sm:justify-between"
-                >
-                  <div>
-                    <p className="font-medium">{p.displayName}</p>
-                    <p className="text-sm text-zinc-500">
-                      {yearsOld(p.birthDate)} 岁 · CHILD
-                      {open
-                        ? ` · 进行中（题 ${open.currentIndex + 1}）`
-                        : ""}
-                    </p>
-                  </div>
-                  {open ? (
-                    <Link
-                      href={`/assess/${open.id}`}
-                      data-testid="resume-assessment"
-                      className="inline-flex min-h-10 items-center justify-center rounded-xl bg-zinc-900 px-4 text-sm font-semibold text-white"
+        {isEmpty ? (
+          <section
+            className="hub-panel flex flex-col gap-6 p-6 md:p-8"
+            aria-labelledby="empty-guide"
+          >
+            <div>
+              <h2 id="empty-guide" className="text-xl font-semibold">
+                创建第一个档案
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--home-ink-muted)]">
+                同一账号可挂多个儿童档案，也可创建成人档案。根据出生日期自动区分：未满
+                16 岁为儿童，≥ 16 岁为成人（年龄需在 6–90 岁）。
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <p className="font-semibold text-[var(--home-ink)]">儿童档案</p>
+                <p className="mt-1 text-sm leading-relaxed text-[var(--home-ink-muted)]">
+                  适合学龄儿童；建议家长陪同。创建后将进入儿童测评体验。
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-[var(--home-ink)]">成人档案</p>
+                <p className="mt-1 text-sm leading-relaxed text-[var(--home-ink-muted)]">
+                  适合本人自测。创建后将进入成人测评体验。
+                </p>
+              </div>
+            </div>
+            <AddProfileForm submitLabel="创建第一个档案" />
+          </section>
+        ) : (
+          <>
+            {inProgress.length > 0 && (
+              <section
+                className="flex flex-col gap-3"
+                aria-labelledby="resume-heading"
+              >
+                <h2 id="resume-heading" className="text-lg font-semibold">
+                  继续测评
+                </h2>
+                <ul className="flex flex-col gap-3">
+                  {inProgress.map((item) => (
+                    <li key={item.sessionId} className="hub-resume">
+                      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                        <div>
+                          <p className="font-medium">
+                            {item.displayName}{" "}
+                            <span className="hub-kind">
+                              {profileKindLabel(item.kind)}
+                            </span>
+                          </p>
+                          <p className="text-sm text-[var(--home-ink-muted)]">
+                            进行中 · 题 {item.currentIndex + 1}
+                          </p>
+                        </div>
+                        <Link
+                          href={`/assess/${item.sessionId}`}
+                          data-testid="resume-assessment"
+                          className="hub-cta"
+                        >
+                          继续测评
+                        </Link>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            <section className="flex flex-col gap-4" aria-labelledby="list-heading">
+              <h2 id="list-heading" className="text-lg font-semibold">
+                全部档案
+              </h2>
+              <ul className="grid gap-4">
+                {profiles.map((p) => {
+                  const open = p.assessments.find(
+                    (a) => a.status === "IN_PROGRESS",
+                  );
+                  const history = p.assessments
+                    .filter((a) => a.status === "SUBMITTED" && a.report)
+                    .slice(0, HISTORY_LIMIT);
+                  const age = yearsOld(p.birthDate);
+                  const kindZh = profileKindLabel(p.kind);
+
+                  return (
+                    <li
+                      key={p.id}
+                      className="hub-panel flex flex-col gap-4 p-4 md:p-5"
                     >
-                      继续测评
-                    </Link>
-                  ) : (
-                    <form action={startAssessment}>
-                      <input type="hidden" name="profileId" value={p.id} />
-                      <button
-                        type="submit"
-                        className="min-h-10 rounded-xl bg-zinc-900 px-4 text-sm font-semibold text-white"
-                      >
-                        开始测评
-                      </button>
-                    </form>
-                  )}
-                </li>
-              );
-              })}
-            </ul>
-          )}
-        </section>
+                      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                        <div>
+                          <p className="font-medium text-lg">{p.displayName}</p>
+                          <p className="text-sm text-[var(--home-ink-muted)]">
+                            {age} 岁 ·{" "}
+                            <span className="hub-kind">{kindZh}</span>
+                            {open
+                              ? ` · 进行中（题 ${open.currentIndex + 1}）`
+                              : ""}
+                          </p>
+                        </div>
+                        {open ? (
+                          <Link
+                            href={`/assess/${open.id}`}
+                            data-testid="resume-assessment"
+                            className="hub-cta"
+                          >
+                            继续测评
+                          </Link>
+                        ) : (
+                          <form action={startAssessment}>
+                            <input
+                              type="hidden"
+                              name="profileId"
+                              value={p.id}
+                            />
+                            <button type="submit" className="hub-cta">
+                              开始测评
+                            </button>
+                          </form>
+                        )}
+                      </div>
 
-        <section className="flex flex-col gap-4">
-          <h2 className="text-lg font-semibold">成人档案（本人）</h2>
-          {adults.length === 0 ? (
-            <p className="text-sm text-zinc-500">尚未创建成人自测档案。</p>
-          ) : (
-            <ul className="grid gap-3">
-              {adults.map((p) => {
-                const open = p.assessments[0];
-                return (
-                <li
-                  key={p.id}
-                  className="flex flex-col gap-3 rounded-2xl border border-zinc-200 bg-white p-4 sm:flex-row sm:items-center sm:justify-between"
-                >
-                  <div>
-                    <p className="font-medium">{p.displayName}</p>
-                    <p className="text-sm text-zinc-500">
-                      {yearsOld(p.birthDate)} 岁 · ADULT
-                      {open
-                        ? ` · 进行中（题 ${open.currentIndex + 1}）`
-                        : ""}
-                    </p>
-                  </div>
-                  {open ? (
-                    <Link
-                      href={`/assess/${open.id}`}
-                      data-testid="resume-assessment"
-                      className="inline-flex min-h-10 items-center justify-center rounded-xl bg-zinc-900 px-4 text-sm font-semibold text-white"
-                    >
-                      继续测评
-                    </Link>
-                  ) : (
-                    <form action={startAssessment}>
-                      <input type="hidden" name="profileId" value={p.id} />
-                      <button
-                        type="submit"
-                        className="min-h-10 rounded-xl bg-zinc-900 px-4 text-sm font-semibold text-white"
-                      >
-                        开始测评
-                      </button>
-                    </form>
-                  )}
-                </li>
-              );
-              })}
-            </ul>
-          )}
-        </section>
+                      {history.length > 0 && (
+                        <div className="hub-history">
+                          <p className="text-sm font-medium text-[var(--home-ink)]">
+                            最近报告
+                          </p>
+                          <ul className="mt-2 flex flex-col gap-2">
+                            {history.map((h) => {
+                              const report = h.report!;
+                              const weak = weakestIndexKey(report);
+                              const when =
+                                formatDate(h.submittedAt) ||
+                                formatDate(report.createdAt);
+                              return (
+                                <li
+                                  key={h.id}
+                                  className="flex flex-col gap-2 text-sm sm:flex-row sm:items-center sm:justify-between"
+                                >
+                                  <span className="text-[var(--home-ink-muted)]">
+                                    {when} · {kindZh}
+                                  </span>
+                                  <span className="flex flex-wrap gap-3">
+                                    <Link
+                                      href={`/report/${h.id}`}
+                                      className="font-medium text-[var(--home-cta)] underline-offset-2 hover:underline"
+                                    >
+                                      查看报告
+                                    </Link>
+                                    <Link
+                                      href={`/practice/${weak}?profileId=${encodeURIComponent(p.id)}&sessionId=${encodeURIComponent(h.id)}`}
+                                      className="text-[var(--home-ink-muted)] underline-offset-2 hover:underline"
+                                    >
+                                      去练习
+                                    </Link>
+                                  </span>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </div>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
 
-        <section className="rounded-2xl border border-zinc-200 bg-white p-6">
-          <h2 className="text-lg font-semibold">添加档案</h2>
-          <p className="mt-1 text-sm text-zinc-500">
-            未满 16 岁 → 儿童档案；≥ 16 岁 → 成人档案。
-          </p>
-          <form action={addProfile} className="mt-4 flex flex-col gap-4">
-            <label className="flex flex-col gap-2 text-sm">
-              显示名称
-              <input
-                name="displayName"
-                required
-                maxLength={40}
-                placeholder="例如：小明 / 本人"
-                className="min-h-11 rounded-xl border border-zinc-300 px-3"
-              />
-            </label>
-            <label className="flex flex-col gap-2 text-sm">
-              出生日期
-              <input
-                name="birthDate"
-                type="date"
-                required
-                className="min-h-11 rounded-xl border border-zinc-300 px-3"
-              />
-            </label>
-            <button
-              type="submit"
-              className="min-h-11 rounded-xl bg-zinc-900 font-semibold text-white"
-            >
-              保存档案
-            </button>
-          </form>
-        </section>
+            <section className="hub-panel p-6">
+              <h2 className="text-lg font-semibold">添加档案</h2>
+              <p className="mt-1 text-sm text-[var(--home-ink-muted)]">
+                未满 16 岁为儿童档案，≥ 16 为成人档案。年龄范围 6–90。
+              </p>
+              <AddProfileForm />
+            </section>
+          </>
+        )}
 
-        <Link href="/" className="text-sm text-zinc-500 underline-offset-2 hover:underline">
+        <Link
+          href="/"
+          className="text-sm text-[var(--home-ink-muted)] underline-offset-2 hover:underline"
+        >
           返回首页
         </Link>
       </main>

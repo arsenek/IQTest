@@ -3,6 +3,22 @@
 :root {
   --background: #fafafa;
   --foreground: #18181b;
+
+  /* Home / profiles hub — calm education assessment palette */
+  --home-bg-deep: #1a2e28;
+  --home-bg-mid: #2f4a40;
+  --home-bg-wash: #e8eee9;
+  --home-fg: #f4f7f5;
+  --home-fg-muted: #b7c5be;
+  --home-ink: #14201c;
+  --home-ink-muted: #4a5c55;
+  --home-cta: #1f6f7c;
+  --home-cta-ink: #f2fafb;
+  --home-cta-secondary-border: color-mix(in oklab, var(--home-fg) 35%, transparent);
+  --home-font-display: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --home-font-body: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", sans-serif;
+  --home-hero-glow: radial-gradient(120% 80% at 70% 20%, #3d6b5c 0%, transparent 55%),
+    linear-gradient(165deg, var(--home-bg-deep), var(--home-bg-mid));
 }
 
 @theme inline {
@@ -142,4 +158,356 @@ body {
 
 .skin-adult [data-testid="subtest-intro"] {
   border: 1px solid var(--assess-border);
+}
+
+/* —— Marketing landing (/) —— */
+.home-landing {
+  font-family: var(--home-font-body);
+  color: var(--home-ink);
+  background: var(--home-bg-wash);
+}
+
+.home-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: min(100svh, 52rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem);
+  color: var(--home-fg);
+  background: var(--home-hero-glow);
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 50% 40% at 15% 85%, color-mix(in oklab, #5a8f7a 40%, transparent), transparent 70%),
+    repeating-linear-gradient(
+      -18deg,
+      transparent 0,
+      transparent 18px,
+      color-mix(in oklab, var(--home-fg) 3.5%, transparent) 18px,
+      color-mix(in oklab, var(--home-fg) 3.5%, transparent) 19px
+    );
+  animation: home-breathe 14s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.home-hero-inner {
+  width: 100%;
+  max-width: 42rem;
+}
+
+.home-brand {
+  font-family: var(--home-font-display);
+  font-size: clamp(3.25rem, 9vw, 5.5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.home-lead {
+  margin: 1.25rem 0 0;
+  max-width: 34rem;
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+  line-height: 1.65;
+  color: var(--home-fg-muted);
+}
+
+.home-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.home-cta-primary,
+.home-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.65rem 1.5rem;
+  border-radius: 0.65rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.home-cta-primary {
+  background: var(--home-cta);
+  color: var(--home-cta-ink);
+}
+
+.home-cta-primary:hover {
+  background: color-mix(in oklab, var(--home-cta) 88%, #0a3a42);
+}
+
+.home-cta-primary:focus-visible,
+.home-cta-secondary:focus-visible {
+  outline: 2px solid var(--home-fg);
+  outline-offset: 3px;
+}
+
+.home-cta-secondary {
+  border: 1px solid var(--home-cta-secondary-border);
+  color: var(--home-fg);
+  background: transparent;
+}
+
+.home-cta-secondary:hover {
+  border-color: color-mix(in oklab, var(--home-fg) 55%, transparent);
+  background: color-mix(in oklab, var(--home-fg) 8%, transparent);
+}
+
+.home-section {
+  padding: clamp(2.75rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 4rem);
+  animation: home-rise 560ms ease-out both;
+}
+
+.home-section:nth-of-type(2) {
+  animation-delay: 80ms;
+}
+
+.home-section:nth-of-type(3) {
+  animation-delay: 160ms;
+}
+
+.home-section-inner {
+  width: 100%;
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+.home-section h2 {
+  font-family: var(--home-font-display);
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+  font-weight: 600;
+  color: var(--home-ink);
+  margin: 0 0 0.5rem;
+}
+
+.home-section-lead {
+  margin: 0 0 1.75rem;
+  color: var(--home-ink-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 36rem;
+}
+
+.home-indices {
+  display: grid;
+  gap: 1.25rem 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+  .home-indices {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.home-index dt {
+  font-weight: 600;
+  color: var(--home-ink);
+  margin: 0;
+}
+
+.home-index dd {
+  margin: 0.35rem 0 0;
+  color: var(--home-ink-muted);
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+.home-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  counter-reset: home-step;
+}
+
+@media (min-width: 900px) {
+  .home-steps {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.home-steps li {
+  counter-increment: home-step;
+  padding-top: 0.25rem;
+}
+
+.home-steps li::before {
+  content: counter(home-step);
+  display: block;
+  font-family: var(--home-font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--home-cta);
+  margin-bottom: 0.35rem;
+}
+
+.home-steps strong {
+  display: block;
+  color: var(--home-ink);
+  margin-bottom: 0.25rem;
+}
+
+.home-steps span {
+  color: var(--home-ink-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.home-foot {
+  border-top: 1px solid color-mix(in oklab, var(--home-ink) 12%, transparent);
+  padding: 1.75rem clamp(1.25rem, 5vw, 4rem) 2.5rem;
+  color: var(--home-ink-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.home-foot a {
+  color: var(--home-cta);
+  text-underline-offset: 2px;
+}
+
+.home-foot a:hover {
+  text-decoration: underline;
+}
+
+@keyframes home-breathe {
+  from {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes home-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero::before,
+  .home-section {
+    animation: none;
+  }
+}
+
+/* —— Profiles hub —— */
+.hub-page {
+  min-height: 100%;
+  background: var(--home-bg-wash);
+  color: var(--home-ink);
+  font-family: var(--home-font-body);
+}
+
+.hub-title {
+  font-family: var(--home-font-display);
+}
+
+.hub-panel {
+  border: 1px solid color-mix(in oklab, var(--home-ink) 12%, transparent);
+  background: #fff;
+  border-radius: 1rem;
+}
+
+.hub-field {
+  min-height: 2.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid color-mix(in oklab, var(--home-ink) 18%, transparent);
+  background: #fff;
+  padding: 0 0.75rem;
+}
+
+.hub-resume {
+  border-left: 4px solid var(--home-cta);
+  background: color-mix(in oklab, var(--home-cta) 8%, white);
+  padding: 1rem 1.15rem;
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+
+.hub-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 1.15rem;
+  border-radius: 0.65rem;
+  background: var(--home-cta);
+  color: var(--home-cta-ink);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hub-cta:hover {
+  background: color-mix(in oklab, var(--home-cta) 88%, #0a3a42);
+}
+
+.hub-cta:focus-visible,
+.hub-btn-quiet:focus-visible {
+  outline: 2px solid var(--home-cta);
+  outline-offset: 2px;
+}
+
+.hub-btn-quiet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 1rem;
+  border-radius: 0.65rem;
+  border: 1px solid color-mix(in oklab, var(--home-ink) 18%, transparent);
+  background: transparent;
+  color: var(--home-ink);
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hub-btn-quiet:hover {
+  background: color-mix(in oklab, var(--home-ink) 4%, white);
+}
+
+.hub-kind {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--home-cta);
+}
+
+.hub-alert {
+  color: #9b1c1c;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0;
+}
+
+.hub-history {
+  border-top: 1px solid color-mix(in oklab, var(--home-ink) 8%, transparent);
+  padding-top: 0.75rem;
 }
