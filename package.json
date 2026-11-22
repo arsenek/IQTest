@@ -16,7 +16,8 @@
     "db:up": "bash scripts/db-up.sh",
     "db:migrate": "prisma migrate deploy",
     "db:generate": "prisma generate",
-    "db:smoke": "node scripts/smoke-persist.mjs"
+    "db:smoke": "node scripts/smoke-persist.mjs",
+    "export:responses": "vite-node -c vitest.config.ts scripts/export-responses.ts --"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",

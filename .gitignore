@@ -31,6 +31,9 @@
 # durable local Postgres data dir (Homebrew fallback when Docker is unavailable)
 .data/
 
+# local Stage-A export dumps
+/tmp/
+
 # debug
 npm-debug.log*
 yarn-debug.log*
