@@ -10,6 +10,10 @@ export type Choice = {
   image?: string;
 };
 
+/** Where a pack sits in the product surface; formal packs omit this. */
+export const PACK_POOLS = ["formal", "practice", "candidates"] as const;
+export type PackPool = (typeof PACK_POOLS)[number];
+
 export type Item = {
   id: string;
   type: ItemType;
@@ -25,6 +29,12 @@ export type Item = {
   maskStem?: boolean;
   /** Keep this item's relative order (used with subtest.ordered / digit_span). */
   ordered?: boolean;
+  /** SPDX-ish or short license tag for third-party / proprietary items. */
+  license?: string;
+  /** Human-readable attribution for imported items. */
+  attribution?: string;
+  /** Upstream source item id (e.g. Wonderlic vo-001). */
+  sourceId?: string;
 };
 
 export type Subtest = {
@@ -40,6 +50,8 @@ export type ContentPack = {
   id: string;
   audience: "child" | "adult";
   title: string;
+  /** formal | practice | candidates; omitted on legacy formal packs. */
+  pool?: PackPool;
   subtests: Subtest[];
 };
 

@@ -1,8 +1,9 @@
 import { z } from "zod";
-import { INDEX_KEYS, ITEM_TYPES, SCORING_STAGES } from "./types";
+import { INDEX_KEYS, ITEM_TYPES, PACK_POOLS, SCORING_STAGES } from "./types";
 
 const indexKeySchema = z.enum(INDEX_KEYS);
 const itemTypeSchema = z.enum(ITEM_TYPES);
+const packPoolSchema = z.enum(PACK_POOLS);
 
 const choiceObjectSchema = z.object({
   label: z.string().min(1),
@@ -27,6 +28,9 @@ export const itemSchema = z.object({
   encodeMs: z.number().int().positive().optional(),
   maskStem: z.boolean().optional(),
   ordered: z.boolean().optional(),
+  license: z.string().min(1).optional(),
+  attribution: z.string().min(1).optional(),
+  sourceId: z.string().min(1).optional(),
 });
 
 export const subtestSchema = z.object({
@@ -43,6 +47,7 @@ export const contentPackSchema = z
     id: z.string().min(1),
     audience: z.enum(["child", "adult"]),
     title: z.string().min(1),
+    pool: packPoolSchema.optional(),
     subtests: z.array(subtestSchema).min(4),
   })
   .superRefine((pack, ctx) => {
