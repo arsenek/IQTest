@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { parseJsonl, rowsToCsv, rowsToJsonl } from "@/lib/export/format";
+import { parseCsv, parseJsonl, rowsToCsv, rowsToJsonl } from "@/lib/export/format";
 import { EXPORT_COLUMNS, type ExportRow } from "@/lib/export/types";
 
 const sample: ExportRow = {
@@ -38,5 +38,18 @@ describe("export formatters", () => {
     const parsed = parseJsonl(text);
     expect(parsed).toHaveLength(2);
     expect(parsed[1].sessionId).toBe("s2");
+  });
+
+  it("CSV round-trips via parseCsv", () => {
+    const text = rowsToCsv([
+      sample,
+      { ...sample, sessionId: "s2", correct: false, rawScore: 0 },
+    ]);
+    const parsed = parseCsv(text);
+    expect(parsed).toHaveLength(2);
+    expect(parsed[0].sessionId).toBe("s1");
+    expect(parsed[0].correct).toBe(true);
+    expect(parsed[1].correct).toBe(false);
+    expect(parsed[1].rawScore).toBe(0);
   });
 });
