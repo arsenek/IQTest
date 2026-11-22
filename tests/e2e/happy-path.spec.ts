@@ -146,13 +146,14 @@ test("happy path: register → child profile → assess → report → practice"
   await page.locator('input[name="password"]').fill(password);
   await page.getByRole("button", { name: "注册并登录" }).click();
   await expect(page).toHaveURL(/\/profiles/);
-  await expect(page.getByRole("heading", { name: "我的测评档案" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "我的档案" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "创建第一个档案" })).toBeVisible();
 
   await page.locator('input[name="displayName"]').fill("E2E儿童");
   await page.locator('input[name="birthDate"]').fill(childBirthDate());
-  await page.getByRole("button", { name: "保存档案" }).click();
+  await page.getByRole("button", { name: "创建第一个档案" }).click();
   await expect(page.getByText("E2E儿童")).toBeVisible();
-  await expect(page.getByText(/CHILD/)).toBeVisible();
+  await expect(page.getByText("儿童").first()).toBeVisible();
 
   await page.getByRole("button", { name: "开始测评" }).click();
   await expect(page).toHaveURL(/\/assess\//);
