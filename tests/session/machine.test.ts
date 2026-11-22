@@ -127,6 +127,9 @@ describe("assessment session state machine", () => {
     expect(report1.sessionId).toBe(session.id);
     expect(report1.composite).toBeTypeOf("number");
     expect(["VCI", "PRI", "WMI", "PSI"]).toContain(report1.narrative);
+    expect(report1.scoringStage).toBe("trial");
+    expect(report1.normVersion).toBe(session.normVersion);
+    expect(report1.algorithmVersion).toBe("scale-z/v1");
 
     const report2 = await submitSession(session.id);
     expect(report2.id).toBe(report1.id);
