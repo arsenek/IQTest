@@ -530,13 +530,13 @@
     {
       "id": "adult-prac-wmi",
       "indexKey": "WMI",
-      "title": "工作记忆练习",
+      "title": "记忆练习",
       "ordered": true,
       "items": [
         {
           "id": "adult-prac-wmi-1",
           "type": "digit_span",
-          "prompt": "请按顺序复述：6、3、9",
+          "prompt": "练习：请按顺序复述这些数字：6、3、9",
           "answer": "6-3-9",
           "timeLimitMs": 45000,
           "encodeMs": 4500,
@@ -546,7 +546,7 @@
         {
           "id": "adult-prac-wmi-2",
           "type": "digit_span",
-          "prompt": "请按顺序复述：1、8、4、2",
+          "prompt": "练习：请按顺序复述这些数字：1、8、4、2",
           "answer": "1-8-4-2",
           "timeLimitMs": 45000,
           "encodeMs": 5000,
@@ -556,7 +556,7 @@
         {
           "id": "adult-prac-wmi-3",
           "type": "digit_span",
-          "prompt": "请按顺序复述：7、0、5、3、9",
+          "prompt": "练习：请按顺序复述这些数字：7、0、5、3、9",
           "answer": "7-0-5-3-9",
           "timeLimitMs": 45000,
           "encodeMs": 5500,
@@ -566,7 +566,7 @@
         {
           "id": "adult-prac-wmi-4",
           "type": "digit_span",
-          "prompt": "请倒序复述：2、8、5（从后往前）",
+          "prompt": "练习：请倒序复述：2、8、5（从后往前）",
           "answer": "5-8-2",
           "timeLimitMs": 45000,
           "encodeMs": 4500,
@@ -576,7 +576,7 @@
         {
           "id": "adult-prac-wmi-5",
           "type": "digit_span",
-          "prompt": "请倒序复述：9、1、6、4（从后往前）",
+          "prompt": "练习：请倒序复述：9、1、6、4（从后往前）",
           "answer": "4-6-1-9",
           "timeLimitMs": 45000,
           "encodeMs": 5000,
@@ -586,7 +586,7 @@
         {
           "id": "adult-prac-wmi-6",
           "type": "digit_span",
-          "prompt": "请倒序复述：3、7、0、8、2（从后往前）",
+          "prompt": "练习：请倒序复述：3、7、0、8、2（从后往前）",
           "answer": "2-8-0-7-3",
           "timeLimitMs": 45000,
           "encodeMs": 5500,
@@ -596,7 +596,7 @@
         {
           "id": "adult-prac-wmi-7",
           "type": "digit_span",
-          "prompt": "请按顺序复述：4、9、1、6、0、8",
+          "prompt": "练习：请按顺序复述这些数字：4、9、1、6、0、8",
           "answer": "4-9-1-6-0-8",
           "timeLimitMs": 45000,
           "encodeMs": 6000,
@@ -606,7 +606,7 @@
         {
           "id": "adult-prac-wmi-8",
           "type": "digit_span",
-          "prompt": "请倒序复述：5、2、9、1、7、3（从后往前）",
+          "prompt": "练习：请倒序复述：5、2、9、1、7、3（从后往前）",
           "answer": "3-7-1-9-2-5",
           "timeLimitMs": 45000,
           "encodeMs": 6000,
@@ -616,7 +616,7 @@
         {
           "id": "adult-prac-wmi-9",
           "type": "digit_span",
-          "prompt": "请按顺序复述：8、3、6、0、4、9、1",
+          "prompt": "练习：请按顺序复述这些数字：8、3、6、0、4、9、1",
           "answer": "8-3-6-0-4-9-1",
           "timeLimitMs": 45000,
           "encodeMs": 6500,
@@ -626,7 +626,7 @@
         {
           "id": "adult-prac-wmi-10",
           "type": "digit_span",
-          "prompt": "请倒序复述：1、7、4、9、2、6、0（从后往前）",
+          "prompt": "练习：请倒序复述：1、7、4、9、2、6、0（从后往前）",
           "answer": "0-6-2-9-4-7-1",
           "timeLimitMs": 45000,
           "encodeMs": 6500,

@@ -1305,7 +1305,7 @@
         {
           "id": "adult-wmi-10",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：4、8、2、9（从后往前说）",
+          "prompt": "请倒序复述：4、8、2、9（从后往前）",
           "answer": "9-2-8-4",
           "timeLimitMs": 45000,
           "encodeMs": 5500,
@@ -1315,7 +1315,7 @@
         {
           "id": "adult-wmi-11",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：1、6、3、9、5（从后往前说）",
+          "prompt": "请倒序复述：1、6、3、9、5（从后往前）",
           "answer": "5-9-3-6-1",
           "timeLimitMs": 45000,
           "encodeMs": 6000,
@@ -1325,7 +1325,7 @@
         {
           "id": "adult-wmi-12",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：7、2、8、4、1、6（从后往前说）",
+          "prompt": "请倒序复述：7、2、8、4、1、6（从后往前）",
           "answer": "6-1-4-8-2-7",
           "timeLimitMs": 45000,
           "encodeMs": 6500,
@@ -1335,7 +1335,7 @@
         {
           "id": "adult-wmi-13",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：5、9、1、7、3、8、2（从后往前说）",
+          "prompt": "请倒序复述：5、9、1、7、3、8、2（从后往前）",
           "answer": "2-8-3-7-1-9-5",
           "timeLimitMs": 45000,
           "encodeMs": 7000,
@@ -1345,7 +1345,7 @@
         {
           "id": "adult-wmi-14",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：3、8、5、1、9、4、7、2（从后往前说）",
+          "prompt": "请倒序复述：3、8、5、1、9、4、7、2（从后往前）",
           "answer": "2-7-4-9-1-5-8-3",
           "timeLimitMs": 45000,
           "encodeMs": 7500,
@@ -1355,7 +1355,7 @@
         {
           "id": "adult-wmi-15",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：9、4、1、6、8、2、5、3、7（从后往前说）",
+          "prompt": "请倒序复述：9、4、1、6、8、2、5、3、7（从后往前）",
           "answer": "7-3-5-2-8-6-1-4-9",
           "timeLimitMs": 45000,
           "encodeMs": 8000,
@@ -1365,7 +1365,7 @@
         {
           "id": "adult-wmi-16",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：2、7、4、9、1、5、8、3、6、0（从后往前说）",
+          "prompt": "请倒序复述：2、7、4、9、1、5、8、3、6、0（从后往前）",
           "answer": "0-6-3-8-5-1-9-4-7-2",
           "timeLimitMs": 45000,
           "encodeMs": 8500,
@@ -1377,7 +1377,7 @@
     {
       "id": "adult-wmi-reverse-short",
       "indexKey": "WMI",
-      "title": "反向数字短梯",
+      "title": "倒序广度",
       "ordered": true,
       "items": [
         {
