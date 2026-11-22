@@ -9,26 +9,58 @@ function childBirthDate(): string {
   return `${yyyy}-${mm}-${dd}`;
 }
 
-async function waitForAssessProgress(page: Page, n: number) {
-  await expect(page.getByText(`进度 ${n} / 4`)).toBeVisible();
+/** Clear break/intro gates; may need more than one pass between subtests. */
+async function passSubtestGates(page: Page) {
+  for (let i = 0; i < 6; i++) {
+    const breakSkip = page.getByTestId("subtest-break-skip");
+    if (await breakSkip.isVisible().catch(() => false)) {
+      await breakSkip.click();
+      await expect(breakSkip).toBeHidden({ timeout: 10_000 });
+      continue;
+    }
+    const introStart = page.getByTestId("subtest-intro-start");
+    if (await introStart.isVisible().catch(() => false)) {
+      await introStart.click();
+      await expect(introStart).toBeHidden({ timeout: 10_000 });
+      continue;
+    }
+    break;
+  }
+}
+
+async function waitForAssessItem(page: Page) {
+  await expect(page.getByTestId("assess-segment-progress")).toBeVisible();
+  // e2e pack: one item per index core → "· 1/1"
+  await expect(page.getByTestId("assess-segment-progress")).toContainText(
+    "1/1",
+  );
+  // Break/intro can appear after the previous item submits; keep clearing
+  // until an interactive item surface is actually on screen.
+  await expect
+    .poll(
+      async () => {
+        await passSubtestGates(page);
+        return page.evaluate(() => {
+          const enabledChoice = document.querySelector(
+            '[data-testid="mcq-choice"]:not([disabled])',
+          );
+          const digitPad = document.querySelector(
+            '[data-testid="item-digit-span"] button:not([disabled])',
+          );
+          const symbolPad = document.querySelector(
+            '[data-testid="item-symbol-search"] button:not([disabled])',
+          );
+          return Boolean(enabledChoice || digitPad || symbolPad);
+        });
+      },
+      { timeout: 30_000 },
+    )
+    .toBe(true);
 }
 
 async function answerCurrentAssessmentItem(page: Page) {
-  // Wait until a non-disabled item surface is interactive (post-submit unlock).
-  await page.waitForFunction(() => {
-    const enabledChoice = document.querySelector(
-      '[data-testid="mcq-choice"]:not([disabled])',
-    );
-    const digitPad = document.querySelector(
-      '[data-testid="item-digit-span"] button:not([disabled])',
-    );
-    const symbolPad = document.querySelector(
-      '[data-testid="item-symbol-search"] button:not([disabled])',
-    );
-    return Boolean(enabledChoice || digitPad || symbolPad);
-  });
-
-  if (await page.getByTestId("item-mcq").isVisible()) {
+  const mcq = page.getByTestId("item-mcq");
+  if (await mcq.isVisible().catch(() => false)) {
     const fruit = page
       .getByTestId("mcq-choice")
       .filter({ hasText: "一种水果" });
@@ -43,19 +75,18 @@ async function answerCurrentAssessmentItem(page: Page) {
     return;
   }
 
-  if (await page.getByTestId("item-digit-span").isVisible()) {
+  const digit = page.getByTestId("item-digit-span");
+  if (await digit.isVisible().catch(() => false)) {
     for (const d of ["1", "2", "3"]) {
-      await page
-        .getByTestId("item-digit-span")
-        .getByRole("button", { name: d, exact: true })
-        .click();
+      await digit.getByRole("button", { name: d, exact: true }).click();
     }
     await expect(page.getByTestId("digit-span-submit")).toBeEnabled();
     await page.getByTestId("digit-span-submit").click();
     return;
   }
 
-  if (await page.getByTestId("item-symbol-search").isVisible()) {
+  const symbol = page.getByTestId("item-symbol-search");
+  if (await symbol.isVisible().catch(() => false)) {
     await page.getByTestId("symbol-count-2").click();
     await expect(page.getByTestId("symbol-search-submit")).toBeEnabled();
     await page.getByTestId("symbol-search-submit").click();
@@ -128,7 +159,7 @@ test("happy path: register → child profile → assess → report → practice"
   await expect(page.getByText("儿童短卷 fixture（e2e）")).toBeVisible();
 
   for (let i = 1; i <= 4; i++) {
-    await waitForAssessProgress(page, i);
+    await waitForAssessItem(page);
     await answerCurrentAssessmentItem(page);
   }
 
@@ -144,7 +175,12 @@ test("happy path: register → child profile → assess → report → practice"
   await expect(page.getByRole("heading", { name: /言语理解/ })).toBeVisible();
 
   await page.getByTestId("practice-start").click();
-  await answerCurrentPracticeItem(page);
+  // Practice rounds are 5 items with immediate feedback.
+  for (let i = 0; i < 5; i++) {
+    const done = page.getByTestId("practice-done");
+    if (await done.isVisible().catch(() => false)) break;
+    await answerCurrentPracticeItem(page);
+  }
   await expect(page.getByTestId("practice-done")).toBeVisible({
     timeout: 60_000,
   });

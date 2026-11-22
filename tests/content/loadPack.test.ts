@@ -151,28 +151,38 @@ describe("loadPack", () => {
 });
 
 describe("loadNorms", () => {
-  it("loads placeholder trial norms with mean ≤ pack max raw", () => {
+  it("loads placeholder trial norms with mean ≤ that index max raw", () => {
     const norms = loadNorms("placeholder/v1");
     expect(norms.version).toBe("placeholder/v1");
     expect(norms.trial).toBe(true);
     expect(norms.ageBands.length).toBeGreaterThan(0);
 
     const child = loadPack("child/v1");
-    const maxRaw = Math.max(
-      ...INDEX_KEYS.map((key) =>
-        child.subtests
-          .filter((s) => s.indexKey === key)
-          .reduce((n, s) => n + s.items.length, 0),
-      ),
-    );
-    expect(maxRaw).toBeGreaterThanOrEqual(22);
-    expect(maxRaw).toBeLessThanOrEqual(24);
-    for (const band of norms.ageBands) {
-      for (const key of INDEX_KEYS) {
+    const adult = loadPack("adult/v1");
+    const maxRawFor = (pack: ReturnType<typeof loadPack>, key: (typeof INDEX_KEYS)[number]) =>
+      pack.subtests
+        .filter((s) => s.indexKey === key)
+        .reduce((n, s) => n + s.items.length, 0);
+
+    for (const key of INDEX_KEYS) {
+      const childMax = maxRawFor(child, key);
+      const adultMax = maxRawFor(adult, key);
+      expect(childMax).toBeGreaterThanOrEqual(22);
+      expect(childMax).toBeLessThanOrEqual(24);
+      expect(adultMax).toBeGreaterThanOrEqual(22);
+      expect(adultMax).toBeLessThanOrEqual(24);
+      for (const band of norms.ageBands) {
+        const packMax = band.minAgeMonths >= 192 ? adultMax : childMax;
         expect(band.means[key], `${band.minAgeMonths}-${key}`).toBeLessThanOrEqual(
-          maxRaw,
+          packMax,
         );
       }
     }
+
+    // PRI rebuilt as harder 3×3 / multi-rule items: adult-band placeholder
+    // mean should sit below the other indices (which still use the old means).
+    const adultBand = norms.ageBands.find((b) => b.minAgeMonths >= 192)!;
+    expect(adultBand.means.PRI).toBeLessThan(adultBand.means.VCI);
+    expect(adultBand.means.PRI).toBeLessThanOrEqual(11);
   });
 });
