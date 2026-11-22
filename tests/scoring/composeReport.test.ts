@@ -24,6 +24,7 @@ describe("composeReport", () => {
 describe("scaleSubtest", () => {
   const norms: NormTables = {
     version: "placeholder/v1",
+    stage: "trial",
     trial: true,
     ageBands: [
       {

@@ -168,8 +168,19 @@ test("happy path: register → child profile → assess → report → practice"
   await page.getByTestId("view-report").click();
   await expect(page).toHaveURL(/\/report\//);
   await expect(page.getByRole("heading", { name: /的结果/ })).toBeVisible();
-  await expect(page.getByText("试运行", { exact: true })).toBeVisible();
-  await expect(page.getByText("总合成分")).toBeVisible();
+  await expect(page.getByTestId("report-stage-badge")).toHaveText("试运行");
+  await expect(page.getByTestId("report-nonstandard-badge")).toHaveText(
+    "非标准化 IQ",
+  );
+  await expect(page.getByTestId("report-nonclinical-badge")).toHaveText(
+    "非临床",
+  );
+  await expect(page.getByTestId("report-composite-label")).toContainText(
+    "非正式 IQ",
+  );
+  await expect(page.getByTestId("report-dual-core-blurb")).toContainText(
+    "试运行能力分数",
+  );
 
   await page.getByTestId("index-card-VCI").click();
   await expect(page).toHaveURL(/\/practice\/VCI/);

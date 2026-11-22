@@ -52,8 +52,15 @@ export type AgeBand = {
   sds: IndexStats;
 };
 
+/** Product scoring honesty stage; all current norms are trial. */
+export const SCORING_STAGES = ["trial", "calibrated", "standardized"] as const;
+export type ScoringStage = (typeof SCORING_STAGES)[number];
+
 export type NormTables = {
   version: string;
-  trial: true;
+  /** Normalized stage after schema parse. */
+  stage: ScoringStage;
+  /** Convenience mirror: `stage === "trial"`. */
+  trial: boolean;
   ageBands: AgeBand[];
 };

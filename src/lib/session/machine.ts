@@ -16,6 +16,7 @@ import {
   type IndexKey,
   type Item,
 } from "@/lib/content/types";
+import { SCORING_ALGORITHM_VERSION } from "@/lib/scoring/algorithm";
 import { scoreItem } from "@/lib/scoring/rawScore";
 import { scaleSubtest } from "@/lib/scoring/scaleScore";
 import { composeReport } from "@/lib/scoring/composeReport";
@@ -354,6 +355,9 @@ export async function submitSession(sessionId: string): Promise<Report> {
           psi: composed.psi,
           composite: composed.composite,
           narrative: composed.narrativeKey,
+          scoringStage: norms.stage,
+          normVersion: session.normVersion,
+          algorithmVersion: SCORING_ALGORITHM_VERSION,
         },
       });
 

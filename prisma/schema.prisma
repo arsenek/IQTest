@@ -67,16 +67,22 @@ model Response {
 }
 
 model Report {
-  id        String            @id @default(cuid())
-  sessionId String            @unique
-  session   AssessmentSession @relation(fields: [sessionId], references: [id])
-  vci       Float
-  pri       Float
-  wmi       Float
-  psi       Float
-  composite Float
-  narrative String
-  createdAt DateTime          @default(now())
+  id                String            @id @default(cuid())
+  sessionId         String            @unique
+  session           AssessmentSession @relation(fields: [sessionId], references: [id])
+  vci               Float
+  pri               Float
+  wmi               Float
+  psi               Float
+  composite         Float
+  narrative         String
+  /** trial | calibrated | standardized — snapshotted at submit */
+  scoringStage      String            @default("trial")
+  /** Norm file version used when this report was composed */
+  normVersion       String            @default("placeholder/v1")
+  /** Scoring algorithm id, e.g. scale-z/v1 */
+  algorithmVersion  String            @default("scale-z/v1")
+  createdAt         DateTime          @default(now())
 }
 
 model PracticeSession {
