@@ -172,6 +172,8 @@ export const adultMatrix: PriSpec[] = [
     distractors: cross({ frame: "hexagon", parts: ["n", "e", "w"] }),
     ruleText: "每一行、每一列里三种外框各出现一次；框内线条按行叠加：第三格 = 第一格 + 第二格。",
   }),
+  // sim50 flagged too_hard (p≈0.03) — unique-key item kept as late-bank ceiling;
+  // discrimination fix is via steeper sim difficulty model, not rewriting a sound item.
   matrix({
     id: "adult-pri-15",
     attrs: {

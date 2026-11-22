@@ -31,14 +31,16 @@ Generate **synthetic** full assessments for preview/calibration plumbing. Output
 
 ## Ability → P(correct)
 
-Within each subtest, item difficulty ≈ position `(i / n-1)`.
+Within each subtest, raw position difficulty = `(i / n-1)`, then softened and (for digit_span) mixed with span length via `effectiveItemDifficulty`.
 
 ```
-logit = 4.2 * (ability - difficulty)
-P(correct) = clamp(logistic(logit), 0.08, 0.96)
+logit = 6.5 * (ability - difficulty)   # steeper than v1 (was 4.2)
+P(correct) = clamp(logistic(logit), 0.05, 0.97)
 ```
 
 Bernoulli draw per item. Wrong answers are type-aware (wrong MCQ choice / mutated digit span / nearby symbol count).
+
+> Stage-A sim50 showed many `low_disc` flags under the flatter v1 curve — treat those as **sim artifacts** unless paired with too_easy/too_hard extremes or content bugs.
 
 ## Latency model → `Response.latencyMs`
 
