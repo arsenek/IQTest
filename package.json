@@ -24,7 +24,10 @@
     "db:generate": "prisma generate",
     "db:smoke": "node scripts/smoke-persist.mjs",
     "export:responses": "vite-node -c vitest.config.ts scripts/export-responses.ts --",
-    "analyze:stage-a": "vite-node -c vitest.config.ts scripts/analyze-stage-a.ts --"
+    "analyze:stage-a": "vite-node -c vitest.config.ts scripts/analyze-stage-a.ts --",
+    "sim:seed": "vite-node -c vitest.config.ts scripts/sim-seed.ts --",
+    "sim:list": "vite-node -c vitest.config.ts scripts/sim-list.ts --",
+    "sim:purge": "vite-node -c vitest.config.ts scripts/sim-purge.ts --"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
