@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { parseSymbolPrompt } from "@/lib/items/symbolPrompt";
 import type { ItemAnswer } from "./McqItem";
 import { ChoiceCardButton, ItemCard } from "./ItemCard";
+
+export { parseSymbolPrompt } from "@/lib/items/symbolPrompt";
 
 type SymbolSearchItemProps = {
   prompt: string;
@@ -11,20 +14,6 @@ type SymbolSearchItemProps = {
 };
 
 const COUNTS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] as const;
-
-/** Pull target + sequence glyphs from Chinese prompt fixtures when present. */
-export function parseSymbolPrompt(prompt: string): {
-  target?: string;
-  sequence: string[];
-} {
-  const targetMatch = prompt.match(/目标\s*([^\s。．.]+)/);
-  const seqMatch = prompt.match(/在\s*(.+?)\s*中/);
-  const target = targetMatch?.[1]?.trim();
-  const sequence = seqMatch?.[1]
-    ? Array.from(seqMatch[1].replace(/\s+/g, ""))
-    : [];
-  return { target, sequence };
-}
 
 export function SymbolSearchItem({
   prompt,

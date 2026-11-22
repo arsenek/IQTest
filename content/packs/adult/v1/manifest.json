@@ -6,406 +6,406 @@
     {
       "id": "adult-vci-vocab",
       "indexKey": "VCI",
-      "title": "词汇与类比",
+      "title": "分类与序列",
       "items": [
         {
           "id": "adult-vci-1",
           "type": "mcq",
-          "prompt": "「隐喻」最接近下列哪一含义？",
+          "prompt": "「假设、实验、对照」同属一类。下列哪一项与它们属于同一范畴？",
           "choices": [
             {
-              "label": "用一种事物暗示另一种事物",
-              "glyph": "⇔"
+              "label": "比喻",
+              "glyph": "比"
             },
             {
-              "label": "逐字翻译",
-              "glyph": "≡"
+              "label": "样本",
+              "glyph": "样"
             },
             {
-              "label": "随机联想",
-              "glyph": "?"
+              "label": "供给",
+              "glyph": "供"
             },
             {
-              "label": "否定陈述",
-              "glyph": "¬"
+              "label": "山脉",
+              "glyph": "山"
             }
           ],
-          "answer": "用一种事物暗示另一种事物",
+          "answer": "样本",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-2",
           "type": "mcq",
-          "prompt": "「稀缺」与「充裕」的关系最接近？",
+          "prompt": "「充分、必要、矛盾」同属一类。下列哪一项与它们属于同一范畴？",
           "choices": [
             {
-              "label": "反义",
-              "glyph": "↔"
+              "label": "弹性",
+              "glyph": "弹"
             },
             {
-              "label": "同义",
-              "glyph": "="
+              "label": "拟人",
+              "glyph": "拟"
             },
             {
-              "label": "因果",
-              "glyph": "→"
+              "label": "蕴含",
+              "glyph": "蕴"
             },
             {
-              "label": "整体与部分",
-              "glyph": "⊂"
+              "label": "湖泊",
+              "glyph": "湖"
             }
           ],
-          "answer": "反义",
+          "answer": "蕴含",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-3",
           "type": "mcq",
-          "prompt": "「范式」在学术语境中通常指？",
+          "prompt": "「供给、需求、稀缺」同属一类。下列哪一项与它们属于同一范畴？",
           "choices": [
             {
-              "label": "被广泛接受的研究框架或模式",
-              "glyph": "▣"
+              "label": "机会成本",
+              "glyph": "机"
             },
             {
-              "label": "临时假设",
-              "glyph": "…"
+              "label": "信度",
+              "glyph": "信"
             },
             {
-              "label": "实验误差",
-              "glyph": "±"
+              "label": "夸张",
+              "glyph": "夸"
             },
             {
-              "label": "样本偏差",
-              "glyph": "≠"
+              "label": "岛屿",
+              "glyph": "岛"
             }
           ],
-          "answer": "被广泛接受的研究框架或模式",
+          "answer": "机会成本",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-4",
           "type": "mcq",
-          "prompt": "「冗余」最接近？",
+          "prompt": "「比喻、拟人、夸张」同属一类。下列哪一项与它们属于同一范畴？",
           "choices": [
             {
-              "label": "多余、可精简的部分",
-              "glyph": "余"
+              "label": "边际",
+              "glyph": "边"
             },
             {
-              "label": "核心必要部分",
-              "glyph": "核"
+              "label": "排比",
+              "glyph": "排"
             },
             {
-              "label": "随机噪声的同义词",
-              "glyph": "噪"
+              "label": "变量",
+              "glyph": "变"
             },
             {
-              "label": "样本量的下限",
-              "glyph": "n"
+              "label": "沙漠",
+              "glyph": "沙"
             }
           ],
-          "answer": "多余、可精简的部分",
+          "answer": "排比",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-5",
           "type": "mcq",
-          "prompt": "「归纳」与「演绎」的关系最像？",
+          "prompt": "「山脉、河流、高原」同属一类。下列哪一项与它们属于同一范畴？",
           "choices": [
             {
-              "label": "自下而上与自上而下",
-              "glyph": "↕"
+              "label": "平原",
+              "glyph": "平"
             },
             {
-              "label": "同义反复",
-              "glyph": "="
+              "label": "外部性",
+              "glyph": "外"
             },
             {
-              "label": "加减运算",
-              "glyph": "+−"
+              "label": "效度",
+              "glyph": "效"
             },
             {
-              "label": "左右对称",
-              "glyph": "⇔"
+              "label": "合取",
+              "glyph": "合"
             }
           ],
-          "answer": "自下而上与自上而下",
+          "answer": "平原",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-6",
           "type": "mcq",
-          "prompt": "「效度」主要关心？",
+          "prompt": "「医生、法官、工程师」同属一类。下列哪一项与它们属于同一范畴？",
           "choices": [
             {
-              "label": "是否测到了想测的构念",
-              "glyph": "✓"
+              "label": "均衡",
+              "glyph": "均"
             },
             {
-              "label": "仪器是否校准到零",
-              "glyph": "0"
+              "label": "对偶",
+              "glyph": "对"
             },
             {
-              "label": "打印机分辨率",
-              "glyph": "dpi"
+              "label": "常模",
+              "glyph": "常"
             },
             {
-              "label": "网络延迟",
-              "glyph": "ms"
+              "label": "教师",
+              "glyph": "教"
             }
           ],
-          "answer": "是否测到了想测的构念",
+          "answer": "教师",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-7",
           "type": "mcq",
-          "prompt": "「信度」强调？",
+          "prompt": "「变量、信度、效度」同属一类。下列哪一项与它们属于同一范畴？",
           "choices": [
             {
-              "label": "测量结果的一致性与稳定性",
-              "glyph": "≈"
+              "label": "海洋",
+              "glyph": "海"
             },
             {
-              "label": "外观是否美观",
-              "glyph": "美"
+              "label": "借代",
+              "glyph": "借"
             },
             {
-              "label": "价格是否最低",
-              "glyph": "¥"
+              "label": "常模",
+              "glyph": "常"
             },
             {
-              "label": "是否首次发表",
-              "glyph": "1st"
+              "label": "弹性",
+              "glyph": "弹"
             }
           ],
-          "answer": "测量结果的一致性与稳定性",
+          "answer": "常模",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-8",
           "type": "mcq",
-          "prompt": "「对照组」的作用是？",
+          "prompt": "「边际、均衡、弹性」同属一类。下列哪一项与它们属于同一范畴？",
           "choices": [
             {
-              "label": "提供比较基线以估计效应",
-              "glyph": "基"
+              "label": "设问",
+              "glyph": "设"
             },
             {
-              "label": "替换自变量",
-              "glyph": "替"
+              "label": "外部性",
+              "glyph": "外"
             },
             {
-              "label": "删除所有异常值",
-              "glyph": "删"
+              "label": "否定",
+              "glyph": "否"
             },
             {
-              "label": "保证样本量无穷大",
-              "glyph": "∞"
+              "label": "铅笔",
+              "glyph": "铅"
             }
           ],
-          "answer": "提供比较基线以估计效应",
+          "answer": "外部性",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-9",
           "type": "mcq",
-          "prompt": "「混淆变量」可能导致？",
+          "prompt": "「等价、否定、合取」同属一类。下列哪一项与它们属于同一范畴？",
           "choices": [
             {
-              "label": "因果解释被干扰",
-              "glyph": "混"
+              "label": "样本",
+              "glyph": "样"
             },
             {
-              "label": "字体自动放大",
-              "glyph": "Aa"
+              "label": "厨师",
+              "glyph": "厨"
             },
             {
-              "label": "电池耗电变慢",
-              "glyph": "电"
+              "label": "充分必要",
+              "glyph": "充"
             },
             {
-              "label": "键盘布局改变",
-              "glyph": "键"
+              "label": "河流",
+              "glyph": "河"
             }
           ],
-          "answer": "因果解释被干扰",
+          "answer": "充分必要",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-10",
           "type": "mcq",
-          "prompt": "「操作性定义」是指？",
+          "prompt": "「借代、对偶、反问」同属一类。下列哪一项与它们属于同一范畴？",
           "choices": [
             {
-              "label": "用可观测程序界定概念",
-              "glyph": "操"
+              "label": "需求",
+              "glyph": "需"
             },
             {
-              "label": "词典里的文学释义",
-              "glyph": "辞"
+              "label": "飞机",
+              "glyph": "飞"
             },
             {
-              "label": "口号式宣传语",
-              "glyph": "宣"
+              "label": "设问",
+              "glyph": "设"
             },
             {
-              "label": "未经验证的传闻",
-              "glyph": "传"
+              "label": "假设",
+              "glyph": "假"
             }
           ],
-          "answer": "用可观测程序界定概念",
+          "answer": "设问",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-11",
           "type": "mcq",
-          "prompt": "「天花板效应」描述？",
+          "prompt": "根据序列规律，下一项应为？ 3、6、9、12、？",
           "choices": [
             {
-              "label": "题目过易导致分数挤在高端",
-              "glyph": "顶"
+              "label": "16",
+              "glyph": "1"
             },
             {
-              "label": "房间真的没有天花板",
-              "glyph": "屋"
+              "label": "15",
+              "glyph": "1"
             },
             {
-              "label": "只测最低分被试",
-              "glyph": "低"
+              "label": "14",
+              "glyph": "1"
             },
             {
-              "label": "永远无法完成测试",
-              "glyph": "∞"
+              "label": "18",
+              "glyph": "1"
             }
           ],
-          "answer": "题目过易导致分数挤在高端",
+          "answer": "15",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-12",
           "type": "mcq",
-          "prompt": "「地板效应」描述？",
+          "prompt": "根据序列规律，下一项应为？ 7、14、21、28、？",
           "choices": [
             {
-              "label": "题目过难导致分数挤在低端",
-              "glyph": "底"
+              "label": "35",
+              "glyph": "3"
             },
             {
-              "label": "地板材质检测",
-              "glyph": "材"
+              "label": "42",
+              "glyph": "4"
             },
             {
-              "label": "只奖励满分",
-              "glyph": "满分"
+              "label": "30",
+              "glyph": "3"
             },
             {
-              "label": "忽略时间限制",
-              "glyph": "时"
+              "label": "32",
+              "glyph": "3"
             }
           ],
-          "answer": "题目过难导致分数挤在低端",
+          "answer": "35",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-13",
           "type": "mcq",
-          "prompt": "「常模」在测评中通常指？",
+          "prompt": "根据序列规律，下一项应为？ 11、22、33、44、？",
           "choices": [
             {
-              "label": "参照群体的分数分布基准",
-              "glyph": "范"
+              "label": "50",
+              "glyph": "5"
             },
             {
-              "label": "试卷封面设计",
-              "glyph": "封"
+              "label": "66",
+              "glyph": "6"
             },
             {
-              "label": "监考老师名单",
-              "glyph": "名"
+              "label": "55",
+              "glyph": "5"
             },
             {
-              "label": "机房空调设定",
-              "glyph": "℃"
+              "label": "45",
+              "glyph": "4"
             }
           ],
-          "answer": "参照群体的分数分布基准",
+          "answer": "55",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-14",
           "type": "mcq",
-          "prompt": "「建构效度」关注？",
+          "prompt": "根据序列规律，下一项应为？ 子、丑、寅、卯、？",
           "choices": [
             {
-              "label": "分数与理论构念的符合程度",
-              "glyph": "构"
+              "label": "巳",
+              "glyph": "巳"
             },
             {
-              "label": "装订是否牢固",
-              "glyph": "钉"
+              "label": "辰",
+              "glyph": "辰"
             },
             {
-              "label": "是否彩色印刷",
-              "glyph": "彩"
+              "label": "午",
+              "glyph": "午"
             },
             {
-              "label": "二维码能否扫描",
-              "glyph": "码"
+              "label": "甲",
+              "glyph": "甲"
             }
           ],
-          "answer": "分数与理论构念的符合程度",
+          "answer": "辰",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-15",
           "type": "mcq",
-          "prompt": "「生态效度」更强调？",
+          "prompt": "根据序列规律，下一项应为？ 宫、商、角、徵、？",
           "choices": [
             {
-              "label": "结论推广到真实情境的程度",
-              "glyph": "境"
+              "label": "宫",
+              "glyph": "宫"
             },
             {
-              "label": "实验室电压稳定",
-              "glyph": "V"
+              "label": "羽",
+              "glyph": "羽"
             },
             {
-              "label": "显示器色域",
-              "glyph": "色"
+              "label": "声",
+              "glyph": "声"
             },
             {
-              "label": "鼠标灵敏度",
-              "glyph": "dpi"
+              "label": "律",
+              "glyph": "律"
             }
           ],
-          "answer": "结论推广到真实情境的程度",
+          "answer": "羽",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-16",
           "type": "mcq",
-          "prompt": "「双盲」设计主要是为了？",
+          "prompt": "根据序列规律，下一项应为？ 金、木、水、火、？",
           "choices": [
             {
-              "label": "减少期望效应与评估偏倚",
-              "glyph": "盲"
+              "label": "金",
+              "glyph": "金"
             },
             {
-              "label": "加快打印速度",
-              "glyph": "速"
+              "label": "风",
+              "glyph": "风"
             },
             {
-              "label": "节省仓储空间",
-              "glyph": "仓"
+              "label": "土",
+              "glyph": "土"
             },
             {
-              "label": "统一服装颜色",
-              "glyph": "衣"
+              "label": "雷",
+              "glyph": "雷"
             }
           ],
-          "answer": "减少期望效应与评估偏倚",
+          "answer": "土",
           "timeLimitMs": 55000
         }
       ]
@@ -413,7 +413,7 @@
     {
       "id": "adult-vci-analogy",
       "indexKey": "VCI",
-      "title": "类比与常识",
+      "title": "类比推理",
       "items": [
         {
           "id": "adult-vci2-1",
@@ -421,8 +421,12 @@
           "prompt": "「医生」之于「医院」，最接近「法官」之于？",
           "choices": [
             {
+              "label": "剧院",
+              "glyph": "剧"
+            },
+            {
               "label": "法院",
-              "glyph": "院"
+              "glyph": "法"
             },
             {
               "label": "药房",
@@ -431,10 +435,6 @@
             {
               "label": "教室",
               "glyph": "教"
-            },
-            {
-              "label": "剧院",
-              "glyph": "剧"
             }
           ],
           "answer": "法院",
@@ -443,151 +443,151 @@
         {
           "id": "adult-vci2-2",
           "type": "mcq",
-          "prompt": "「储蓄」与「消费」的关系最接近？",
+          "prompt": "「稀缺」之于「充裕」，最接近「储蓄」之于？",
           "choices": [
             {
-              "label": "积累与支出",
-              "glyph": "↔"
+              "label": "定价",
+              "glyph": "定"
             },
             {
-              "label": "同义替换",
-              "glyph": "="
+              "label": "理论",
+              "glyph": "理"
             },
             {
-              "label": "颜色对比",
-              "glyph": "色"
+              "label": "消费",
+              "glyph": "消"
             },
             {
-              "label": "空间方位",
-              "glyph": "方"
+              "label": "积累",
+              "glyph": "积"
             }
           ],
-          "answer": "积累与支出",
+          "answer": "消费",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci2-3",
           "type": "mcq",
-          "prompt": "在公共场所大声喧哗通常被视为？",
+          "prompt": "「页」之于「书」，最接近「琴键」之于？",
           "choices": [
             {
-              "label": "对他人的干扰",
-              "glyph": "扰"
+              "label": "手指",
+              "glyph": "手"
             },
             {
-              "label": "高效沟通",
-              "glyph": "效"
+              "label": "房子",
+              "glyph": "房"
             },
             {
-              "label": "法律义务",
-              "glyph": "法"
+              "label": "钢琴",
+              "glyph": "钢"
             },
             {
-              "label": "医疗程序",
-              "glyph": "医"
+              "label": "音乐",
+              "glyph": "音"
             }
           ],
-          "answer": "对他人的干扰",
+          "answer": "钢琴",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci2-4",
           "type": "mcq",
-          "prompt": "「显微镜」之于「微观」，好比「望远镜」之于？",
+          "prompt": "「摩擦」之于「生热」，最接近「感染」之于？",
           "choices": [
             {
-              "label": "宏观/远距",
-              "glyph": "远"
+              "label": "发芽",
+              "glyph": "发"
             },
             {
-              "label": "听觉",
-              "glyph": "听"
+              "label": "进步",
+              "glyph": "进"
             },
             {
-              "label": "气味",
-              "glyph": "嗅"
+              "label": "蒸发",
+              "glyph": "蒸"
             },
             {
-              "label": "温度",
-              "glyph": "温"
+              "label": "发热",
+              "glyph": "发"
             }
           ],
-          "answer": "宏观/远距",
+          "answer": "发热",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci2-5",
           "type": "mcq",
-          "prompt": "火灾时优先行动通常是？",
+          "prompt": "「小提琴」之于「乐器」，最接近「诗歌」之于？",
           "choices": [
             {
-              "label": "确保人员安全撤离",
-              "glyph": "撤"
-            },
-            {
-              "label": "先整理文件",
+              "label": "文学",
               "glyph": "文"
             },
             {
-              "label": "关闭所有电源后拍照",
-              "glyph": "拍"
+              "label": "花",
+              "glyph": "花"
             },
             {
-              "label": "等待陌生人指示再行动",
-              "glyph": "等"
+              "label": "树",
+              "glyph": "树"
+            },
+            {
+              "label": "鸟",
+              "glyph": "鸟"
             }
           ],
-          "answer": "确保人员安全撤离",
+          "answer": "文学",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci2-6",
           "type": "mcq",
-          "prompt": "「前提」与「结论」的关系最像？",
+          "prompt": "「温」之于「热」，最接近「走」之于？",
           "choices": [
             {
-              "label": "依据与推导结果",
-              "glyph": "→"
+              "label": "看",
+              "glyph": "看"
             },
             {
-              "label": "同义词对",
-              "glyph": "="
+              "label": "跑",
+              "glyph": "跑"
             },
             {
-              "label": "左右对称",
-              "glyph": "⇔"
+              "label": "说",
+              "glyph": "说"
             },
             {
-              "label": "随机配对",
-              "glyph": "?"
+              "label": "坐",
+              "glyph": "坐"
             }
           ],
-          "answer": "依据与推导结果",
+          "answer": "跑",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci2-7",
           "type": "mcq",
-          "prompt": "「稀缺资源」在决策中意味着？",
+          "prompt": "「锤子」之于「钉子」，最接近「梳子」之于？",
           "choices": [
             {
-              "label": "需要权衡取舍",
-              "glyph": "权"
+              "label": "地面",
+              "glyph": "地"
             },
             {
-              "label": "可以无限使用",
-              "glyph": "∞"
+              "label": "头发",
+              "glyph": "头"
             },
             {
-              "label": "无需定价",
-              "glyph": "0"
+              "label": "布",
+              "glyph": "布"
             },
             {
-              "label": "只存在于理论",
-              "glyph": "理"
+              "label": "锁",
+              "glyph": "锁"
             }
           ],
-          "answer": "需要权衡取舍",
+          "answer": "头发",
           "timeLimitMs": 55000
         }
       ]
@@ -1305,7 +1305,7 @@
         {
           "id": "adult-wmi-10",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：4、8、2、9（从后往前说）",
+          "prompt": "请倒序复述：4、8、2、9（从后往前）",
           "answer": "9-2-8-4",
           "timeLimitMs": 45000,
           "encodeMs": 5500,
@@ -1315,7 +1315,7 @@
         {
           "id": "adult-wmi-11",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：1、6、3、9、5（从后往前说）",
+          "prompt": "请倒序复述：1、6、3、9、5（从后往前）",
           "answer": "5-9-3-6-1",
           "timeLimitMs": 45000,
           "encodeMs": 6000,
@@ -1325,7 +1325,7 @@
         {
           "id": "adult-wmi-12",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：7、2、8、4、1、6（从后往前说）",
+          "prompt": "请倒序复述：7、2、8、4、1、6（从后往前）",
           "answer": "6-1-4-8-2-7",
           "timeLimitMs": 45000,
           "encodeMs": 6500,
@@ -1335,7 +1335,7 @@
         {
           "id": "adult-wmi-13",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：5、9、1、7、3、8、2（从后往前说）",
+          "prompt": "请倒序复述：5、9、1、7、3、8、2（从后往前）",
           "answer": "2-8-3-7-1-9-5",
           "timeLimitMs": 45000,
           "encodeMs": 7000,
@@ -1345,7 +1345,7 @@
         {
           "id": "adult-wmi-14",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：3、8、5、1、9、4、7、2（从后往前说）",
+          "prompt": "请倒序复述：3、8、5、1、9、4、7、2（从后往前）",
           "answer": "2-7-4-9-1-5-8-3",
           "timeLimitMs": 45000,
           "encodeMs": 7500,
@@ -1355,7 +1355,7 @@
         {
           "id": "adult-wmi-15",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：9、4、1、6、8、2、5、3、7（从后往前说）",
+          "prompt": "请倒序复述：9、4、1、6、8、2、5、3、7（从后往前）",
           "answer": "7-3-5-2-8-6-1-4-9",
           "timeLimitMs": 45000,
           "encodeMs": 8000,
@@ -1365,7 +1365,7 @@
         {
           "id": "adult-wmi-16",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：2、7、4、9、1、5、8、3、6、0（从后往前说）",
+          "prompt": "请倒序复述：2、7、4、9、1、5、8、3、6、0（从后往前）",
           "answer": "0-6-3-8-5-1-9-4-7-2",
           "timeLimitMs": 45000,
           "encodeMs": 8500,
@@ -1377,7 +1377,7 @@
     {
       "id": "adult-wmi-reverse-short",
       "indexKey": "WMI",
-      "title": "反向数字短梯",
+      "title": "倒序广度",
       "ordered": true,
       "items": [
         {
@@ -1460,112 +1460,112 @@
         {
           "id": "adult-psi-1",
           "type": "symbol_search",
-          "prompt": "目标 Σ。在 ΑΣΒΓΔΕ 中出现几次？",
+          "prompt": "目标Σ。在 ΑΣΒΓΔΕ 中出现几次？",
           "answer": 1,
           "timeLimitMs": 32000
         },
         {
           "id": "adult-psi-2",
           "type": "symbol_search",
-          "prompt": "目标 ≠。在 =≠≈≠≡≠∼≠ 中出现几次？",
+          "prompt": "目标≠。在 =≠≈≠≡≠∼≠ 中出现几次？",
           "answer": 4,
           "timeLimitMs": 31200
         },
         {
           "id": "adult-psi-3",
           "type": "symbol_search",
-          "prompt": "目标 ∞。在 ∅∞∪∩⊂⊃ 中出现几次？",
+          "prompt": "目标∞。在 ∅∞∪∩⊂⊃ 中出现几次？",
           "answer": 1,
           "timeLimitMs": 30400
         },
         {
           "id": "adult-psi-4",
           "type": "symbol_search",
-          "prompt": "目标 √。在 √π√e√2√φ√ 中出现几次？",
+          "prompt": "目标√。在 √π√e√2√φ√ 中出现几次？",
           "answer": 5,
           "timeLimitMs": 29600
         },
         {
           "id": "adult-psi-5",
           "type": "symbol_search",
-          "prompt": "目标 ∴。在 ∵∴∵∴∵∴ 中出现几次？",
+          "prompt": "目标∴。在 ∵∴∵∴∵∴ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 28800
         },
         {
           "id": "adult-psi-6",
           "type": "symbol_search",
-          "prompt": "目标 ∂。在 ∇Δ∫∑∂ 中出现几次？",
+          "prompt": "目标∂。在 ∇Δ∫∑∂ 中出现几次？",
           "answer": 1,
           "timeLimitMs": 28000
         },
         {
           "id": "adult-psi-7",
           "type": "symbol_search",
-          "prompt": "目标 ∈。在 ⊂∈∪∈∩∈∅∈ 中出现几次？",
+          "prompt": "目标∈。在 ⊂∈∪∈∩∈∅∈ 中出现几次？",
           "answer": 4,
           "timeLimitMs": 27200
         },
         {
           "id": "adult-psi-8",
           "type": "symbol_search",
-          "prompt": "目标 ℵ。在 αβγδℵε 中出现几次？",
+          "prompt": "目标ℵ。在 αβγδℵε 中出现几次？",
           "answer": 1,
           "timeLimitMs": 26400
         },
         {
           "id": "adult-psi-9",
           "type": "symbol_search",
-          "prompt": "目标 ⊢。在 ⊨⊢⊥⊢⊤⊢∼⊢ 中出现几次？",
+          "prompt": "目标⊢。在 ⊨⊢⊥⊢⊤⊢∼⊢ 中出现几次？",
           "answer": 4,
           "timeLimitMs": 25600
         },
         {
           "id": "adult-psi-10",
           "type": "symbol_search",
-          "prompt": "目标 ∀。在 ∃∀∃∀∃∀∀ 中出现几次？",
+          "prompt": "目标∀。在 ∃∀∃∀∃∀∀ 中出现几次？",
           "answer": 4,
           "timeLimitMs": 24800
         },
         {
           "id": "adult-psi-11",
           "type": "symbol_search",
-          "prompt": "目标 ⊆。在 ⊂⊆⊂⊆⊆⊃ 中出现几次？",
+          "prompt": "目标⊆。在 ⊂⊆⊂⊆⊆⊃ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 24000
         },
         {
           "id": "adult-psi-12",
           "type": "symbol_search",
-          "prompt": "目标 ∧。在 ∨∧∨∧∨∧∧ 中出现几次？",
+          "prompt": "目标∧。在 ∨∧∨∧∨∧∧ 中出现几次？",
           "answer": 4,
           "timeLimitMs": 23200
         },
         {
           "id": "adult-psi-13",
           "type": "symbol_search",
-          "prompt": "目标 ⊥。在 ⊤⊥⊤⊥⊥⊤ 中出现几次？",
+          "prompt": "目标⊥。在 ⊤⊥⊤⊥⊥⊤ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 22400
         },
         {
           "id": "adult-psi-14",
           "type": "symbol_search",
-          "prompt": "目标 ≈。在 =≈≠≈≡≈∼ 中出现几次？",
+          "prompt": "目标≈。在 =≈≠≈≡≈∼ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 21600
         },
         {
           "id": "adult-psi-15",
           "type": "symbol_search",
-          "prompt": "目标 Ω。在 αΩβΩγδΩ 中出现几次？",
+          "prompt": "目标Ω。在 αΩβΩγδΩ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 20800
         },
         {
           "id": "adult-psi-16",
           "type": "symbol_search",
-          "prompt": "目标 ∅。在 ∅∪∅∩∅⊂∅ 中出现几次？",
+          "prompt": "目标∅。在 ∅∪∅∩∅⊂∅ 中出现几次？",
           "answer": 4,
           "timeLimitMs": 20000
         }
@@ -1574,7 +1574,7 @@
     {
       "id": "adult-psi-pairing",
       "indexKey": "PSI",
-      "title": "符号配对与计数",
+      "title": "符号配对",
       "items": [
         {
           "id": "adult-psi2-1",
@@ -1586,42 +1586,42 @@
         {
           "id": "adult-psi2-2",
           "type": "symbol_search",
-          "prompt": "快速扫描：目标◇。序列 ◆◇○◇◆◇○◇ 中出现几次？",
+          "prompt": "目标◇。在 ◆◇○◇◆◇○◇ 中出现几次？",
           "answer": 4,
           "timeLimitMs": 26000
         },
         {
           "id": "adult-psi2-3",
           "type": "symbol_search",
-          "prompt": "配对：目标▲。在 △▼▲◆▲△▼▲ 中出现几次？",
+          "prompt": "配对计数：目标▲。在 △▼▲◆▲△▼▲ 中目标出现几次？",
           "answer": 3,
           "timeLimitMs": 24000
         },
         {
           "id": "adult-psi2-4",
           "type": "symbol_search",
-          "prompt": "计数变体：目标＋。在 ×÷＋＝＋－＋× 中出现几次？",
+          "prompt": "目标＋。在 ×÷＋＝＋－＋× 中出现几次？",
           "answer": 3,
           "timeLimitMs": 22000
         },
         {
           "id": "adult-psi2-5",
           "type": "symbol_search",
-          "prompt": "扫描：目标◎。在 ○●◎○◎●◎○ 中出现几次？",
+          "prompt": "目标◎。在 ○●◎○◎●◎○ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 21000
         },
         {
           "id": "adult-psi2-6",
           "type": "symbol_search",
-          "prompt": "配对计数：目标■。在 □■◆□■▲■□ 中出现几次？",
+          "prompt": "配对计数：目标■。在 □■◆□■▲■□ 中目标出现几次？",
           "answer": 3,
           "timeLimitMs": 20000
         },
         {
           "id": "adult-psi2-7",
           "type": "symbol_search",
-          "prompt": "快速配对：目标★。在 ☆★●★☆■★☆ 中出现几次？",
+          "prompt": "目标★。在 ☆★●★☆■★☆ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 18000
         }

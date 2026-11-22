@@ -6,406 +6,406 @@
     {
       "id": "child-vci-vocab",
       "indexKey": "VCI",
-      "title": "词语理解",
+      "title": "分类与序列",
       "items": [
         {
           "id": "child-vci-1",
           "type": "mcq",
-          "prompt": "「雨伞」主要用来做什么？",
+          "prompt": "看看「苹果、香蕉、橙子」。下面哪一项和它们是同一类？",
           "choices": [
             {
-              "label": "挡住雨水",
-              "glyph": "傘"
+              "label": "葡萄",
+              "glyph": "葡"
             },
             {
-              "label": "切水果",
-              "glyph": "刀"
+              "label": "桌子",
+              "glyph": "桌"
             },
             {
-              "label": "写字",
-              "glyph": "筆"
+              "label": "汽车",
+              "glyph": "汽"
             },
             {
-              "label": "踢足球",
-              "glyph": "球"
+              "label": "铅笔",
+              "glyph": "铅"
             }
           ],
-          "answer": "挡住雨水",
+          "answer": "葡萄",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-2",
           "type": "mcq",
-          "prompt": "「图书馆」是做什么的地方？",
+          "prompt": "看看「猫、狗、兔子」。下面哪一项和它们是同一类？",
           "choices": [
             {
-              "label": "借阅图书",
-              "glyph": "書"
+              "label": "椅子",
+              "glyph": "椅"
             },
             {
-              "label": "修车",
-              "glyph": "車"
+              "label": "红色",
+              "glyph": "红"
             },
             {
-              "label": "游泳",
-              "glyph": "泳"
+              "label": "老虎",
+              "glyph": "老"
             },
             {
-              "label": "烤蛋糕",
-              "glyph": "糕"
+              "label": "轮船",
+              "glyph": "轮"
             }
           ],
-          "answer": "借阅图书",
+          "answer": "老虎",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-3",
           "type": "mcq",
-          "prompt": "「早晨」通常发生在一天的什么时候？",
+          "prompt": "看看「汽车、火车、飞机」。下面哪一项和它们是同一类？",
           "choices": [
             {
-              "label": "刚起床、天刚亮",
-              "glyph": "晨"
+              "label": "轮船",
+              "glyph": "轮"
             },
             {
-              "label": "半夜最黑时",
-              "glyph": "夜"
+              "label": "沙发",
+              "glyph": "沙"
             },
             {
-              "label": "太阳落山后",
-              "glyph": "暮"
+              "label": "橡皮",
+              "glyph": "橡"
             },
             {
-              "label": "只在周末",
-              "glyph": "休"
+              "label": "下雨",
+              "glyph": "下"
             }
           ],
-          "answer": "刚起床、天刚亮",
+          "answer": "轮船",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-4",
           "type": "mcq",
-          "prompt": "「医生」和「护士」有什么共同点？",
+          "prompt": "看看「桌子、椅子、床」。下面哪一项和它们是同一类？",
           "choices": [
             {
-              "label": "都在医院帮助病人",
-              "glyph": "醫"
+              "label": "香蕉",
+              "glyph": "香"
             },
             {
-              "label": "都会开飞机",
-              "glyph": "機"
+              "label": "警察",
+              "glyph": "警"
             },
             {
-              "label": "都只卖文具",
-              "glyph": "筆"
+              "label": "下雨",
+              "glyph": "下"
             },
             {
-              "label": "都不需要学习",
-              "glyph": "休"
+              "label": "柜子",
+              "glyph": "柜"
             }
           ],
-          "answer": "都在医院帮助病人",
+          "answer": "柜子",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-5",
           "type": "mcq",
-          "prompt": "「吵闹」的反义词最接近？",
+          "prompt": "看看「铅笔、橡皮、尺子」。下面哪一项和它们是同一类？",
           "choices": [
             {
-              "label": "安静",
-              "glyph": "静"
+              "label": "书包",
+              "glyph": "书"
             },
             {
-              "label": "巨大",
+              "label": "大象",
               "glyph": "大"
             },
             {
-              "label": "快速",
-              "glyph": "速"
+              "label": "厨师",
+              "glyph": "厨"
             },
             {
-              "label": "彩色",
-              "glyph": "彩"
+              "label": "海洋",
+              "glyph": "海"
             }
           ],
-          "answer": "安静",
+          "answer": "书包",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-6",
           "type": "mcq",
-          "prompt": "「钥匙」通常和什么一起使用？",
+          "prompt": "看看「下雨、下雪、刮风」。下面哪一项和它们是同一类？",
           "choices": [
             {
-              "label": "锁",
-              "glyph": "鎖"
+              "label": "膝盖",
+              "glyph": "膝"
             },
             {
-              "label": "枕头",
-              "glyph": "枕"
+              "label": "地铁",
+              "glyph": "地"
             },
             {
-              "label": "雨靴",
-              "glyph": "靴"
+              "label": "笔记本",
+              "glyph": "笔"
             },
             {
-              "label": "跳绳",
-              "glyph": "繩"
+              "label": "打雷",
+              "glyph": "打"
             }
           ],
-          "answer": "锁",
+          "answer": "打雷",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-7",
           "type": "mcq",
-          "prompt": "「勇敢」最可能用来形容谁？",
+          "prompt": "看看「手、脚、眼睛」。下面哪一项和它们是同一类？",
           "choices": [
             {
-              "label": "敢于尝试新事物的人",
-              "glyph": "勇"
+              "label": "西瓜",
+              "glyph": "西"
             },
             {
-              "label": "总是躲在角落的人",
-              "glyph": "躲"
+              "label": "黄色",
+              "glyph": "黄"
             },
             {
-              "label": "只爱吃糖的人",
-              "glyph": "糖"
+              "label": "飞机",
+              "glyph": "飞"
             },
             {
-              "label": "从不说话的人",
-              "glyph": "默"
+              "label": "耳朵",
+              "glyph": "耳"
             }
           ],
-          "answer": "敢于尝试新事物的人",
+          "answer": "耳朵",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-8",
           "type": "mcq",
-          "prompt": "「冬天」和「夏天」的关系最像？",
+          "prompt": "看看「红色、蓝色、黄色」。下面哪一项和它们是同一类？",
           "choices": [
             {
-              "label": "白天和黑夜",
-              "glyph": "↔"
+              "label": "狗",
+              "glyph": "狗"
             },
             {
-              "label": "铅笔和橡皮",
-              "glyph": "工"
+              "label": "床",
+              "glyph": "床"
             },
             {
-              "label": "妈妈和孩子",
-              "glyph": "亲"
+              "label": "胶水",
+              "glyph": "胶"
             },
             {
-              "label": "书和封面",
-              "glyph": "⊂"
+              "label": "绿色",
+              "glyph": "绿"
             }
           ],
-          "answer": "白天和黑夜",
+          "answer": "绿色",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-9",
           "type": "mcq",
-          "prompt": "「节约」是什么意思？",
+          "prompt": "看看「医生、教师、警察」。下面哪一项和它们是同一类？",
           "choices": [
             {
-              "label": "不浪费、好好使用",
-              "glyph": "省"
+              "label": "梨",
+              "glyph": "梨"
             },
             {
-              "label": "全部扔掉",
-              "glyph": "弃"
+              "label": "厨师",
+              "glyph": "厨"
             },
             {
-              "label": "越买越多",
-              "glyph": "购"
+              "label": "柜子",
+              "glyph": "柜"
             },
             {
-              "label": "从不分享",
-              "glyph": "独"
+              "label": "出太阳",
+              "glyph": "出"
             }
           ],
-          "answer": "不浪费、好好使用",
+          "answer": "厨师",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-10",
           "type": "mcq",
-          "prompt": "「邻居」通常住在哪里？",
+          "prompt": "看看「山脉、河流、平原」。下面哪一项和它们是同一类？",
           "choices": [
             {
-              "label": "你家附近",
-              "glyph": "邻"
+              "label": "蜡笔",
+              "glyph": "蜡"
             },
             {
-              "label": "外太空",
-              "glyph": "星"
-            },
-            {
-              "label": "海底火山",
+              "label": "海洋",
               "glyph": "海"
             },
             {
-              "label": "只有动物园里",
-              "glyph": "园"
+              "label": "紫色",
+              "glyph": "紫"
+            },
+            {
+              "label": "护士",
+              "glyph": "护"
             }
           ],
-          "answer": "你家附近",
+          "answer": "海洋",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-11",
           "type": "mcq",
-          "prompt": "「透明」最接近下列哪一项？",
+          "prompt": "按规律往下排：1、2、3、4、？ 下一项是什么？",
           "choices": [
             {
-              "label": "能看得见对面",
-              "glyph": "透"
+              "label": "3",
+              "glyph": "3"
             },
             {
-              "label": "完全听不见",
-              "glyph": "静"
+              "label": "6",
+              "glyph": "6"
             },
             {
-              "label": "特别烫",
-              "glyph": "热"
+              "label": "0",
+              "glyph": "0"
             },
             {
-              "label": "特别咸",
-              "glyph": "咸"
+              "label": "5",
+              "glyph": "5"
             }
           ],
-          "answer": "能看得见对面",
+          "answer": "5",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-12",
           "type": "mcq",
-          "prompt": "「种子」长大后可能变成？",
+          "prompt": "按规律往下排：2、4、6、8、？ 下一项是什么？",
           "choices": [
             {
-              "label": "植物",
-              "glyph": "芽"
+              "label": "9",
+              "glyph": "9"
             },
             {
-              "label": "石头",
-              "glyph": "石"
+              "label": "7",
+              "glyph": "7"
             },
             {
-              "label": "云朵",
-              "glyph": "云"
+              "label": "10",
+              "glyph": "1"
             },
             {
-              "label": "橡皮",
-              "glyph": "擦"
+              "label": "12",
+              "glyph": "1"
             }
           ],
-          "answer": "植物",
+          "answer": "10",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-13",
           "type": "mcq",
-          "prompt": "「礼貌」的表现是？",
+          "prompt": "按规律往下排：5、10、15、20、？ 下一项是什么？",
           "choices": [
             {
-              "label": "说谢谢、请、对不起",
-              "glyph": "礼"
+              "label": "25",
+              "glyph": "2"
             },
             {
-              "label": "推别人抢玩具",
-              "glyph": "抢"
+              "label": "15",
+              "glyph": "1"
             },
             {
-              "label": "大声打断别人",
-              "glyph": "吵"
+              "label": "30",
+              "glyph": "3"
             },
             {
-              "label": "从来不排队",
-              "glyph": "队"
+              "label": "21",
+              "glyph": "2"
             }
           ],
-          "answer": "说谢谢、请、对不起",
+          "answer": "25",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-14",
           "type": "mcq",
-          "prompt": "「地图」主要帮助我们？",
+          "prompt": "按规律往下排：甲、乙、丙、？ 下一项是什么？",
           "choices": [
             {
-              "label": "找到方向和位置",
-              "glyph": "图"
+              "label": "甲",
+              "glyph": "甲"
             },
             {
-              "label": "做饭",
-              "glyph": "厨"
+              "label": "戊",
+              "glyph": "戊"
             },
             {
-              "label": "刷牙",
-              "glyph": "刷"
+              "label": "丁",
+              "glyph": "丁"
             },
             {
-              "label": "量体温",
-              "glyph": "温"
+              "label": "己",
+              "glyph": "己"
             }
           ],
-          "answer": "找到方向和位置",
+          "answer": "丁",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-15",
           "type": "mcq",
-          "prompt": "「果实」通常长在？",
+          "prompt": "按规律往下排：一、二、三、四、？ 下一项是什么？",
           "choices": [
             {
-              "label": "树上或植物上",
-              "glyph": "果"
+              "label": "五",
+              "glyph": "五"
             },
             {
-              "label": "电脑里",
-              "glyph": "电"
+              "label": "六",
+              "glyph": "六"
             },
             {
-              "label": "书包夹层",
-              "glyph": "包"
+              "label": "零",
+              "glyph": "零"
             },
             {
-              "label": "只在夜里出现",
-              "glyph": "夜"
+              "label": "八",
+              "glyph": "八"
             }
           ],
-          "answer": "树上或植物上",
+          "answer": "五",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci-16",
           "type": "mcq",
-          "prompt": "「合作」是什么意思？",
+          "prompt": "按规律往下排：春、夏、秋、？ 下一项是什么？",
           "choices": [
             {
-              "label": "大家一起完成一件事",
-              "glyph": "合"
+              "label": "春",
+              "glyph": "春"
             },
             {
-              "label": "只顾自己",
-              "glyph": "己"
+              "label": "冬",
+              "glyph": "冬"
             },
             {
-              "label": "互相隐瞒",
-              "glyph": "隐"
+              "label": "年",
+              "glyph": "年"
             },
             {
-              "label": "永远不说话",
-              "glyph": "默"
+              "label": "雨",
+              "glyph": "雨"
             }
           ],
-          "answer": "大家一起完成一件事",
+          "answer": "冬",
           "timeLimitMs": 60000
         }
       ]
@@ -413,12 +413,12 @@
     {
       "id": "child-vci-analogy",
       "indexKey": "VCI",
-      "title": "类比与常识",
+      "title": "类比推理",
       "items": [
         {
           "id": "child-vci2-1",
           "type": "mcq",
-          "prompt": "鸟对天空，就像鱼对？",
+          "prompt": "「鸟」对「天空」，就像「鱼」对？",
           "choices": [
             {
               "label": "水",
@@ -443,151 +443,151 @@
         {
           "id": "child-vci2-2",
           "type": "mcq",
-          "prompt": "手套主要保护哪一部分？",
+          "prompt": "「医生」对「医院」，就像「教师」对？",
           "choices": [
             {
-              "label": "手",
-              "glyph": "手"
+              "label": "教室",
+              "glyph": "教"
             },
             {
-              "label": "脚",
-              "glyph": "脚"
+              "label": "学校",
+              "glyph": "学"
             },
             {
-              "label": "耳朵",
-              "glyph": "耳"
+              "label": "厨房",
+              "glyph": "厨"
             },
             {
-              "label": "牙齿",
-              "glyph": "牙"
+              "label": "药房",
+              "glyph": "药"
             }
           ],
-          "answer": "手",
+          "answer": "学校",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci2-3",
           "type": "mcq",
-          "prompt": "红绿灯里，红灯通常表示？",
+          "prompt": "「笔」对「纸」，就像「钥匙」对？",
           "choices": [
             {
-              "label": "停下",
-              "glyph": "停"
+              "label": "门",
+              "glyph": "门"
             },
             {
-              "label": "加速",
-              "glyph": "速"
+              "label": "布",
+              "glyph": "布"
             },
             {
-              "label": "倒车",
-              "glyph": "倒"
+              "label": "头发",
+              "glyph": "头"
             },
             {
-              "label": "鸣笛",
-              "glyph": "笛"
+              "label": "锁",
+              "glyph": "锁"
             }
           ],
-          "answer": "停下",
+          "answer": "锁",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci2-4",
           "type": "mcq",
-          "prompt": "铅笔对写字，就像剪刀对？",
+          "prompt": "「轮子」对「汽车」，就像「树叶」对？",
           "choices": [
             {
-              "label": "剪东西",
-              "glyph": "剪"
+              "label": "书",
+              "glyph": "书"
             },
             {
-              "label": "喝水",
-              "glyph": "喝"
+              "label": "手",
+              "glyph": "手"
             },
             {
-              "label": "睡觉",
-              "glyph": "睡"
+              "label": "花",
+              "glyph": "花"
             },
             {
-              "label": "唱歌",
-              "glyph": "歌"
+              "label": "树",
+              "glyph": "树"
             }
           ],
-          "answer": "剪东西",
+          "answer": "树",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci2-5",
           "type": "mcq",
-          "prompt": "为什么夏天人们更爱喝水？",
+          "prompt": "「热」对「冷」，就像「快」对？",
           "choices": [
             {
-              "label": "身体更容易出汗失水",
-              "glyph": "汗"
+              "label": "开",
+              "glyph": "开"
             },
             {
-              "label": "水会自己变热",
-              "glyph": "热"
+              "label": "慢",
+              "glyph": "慢"
             },
             {
-              "label": "冬天没有水",
-              "glyph": "冬"
+              "label": "高",
+              "glyph": "高"
             },
             {
-              "label": "水能当玩具",
-              "glyph": "玩"
+              "label": "多",
+              "glyph": "多"
             }
           ],
-          "answer": "身体更容易出汗失水",
+          "answer": "慢",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci2-6",
           "type": "mcq",
-          "prompt": "猫对喵喵，就像狗对？",
+          "prompt": "「玫瑰」对「花」，就像「麻雀」对？",
           "choices": [
             {
-              "label": "汪汪",
-              "glyph": "汪"
+              "label": "鸟",
+              "glyph": "鸟"
             },
             {
-              "label": "呱呱",
-              "glyph": "蛙"
+              "label": "乐器",
+              "glyph": "乐"
             },
             {
-              "label": "嗡嗡",
-              "glyph": "蜂"
+              "label": "树",
+              "glyph": "树"
             },
             {
-              "label": "嘶嘶",
-              "glyph": "蛇"
+              "label": "鱼",
+              "glyph": "鱼"
             }
           ],
-          "answer": "汪汪",
+          "answer": "鸟",
           "timeLimitMs": 60000
         },
         {
           "id": "child-vci2-7",
           "type": "mcq",
-          "prompt": "书包主要用来做什么？",
+          "prompt": "「下雨」对「地湿」，就像「加热」对？",
           "choices": [
             {
-              "label": "装书本和学习用品",
-              "glyph": "书"
+              "label": "蒸发",
+              "glyph": "蒸"
             },
             {
-              "label": "做饭",
-              "glyph": "饭"
+              "label": "发芽",
+              "glyph": "发"
             },
             {
-              "label": "浇花",
-              "glyph": "花"
+              "label": "结冰",
+              "glyph": "结"
             },
             {
-              "label": "开锁",
-              "glyph": "锁"
+              "label": "进步",
+              "glyph": "进"
             }
           ],
-          "answer": "装书本和学习用品",
+          "answer": "蒸发",
           "timeLimitMs": 60000
         }
       ]
@@ -1305,7 +1305,7 @@
         {
           "id": "child-wmi-10",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：9、2、5（从后往前说）",
+          "prompt": "请倒序复述：9、2、5（从后往前说）",
           "answer": "5-2-9",
           "timeLimitMs": 45000,
           "encodeMs": 5000,
@@ -1315,7 +1315,7 @@
         {
           "id": "child-wmi-11",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：4、7、1、8（从后往前说）",
+          "prompt": "请倒序复述：4、7、1、8（从后往前说）",
           "answer": "8-1-7-4",
           "timeLimitMs": 45000,
           "encodeMs": 5500,
@@ -1325,7 +1325,7 @@
         {
           "id": "child-wmi-12",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：3、6、2、9、5（从后往前说）",
+          "prompt": "请倒序复述：3、6、2、9、5（从后往前说）",
           "answer": "5-9-2-6-3",
           "timeLimitMs": 45000,
           "encodeMs": 6000,
@@ -1335,7 +1335,7 @@
         {
           "id": "child-wmi-13",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：8、1、4、7、2、6（从后往前说）",
+          "prompt": "请倒序复述：8、1、4、7、2、6（从后往前说）",
           "answer": "6-2-7-4-1-8",
           "timeLimitMs": 45000,
           "encodeMs": 6500,
@@ -1345,7 +1345,7 @@
         {
           "id": "child-wmi-14",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：5、9、3、1、8、4、7（从后往前说）",
+          "prompt": "请倒序复述：5、9、3、1、8、4、7（从后往前说）",
           "answer": "7-4-8-1-3-9-5",
           "timeLimitMs": 45000,
           "encodeMs": 7000,
@@ -1355,7 +1355,7 @@
         {
           "id": "child-wmi-15",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：2、7、4、9、1、6、3、8（从后往前说）",
+          "prompt": "请倒序复述：2、7、4、9、1、6、3、8（从后往前说）",
           "answer": "8-3-6-1-9-4-7-2",
           "timeLimitMs": 45000,
           "encodeMs": 7500,
@@ -1365,7 +1365,7 @@
         {
           "id": "child-wmi-16",
           "type": "digit_span",
-          "prompt": "请倒序复述这些数字：6、1、8、3、9、2、5、4、7（从后往前说）",
+          "prompt": "请倒序复述：6、1、8、3、9、2、5、4、7（从后往前说）",
           "answer": "7-4-5-2-9-3-8-1-6",
           "timeLimitMs": 45000,
           "encodeMs": 8000,
@@ -1377,7 +1377,7 @@
     {
       "id": "child-wmi-reverse-short",
       "indexKey": "WMI",
-      "title": "反向数字短梯",
+      "title": "倒序广度",
       "ordered": true,
       "items": [
         {
@@ -1579,49 +1579,49 @@
         {
           "id": "child-psi2-1",
           "type": "symbol_search",
-          "prompt": "配对：左边是☆，右边应选哪个？在 ★☆●■ 中找与目标相同的符号，它出现几次？目标☆",
+          "prompt": "配对计数：目标☆。在 ★☆●■ 中出现几次？",
           "answer": 1,
           "timeLimitMs": 32000
         },
         {
           "id": "child-psi2-2",
           "type": "symbol_search",
-          "prompt": "数一数：▲ 在 ▲△▲○▲■ 中出现几次？",
+          "prompt": "目标▲。在 ▲△▲○▲■ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 30000
         },
         {
           "id": "child-psi2-3",
           "type": "symbol_search",
-          "prompt": "配对计数：目标◇。序列 ◆◇○◇◆◇ 中出现几次？",
+          "prompt": "配对计数：目标◇。在 ◆◇○◇◆◇ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 28000
         },
         {
           "id": "child-psi2-4",
           "type": "symbol_search",
-          "prompt": "快速配对：目标＋。在 ×＋÷＋＝－ 中出现几次？",
+          "prompt": "目标＋。在 ×＋÷＋＝－ 中出现几次？",
           "answer": 2,
           "timeLimitMs": 26000
         },
         {
           "id": "child-psi2-5",
           "type": "symbol_search",
-          "prompt": "数一数：○ 在 ●◎○●○◎○○ 中出现几次？",
+          "prompt": "目标○。在 ●◎○●○◎○○ 中出现几次？",
           "answer": 4,
           "timeLimitMs": 24000
         },
         {
           "id": "child-psi2-6",
           "type": "symbol_search",
-          "prompt": "配对：目标■。在 □■◆■□▲■ 中出现几次？",
+          "prompt": "配对计数：目标■。在 □■◆■□▲■ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 22000
         },
         {
           "id": "child-psi2-7",
           "type": "symbol_search",
-          "prompt": "计数变体：目标※。在 ＊＃※＊※＃※ 中出现几次？",
+          "prompt": "目标※。在 ＊＃※＊※＃※ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 20000
         }

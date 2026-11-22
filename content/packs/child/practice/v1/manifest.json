@@ -11,251 +11,251 @@
         {
           "id": "child-prac-vci-1",
           "type": "mcq",
-          "prompt": "「冰箱」主要用来？",
+          "prompt": "练习：看看「西瓜、桃子、梨」。下面哪一项和它们是同一类？",
           "choices": [
             {
-              "label": "冷藏食物",
-              "glyph": "冷"
+              "label": "草莓",
+              "glyph": "草"
             },
             {
-              "label": "洗衣服",
-              "glyph": "洗"
+              "label": "地铁",
+              "glyph": "地"
             },
             {
-              "label": "浇花",
-              "glyph": "花"
+              "label": "沙发",
+              "glyph": "沙"
             },
             {
-              "label": "开锁",
-              "glyph": "锁"
+              "label": "鼻子",
+              "glyph": "鼻"
             }
           ],
-          "answer": "冷藏食物",
+          "answer": "草莓",
           "timeLimitMs": 60000
         },
         {
           "id": "child-prac-vci-2",
           "type": "mcq",
-          "prompt": "「夜晚」通常发生在？",
+          "prompt": "练习：看看「狮子、大象、鸟」。下面哪一项和它们是同一类？",
           "choices": [
             {
-              "label": "天黑之后",
-              "glyph": "夜"
+              "label": "鱼",
+              "glyph": "鱼"
             },
             {
-              "label": "中午最热时",
-              "glyph": "午"
+              "label": "书架",
+              "glyph": "书"
             },
             {
-              "label": "刚起床时",
-              "glyph": "晨"
+              "label": "绿色",
+              "glyph": "绿"
             },
             {
-              "label": "只在周一",
-              "glyph": "一"
+              "label": "胶水",
+              "glyph": "胶"
             }
           ],
-          "answer": "天黑之后",
+          "answer": "鱼",
           "timeLimitMs": 60000
         },
         {
           "id": "child-prac-vci-3",
           "type": "mcq",
-          "prompt": "筷子对吃饭，就像笔对？",
+          "prompt": "练习：看看「笔记本、蜡笔、剪刀」。下面哪一项和它们是同一类？",
           "choices": [
             {
-              "label": "写字",
-              "glyph": "写"
+              "label": "白色",
+              "glyph": "白"
             },
             {
-              "label": "跑步",
-              "glyph": "跑"
+              "label": "下雪",
+              "glyph": "下"
             },
             {
-              "label": "游泳",
-              "glyph": "泳"
+              "label": "胶水",
+              "glyph": "胶"
             },
             {
-              "label": "睡觉",
-              "glyph": "睡"
+              "label": "老虎",
+              "glyph": "老"
             }
           ],
-          "answer": "写字",
+          "answer": "胶水",
           "timeLimitMs": 60000
         },
         {
           "id": "child-prac-vci-4",
           "type": "mcq",
-          "prompt": "「温暖」的反义词更接近？",
+          "prompt": "练习：按规律往下排：10、20、30、？ 下一项是什么？",
           "choices": [
             {
-              "label": "寒冷",
-              "glyph": "寒"
+              "label": "50",
+              "glyph": "5"
             },
             {
-              "label": "明亮",
-              "glyph": "明"
+              "label": "40",
+              "glyph": "4"
             },
             {
-              "label": "巨大",
-              "glyph": "大"
+              "label": "25",
+              "glyph": "2"
             },
             {
-              "label": "柔软",
-              "glyph": "软"
+              "label": "35",
+              "glyph": "3"
             }
           ],
-          "answer": "寒冷",
+          "answer": "40",
           "timeLimitMs": 60000
         },
         {
           "id": "child-prac-vci-5",
           "type": "mcq",
-          "prompt": "消防车通常帮助？",
+          "prompt": "练习：按规律往下排：东、南、西、？ 下一项是什么？",
           "choices": [
             {
-              "label": "灭火救人",
-              "glyph": "火"
+              "label": "北",
+              "glyph": "北"
             },
             {
-              "label": "卖冰淇淋",
-              "glyph": "冰"
+              "label": "东",
+              "glyph": "东"
             },
             {
-              "label": "修理电脑",
-              "glyph": "电"
+              "label": "上",
+              "glyph": "上"
             },
             {
-              "label": "教拼音",
-              "glyph": "拼"
+              "label": "中",
+              "glyph": "中"
             }
           ],
-          "answer": "灭火救人",
+          "answer": "北",
           "timeLimitMs": 60000
         },
         {
           "id": "child-prac-vci-6",
           "type": "mcq",
-          "prompt": "鸟对飞，就像鱼对？",
+          "prompt": "练习：「蜜蜂」对「蜂巢」，就像「蚂蚁」对？",
           "choices": [
             {
-              "label": "游",
-              "glyph": "游"
+              "label": "水",
+              "glyph": "水"
             },
             {
-              "label": "跑",
-              "glyph": "跑"
+              "label": "蚁穴",
+              "glyph": "蚁"
             },
             {
-              "label": "爬树",
-              "glyph": "爬"
+              "label": "沙漠",
+              "glyph": "沙"
             },
             {
-              "label": "唱歌",
-              "glyph": "歌"
+              "label": "天空",
+              "glyph": "天"
             }
           ],
-          "answer": "游",
+          "answer": "蚁穴",
           "timeLimitMs": 60000
         },
         {
           "id": "child-prac-vci-7",
           "type": "mcq",
-          "prompt": "「礼貌」指的是？",
+          "prompt": "练习：「多」对「少」，就像「高」对？",
           "choices": [
             {
-              "label": "对人客气有规矩",
-              "glyph": "礼"
+              "label": "低",
+              "glyph": "低"
             },
             {
-              "label": "跑得很快",
+              "label": "快",
               "glyph": "快"
             },
             {
-              "label": "声音很大",
-              "glyph": "响"
+              "label": "进",
+              "glyph": "进"
             },
             {
-              "label": "不睡觉",
-              "glyph": "醒"
+              "label": "开",
+              "glyph": "开"
             }
           ],
-          "answer": "对人客气有规矩",
+          "answer": "低",
           "timeLimitMs": 60000
         },
         {
           "id": "child-prac-vci-8",
           "type": "mcq",
-          "prompt": "晴天对太阳，就像雨天对？",
+          "prompt": "练习：看看「黑色、白色、紫色」。下面哪一项和它们是同一类？",
           "choices": [
             {
-              "label": "雨水",
-              "glyph": "雨"
+              "label": "冰雹",
+              "glyph": "冰"
             },
             {
-              "label": "月亮",
-              "glyph": "月"
+              "label": "橙色",
+              "glyph": "橙"
             },
             {
-              "label": "雪人",
-              "glyph": "雪"
+              "label": "兔子",
+              "glyph": "兔"
             },
             {
-              "label": "风筝",
-              "glyph": "筝"
+              "label": "凳子",
+              "glyph": "凳"
             }
           ],
-          "answer": "雨水",
+          "answer": "橙色",
           "timeLimitMs": 60000
         },
         {
           "id": "child-prac-vci-9",
           "type": "mcq",
-          "prompt": "「厨房」最常用来？",
+          "prompt": "练习：按规律往下排：3、6、9、？ 下一项是什么？",
           "choices": [
             {
-              "label": "做饭",
-              "glyph": "饭"
+              "label": "15",
+              "glyph": "1"
             },
             {
-              "label": "睡觉",
-              "glyph": "睡"
+              "label": "11",
+              "glyph": "1"
             },
             {
-              "label": "洗澡",
-              "glyph": "浴"
+              "label": "10",
+              "glyph": "1"
             },
             {
-              "label": "停车",
-              "glyph": "车"
+              "label": "12",
+              "glyph": "1"
             }
           ],
-          "answer": "做饭",
+          "answer": "12",
           "timeLimitMs": 60000
         },
         {
           "id": "child-prac-vci-10",
           "type": "mcq",
-          "prompt": "冬天人们常穿？",
+          "prompt": "练习：「手指」对「手」，就像「屋顶」对？",
           "choices": [
             {
-              "label": "厚衣服",
-              "glyph": "衣"
+              "label": "书",
+              "glyph": "书"
             },
             {
-              "label": "泳装",
-              "glyph": "泳"
+              "label": "树",
+              "glyph": "树"
             },
             {
-              "label": "短裤",
-              "glyph": "短"
+              "label": "钢琴",
+              "glyph": "钢"
             },
             {
-              "label": "拖鞋去雪山",
-              "glyph": "拖"
+              "label": "房子",
+              "glyph": "房"
             }
           ],
-          "answer": "厚衣服",
+          "answer": "房子",
           "timeLimitMs": 60000
         }
       ]
@@ -536,7 +536,7 @@
         {
           "id": "child-prac-wmi-1",
           "type": "digit_span",
-          "prompt": "请按顺序复述：5、2",
+          "prompt": "练习：请按顺序复述这些数字：5、2",
           "answer": "5-2",
           "timeLimitMs": 45000,
           "encodeMs": 4000,
@@ -546,7 +546,7 @@
         {
           "id": "child-prac-wmi-2",
           "type": "digit_span",
-          "prompt": "请按顺序复述：8、1、4",
+          "prompt": "练习：请按顺序复述这些数字：8、1、4",
           "answer": "8-1-4",
           "timeLimitMs": 45000,
           "encodeMs": 4500,
@@ -556,7 +556,7 @@
         {
           "id": "child-prac-wmi-3",
           "type": "digit_span",
-          "prompt": "请按顺序复述：3、7、0、6",
+          "prompt": "练习：请按顺序复述这些数字：3、7、0、6",
           "answer": "3-7-0-6",
           "timeLimitMs": 45000,
           "encodeMs": 5000,
@@ -566,7 +566,7 @@
         {
           "id": "child-prac-wmi-4",
           "type": "digit_span",
-          "prompt": "请按顺序复述：9、2、5、1、8",
+          "prompt": "练习：请按顺序复述这些数字：9、2、5、1、8",
           "answer": "9-2-5-1-8",
           "timeLimitMs": 45000,
           "encodeMs": 5500,
@@ -576,7 +576,7 @@
         {
           "id": "child-prac-wmi-5",
           "type": "digit_span",
-          "prompt": "请倒序复述：4、7（从后往前说）",
+          "prompt": "练习：请倒序复述：4、7（从后往前说）",
           "answer": "7-4",
           "timeLimitMs": 45000,
           "encodeMs": 4000,
@@ -586,7 +586,7 @@
         {
           "id": "child-prac-wmi-6",
           "type": "digit_span",
-          "prompt": "请倒序复述：1、9、3（从后往前说）",
+          "prompt": "练习：请倒序复述：1、9、3（从后往前说）",
           "answer": "3-9-1",
           "timeLimitMs": 45000,
           "encodeMs": 4500,
@@ -596,7 +596,7 @@
         {
           "id": "child-prac-wmi-7",
           "type": "digit_span",
-          "prompt": "请倒序复述：6、2、8、5（从后往前说）",
+          "prompt": "练习：请倒序复述：6、2、8、5（从后往前说）",
           "answer": "5-8-2-6",
           "timeLimitMs": 45000,
           "encodeMs": 5000,
@@ -606,7 +606,7 @@
         {
           "id": "child-prac-wmi-8",
           "type": "digit_span",
-          "prompt": "请倒序复述：0、4、7、1、9（从后往前说）",
+          "prompt": "练习：请倒序复述：0、4、7、1、9（从后往前说）",
           "answer": "9-1-7-4-0",
           "timeLimitMs": 45000,
           "encodeMs": 5500,
@@ -616,7 +616,7 @@
         {
           "id": "child-prac-wmi-9",
           "type": "digit_span",
-          "prompt": "请按顺序复述：2、8、3、6、1、4",
+          "prompt": "练习：请按顺序复述这些数字：2、8、3、6、1、4",
           "answer": "2-8-3-6-1-4",
           "timeLimitMs": 45000,
           "encodeMs": 6000,
@@ -626,7 +626,7 @@
         {
           "id": "child-prac-wmi-10",
           "type": "digit_span",
-          "prompt": "请倒序复述：5、0、8、2、7、3（从后往前说）",
+          "prompt": "练习：请倒序复述：5、0、8、2、7、3（从后往前说）",
           "answer": "3-7-2-8-0-5",
           "timeLimitMs": 45000,
           "encodeMs": 6000,
@@ -638,75 +638,75 @@
     {
       "id": "child-prac-psi",
       "indexKey": "PSI",
-      "title": "速度练习",
+      "title": "符号练习",
       "items": [
         {
           "id": "child-prac-psi-1",
           "type": "symbol_search",
-          "prompt": "目标○。在 ●○◎○● 中出现几次？",
+          "prompt": "练习：目标○。在 ●○◎○● 中出现几次？",
           "answer": 2,
           "timeLimitMs": 30000
         },
         {
           "id": "child-prac-psi-2",
           "type": "symbol_search",
-          "prompt": "目标△。在 △□△○△■ 中出现几次？",
+          "prompt": "练习：目标△。在 △□△○△■ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 29000
         },
         {
           "id": "child-prac-psi-3",
           "type": "symbol_search",
-          "prompt": "目标★。在 ☆★●★☆ 中出现几次？",
+          "prompt": "练习：目标★。在 ☆★●★☆ 中出现几次？",
           "answer": 2,
           "timeLimitMs": 28000
         },
         {
           "id": "child-prac-psi-4",
           "type": "symbol_search",
-          "prompt": "目标■。在 □■◆■□▲ 中出现几次？",
+          "prompt": "练习：目标■。在 □■◆■□▲ 中出现几次？",
           "answer": 2,
           "timeLimitMs": 27000
         },
         {
           "id": "child-prac-psi-5",
           "type": "symbol_search",
-          "prompt": "目标＋。在 ×＋÷＋＝ 中出现几次？",
+          "prompt": "练习：目标＋。在 ×＋÷＋＝ 中出现几次？",
           "answer": 2,
           "timeLimitMs": 26000
         },
         {
           "id": "child-prac-psi-6",
           "type": "symbol_search",
-          "prompt": "目标◇。在 ◆◇○◇◆◇ 中出现几次？",
+          "prompt": "练习：目标◇。在 ◆◇○◇◆◇ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 25000
         },
         {
           "id": "child-prac-psi-7",
           "type": "symbol_search",
-          "prompt": "目标▲。在 △▼▲◆▲△ 中出现几次？",
+          "prompt": "练习：目标▲。在 △▼▲◆▲△ 中出现几次？",
           "answer": 2,
           "timeLimitMs": 24000
         },
         {
           "id": "child-prac-psi-8",
           "type": "symbol_search",
-          "prompt": "目标※。在 ＊＃※＊＃※ 中出现几次？",
+          "prompt": "练习：目标※。在 ＊＃※＊＃※ 中出现几次？",
           "answer": 2,
           "timeLimitMs": 23000
         },
         {
           "id": "child-prac-psi-9",
           "type": "symbol_search",
-          "prompt": "目标◎。在 ○●◎○◎● 中出现几次？",
+          "prompt": "练习：目标◎。在 ○●◎○◎● 中出现几次？",
           "answer": 2,
           "timeLimitMs": 22000
         },
         {
           "id": "child-prac-psi-10",
           "type": "symbol_search",
-          "prompt": "目标▼。在 ▲▼▲▼▼◆ 中出现几次？",
+          "prompt": "练习：目标▼。在 ▲▼▲▼▼◆ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 21000
         }
