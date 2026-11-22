@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { INDEX_KEYS, ITEM_TYPES } from "./types";
+import { INDEX_KEYS, ITEM_TYPES, SCORING_STAGES } from "./types";
 
 const indexKeySchema = z.enum(INDEX_KEYS);
 const itemTypeSchema = z.enum(ITEM_TYPES);
@@ -65,17 +65,64 @@ const indexStatsSchema = z.object({
   PSI: z.number(),
 });
 
-export const normTablesSchema = z.object({
-  version: z.string().min(1),
-  trial: z.literal(true),
-  ageBands: z
-    .array(
-      z.object({
-        minAgeMonths: z.number().int().nonnegative(),
-        maxAgeMonths: z.number().int().positive(),
-        means: indexStatsSchema,
-        sds: indexStatsSchema,
-      }),
-    )
-    .min(1),
-});
+const scoringStageSchema = z.enum(SCORING_STAGES);
+
+/**
+ * NormVersion file schema.
+ * Accepts `stage` and/or legacy `trial`; always outputs normalized
+ * `{ stage, trial }` where `trial === (stage === "trial")`.
+ */
+export const normTablesSchema = z
+  .object({
+    version: z.string().min(1),
+    stage: scoringStageSchema.optional(),
+    trial: z.boolean().optional(),
+    ageBands: z
+      .array(
+        z.object({
+          minAgeMonths: z.number().int().nonnegative(),
+          maxAgeMonths: z.number().int().positive(),
+          means: indexStatsSchema,
+          sds: indexStatsSchema,
+        }),
+      )
+      .min(1),
+  })
+  .superRefine((data, ctx) => {
+    if (data.stage == null && data.trial == null) {
+      ctx.addIssue({
+        code: "custom",
+        message: "norms must declare stage or trial",
+        path: ["stage"],
+      });
+      return;
+    }
+    if (data.stage == null && data.trial === false) {
+      ctx.addIssue({
+        code: "custom",
+        message: "trial:false requires an explicit stage",
+        path: ["stage"],
+      });
+      return;
+    }
+    if (data.stage != null && data.trial != null) {
+      const expectedTrial = data.stage === "trial";
+      if (data.trial !== expectedTrial) {
+        ctx.addIssue({
+          code: "custom",
+          message: `trial (${data.trial}) inconsistent with stage (${data.stage})`,
+          path: ["trial"],
+        });
+      }
+    }
+  })
+  .transform((data) => {
+    const stage: (typeof SCORING_STAGES)[number] =
+      data.stage ?? "trial";
+    return {
+      version: data.version,
+      stage,
+      trial: stage === "trial",
+      ageBands: data.ageBands,
+    };
+  });

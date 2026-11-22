@@ -1,5 +1,6 @@
 {
   "version": "placeholder/v1",
+  "stage": "trial",
   "trial": true,
   "ageBands": [
     {

@@ -154,6 +154,7 @@ describe("loadNorms", () => {
   it("loads placeholder trial norms with mean ≤ that index max raw", () => {
     const norms = loadNorms("placeholder/v1");
     expect(norms.version).toBe("placeholder/v1");
+    expect(norms.stage).toBe("trial");
     expect(norms.trial).toBe(true);
     expect(norms.ageBands.length).toBeGreaterThan(0);
 
