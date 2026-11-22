@@ -6,256 +6,256 @@
     {
       "id": "adult-prac-vci",
       "indexKey": "VCI",
-      "title": "词汇练习",
+      "title": "词语练习",
       "items": [
         {
           "id": "adult-prac-vci-1",
           "type": "mcq",
-          "prompt": "「权衡」最接近？",
+          "prompt": "练习：「实验、样本、变量」同属一类。下列哪一项与它们属于同一范畴？",
           "choices": [
             {
-              "label": "比较利弊后抉择",
-              "glyph": "衡"
+              "label": "假设",
+              "glyph": "假"
             },
             {
-              "label": "随机挑选",
-              "glyph": "随"
+              "label": "平原",
+              "glyph": "平"
             },
             {
-              "label": "完全放弃",
-              "glyph": "弃"
+              "label": "稀缺",
+              "glyph": "稀"
             },
             {
-              "label": "重复抄写",
-              "glyph": "抄"
+              "label": "排比",
+              "glyph": "排"
             }
           ],
-          "answer": "比较利弊后抉择",
+          "answer": "假设",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-prac-vci-2",
           "type": "mcq",
-          "prompt": "「因果」关系最像？",
+          "prompt": "练习：「机会成本、边际、均衡」同属一类。下列哪一项与它们属于同一范畴？",
           "choices": [
             {
-              "label": "前提导致结果",
-              "glyph": "→"
+              "label": "对照",
+              "glyph": "对"
             },
             {
-              "label": "同义反复",
-              "glyph": "="
+              "label": "岛屿",
+              "glyph": "岛"
             },
             {
-              "label": "左右对称",
-              "glyph": "⇔"
+              "label": "拟人",
+              "glyph": "拟"
             },
             {
-              "label": "颜色对比",
-              "glyph": "色"
+              "label": "弹性",
+              "glyph": "弹"
             }
           ],
-          "answer": "前提导致结果",
+          "answer": "弹性",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-prac-vci-3",
           "type": "mcq",
-          "prompt": "「抽象」与「具象」更接近？",
+          "prompt": "练习：「蕴含、等价、否定」同属一类。下列哪一项与它们属于同一范畴？",
           "choices": [
             {
-              "label": "概括与具体",
-              "glyph": "↕"
+              "label": "矛盾",
+              "glyph": "矛"
             },
             {
-              "label": "同义",
-              "glyph": "="
+              "label": "借代",
+              "glyph": "借"
             },
             {
-              "label": "加减",
-              "glyph": "+−"
+              "label": "信度",
+              "glyph": "信"
             },
             {
-              "label": "地理方位",
-              "glyph": "方"
+              "label": "湖泊",
+              "glyph": "湖"
             }
           ],
-          "answer": "概括与具体",
+          "answer": "矛盾",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-prac-vci-4",
           "type": "mcq",
-          "prompt": "会议纪要的主要作用是？",
+          "prompt": "练习：根据序列规律，下一项应为？ 4、8、12、16、？",
           "choices": [
             {
-              "label": "记录决议与行动项",
-              "glyph": "记"
+              "label": "18",
+              "glyph": "1"
             },
             {
-              "label": "装饰会议室",
-              "glyph": "饰"
+              "label": "15",
+              "glyph": "1"
             },
             {
-              "label": "替代所有口头沟通",
-              "glyph": "替"
+              "label": "24",
+              "glyph": "2"
             },
             {
-              "label": "计算工资",
-              "glyph": "资"
+              "label": "20",
+              "glyph": "2"
             }
           ],
-          "answer": "记录决议与行动项",
+          "answer": "20",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-prac-vci-5",
           "type": "mcq",
-          "prompt": "「稀缺」通常意味着？",
+          "prompt": "练习：根据序列规律，下一项应为？ 甲、乙、丙、丁、？",
           "choices": [
             {
-              "label": "供给有限需取舍",
-              "glyph": "稀"
+              "label": "戊",
+              "glyph": "戊"
             },
             {
-              "label": "永远够用",
-              "glyph": "∞"
+              "label": "己",
+              "glyph": "己"
             },
             {
-              "label": "无法定价",
-              "glyph": "0"
+              "label": "甲",
+              "glyph": "甲"
             },
             {
-              "label": "只存在于艺术",
-              "glyph": "艺"
+              "label": "庚",
+              "glyph": "庚"
             }
           ],
-          "answer": "供给有限需取舍",
+          "answer": "戊",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-prac-vci-6",
           "type": "mcq",
-          "prompt": "「律师」之于「法庭」，最接近「教师」之于？",
+          "prompt": "练习：「飞行员」之于「机场」，最接近「演员」之于？",
           "choices": [
             {
-              "label": "学校/教室",
-              "glyph": "校"
+              "label": "剧院",
+              "glyph": "剧"
             },
             {
-              "label": "药房",
-              "glyph": "药"
+              "label": "学校",
+              "glyph": "学"
             },
             {
-              "label": "机场",
-              "glyph": "机"
+              "label": "医院",
+              "glyph": "医"
             },
             {
-              "label": "银行金库",
-              "glyph": "库"
+              "label": "厨房",
+              "glyph": "厨"
             }
           ],
-          "answer": "学校/教室",
+          "answer": "剧院",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-prac-vci-7",
           "type": "mcq",
-          "prompt": "「冗余」在信息语境中常指？",
+          "prompt": "练习：「看」之于「盯」，最接近「说」之于？",
           "choices": [
             {
-              "label": "可精简的多余部分",
-              "glyph": "余"
+              "label": "喜",
+              "glyph": "喜"
             },
             {
-              "label": "核心密钥",
-              "glyph": "核"
+              "label": "跑",
+              "glyph": "跑"
             },
             {
-              "label": "噪声同义词",
-              "glyph": "噪"
+              "label": "热",
+              "glyph": "热"
             },
             {
-              "label": "样本量下限",
-              "glyph": "n"
+              "label": "喊",
+              "glyph": "喊"
             }
           ],
-          "answer": "可精简的多余部分",
+          "answer": "喊",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-prac-vci-8",
           "type": "mcq",
-          "prompt": "紧急疏散时优先？",
+          "prompt": "练习：「排比、借代、设问」同属一类。下列哪一项与它们属于同一范畴？",
           "choices": [
             {
-              "label": "保障人员安全",
-              "glyph": "安"
+              "label": "常模",
+              "glyph": "常"
             },
             {
-              "label": "先整理桌面",
-              "glyph": "桌"
+              "label": "供给",
+              "glyph": "供"
             },
             {
-              "label": "拍照留念",
-              "glyph": "拍"
+              "label": "山脉",
+              "glyph": "山"
             },
             {
-              "label": "关闭全部社交软件",
-              "glyph": "社"
+              "label": "拟人",
+              "glyph": "拟"
             }
           ],
-          "answer": "保障人员安全",
+          "answer": "拟人",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-prac-vci-9",
           "type": "mcq",
-          "prompt": "「效度」主要关心？",
+          "prompt": "练习：根据序列规律，下一项应为？ 9、18、27、？",
           "choices": [
             {
-              "label": "是否测到目标构念",
-              "glyph": "效"
+              "label": "36",
+              "glyph": "3"
             },
             {
-              "label": "打印机分辨率",
-              "glyph": "打"
+              "label": "33",
+              "glyph": "3"
             },
             {
-              "label": "字体是否好看",
-              "glyph": "字"
+              "label": "45",
+              "glyph": "4"
             },
             {
-              "label": "电池续航",
-              "glyph": "电"
+              "label": "30",
+              "glyph": "3"
             }
           ],
-          "answer": "是否测到目标构念",
+          "answer": "36",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-prac-vci-10",
           "type": "mcq",
-          "prompt": "「归纳」通常是？",
+          "prompt": "练习：「播种」之于「发芽」，最接近「学习」之于？",
           "choices": [
             {
-              "label": "从个别到一般",
-              "glyph": "↑"
+              "label": "发热",
+              "glyph": "发"
             },
             {
-              "label": "从一般到个别",
-              "glyph": "↓"
+              "label": "生热",
+              "glyph": "生"
             },
             {
-              "label": "随机配对",
-              "glyph": "?"
+              "label": "地湿",
+              "glyph": "地"
             },
             {
-              "label": "纯复制粘贴",
-              "glyph": "复"
+              "label": "进步",
+              "glyph": "进"
             }
           ],
-          "answer": "从个别到一般",
+          "answer": "进步",
           "timeLimitMs": 55000
         }
       ]
