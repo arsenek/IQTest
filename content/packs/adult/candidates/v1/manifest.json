@@ -1,0 +1,605 @@
+{
+  "id": "adult/candidates/v1",
+  "audience": "adult",
+  "title": "成人候选池 v1（开源尽调样本，非正式测评）",
+  "pool": "candidates",
+  "subtests": [
+    {
+      "id": "adult-cand-vci",
+      "indexKey": "VCI",
+      "title": "词汇/言语候选（CC BY-SA）",
+      "items": [
+        {
+          "id": "adult-cand-vci-1",
+          "type": "mcq",
+          "prompt": "【候选】Do RAPID and SWIFT have meanings that are similar, contradictory, or neither?",
+          "choices": [
+            {
+              "label": "Similar",
+              "glyph": "1"
+            },
+            {
+              "label": "Contradictory",
+              "glyph": "2"
+            },
+            {
+              "label": "Neither",
+              "glyph": "3"
+            }
+          ],
+          "answer": "Similar",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "vo-001"
+        },
+        {
+          "id": "adult-cand-vci-2",
+          "type": "mcq",
+          "prompt": "【候选】Do EXPAND and SHRINK have meanings that are similar, contradictory, or neither?",
+          "choices": [
+            {
+              "label": "Similar",
+              "glyph": "1"
+            },
+            {
+              "label": "Contradictory",
+              "glyph": "2"
+            },
+            {
+              "label": "Neither",
+              "glyph": "3"
+            }
+          ],
+          "answer": "Contradictory",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "vo-002"
+        },
+        {
+          "id": "adult-cand-vci-3",
+          "type": "mcq",
+          "prompt": "【候选】Which word is closest in meaning to BEGIN?",
+          "choices": [
+            {
+              "label": "Commence",
+              "glyph": "1"
+            },
+            {
+              "label": "Conclude",
+              "glyph": "2"
+            },
+            {
+              "label": "Pause",
+              "glyph": "3"
+            },
+            {
+              "label": "Delay",
+              "glyph": "4"
+            }
+          ],
+          "answer": "Commence",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "vo-003"
+        },
+        {
+          "id": "adult-cand-vci-4",
+          "type": "mcq",
+          "prompt": "【候选】Do FRUGAL and WASTEFUL have meanings that are similar, contradictory, or neither?",
+          "choices": [
+            {
+              "label": "Similar",
+              "glyph": "1"
+            },
+            {
+              "label": "Contradictory",
+              "glyph": "2"
+            },
+            {
+              "label": "Neither",
+              "glyph": "3"
+            }
+          ],
+          "answer": "Contradictory",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "vo-004"
+        },
+        {
+          "id": "adult-cand-vci-5",
+          "type": "mcq",
+          "prompt": "【候选】Which word is closest in meaning to ABUNDANT?",
+          "choices": [
+            {
+              "label": "Scarce",
+              "glyph": "1"
+            },
+            {
+              "label": "Plentiful",
+              "glyph": "2"
+            },
+            {
+              "label": "Adequate",
+              "glyph": "3"
+            },
+            {
+              "label": "Occasional",
+              "glyph": "4"
+            }
+          ],
+          "answer": "Plentiful",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "vo-005"
+        },
+        {
+          "id": "adult-cand-vci-6",
+          "type": "mcq",
+          "prompt": "【候选】Do CANDID and FRANK have meanings that are similar, contradictory, or neither?",
+          "choices": [
+            {
+              "label": "Similar",
+              "glyph": "1"
+            },
+            {
+              "label": "Contradictory",
+              "glyph": "2"
+            },
+            {
+              "label": "Neither",
+              "glyph": "3"
+            }
+          ],
+          "answer": "Similar",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "vo-006"
+        },
+        {
+          "id": "adult-cand-vci-7",
+          "type": "mcq",
+          "prompt": "【候选】PUPPY is to DOG as KITTEN is to:",
+          "choices": [
+            {
+              "label": "Mouse",
+              "glyph": "1"
+            },
+            {
+              "label": "Cat",
+              "glyph": "2"
+            },
+            {
+              "label": "Lion",
+              "glyph": "3"
+            },
+            {
+              "label": "Fur",
+              "glyph": "4"
+            }
+          ],
+          "answer": "Cat",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "vr-001"
+        },
+        {
+          "id": "adult-cand-vci-8",
+          "type": "mcq",
+          "prompt": "【候选】HOT is to COLD as DAY is to:",
+          "choices": [
+            {
+              "label": "Sun",
+              "glyph": "1"
+            },
+            {
+              "label": "Night",
+              "glyph": "2"
+            },
+            {
+              "label": "Week",
+              "glyph": "3"
+            },
+            {
+              "label": "Warm",
+              "glyph": "4"
+            }
+          ],
+          "answer": "Night",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "vr-002"
+        },
+        {
+          "id": "adult-cand-vci-9",
+          "type": "mcq",
+          "prompt": "【候选】Assume the first two statements are true. All the pencils in this box are red. Marta took a pencil from this box. The pencil Marta took is red. Is the final statement true, false, or uncertain?",
+          "choices": [
+            {
+              "label": "True",
+              "glyph": "1"
+            },
+            {
+              "label": "False",
+              "glyph": "2"
+            },
+            {
+              "label": "Uncertain",
+              "glyph": "3"
+            }
+          ],
+          "answer": "True",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "vr-003"
+        },
+        {
+          "id": "adult-cand-vci-10",
+          "type": "mcq",
+          "prompt": "【候选】PILOT is to AIRPLANE as CAPTAIN is to:",
+          "choices": [
+            {
+              "label": "Ocean",
+              "glyph": "1"
+            },
+            {
+              "label": "Ship",
+              "glyph": "2"
+            },
+            {
+              "label": "Crew",
+              "glyph": "3"
+            },
+            {
+              "label": "Harbor",
+              "glyph": "4"
+            }
+          ],
+          "answer": "Ship",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "vr-004"
+        }
+      ]
+    },
+    {
+      "id": "adult-cand-pri",
+      "indexKey": "PRI",
+      "title": "逻辑数列候选（CC BY-SA，非矩阵图）",
+      "items": [
+        {
+          "id": "adult-cand-pri-1",
+          "type": "mcq",
+          "prompt": "【候选】What number comes next? 2, 4, 6, 8, ...",
+          "choices": [
+            {
+              "label": "9",
+              "glyph": "1"
+            },
+            {
+              "label": "10",
+              "glyph": "2"
+            },
+            {
+              "label": "12",
+              "glyph": "3"
+            },
+            {
+              "label": "14",
+              "glyph": "4"
+            }
+          ],
+          "answer": "10",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "lp-001"
+        },
+        {
+          "id": "adult-cand-pri-2",
+          "type": "mcq",
+          "prompt": "【候选】Which word does not belong?",
+          "choices": [
+            {
+              "label": "Apple",
+              "glyph": "1"
+            },
+            {
+              "label": "Banana",
+              "glyph": "2"
+            },
+            {
+              "label": "Carrot",
+              "glyph": "3"
+            },
+            {
+              "label": "Grape",
+              "glyph": "4"
+            }
+          ],
+          "answer": "Carrot",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "lp-002"
+        },
+        {
+          "id": "adult-cand-pri-3",
+          "type": "mcq",
+          "prompt": "【候选】What number comes next? 3, 6, 12, 24, ...",
+          "choices": [
+            {
+              "label": "36",
+              "glyph": "1"
+            },
+            {
+              "label": "40",
+              "glyph": "2"
+            },
+            {
+              "label": "48",
+              "glyph": "3"
+            },
+            {
+              "label": "60",
+              "glyph": "4"
+            }
+          ],
+          "answer": "48",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "lp-003"
+        },
+        {
+          "id": "adult-cand-pri-4",
+          "type": "mcq",
+          "prompt": "【候选】What letter comes next? A, C, E, G, ...",
+          "choices": [
+            {
+              "label": "H",
+              "glyph": "1"
+            },
+            {
+              "label": "I",
+              "glyph": "2"
+            },
+            {
+              "label": "J",
+              "glyph": "3"
+            },
+            {
+              "label": "K",
+              "glyph": "4"
+            }
+          ],
+          "answer": "I",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "lp-004"
+        },
+        {
+          "id": "adult-cand-pri-5",
+          "type": "mcq",
+          "prompt": "【候选】Which word does not belong?",
+          "choices": [
+            {
+              "label": "Oak",
+              "glyph": "1"
+            },
+            {
+              "label": "Maple",
+              "glyph": "2"
+            },
+            {
+              "label": "Pine",
+              "glyph": "3"
+            },
+            {
+              "label": "Tulip",
+              "glyph": "4"
+            }
+          ],
+          "answer": "Tulip",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "lp-005"
+        },
+        {
+          "id": "adult-cand-pri-6",
+          "type": "mcq",
+          "prompt": "【候选】What number comes next? 100, 90, 81, 73, ...",
+          "choices": [
+            {
+              "label": "64",
+              "glyph": "1"
+            },
+            {
+              "label": "65",
+              "glyph": "2"
+            },
+            {
+              "label": "66",
+              "glyph": "3"
+            },
+            {
+              "label": "67",
+              "glyph": "4"
+            }
+          ],
+          "answer": "66",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "lp-006"
+        },
+        {
+          "id": "adult-cand-pri-7",
+          "type": "mcq",
+          "prompt": "【候选】What number comes next? 1, 4, 9, 16, 25, ...",
+          "choices": [
+            {
+              "label": "30",
+              "glyph": "1"
+            },
+            {
+              "label": "32",
+              "glyph": "2"
+            },
+            {
+              "label": "36",
+              "glyph": "3"
+            },
+            {
+              "label": "49",
+              "glyph": "4"
+            }
+          ],
+          "answer": "36",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "lp-007"
+        },
+        {
+          "id": "adult-cand-pri-8",
+          "type": "mcq",
+          "prompt": "【候选】What number comes next? 5, 10, 8, 16, 14, 28, ...",
+          "choices": [
+            {
+              "label": "24",
+              "glyph": "1"
+            },
+            {
+              "label": "26",
+              "glyph": "2"
+            },
+            {
+              "label": "30",
+              "glyph": "3"
+            },
+            {
+              "label": "56",
+              "glyph": "4"
+            }
+          ],
+          "answer": "26",
+          "timeLimitMs": 55000,
+          "license": "CC-BY-SA-4.0",
+          "attribution": "Adapted from Awesome Wonderlic (paladini/awesome-wonderlic), © contributors, CC BY-SA 4.0. https://github.com/paladini/awesome-wonderlic — not affiliated with Wonderlic, Inc.",
+          "sourceId": "lp-008"
+        }
+      ]
+    },
+    {
+      "id": "adult-cand-wmi",
+      "indexKey": "WMI",
+      "title": "工作记忆脚手架（自研）",
+      "ordered": true,
+      "items": [
+        {
+          "id": "adult-cand-wmi-1",
+          "type": "digit_span",
+          "prompt": "【候选脚手架】请按顺序复述：2、9、4",
+          "answer": "2-9-4",
+          "timeLimitMs": 45000,
+          "encodeMs": 4500,
+          "maskStem": true,
+          "ordered": true,
+          "license": "proprietary",
+          "attribution": "IQTest original scaffold (schema filler; not third-party)."
+        },
+        {
+          "id": "adult-cand-wmi-2",
+          "type": "digit_span",
+          "prompt": "【候选脚手架】请按顺序复述：5、1、8、3",
+          "answer": "5-1-8-3",
+          "timeLimitMs": 45000,
+          "encodeMs": 5000,
+          "maskStem": true,
+          "ordered": true,
+          "license": "proprietary",
+          "attribution": "IQTest original scaffold (schema filler; not third-party)."
+        },
+        {
+          "id": "adult-cand-wmi-3",
+          "type": "digit_span",
+          "prompt": "【候选脚手架】请按顺序复述：7、0、6、2、9",
+          "answer": "7-0-6-2-9",
+          "timeLimitMs": 50000,
+          "encodeMs": 5500,
+          "maskStem": true,
+          "ordered": true,
+          "license": "proprietary",
+          "attribution": "IQTest original scaffold (schema filler; not third-party)."
+        },
+        {
+          "id": "adult-cand-wmi-4",
+          "type": "digit_span",
+          "prompt": "【候选脚手架】请倒序复述：4、8、1",
+          "answer": "1-8-4",
+          "timeLimitMs": 50000,
+          "encodeMs": 5000,
+          "maskStem": true,
+          "ordered": true,
+          "license": "proprietary",
+          "attribution": "IQTest original scaffold (schema filler; not third-party)."
+        }
+      ]
+    },
+    {
+      "id": "adult-cand-psi",
+      "indexKey": "PSI",
+      "title": "加工速度脚手架（自研）",
+      "items": [
+        {
+          "id": "adult-cand-psi-1",
+          "type": "symbol_search",
+          "prompt": "【候选脚手架】目标△。在 ○□△○△□ 中出现几次？",
+          "answer": 2,
+          "timeLimitMs": 26000,
+          "license": "proprietary",
+          "attribution": "IQTest original scaffold (schema filler; not third-party)."
+        },
+        {
+          "id": "adult-cand-psi-2",
+          "type": "symbol_search",
+          "prompt": "【候选脚手架】目标＃。在 ＊＃※＃＊＃ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 26000,
+          "license": "proprietary",
+          "attribution": "IQTest original scaffold (schema filler; not third-party)."
+        },
+        {
+          "id": "adult-cand-psi-3",
+          "type": "symbol_search",
+          "prompt": "【候选脚手架】目标※。在 ※＊＃＊※＊ 中出现几次？",
+          "answer": 2,
+          "timeLimitMs": 26000,
+          "license": "proprietary",
+          "attribution": "IQTest original scaffold (schema filler; not third-party)."
+        },
+        {
+          "id": "adult-cand-psi-4",
+          "type": "symbol_search",
+          "prompt": "【候选脚手架】目标○。在 △○□○△○□ 中出现几次？",
+          "answer": 3,
+          "timeLimitMs": 26000,
+          "license": "proprietary",
+          "attribution": "IQTest original scaffold (schema filler; not third-party)."
+        }
+      ]
+    }
+  ]
+}

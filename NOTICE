@@ -1,0 +1,27 @@
+IQTest — third-party notices
+============================
+
+This product includes content from the following third-party sources.
+Formal assessment packs (`child/v1`, `adult/v1`) do **not** include
+GPL or CC BY-SA licensed items.
+
+-------------------------------------------------------------------------------
+Awesome Wonderlic (paladini/awesome-wonderlic)
+-------------------------------------------------------------------------------
+
+Portions of the candidate pool (`content/packs/adult/candidates/v1`) are
+adapted from the Awesome Wonderlic question bank.
+
+- Source: https://github.com/paladini/awesome-wonderlic
+- Content license: Creative Commons Attribution-ShareAlike 4.0 International
+  (CC BY-SA 4.0) — https://creativecommons.org/licenses/by-sa/4.0/legalcode
+- Code in that repository (scripts/CI) is MIT; this NOTICE covers the
+  imported **question content** only.
+- Trademark: "Wonderlic" is a trademark of Wonderlic, Inc. Awesome Wonderlic
+  and IQTest are not affiliated with, sponsored by, or endorsed by Wonderlic, Inc.
+- ShareAlike: adaptations of these items must be shared under CC BY-SA 4.0.
+- Scope: candidate / familiarity items only — **not** formal scored assessment,
+  and **no** normative IQ claims are made for this material.
+
+See THIRD_PARTY.md and per-item `license` / `attribution` / `sourceId` fields
+in the candidates manifest.
