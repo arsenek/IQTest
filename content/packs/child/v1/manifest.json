@@ -1365,8 +1365,8 @@
         {
           "id": "child-wmi-16",
           "type": "digit_span",
-          "prompt": "请倒序复述：6、1、8、3、9、2、5、4、7（从后往前说）",
-          "answer": "7-4-5-2-9-3-8-1-6",
+          "prompt": "请倒序复述：7、2、9、4、1、8、3、6（从后往前说）",
+          "answer": "6-3-8-1-4-9-2-7",
           "timeLimitMs": 45000,
           "encodeMs": 8000,
           "maskStem": true,
@@ -1383,16 +1383,6 @@
         {
           "id": "child-wmi2-1",
           "type": "digit_span",
-          "prompt": "请倒序复述：6、1（从后往前说）",
-          "answer": "1-6",
-          "timeLimitMs": 45000,
-          "encodeMs": 4000,
-          "maskStem": true,
-          "ordered": true
-        },
-        {
-          "id": "child-wmi2-2",
-          "type": "digit_span",
           "prompt": "请倒序复述：8、3、5（从后往前说）",
           "answer": "5-3-8",
           "timeLimitMs": 45000,
@@ -1401,7 +1391,7 @@
           "ordered": true
         },
         {
-          "id": "child-wmi2-3",
+          "id": "child-wmi2-2",
           "type": "digit_span",
           "prompt": "请倒序复述：2、9、4、7（从后往前说）",
           "answer": "7-4-9-2",
@@ -1411,7 +1401,7 @@
           "ordered": true
         },
         {
-          "id": "child-wmi2-4",
+          "id": "child-wmi2-3",
           "type": "digit_span",
           "prompt": "请倒序复述：1、6、3、8、5（从后往前说）",
           "answer": "5-8-3-6-1",
@@ -1421,7 +1411,7 @@
           "ordered": true
         },
         {
-          "id": "child-wmi2-5",
+          "id": "child-wmi2-4",
           "type": "digit_span",
           "prompt": "请倒序复述：9、2、7、4、0、6（从后往前说）",
           "answer": "6-0-4-7-2-9",
@@ -1431,7 +1421,7 @@
           "ordered": true
         },
         {
-          "id": "child-wmi2-6",
+          "id": "child-wmi2-5",
           "type": "digit_span",
           "prompt": "请倒序复述：4、8、1、5、9、2、7（从后往前说）",
           "answer": "7-2-9-5-1-8-4",
@@ -1441,12 +1431,22 @@
           "ordered": true
         },
         {
-          "id": "child-wmi2-7",
+          "id": "child-wmi2-6",
           "type": "digit_span",
           "prompt": "请倒序复述：3、0、6、9、1、8、4、2（从后往前说）",
           "answer": "2-4-8-1-9-6-0-3",
           "timeLimitMs": 45000,
           "encodeMs": 7000,
+          "maskStem": true,
+          "ordered": true
+        },
+        {
+          "id": "child-wmi2-7",
+          "type": "digit_span",
+          "prompt": "请倒序复述：5、1、8、2、9、4、0、7、3（从后往前说）",
+          "answer": "3-7-0-4-9-2-8-1-5",
+          "timeLimitMs": 45000,
+          "encodeMs": 7500,
           "maskStem": true,
           "ordered": true
         }

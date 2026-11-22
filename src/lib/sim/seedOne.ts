@@ -10,6 +10,7 @@ import {
 import { createSeededRng as packRng } from "@/lib/session/shuffle";
 import {
   difficultyFromIndex,
+  effectiveItemDifficulty,
   probabilityCorrect,
   sampleLatencyMs,
 } from "@/lib/sim/ability";
@@ -139,7 +140,8 @@ export async function seedOnePersona(
   let correctCount = 0;
   for (const row of flat) {
     const pos = subtestPos.get(row.subtestId)!;
-    const difficulty = difficultyFromIndex(pos.i, pos.n);
+    const positionDifficulty = difficultyFromIndex(pos.i, pos.n);
+    const difficulty = effectiveItemDifficulty(row.item, positionDifficulty);
     pos.i += 1;
 
     const ability = persona.ability[row.indexKey];

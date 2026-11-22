@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   difficultyFromIndex,
+  effectiveItemDifficulty,
   probabilityCorrect,
   sampleLatencyMs,
 } from "@/lib/sim/ability";
@@ -22,13 +23,37 @@ describe("sim ability → probability", () => {
   });
 
   it("stays within floor/ceiling", () => {
-    expect(probabilityCorrect(0, 1)).toBeGreaterThanOrEqual(0.08);
-    expect(probabilityCorrect(1, 0)).toBeLessThanOrEqual(0.96);
+    expect(probabilityCorrect(0, 1)).toBeGreaterThanOrEqual(0.05);
+    expect(probabilityCorrect(1, 0)).toBeLessThanOrEqual(0.97);
+  });
+
+  it("steeper slope separates abilities more than a flat model", () => {
+    const gap =
+      probabilityCorrect(0.85, 0.5) - probabilityCorrect(0.25, 0.5);
+    expect(gap).toBeGreaterThan(0.55);
   });
 
   it("difficultyFromIndex spans 0..1", () => {
     expect(difficultyFromIndex(0, 5)).toBe(0);
     expect(difficultyFromIndex(4, 5)).toBe(1);
+  });
+
+  it("digit_span effective difficulty rises with length", () => {
+    const short: Item = {
+      id: "s",
+      type: "digit_span",
+      prompt: "x",
+      answer: "1-2",
+    };
+    const long: Item = {
+      id: "l",
+      type: "digit_span",
+      prompt: "x",
+      answer: "1-2-3-4-5-6-7-8",
+    };
+    expect(effectiveItemDifficulty(long, 0.5)).toBeGreaterThan(
+      effectiveItemDifficulty(short, 0.5),
+    );
   });
 });
 
