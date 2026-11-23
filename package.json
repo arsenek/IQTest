@@ -19,6 +19,7 @@
     "psi:check": "vite-node scripts/generate-psi-items.ts -- --check",
     "wmi:generate": "vite-node scripts/generate-wmi-items.ts --",
     "wmi:check": "vite-node scripts/generate-wmi-items.ts -- --check",
+    "bank:check": "npm run pri:check && npm run vci:check && npm run psi:check && npm run wmi:check",
     "db:up": "bash scripts/db-up.sh",
     "db:migrate": "prisma migrate deploy",
     "db:generate": "prisma generate",
