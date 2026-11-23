@@ -1,14 +1,18 @@
 /**
  * Stage-A response export for CTT/IRT calibration prep.
  *
- *   npm run export:responses -- --out ./tmp/export --format both
- *   npm run export:responses -- --pack child/v1 --format jsonl
+ * Human Stage A (default — excludes sim-*@iqtest.local):
+ *   npm run export:responses -- --out ./tmp/stage-a-live-human-export --format both --cohort stage-a-pilot
+ *
+ * Sim pipeline comparison only:
+ *   npm run export:responses -- --out ./tmp/stage-a-sim-export --include-sim
  */
 import fs from "node:fs";
 import path from "node:path";
 import { buildRowsForSessions } from "../src/lib/export/buildRows";
 import { rowsToCsv, rowsToJsonl } from "../src/lib/export/format";
 import { resolveExportSalt } from "../src/lib/export/hashProfile";
+import { buildExportMeta } from "../src/lib/export/meta";
 import { fetchExportableSessions } from "../src/lib/export/query";
 import { prisma } from "../src/lib/db";
 
@@ -21,9 +25,12 @@ function parseArgs(argv: string[]) {
     packId?: string;
     since?: string;
     until?: string;
+    includeSim: boolean;
+    cohort?: string;
   } = {
     outDir: "./tmp/stage-a-export",
     format: "both",
+    includeSim: false,
   };
 
   for (let i = 0; i < argv.length; i++) {
@@ -47,13 +54,20 @@ function parseArgs(argv: string[]) {
     } else if (a === "--until" && next) {
       out.until = next;
       i++;
+    } else if (a === "--include-sim") {
+      out.includeSim = true;
+    } else if (a === "--cohort" && next) {
+      out.cohort = next;
+      i++;
     } else if (a === "--help" || a === "-h") {
       console.log(`Usage: npm run export:responses -- [options]
   --out <dir>       Output directory (default ./tmp/stage-a-export)
   --format <kind>   csv | jsonl | both (default both)
   --pack <id>       Filter by content pack id
   --since <ISO>     submittedAt >=
-  --until <ISO>     submittedAt <=`);
+  --until <ISO>     submittedAt <=
+  --include-sim     Include sim-*@iqtest.local (default: exclude)
+  --cohort <label>  Pilot cohort label written to meta.json (docs convention)`);
       process.exit(0);
     }
   }
@@ -72,10 +86,15 @@ function parseDate(label: string, value?: string): Date | undefined {
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const salt = resolveExportSalt();
-  const sessions = await fetchExportableSessions({
+  const {
+    sessions,
+    matchedBeforeSimFilter,
+    excludedSimSessions,
+  } = await fetchExportableSessions({
     packId: args.packId,
     since: parseDate("--since", args.since),
     until: parseDate("--until", args.until),
+    includeSim: args.includeSim,
   });
 
   const { rows, skippedResponses, warnings } = buildRowsForSessions(
@@ -98,23 +117,25 @@ async function main() {
     written.push(file);
   }
 
+  const meta = buildExportMeta({
+    pilotCohort: args.cohort,
+    includeSim: args.includeSim,
+    sessions: sessions.length,
+    rows: rows.length,
+    skippedResponses,
+    warningCount: warnings.length,
+    matchedBeforeSimFilter,
+    excludedSimSessions,
+  });
+  const metaFile = path.join(absOut, "meta.json");
+  fs.writeFileSync(metaFile, JSON.stringify(meta, null, 2) + "\n", "utf8");
+  written.push(metaFile);
+
   for (const w of warnings) {
     console.warn(`[warn] ${w}`);
   }
 
-  console.log(
-    JSON.stringify(
-      {
-        sessions: sessions.length,
-        rows: rows.length,
-        skippedResponses,
-        warningCount: warnings.length,
-        written,
-      },
-      null,
-      2,
-    ),
-  );
+  console.log(JSON.stringify({ ...meta, written }, null, 2));
 }
 
 main()

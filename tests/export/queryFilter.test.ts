@@ -11,11 +11,17 @@ import { createSeededRng } from "@/lib/session/shuffle";
 import { buildRowsForSessions } from "@/lib/export/buildRows";
 import { fetchExportableSessions } from "@/lib/export/query";
 import { EXPORT_COLUMNS } from "@/lib/export/types";
+import { simEmailForPersona } from "@/lib/sim/constants";
 
-async function seedProfile(kind: "CHILD" | "ADULT" = "CHILD") {
+async function seedProfile(
+  kind: "CHILD" | "ADULT" = "CHILD",
+  email?: string,
+) {
   const user = await prisma.user.create({
     data: {
-      email: `export-${Date.now()}-${Math.random().toString(36).slice(2)}@test.local`,
+      email:
+        email ??
+        `export-${Date.now()}-${Math.random().toString(36).slice(2)}@test.local`,
       passwordHash: "x",
     },
   });
@@ -74,7 +80,7 @@ describe("fetchExportableSessions filter", () => {
       itemId: flat[0].item.id,
     });
 
-    const sessions = await fetchExportableSessions();
+    const { sessions } = await fetchExportableSessions();
     expect(sessions).toHaveLength(1);
     expect(sessions[0].id).toBe(submitted.id);
     expect(sessions[0].status).toBe("SUBMITTED");
@@ -91,6 +97,32 @@ describe("fetchExportableSessions filter", () => {
     expect(JSON.stringify(rows)).not.toContain("@test.local");
 
     const packed = await fetchExportableSessions({ packId: "adult/v1" });
-    expect(packed).toHaveLength(0);
+    expect(packed.sessions).toHaveLength(0);
+  }, 60_000);
+
+  it("excludes sim-*@iqtest.local by default; --include-sim keeps them", async () => {
+    process.env.EXPORT_PROFILE_SALT = "query-filter-sim-salt";
+
+    const human = await seedProfile("CHILD");
+    const humanSession = await createSession(human.id, createSeededRng(11));
+    await answerAllAndSubmit(humanSession.id, 11);
+
+    const simEmail = simEmailForPersona("sim-c99");
+    const sim = await seedProfile("ADULT", simEmail);
+    const simSession = await createSession(sim.id, createSeededRng(12));
+    await answerAllAndSubmit(simSession.id, 12);
+
+    const humanOnly = await fetchExportableSessions();
+    expect(humanOnly.matchedBeforeSimFilter).toBe(2);
+    expect(humanOnly.excludedSimSessions).toBe(1);
+    expect(humanOnly.sessions).toHaveLength(1);
+    expect(humanOnly.sessions[0].id).toBe(humanSession.id);
+
+    const withSim = await fetchExportableSessions({ includeSim: true });
+    expect(withSim.excludedSimSessions).toBe(0);
+    expect(withSim.sessions).toHaveLength(2);
+    expect(withSim.sessions.map((s) => s.id).sort()).toEqual(
+      [humanSession.id, simSession.id].sort(),
+    );
   }, 60_000);
 });
