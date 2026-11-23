@@ -93,11 +93,11 @@ export const adultVocab: VciSpec[] = [
   }),
   sequence({
     id: "adult-vci-12",
-    series: ["7", "14", "21", "28"],
-    rule: { type: "numeric", step: 7 },
-    answer: "35",
-    distractors: ["32", "42", "30"],
-    ruleText: "每次加 7。",
+    series: ["2", "6", "18"],
+    rule: { type: "geometric", ratio: 3 },
+    answer: "54",
+    distractors: ["24", "36", "27"],
+    ruleText: "每次乘以 3（等比）。",
   }),
   sequence({
     id: "adult-vci-13",

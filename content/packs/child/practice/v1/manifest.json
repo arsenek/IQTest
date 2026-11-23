@@ -211,26 +211,26 @@
         {
           "id": "child-prac-vci-9",
           "type": "mcq",
-          "prompt": "练习：按规律往下排：3、6、9、？ 下一项是什么？",
+          "prompt": "练习：按规律往下排：3、9、27、？ 下一项是什么？",
           "choices": [
             {
-              "label": "15",
-              "glyph": "1"
+              "label": "54",
+              "glyph": "5"
             },
             {
-              "label": "11",
-              "glyph": "1"
+              "label": "30",
+              "glyph": "3"
             },
             {
-              "label": "10",
-              "glyph": "1"
+              "label": "36",
+              "glyph": "3"
             },
             {
-              "label": "12",
-              "glyph": "1"
+              "label": "81",
+              "glyph": "8"
             }
           ],
-          "answer": "12",
+          "answer": "81",
           "timeLimitMs": 60000
         },
         {

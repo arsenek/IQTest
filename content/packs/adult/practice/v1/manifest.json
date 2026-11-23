@@ -211,26 +211,26 @@
         {
           "id": "adult-prac-vci-9",
           "type": "mcq",
-          "prompt": "练习：根据序列规律，下一项应为？ 9、18、27、？",
+          "prompt": "练习：根据序列规律，下一项应为？ 4、8、16、？",
           "choices": [
             {
-              "label": "36",
+              "label": "32",
               "glyph": "3"
             },
             {
-              "label": "33",
-              "glyph": "3"
+              "label": "18",
+              "glyph": "1"
             },
             {
-              "label": "45",
-              "glyph": "4"
+              "label": "24",
+              "glyph": "2"
             },
             {
-              "label": "30",
-              "glyph": "3"
+              "label": "20",
+              "glyph": "2"
             }
           ],
-          "answer": "36",
+          "answer": "32",
           "timeLimitMs": 55000
         },
         {

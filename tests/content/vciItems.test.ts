@@ -83,6 +83,42 @@ describe("VCI items: the checks reject broken items", () => {
     expect(failed(item)).toContain("answer-deducible");
   });
 
+  it("rejects a geometric sequence with a wrong keyed answer", () => {
+    const broken = sequence({
+      id: "x-geo-wrong",
+      series: ["2", "4", "8"],
+      rule: { type: "geometric", ratio: 2 },
+      answer: "10",
+      distractors: ["16", "12", "6"],
+      ruleText: "乘二。",
+    });
+    const item = buildItem(plan, sub, broken);
+    expect(failed(item)).toContain("answer-deducible");
+  });
+
+  it("rejects a geometric stem that breaks the declared ratio", () => {
+    const broken = sequence({
+      id: "x-geo-broken-stem",
+      series: ["2", "4", "7"],
+      rule: { type: "geometric", ratio: 2 },
+      answer: "14",
+      distractors: ["8", "10", "9"],
+      ruleText: "乘二。",
+    });
+    const item = buildItem(plan, sub, broken);
+    expect(failed(item)).toContain("answer-deducible");
+  });
+
+  it("ships at least one formal geometric sequence per audience", () => {
+    const geos = allItems.filter(
+      (x) =>
+        !x.packId.includes("practice") &&
+        x.item.spec.kind === "sequence" &&
+        x.item.spec.rule.type === "geometric",
+    );
+    expect(geos.map((x) => x.item.spec.id).sort()).toEqual(["adult-vci-12", "child-vci-12"]);
+  });
+
   it("rejects an analogy whose stem pair is not in the lexicon", () => {
     const broken = analogy({
       id: "x-analogy-bad-stem",

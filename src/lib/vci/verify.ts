@@ -7,21 +7,40 @@ function add(checks: Check[], name: string, ok: boolean, detail = "") {
   checks.push({ name, ok, detail });
 }
 
+function parseNumericTerms(series: string[]): number[] {
+  return series.map((s) => {
+    const n = Number(s);
+    if (!Number.isFinite(n)) throw new Error(`non-numeric term "${s}"`);
+    return n;
+  });
+}
+
 /** Deduce the unique next term for a sequence rule. */
 export function deduceSequenceNext(series: string[], rule: SequenceRule): string {
   if (series.length < 2) throw new Error("sequence needs at least 2 stem terms");
   if (rule.type === "numeric") {
-    const nums = series.map((s) => {
-      const n = Number(s);
-      if (!Number.isFinite(n)) throw new Error(`non-numeric term "${s}"`);
-      return n;
-    });
+    const nums = parseNumericTerms(series);
     for (let i = 1; i < nums.length; i++) {
       if (nums[i] - nums[i - 1] !== rule.step) {
         throw new Error(`stem breaks step ${rule.step}`);
       }
     }
     return String(nums[nums.length - 1] + rule.step);
+  }
+  if (rule.type === "geometric") {
+    const { ratio } = rule;
+    if (!Number.isInteger(ratio) || ratio === 0 || Math.abs(ratio) === 1) {
+      throw new Error(`geometric ratio must be integer ≠0 with |ratio|≠1 (got ${ratio})`);
+    }
+    const nums = parseNumericTerms(series);
+    for (let i = 1; i < nums.length; i++) {
+      if (nums[i - 1] * ratio !== nums[i]) {
+        throw new Error(`stem breaks ratio ${ratio}`);
+      }
+    }
+    const next = nums[nums.length - 1] * ratio;
+    if (!Number.isInteger(next)) throw new Error(`geometric next is not integer (${next})`);
+    return String(next);
   }
   const { alphabet } = rule;
   if (alphabet.length < 2) throw new Error("cycle alphabet too short");

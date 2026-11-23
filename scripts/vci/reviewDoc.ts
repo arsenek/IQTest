@@ -17,7 +17,9 @@ function ruleSummary(item: BuiltPack["subtests"][0]["items"][0]): string {
     const r =
       spec.rule.type === "numeric"
         ? `等差 step=${spec.rule.step}`
-        : `循环 [${spec.rule.alphabet.join("")}]`;
+        : spec.rule.type === "geometric"
+          ? `等比 ratio=${spec.rule.ratio}`
+          : `循环 [${spec.rule.alphabet.join("")}]`;
     return `${spec.ruleText}（${r}）`;
   }
   return `${spec.ruleText}（关系：${getRelation(spec.relationId).label}）`;

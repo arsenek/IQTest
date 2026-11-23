@@ -73,11 +73,11 @@ export const childPractice: VciSpec[] = [
   }),
   sequence({
     id: "child-prac-vci-9",
-    series: ["3", "6", "9"],
-    rule: { type: "numeric", step: 3 },
-    answer: "12",
-    distractors: ["10", "15", "11"],
-    ruleText: "每次加 3。",
+    series: ["3", "9", "27"],
+    rule: { type: "geometric", ratio: 3 },
+    answer: "81",
+    distractors: ["36", "54", "30"],
+    ruleText: "每次乘以 3（等比）。",
   }),
   analogy({
     id: "child-prac-vci-10",
@@ -162,11 +162,11 @@ export const adultPractice: VciSpec[] = [
   }),
   sequence({
     id: "adult-prac-vci-9",
-    series: ["9", "18", "27"],
-    rule: { type: "numeric", step: 9 },
-    answer: "36",
-    distractors: ["30", "45", "33"],
-    ruleText: "每次加 9。",
+    series: ["4", "8", "16"],
+    rule: { type: "geometric", ratio: 2 },
+    answer: "32",
+    distractors: ["20", "24", "18"],
+    ruleText: "每次乘以 2（等比）。",
   }),
   analogy({
     id: "adult-prac-vci-10",
