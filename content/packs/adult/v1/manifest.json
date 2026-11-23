@@ -111,11 +111,11 @@
         {
           "id": "adult-vci-5",
           "type": "mcq",
-          "prompt": "「山脉、河流、高原」同属一类。下列哪一项与它们属于同一范畴？",
+          "prompt": "「高原、湖泊、沙漠」同属一类。下列哪一项与它们属于同一范畴？",
           "choices": [
             {
-              "label": "平原",
-              "glyph": "平"
+              "label": "岛屿",
+              "glyph": "岛"
             },
             {
               "label": "外部性",
@@ -130,13 +130,13 @@
               "glyph": "合"
             }
           ],
-          "answer": "平原",
+          "answer": "岛屿",
           "timeLimitMs": 55000
         },
         {
           "id": "adult-vci-6",
           "type": "mcq",
-          "prompt": "「医生、法官、工程师」同属一类。下列哪一项与它们属于同一范畴？",
+          "prompt": "「法官、工程师、护士」同属一类。下列哪一项与它们属于同一范畴？",
           "choices": [
             {
               "label": "均衡",
@@ -151,11 +151,11 @@
               "glyph": "常"
             },
             {
-              "label": "教师",
-              "glyph": "教"
+              "label": "司机",
+              "glyph": "司"
             }
           ],
-          "answer": "教师",
+          "answer": "司机",
           "timeLimitMs": 55000
         },
         {
@@ -1579,50 +1579,50 @@
         {
           "id": "adult-psi2-1",
           "type": "symbol_search",
-          "prompt": "配对计数：目标※。在 ＊＃※＃＊※＃ 中目标出现几次？",
+          "prompt": "配对计数：目标Σ。在 ΑΣΒΣΓΔΕ 中目标出现几次？",
           "answer": 2,
           "timeLimitMs": 28000
         },
         {
           "id": "adult-psi2-2",
           "type": "symbol_search",
-          "prompt": "目标◇。在 ◆◇○◇◆◇○◇ 中出现几次？",
-          "answer": 4,
+          "prompt": "目标∴。在 ∵∴∵∴∵∴ 中出现几次？",
+          "answer": 3,
           "timeLimitMs": 26000
         },
         {
           "id": "adult-psi2-3",
           "type": "symbol_search",
-          "prompt": "配对计数：目标▲。在 △▼▲◆▲△▼▲ 中目标出现几次？",
-          "answer": 3,
+          "prompt": "配对计数：目标∞。在 ∅∞∪∞∩⊂⊃ 中目标出现几次？",
+          "answer": 2,
           "timeLimitMs": 24000
         },
         {
           "id": "adult-psi2-4",
           "type": "symbol_search",
-          "prompt": "目标＋。在 ×÷＋＝＋－＋× 中出现几次？",
-          "answer": 3,
+          "prompt": "目标√。在 √π√e√2√φ 中出现几次？",
+          "answer": 4,
           "timeLimitMs": 22000
         },
         {
           "id": "adult-psi2-5",
           "type": "symbol_search",
-          "prompt": "目标◎。在 ○●◎○◎●◎○ 中出现几次？",
+          "prompt": "目标∈。在 ⊂∈∪∈∩∈∅ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 21000
         },
         {
           "id": "adult-psi2-6",
           "type": "symbol_search",
-          "prompt": "配对计数：目标■。在 □■◆□■▲■□ 中目标出现几次？",
-          "answer": 3,
+          "prompt": "配对计数：目标∀。在 ∃∀∃∀∃∀∀ 中目标出现几次？",
+          "answer": 4,
           "timeLimitMs": 20000
         },
         {
           "id": "adult-psi2-7",
           "type": "symbol_search",
-          "prompt": "目标★。在 ☆★●★☆■★☆ 中出现几次？",
-          "answer": 3,
+          "prompt": "目标∧。在 ∨∧∨∧∨∧∧ 中出现几次？",
+          "answer": 4,
           "timeLimitMs": 18000
         }
       ]

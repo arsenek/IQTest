@@ -14,15 +14,16 @@ export const childPractice: PsiSpec[] = [
   psi({ id: "child-prac-psi-10", target: "▼", grid: "▲▼▲▼▼◆", timeLimitMs: 21000 }),
 ];
 
+/** Adult practice stays in Greek/logic family — disjoint from child shape practice. */
 export const adultPractice: PsiSpec[] = [
-  psi({ id: "adult-prac-psi-1", target: "※", grid: "＊＃※＃＊※", timeLimitMs: 26000 }),
-  psi({ id: "adult-prac-psi-2", target: "◇", grid: "◆◇○◇◆◇○", timeLimitMs: 25000 }),
-  psi({ id: "adult-prac-psi-3", target: "▲", grid: "△▼▲◆▲△▼", timeLimitMs: 24000 }),
-  psi({ id: "adult-prac-psi-4", target: "＋", grid: "×÷＋＝＋－", timeLimitMs: 23000 }),
-  psi({ id: "adult-prac-psi-5", target: "◎", grid: "○●◎○◎●◎", timeLimitMs: 22000 }),
-  psi({ id: "adult-prac-psi-6", target: "■", grid: "□■◆□■▲■", timeLimitMs: 21000 }),
-  psi({ id: "adult-prac-psi-7", target: "★", grid: "☆★●★☆■★", timeLimitMs: 20000 }),
-  psi({ id: "adult-prac-psi-8", target: "▼", grid: "▲▼▲▼◆▼▲", timeLimitMs: 19000 }),
-  psi({ id: "adult-prac-psi-9", target: "＃", grid: "＊＃※＃＊＃※", timeLimitMs: 18000 }),
-  psi({ id: "adult-prac-psi-10", target: "○", grid: "●◎○●○◎○○", timeLimitMs: 17000 }),
+  psi({ id: "adult-prac-psi-1", target: "≠", grid: "=≠≈≠≡≠", timeLimitMs: 26000 }),
+  psi({ id: "adult-prac-psi-2", target: "∂", grid: "∇Δ∫∑∂∇", timeLimitMs: 25000 }),
+  psi({ id: "adult-prac-psi-3", target: "ℵ", grid: "αβγδℵε", timeLimitMs: 24000 }),
+  psi({ id: "adult-prac-psi-4", target: "⊢", grid: "⊨⊢⊥⊢⊤⊢", timeLimitMs: 23000 }),
+  psi({ id: "adult-prac-psi-5", target: "⊆", grid: "⊂⊆⊂⊆⊆⊃", timeLimitMs: 22000 }),
+  psi({ id: "adult-prac-psi-6", target: "⊥", grid: "⊤⊥⊤⊥⊥⊤", timeLimitMs: 21000 }),
+  psi({ id: "adult-prac-psi-7", target: "≈", grid: "=≈≠≈≡≈", timeLimitMs: 20000 }),
+  psi({ id: "adult-prac-psi-8", target: "Ω", grid: "αΩβΩγδΩ", timeLimitMs: 19000 }),
+  psi({ id: "adult-prac-psi-9", target: "∅", grid: "∅∪∅∩∅⊂", timeLimitMs: 18000 }),
+  psi({ id: "adult-prac-psi-10", target: "∀", grid: "∃∀∃∀∃∀", timeLimitMs: 17000 }),
 ];

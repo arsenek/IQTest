@@ -643,71 +643,71 @@
         {
           "id": "adult-prac-psi-1",
           "type": "symbol_search",
-          "prompt": "练习：目标※。在 ＊＃※＃＊※ 中出现几次？",
-          "answer": 2,
+          "prompt": "练习：目标≠。在 =≠≈≠≡≠ 中出现几次？",
+          "answer": 3,
           "timeLimitMs": 26000
         },
         {
           "id": "adult-prac-psi-2",
           "type": "symbol_search",
-          "prompt": "练习：目标◇。在 ◆◇○◇◆◇○ 中出现几次？",
-          "answer": 3,
+          "prompt": "练习：目标∂。在 ∇Δ∫∑∂∇ 中出现几次？",
+          "answer": 1,
           "timeLimitMs": 25000
         },
         {
           "id": "adult-prac-psi-3",
           "type": "symbol_search",
-          "prompt": "练习：目标▲。在 △▼▲◆▲△▼ 中出现几次？",
-          "answer": 2,
+          "prompt": "练习：目标ℵ。在 αβγδℵε 中出现几次？",
+          "answer": 1,
           "timeLimitMs": 24000
         },
         {
           "id": "adult-prac-psi-4",
           "type": "symbol_search",
-          "prompt": "练习：目标＋。在 ×÷＋＝＋－ 中出现几次？",
-          "answer": 2,
+          "prompt": "练习：目标⊢。在 ⊨⊢⊥⊢⊤⊢ 中出现几次？",
+          "answer": 3,
           "timeLimitMs": 23000
         },
         {
           "id": "adult-prac-psi-5",
           "type": "symbol_search",
-          "prompt": "练习：目标◎。在 ○●◎○◎●◎ 中出现几次？",
+          "prompt": "练习：目标⊆。在 ⊂⊆⊂⊆⊆⊃ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 22000
         },
         {
           "id": "adult-prac-psi-6",
           "type": "symbol_search",
-          "prompt": "练习：目标■。在 □■◆□■▲■ 中出现几次？",
+          "prompt": "练习：目标⊥。在 ⊤⊥⊤⊥⊥⊤ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 21000
         },
         {
           "id": "adult-prac-psi-7",
           "type": "symbol_search",
-          "prompt": "练习：目标★。在 ☆★●★☆■★ 中出现几次？",
+          "prompt": "练习：目标≈。在 =≈≠≈≡≈ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 20000
         },
         {
           "id": "adult-prac-psi-8",
           "type": "symbol_search",
-          "prompt": "练习：目标▼。在 ▲▼▲▼◆▼▲ 中出现几次？",
+          "prompt": "练习：目标Ω。在 αΩβΩγδΩ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 19000
         },
         {
           "id": "adult-prac-psi-9",
           "type": "symbol_search",
-          "prompt": "练习：目标＃。在 ＊＃※＃＊＃※ 中出现几次？",
+          "prompt": "练习：目标∅。在 ∅∪∅∩∅⊂ 中出现几次？",
           "answer": 3,
           "timeLimitMs": 18000
         },
         {
           "id": "adult-prac-psi-10",
           "type": "symbol_search",
-          "prompt": "练习：目标○。在 ●◎○●○◎○○ 中出现几次？",
-          "answer": 4,
+          "prompt": "练习：目标∀。在 ∃∀∃∀∃∀ 中出现几次？",
+          "answer": 3,
           "timeLimitMs": 17000
         }
       ]
