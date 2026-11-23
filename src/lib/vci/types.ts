@@ -21,13 +21,20 @@ export type NumericSequenceRule = {
   step: number;
 };
 
+/** Constant integer ratio; next = last × ratio (falsifiable geometric family). */
+export type GeometricSequenceRule = {
+  type: "geometric";
+  /** Integer ratio ≠ 0; |ratio| ≠ 1 (constant series is not this family). */
+  ratio: number;
+};
+
 export type CycleSequenceRule = {
   type: "cycle";
   /** Ordered alphabet; next term wraps. */
   alphabet: string[];
 };
 
-export type SequenceRule = NumericSequenceRule | CycleSequenceRule;
+export type SequenceRule = NumericSequenceRule | GeometricSequenceRule | CycleSequenceRule;
 
 export type SequenceSpec = {
   kind: "sequence";

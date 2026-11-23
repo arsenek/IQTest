@@ -93,11 +93,11 @@ export const childVocab: VciSpec[] = [
   }),
   sequence({
     id: "child-vci-12",
-    series: ["2", "4", "6", "8"],
-    rule: { type: "numeric", step: 2 },
-    answer: "10",
-    distractors: ["9", "12", "7"],
-    ruleText: "偶数每次加 2。",
+    series: ["2", "4", "8"],
+    rule: { type: "geometric", ratio: 2 },
+    answer: "16",
+    distractors: ["10", "12", "6"],
+    ruleText: "每次乘以 2（等比）。",
   }),
   sequence({
     id: "child-vci-13",

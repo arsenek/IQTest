@@ -286,26 +286,26 @@
         {
           "id": "adult-vci-12",
           "type": "mcq",
-          "prompt": "根据序列规律，下一项应为？ 7、14、21、28、？",
+          "prompt": "根据序列规律，下一项应为？ 2、6、18、？",
           "choices": [
             {
-              "label": "35",
+              "label": "54",
+              "glyph": "5"
+            },
+            {
+              "label": "36",
               "glyph": "3"
             },
             {
-              "label": "42",
-              "glyph": "4"
+              "label": "27",
+              "glyph": "2"
             },
             {
-              "label": "30",
-              "glyph": "3"
-            },
-            {
-              "label": "32",
-              "glyph": "3"
+              "label": "24",
+              "glyph": "2"
             }
           ],
-          "answer": "35",
+          "answer": "54",
           "timeLimitMs": 55000
         },
         {

@@ -286,18 +286,18 @@
         {
           "id": "child-vci-12",
           "type": "mcq",
-          "prompt": "按规律往下排：2、4、6、8、？ 下一项是什么？",
+          "prompt": "按规律往下排：2、4、8、？ 下一项是什么？",
           "choices": [
             {
-              "label": "9",
-              "glyph": "9"
-            },
-            {
-              "label": "7",
-              "glyph": "7"
-            },
-            {
               "label": "10",
+              "glyph": "1"
+            },
+            {
+              "label": "6",
+              "glyph": "6"
+            },
+            {
+              "label": "16",
               "glyph": "1"
             },
             {
@@ -305,7 +305,7 @@
               "glyph": "1"
             }
           ],
-          "answer": "10",
+          "answer": "16",
           "timeLimitMs": 60000
         },
         {
