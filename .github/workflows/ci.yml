@@ -5,8 +5,13 @@ on:
     branches: [main]
   pull_request:
 
+env:
+  DATABASE_URL: postgresql://postgres:postgres@localhost:5432/iqtest?schema=public
+  AUTH_SECRET: ci-test-secret-not-for-production
+
 jobs:
-  bank-and-unit:
+  bank-gates:
+    name: bank uniqueness gates
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -17,7 +22,38 @@ jobs:
           cache: npm
       - name: Install
         run: npm ci
-      - name: Rule-gen uniqueness checks (pri/vci/psi/wmi)
+      - name: Rule-gen *:check (pri/vci/psi/wmi)
         run: npm run bank:check
-      - name: Unit tests (includes uniqueness breakage regressions)
+      - name: Content uniqueness + license regressions
+        run: npm run test:content
+
+  unit-with-db:
+    name: unit tests (postgres)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: iqtest
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d iqtest"
+          --health-interval 3s
+          --health-timeout 5s
+          --health-retries 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Prisma migrate
+        run: npx prisma migrate deploy
+      - name: Full unit suite
         run: npm test

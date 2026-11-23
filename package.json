@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
+    "test:content": "vitest run tests/content",
     "test:watch": "vitest",
     "test:e2e": "playwright test tests/e2e/happy-path.spec.ts",
     "pri:generate": "vite-node scripts/generate-pri-items.ts --",

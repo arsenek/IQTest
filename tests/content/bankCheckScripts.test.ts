@@ -11,26 +11,33 @@ describe("bank:check script contract", () => {
     readFileSync(path.join(process.cwd(), "package.json"), "utf8"),
   ) as { scripts: Record<string, string> };
 
-  it("exposes pri/vci/psi/wmi :check and aggregate bank:check", () => {
-    for (const name of ["pri:check", "vci:check", "psi:check", "wmi:check", "bank:check"] as const) {
+  it("exposes pri/vci/psi/wmi :check, bank:check, and test:content", () => {
+    for (const name of [
+      "pri:check",
+      "vci:check",
+      "psi:check",
+      "wmi:check",
+      "bank:check",
+      "test:content",
+    ] as const) {
       expect(pkg.scripts[name], name).toBeTypeOf("string");
       expect(pkg.scripts[name]!.length).toBeGreaterThan(0);
     }
     for (const name of ["pri:check", "vci:check", "psi:check", "wmi:check"] as const) {
       expect(pkg.scripts["bank:check"]).toContain(name);
     }
+    expect(pkg.scripts["test:content"]).toMatch(/tests\/content/);
   });
 
-  it("CI workflow runs bank:check before npm test", () => {
+  it("CI workflow runs bank:check and content uniqueness tests", () => {
     const yml = readFileSync(
       path.join(process.cwd(), ".github", "workflows", "ci.yml"),
       "utf8",
     );
     expect(yml).toMatch(/npm run bank:check/);
+    expect(yml).toMatch(/npm run test:content/);
     expect(yml).toMatch(/npm test/);
-    const bankAt = yml.indexOf("npm run bank:check");
-    const testAt = yml.indexOf("npm test");
-    expect(bankAt).toBeGreaterThanOrEqual(0);
-    expect(testAt).toBeGreaterThan(bankAt);
+    expect(yml).toMatch(/postgres:16/);
+    expect(yml).toMatch(/prisma migrate deploy/);
   });
 });
