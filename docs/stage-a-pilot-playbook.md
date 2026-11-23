@@ -20,10 +20,16 @@
 ### 2.1 导出（真样本）
 
 ```bash
-npm run export:responses -- --out ./tmp/stage-a-export --format both
+# 默认排除 sim-*@iqtest.local；建议加 --cohort 标注试点队列
+npm run export:responses -- \
+  --out ./tmp/stage-a-live-human-export \
+  --format both \
+  --cohort stage-a-pilot
 ```
 
-得到 `responses.csv` / `responses.jsonl`。儿童行（`isChildData=true`）按机密处理，勿外传可追溯个体。
+得到 `responses.csv` / `responses.jsonl` 与 `meta.json`（含 `pilotCohort`、`excludedSimSessions`）。儿童行（`isChildData=true`）按机密处理，勿外传可追溯个体。
+
+sim 管线对照请另目录并显式 `--include-sim`；**禁止**与真人导出混报为常模（详见 `docs/export-stage-a.md`）。
 
 ### 2.2 分析
 

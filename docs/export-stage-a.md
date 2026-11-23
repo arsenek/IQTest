@@ -6,7 +6,11 @@
 
 ```bash
 # 需 DATABASE_URL；建议设置 EXPORT_PROFILE_SALT（否则回退 AUTH_SECRET）
-npm run export:responses -- --out ./tmp/export --format both
+# 默认排除 sim-*@iqtest.local（真人 Stage A）
+npm run export:responses -- \
+  --out ./tmp/stage-a-live-human-export \
+  --format both \
+  --cohort stage-a-pilot
 ```
 
 可选参数：
@@ -17,20 +21,41 @@ npm run export:responses -- --out ./tmp/export --format both
 | `--format csv\|jsonl\|both` | 默认 `both` → `responses.csv` + `responses.jsonl` |
 | `--pack <id>` | 仅该内容包（如 `child/v1`） |
 | `--since <ISO>` / `--until <ISO>` | 按 `submittedAt` 过滤 |
+| `--include-sim` | **纳入** `sim-*@iqtest.local`（默认排除；仅管线对照用） |
+| `--cohort <label>` | 试点队列标签，写入同目录 `meta.json` 的 `pilotCohort`（无 DB 列） |
 
-受保护 API（默认关闭）：
+产物：
+
+| 文件 | 内容 |
+|------|------|
+| `responses.csv` / `responses.jsonl` | 作答行 |
+| `meta.json` | `pilotCohort`、`includeSim`、`excludedSimSessions`、免责声明等 |
+
+### 真人 vs sim
+
+| 用途 | 命令要点 |
+|------|----------|
+| **真人 Stage A**（默认） | 不加 `--include-sim`；建议 `--cohort stage-a-pilot`（或运营约定标签） |
+| **sim 管线对照** | 加 `--include-sim`；**分目录**存放，勿与真人导出混跑分析后当常模 |
+
+约定：`sim-*@iqtest.local` 为合成账号（见 `sim:seed`）；真人招募禁止使用该域。识别逻辑与 `isSimEmail` 一致。
+
+受保护 API（默认关闭；同样默认排除 sim）：
 
 ```bash
 ENABLE_RESPONSE_EXPORT=1 EXPORT_TOKEN=… \
   curl -H "Authorization: Bearer $EXPORT_TOKEN" \
   "http://127.0.0.1:3000/api/admin/export/responses?format=jsonl"
+
+# 仅管线对照时显式纳入 sim：
+# .../responses?format=jsonl&includeSim=1
 ```
 
 启用条件：`ENABLE_RESPONSE_EXPORT=1` **或** `NODE_ENV=development`，**且** Bearer token 匹配 `EXPORT_TOKEN`。
 
 ## 行粒度
 
-每题一次作答一行。仅 **SUBMITTED** 且已有 **Report** 的正式评估会话；不含练习包、进行中或放弃会话。
+每题一次作答一行。仅 **SUBMITTED** 且已有 **Report** 的正式评估会话；不含练习包、进行中或放弃会话。默认再排除 sim 账号会话。
 
 ## 字段
 
@@ -55,6 +80,8 @@ ENABLE_RESPONSE_EXPORT=1 EXPORT_TOKEN=… \
 | `submittedAt` | ISO\|空 | 交卷时间 |
 | `deviceClass` | string | **本轮未采集，恒为空** |
 | `isChildData` | bool | `profileKind === CHILD` |
+
+试点队列标签**不**写入行字段（避免 schema 膨胀）；见同目录 `meta.json` → `pilotCohort`。
 
 ## 隐私
 
@@ -82,8 +109,8 @@ ENABLE_RESPONSE_EXPORT=1 EXPORT_TOKEN=… \
 
 | 缺口 | 说明 |
 |------|------|
-| 设备 / UA / `deviceClass` | 无采集；可加可选 client meta |
+| 设备 / UA / `deviceClass` | 无采集；可加可选 client meta（本轮明确延后） |
 | 显式 skipped/timedOut | 仅推断 |
-| 人口学、研究同意标签 | 无 |
+| 人口学、研究同意标签 | 无 DB 列；试点用 `--cohort` + 运营表 |
 | 完整 answerJson | 故意不导出 |
 | IP / 地理 | 默认不采 |

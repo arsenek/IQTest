@@ -31,6 +31,9 @@ export async function GET(request: Request) {
   }
 
   const packId = url.searchParams.get("pack") ?? undefined;
+  const includeSim =
+    url.searchParams.get("includeSim") === "1" ||
+    url.searchParams.get("includeSim") === "true";
   let salt: string;
   try {
     salt = resolveExportSalt();
@@ -41,7 +44,7 @@ export async function GET(request: Request) {
     );
   }
 
-  const sessions = await fetchExportableSessions({ packId });
+  const { sessions } = await fetchExportableSessions({ packId, includeSim });
   const { rows } = buildRowsForSessions(sessions, salt);
 
   if (format === "csv") {
