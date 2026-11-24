@@ -38,16 +38,18 @@ export const adultVocab: VciSpec[] = [
   classify({
     id: "adult-vci-5",
     categoryId: "geo-feature",
-    exemplars: ["山脉", "河流", "高原"],
-    answer: "平原",
+    // Exemplars disjoint from child-vci-10 (山脉/河流/平原) — same category, different stem set.
+    exemplars: ["高原", "湖泊", "沙漠"],
+    answer: "岛屿",
     distractors: ["效度", "合取", "外部性"],
     ruleText: "同属「地理要素」。",
   }),
   classify({
     id: "adult-vci-6",
     categoryId: "profession",
-    exemplars: ["医生", "法官", "工程师"],
-    answer: "教师",
+    // Avoid child-vci-9 stem overlap (医生/教师/警察).
+    exemplars: ["法官", "工程师", "护士"],
+    answer: "司机",
     distractors: ["常模", "对偶", "均衡"],
     ruleText: "同属「职业」。",
   }),

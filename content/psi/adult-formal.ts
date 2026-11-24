@@ -20,30 +20,31 @@ export const adultSymbols: PsiSpec[] = [
   psi({ id: "adult-psi-16", target: "∅", grid: "∅∪∅∩∅⊂∅", timeLimitMs: 20000 }),
 ];
 
+/** Core 2 uses the same Greek/logic alphabet family as core 1 — not child shape glyphs. */
 export const adultPairing: PsiSpec[] = [
   psi({
     id: "adult-psi2-1",
-    target: "※",
-    grid: "＊＃※＃＊※＃",
+    target: "Σ",
+    grid: "ΑΣΒΣΓΔΕ",
     timeLimitMs: 28000,
     framing: "pairing",
   }),
-  psi({ id: "adult-psi2-2", target: "◇", grid: "◆◇○◇◆◇○◇", timeLimitMs: 26000 }),
+  psi({ id: "adult-psi2-2", target: "∴", grid: "∵∴∵∴∵∴", timeLimitMs: 26000 }),
   psi({
     id: "adult-psi2-3",
-    target: "▲",
-    grid: "△▼▲◆▲△▼▲",
+    target: "∞",
+    grid: "∅∞∪∞∩⊂⊃",
     timeLimitMs: 24000,
     framing: "pairing",
   }),
-  psi({ id: "adult-psi2-4", target: "＋", grid: "×÷＋＝＋－＋×", timeLimitMs: 22000 }),
-  psi({ id: "adult-psi2-5", target: "◎", grid: "○●◎○◎●◎○", timeLimitMs: 21000 }),
+  psi({ id: "adult-psi2-4", target: "√", grid: "√π√e√2√φ", timeLimitMs: 22000 }),
+  psi({ id: "adult-psi2-5", target: "∈", grid: "⊂∈∪∈∩∈∅", timeLimitMs: 21000 }),
   psi({
     id: "adult-psi2-6",
-    target: "■",
-    grid: "□■◆□■▲■□",
+    target: "∀",
+    grid: "∃∀∃∀∃∀∀",
     timeLimitMs: 20000,
     framing: "pairing",
   }),
-  psi({ id: "adult-psi2-7", target: "★", grid: "☆★●★☆■★☆", timeLimitMs: 18000 }),
+  psi({ id: "adult-psi2-7", target: "∧", grid: "∨∧∨∧∨∧∧", timeLimitMs: 18000 }),
 ];
